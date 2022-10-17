@@ -1,7 +1,7 @@
 {{ if eq (printf "%T" .) "template.HTML" }}
-    {{- . -}}
+    {{ . }}
 {{ else if eq (printf "%T" .) "string" }}
-    {{- . -}}
+    {{ . }}
 {{ else if ne (printf "%T" .) "map[string]interface {}" }}
     {{ ErrorF "field structure: %T not supported in field-switch.tmpl" . }}
 {{ else if eq .Type "a" }}
