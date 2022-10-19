@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   {{ template "partials/head.tmpl" . }}
-  <body>
+  <body
+          {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+          {{- if .Format }} data-page-format="{{ .Format }}"{{ end -}}
+          {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+  >
     <main>
       <div id="top"></div>
       <article
