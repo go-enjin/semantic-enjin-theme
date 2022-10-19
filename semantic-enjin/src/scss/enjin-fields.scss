@@ -65,6 +65,18 @@ p:not(:first-child) {
   text-align: center;
 }
 
+.indented {
+  padding-left: 10px;
+
+  &-1 {
+    padding-left: 20px;
+  }
+
+  &-2 {
+    padding-left: 40px;
+  }
+}
+
 .rotate-315 {
   transform: rotate(315deg);
 }
