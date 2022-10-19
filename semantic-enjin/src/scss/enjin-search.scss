@@ -25,30 +25,37 @@ body[data-page-type="search"] {
     flex-direction: row;
 
     input[name="query"] {
-      width: 50%;
+      flex-grow: 1;
       height: 34px;
-      padding: 5px 10px 1px 10px;
+      border: none;
       font-size: 16px;
-      line-height: 34px;
-
-      border-radius: 5px;
-      border-color: var(--color--resting);
+      line-height: 16px;
+      padding: 0 10px 1px 10px;
+      vertical-align: middle;
     }
 
     button[type="submit"] {
-      display: inline-block;
+      display: inline-flex;
 
-      min-width: 50px;
-      margin-left: var(--page--flex--gap--sm);
-      border-radius: 3px;
+      align-items: center;
+      align-content: center;
+      justify-items: center;
+      justify-content: center;
 
+      width: 42px;
+      height: 34px;
+      min-width: 42px;
       font-size: 18px;
+
+      border: none;
       background: none;
-      color: var(--secondary--fg);
+      color: var(--primary--bg);
+      margin-left: var(--page--flex--gap--sm);
 
       &:hover {
-        color: var(--secondary--bg);
-        background-color: var(--secondary--fg);
+        opacity: 1;
+        color: var(--primary--fg);
+        background-color: var(--primary--bg);
       }
     }
   }
