@@ -58,7 +58,9 @@
     {{ end -}}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Source%20Sans%20Pro&amp;family=Source%20Serif%20Pro"/>
-    <link rel="stylesheet" href="/fontawesome-free-6.2.0-web/css/all.css"/>
+    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/fontawesome.css" }}"/>
+    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/brands.css" }}"/>
+    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/solid.css" }}"/>
 
     <link rel="stylesheet" href="{{ fsUrl "/css/semantic-enjin.css" }}"/>
     {{ if gt (len .Theme.RootStyles) 0 }}
