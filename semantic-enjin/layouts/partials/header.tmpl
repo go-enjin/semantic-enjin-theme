@@ -1,6 +1,8 @@
 {{- if .SiteMenu.MainMenu -}}
     <input type="checkbox" name="side-menu" id="side-menu"/>
+    {{- if .SiteSearchPath }}
     <input type="checkbox" name="search-menu" id="search-menu"/>
+    {{- end }}
     <input type="radio" name="main-menu" id="menu-close" checked=""/>
 
     {{- range $i, $item := .SiteMenu.MainMenu }}
@@ -97,6 +99,7 @@
                 </nav>
 
                 <div class="controls">
+                    {{- if .SiteSearchPath }}
                     <div class="search">
                         <form>
                             <input type="text" name="query" placeholder="Search" />
@@ -113,6 +116,7 @@
                             <span class="sr-only">toggle search</span>
                         </label>
                     </div>
+                    {{- end }}
                     <div class="side-menu--toggle">
                         <label for="side-menu" id="side-menu--label">
                             <i class="fa-solid fa-bars closed"></i>
