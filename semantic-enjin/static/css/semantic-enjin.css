@@ -70,8 +70,8 @@
   --page--masthead--full-height: 64px;
   --page--masthead--real-height: 63px;
   --page--side-menu--width: 85vw;
-  --page--heading--font-family: 'Source Sans Pro', sans-serif;
-  --page--content--font-family: 'Source Serif Pro', serif;
+  --page--heading--font-family: sans-serif;
+  --page--content--font-family: serif;
   --page--monospace--font-family: monospace;
   --page--h1--font-size: 28px;
   --page--h1--line-height: 28px;
@@ -87,7 +87,7 @@
   --page--h6--line-height: 14px;
   --page--heading--font-size: var(--page--h2--font-size);
   --page--content--font-size: 12px;
-  --page--dropcap--font-family: 'Source Sans Pro', sans-serif;
+  --page--dropcap--font-family: sans-serif;
   --page--dropcap--font-size: inherit;
   --page--ani--duration--long: 0.8s;
   --page--ani--duration--short: calc(var(--page--ani--duration--long) / 2);
