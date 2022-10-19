@@ -7,7 +7,7 @@ SHELL = /bin/bash
 BE_REPO_PATH ?= ../be
 
 help:
-	@echo "# usage: make <help|build|tidy|local|unlocal>"
+	@echo "# usage: make <help|build|tidy|local|unlocal|be-update>"
 
 build:
 	@pushd ./semantic-enjin > /dev/null \
@@ -26,4 +26,10 @@ local:
 unlocal:
 	@echo "# go.mod unlocal: github.com/go-enjin/be"
 	@enjenv go-unlocal
+	@go mod tidy
+
+be-update: export GOPROXY=direct
+be-update:
+	@echo "# updating github.com/go-enjin/be"
+	@go get github.com/go-enjin/be@latest
 	@go mod tidy
