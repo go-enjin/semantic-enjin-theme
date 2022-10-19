@@ -17,7 +17,6 @@ package theme
 import (
 	"embed"
 
-	beFsEmbed "github.com/go-enjin/be/pkg/fs/embed"
 	"github.com/go-enjin/be/pkg/log"
 	"github.com/go-enjin/be/pkg/theme"
 )
@@ -32,16 +31,12 @@ func SemanticEnjinTheme() *theme.Theme {
 	if semanticEnjinThemeInstance != nil {
 		return semanticEnjinThemeInstance
 	}
-	if f, err := beFsEmbed.New("semantic-enjin", semanticEnjinThemeFS); err != nil {
-		log.FatalF("error including semanticEnjinThemeFS: %v", err)
+	if dt, err := theme.NewEmbed("semantic-enjin", semanticEnjinThemeFS); err != nil {
+		log.FatalF("error loading semantic-enjin theme: %v", err)
 	} else {
-		if dt, err := theme.New("semantic-enjin", f); err != nil {
-			log.FatalF("error loading semantic-enjin theme: %v", err)
-		} else {
-			log.DebugF("included semantic-enjin theme")
-			semanticEnjinThemeInstance = dt
-			return dt
-		}
+		log.DebugF("included semantic-enjin theme")
+		semanticEnjinThemeInstance = dt
+		return dt
 	}
 	return nil
 }
