@@ -43,32 +43,63 @@ input[type='radio'][name='main-menu'] {
   justify-content: space-between;
 }
 
-.masthead .brand,
-.masthead .brand a {
+.masthead .brand {
   display: inline-flex;
   position: relative;
   min-width: 200px;
   height: var(--page--masthead--real-height);
   align-items: center;
 }
-.masthead .brand a:hover {
-  opacity: 1;
+
+.masthead .brand .site-logo {
+  display: inline-flex;
+
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+
+  width: auto;
+  height: 54px;
+
+  vertical-align: middle;
 }
 
-.masthead .brand img {
+.masthead .brand .site-logo img {
   width: auto;
   height: 54px;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
 }
 
-.masthead .brand span {
-  display: inline-block;
+.masthead .brand .brand--copy {
   margin-left: 10px;
+  display: inline-flex;
+  position: relative;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.masthead .brand .brand--copy a {
+  display: inline-block;
+}
+
+.masthead .brand .brand--copy a:hover {
+  opacity: 1;
+}
+
+.masthead .brand .brand--copy .site-name {
+  display: inline-block;
   line-height: var(--page--heading--font-size);
   font-size:   var(--page--heading--font-size);
-  vertical-align: middle;
+}
+
+.masthead .brand .brand--copy .site-tag-line {
+  display: inline-block;
+  line-height: var(--page--content--font-size);
+  font-size:   var(--page--content--font-size);
 }
 
 .masthead .menus {

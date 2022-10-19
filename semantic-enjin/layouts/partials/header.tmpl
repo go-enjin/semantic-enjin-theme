@@ -27,14 +27,17 @@
 <header class="masthead">
     <div class="banner page-column">
         <div class="brand">
-            <a href="/">
                 {{- if .SiteLogoUrl }}
-                    <img src="{{- .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/>
+                    <a class="site-logo" href="/"><img src="{{- .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></a>
                 {{- end }}
+            <div class="brand--copy">
                 {{- if .SiteName }}
-                    <span>{{- .SiteName -}}</span>
+                    <a class="site-name" href="/">{{- .SiteName -}}</a>
                 {{- end }}
-            </a>
+                {{- if .SiteTagLine }}
+                    <a class="site-tag-line" href="/"><small>{{ .SiteTagLine }}</small></a>
+                {{- end }}
+            </div>
         </div>
         {{- if .SiteMenu.MainMenu -}}
             <div class="menus"
