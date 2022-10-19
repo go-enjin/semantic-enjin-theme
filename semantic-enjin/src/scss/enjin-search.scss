@@ -1,0 +1,129 @@
+// Copyright (c) 2022  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+body[data-page-type="search"] {
+
+  form[name="site-search"] {
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    input[name="query"] {
+      width: 50%;
+      height: 34px;
+      padding: 5px 10px 1px 10px;
+      font-size: 16px;
+      line-height: 34px;
+
+      border-radius: 5px;
+      border-color: var(--color--resting);
+    }
+
+    button[type="submit"] {
+      display: inline-block;
+
+      min-width: 50px;
+      margin-left: var(--page--flex--gap--sm);
+      border-radius: 3px;
+
+      font-size: 18px;
+      background: none;
+      color: var(--secondary--fg);
+
+      &:hover {
+        color: var(--secondary--bg);
+        background-color: var(--secondary--fg);
+      }
+    }
+  }
+
+  ol.search-results {
+    li {
+      padding-top: 25px;
+
+      .search-result {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+
+        a, a:hover, a:active, a:focus, a:visited {
+          color: var(--color--working);
+        }
+        sup {
+          font-size: 12px;
+          color: var(--color--resting);
+        }
+      }
+
+      dl {
+        font-size: 12px;
+        padding-left: 30px;
+        color: var(--color--recover);
+
+        dt {
+          font-weight: bold;
+          font-style: italic;
+        }
+
+        dd {
+          margin-bottom: calc(var(--page--flex--gap) / 2);
+        }
+      }
+    }
+
+    li:not(:last-of-type) {
+      border-bottom: 1px solid var(--color--resting);
+    }
+  }
+
+  .search-pagination {
+
+    height: 34px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color--resting);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    div, a {
+      padding: 0 8px;
+      display: inline-block;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    a, a:visited {
+      color: var(--color--recover);
+    }
+    a:hover, a:active, a:focus  {
+      color: var(--color--working);
+    }
+
+    &-info {
+      color: var(--color--recover);
+    }
+  }
+}
