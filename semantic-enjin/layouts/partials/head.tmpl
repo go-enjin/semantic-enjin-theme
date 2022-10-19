@@ -57,12 +57,14 @@
         </style>
     {{ end -}}
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Source%20Sans%20Pro&amp;family=Source%20Serif%20Pro"/>
+    {{ range $url := .Theme.Context.PageFontStyleSheets }}
+    <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url | unescapeHTML | asHTMLAttr }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
+    {{- end }}
     <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/fontawesome.css" }}"/>
     <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/brands.css" }}"/>
     <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/solid.css" }}"/>
-
     <link rel="stylesheet" href="{{ fsUrl "/css/semantic-enjin.css" }}"/>
+
     {{ if gt (len .Theme.RootStyles) 0 }}
         <style>
             :root {
@@ -72,11 +74,12 @@
             }
         </style>
     {{ end }}
+
     {{ if gt (len .Theme.BlockStyles) 0 }}
         <style>
-            {{- range $k, $styles := .Theme.BlockStyles }}
+            {{- range $idx, $k := (sortedKeys .Theme.BlockStyles) }}
             [data-block-theme="{{ $k }}"] {
-                {{- range $style := $styles }}
+                {{- range $style := index ($.Theme.BlockStyles) $k }}
                 {{ $style }}
                 {{- end }}
             }
@@ -84,5 +87,7 @@
         </style>
     {{ end }}
 
-
+    {{ range $url := .Theme.Context.PageStyleSheets }}
+    <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
+    {{- end }}
 </head>
