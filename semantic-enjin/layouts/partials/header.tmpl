@@ -34,9 +34,11 @@
                 {{- end }}
             </a>
         </div>
-
         {{- if .SiteMenu.MainMenu -}}
-            <div class="menus" data-mobile-style="side" data-desktop-style="menu">
+            <div class="menus"
+                    {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
+                    {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
+            >
                 <label for="side-menu" id="side-close--label"><span class="sr-only">close side menu</span></label>
                 <label for="menu-close" id="menu-close--label"><span class="sr-only">close main menu</span></label>
 
