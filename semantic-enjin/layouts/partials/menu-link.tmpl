@@ -1,9 +1,9 @@
 {{- if .Href -}}
-    <a href="{{- .Href -}}" {{- elementAttributes . -}}>
-        {{- .Text -}}
-    </a>
+    {{- if eq .Lang "" }}
+        <a href="{{- .Href -}}" {{- elementAttributes . -}}>{{- .Text -}}</a>
+    {{- else }}
+        <a href="{{- __ .Lang .Href -}}" {{- elementAttributes . -}}>{{- .Text -}}</a>
+    {{- end }}
 {{- else -}}
-    <span {{- elementAttributes . -}}>
-        {{- .Text -}}
-    </span>
+    <span {{- elementAttributes . -}}>{{- .Text -}}</span>
 {{- end -}}

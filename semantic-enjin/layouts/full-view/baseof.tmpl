@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Request.Language }}">
   {{ template "partials/head.tmpl" . }}
   <body
           {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
