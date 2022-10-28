@@ -36,13 +36,13 @@ header nav .menu-item > .parent:after {
   padding-left: 8px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1199.99px) {
   .masthead .menus nav li .language-switcher {
     justify-content: start;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1199.99px) {
   .masthead .menus nav li .language-switcher:hover {
     color: var(--secondary--bg);
     background-color: var(--secondary--fg);
@@ -61,7 +61,7 @@ header nav .menu-item > .parent:after {
 
 /* masthead menus - mobile */
 
-@media screen and (max-width: 1023.99px) {
+@media screen and (max-width: 1199.99px) {
 
   /* side-menu states */
 
@@ -245,11 +245,11 @@ header nav .menu-item > .parent:after {
     display: none;
   }
 
-} /* end media screen max-width 1023.99px */
+} /* end media screen max-width 1199.99px */
 
 /* masthead menus - desktop */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1199.99px) {
 
   /* side-menu states */
 
@@ -618,4 +618,4 @@ header nav .menu-item > .parent:after {
     display: none;
   }
 
-} /* end media screen min-width 1024px */
+} /* end media screen min-width 1199.99px */
