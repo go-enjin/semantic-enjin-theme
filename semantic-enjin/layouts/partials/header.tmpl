@@ -132,7 +132,7 @@
                     <div class="search">
                         <form method="get" action="{{ __ .SiteSearchPath }}">
                             <input type="hidden" name="nonce" value="{{ Nonce "site-search-form" }}" />
-                            <input type="text" name="query" placeholder="Search" value="{{ .SiteSearchQuery | escapeHTML }}" />
+                            <input type="text" name="query" placeholder="Search" value="{{ .SiteSearchQuery }}" />
                             <button type="submit" value="submit">
                                 <i class="fas fa-search"></i>
                                 <span class="sr-only">{{ _ "Search" }}</span>
