@@ -4,6 +4,55 @@ header nav .menu-item > .parent:after {
   content: var(--icon--closed--content);
 }
 
+/* language adjustments */
+
+.masthead .menus nav li .language-switcher {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.masthead .menus nav li .language-switcher a {
+  display: inline-block;
+  font-family: var(--page--heading--font-family);
+  font-weight: bold;
+}
+
+.masthead .menus nav li .language-switcher a:hover,
+.masthead .menus nav li .language-switcher a.selected {
+  text-decoration: underline;
+}
+
+.masthead .menus nav li .language-switcher a:not(:last-of-type) {
+  padding-right: 8px;
+  border-right: 1px solid var(--secondary--fg);
+}
+
+.masthead .menus nav li .language-switcher a:not(:first-of-type) {
+  padding-left: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .masthead .menus nav li .language-switcher {
+    justify-content: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .masthead .menus nav li .language-switcher:hover {
+    color: var(--secondary--bg);
+    background-color: var(--secondary--fg);
+  }
+
+  .masthead .menus nav li .language-switcher:hover a {
+    color: var(--primary--fg);
+  }
+}
+
 /* nav menu states */
 
 #menu-close:checked ~ .masthead nav .sub-menu {

@@ -15,47 +15,51 @@
 body[data-page-type="search"] {
 
   form[name="site-search"] {
-    height: 50px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    .site-search-form-fields {
 
-    input[name="query"] {
-      flex-grow: 1;
-      height: 34px;
-      border: none;
-      font-size: 16px;
-      line-height: 16px;
-      padding: 0 10px 1px 10px;
-      vertical-align: middle;
-    }
+      height: 50px;
 
-    button[type="submit"] {
-      display: inline-flex;
-
+      display: flex;
+      justify-content: center;
       align-items: center;
       align-content: center;
-      justify-items: center;
-      justify-content: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
 
-      width: 42px;
-      height: 34px;
-      min-width: 42px;
-      font-size: 18px;
+      input[name="query"] {
+        flex-grow: 1;
+        height: 34px;
+        border: none;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 0 10px 1px 10px;
+        vertical-align: middle;
+      }
 
-      border: none;
-      background: none;
-      color: var(--primary--bg);
-      margin-left: var(--page--flex--gap--sm);
+      button[type="submit"] {
+        display: inline-flex;
 
-      &:hover {
-        opacity: 1;
-        color: var(--primary--fg);
-        background-color: var(--primary--bg);
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 34px;
+        min-width: 42px;
+        font-size: 18px;
+
+        border: none;
+        background: none;
+        color: var(--primary--bg);
+        margin-left: var(--page--flex--gap--sm);
+
+        &:hover {
+          opacity: 1;
+          color: var(--primary--fg);
+          background-color: var(--primary--bg);
+        }
       }
     }
   }
@@ -112,6 +116,21 @@ body[data-page-type="search"] {
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
+
+    .search-pagination-info {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+
+      &--pages {
+        font-size: 16px;
+      }
+      &--hits {
+        font-size: 14px;
+      }
+    }
 
     div, a {
       padding: 0 8px;

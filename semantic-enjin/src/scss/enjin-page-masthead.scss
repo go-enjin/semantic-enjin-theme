@@ -37,9 +37,10 @@ input[type='radio'][name='main-menu'] {
 .masthead .banner {
   display: flex;
   width: 100%;
-  height: var(--page--masthead--real-height);
+  height: 100%;
   padding: 0;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
 }
 
@@ -47,7 +48,7 @@ input[type='radio'][name='main-menu'] {
   display: inline-flex;
   position: relative;
   min-width: 200px;
-  height: var(--page--masthead--real-height);
+  height: 100%;
   align-items: center;
 }
 
