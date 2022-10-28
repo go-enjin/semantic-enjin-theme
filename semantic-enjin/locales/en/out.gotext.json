@@ -1,0 +1,89 @@
+{
+	"language": "en",
+	"messages": [
+		{
+			"id": "Search",
+			"key": "Search",
+			"message": "Search",
+			"translation": "Search",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "back to top",
+			"key": "back to top",
+			"message": "back to top",
+			"translation": "back to top",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close main menu",
+			"key": "close main menu",
+			"message": "close main menu",
+			"translation": "close main menu",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close menu",
+			"key": "close menu",
+			"message": "close menu",
+			"translation": "close menu",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close side menu",
+			"key": "close side menu",
+			"message": "close side menu",
+			"translation": "close side menu",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "go to card number %d",
+			"key": "go to card number %d",
+			"message": "go to card number %d",
+			"translation": "go to card number %d",
+			"translatorComment": "Copied from source: (add $idx 1)"
+		},
+		{
+			"id": "go to the next card",
+			"key": "go to the next card",
+			"message": "go to the next card",
+			"translation": "go to the next card",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "go to the previous card",
+			"key": "go to the previous card",
+			"message": "go to the previous card",
+			"translation": "go to the previous card",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "page heading navigation link",
+			"key": "page heading navigation link",
+			"message": "page heading navigation link",
+			"translation": "page heading navigation link",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "toggle search",
+			"key": "toggle search",
+			"message": "toggle search",
+			"translation": "toggle search",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "toggle side menu",
+			"key": "toggle side menu",
+			"message": "toggle side menu",
+			"translation": "toggle side menu",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "top",
+			"key": "top",
+			"message": "top",
+			"translation": "top",
+			"translatorComment": "Copied from source"
+		}
+	]
+}
