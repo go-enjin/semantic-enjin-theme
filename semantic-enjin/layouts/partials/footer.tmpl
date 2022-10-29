@@ -58,7 +58,7 @@
                         {{ if $author.Homepage }}
                         <a href="{{ $author.Homepage }}" target="_blank">
                             {{- end -}}
-                            <span>(Site theme by: {{- if $author.Name }} {{ $author.Name }}{{ else if $author.Homepage }} {{ $author.Homepage }}{{- end -}})</span>
+                            <span>({{ _ "Site theme by:" }} {{- if $author.Name }} {{ $author.Name }}{{ else if $author.Homepage }} {{ $author.Homepage }}{{- end -}})</span>
                             {{- if $author.Homepage }}
                         </a>
                         {{- end -}}
