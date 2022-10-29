@@ -1,0 +1,89 @@
+{
+	"language": "ja",
+	"messages": [
+		{
+			"id": "Search",
+			"key": "Search",
+			"message": "Search",
+			"translation": "検索",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "back to top",
+			"key": "back to top",
+			"message": "back to top",
+			"translation": "トップに戻る",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close main menu",
+			"key": "close main menu",
+			"message": "close main menu",
+			"translation": "メインメニューを閉じる",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close menu",
+			"key": "close menu",
+			"message": "close menu",
+			"translation": "メニューを閉じる",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "close side menu",
+			"key": "close side menu",
+			"message": "close side menu",
+			"translation": "サイドメニューを閉じる",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "go to card number %d",
+			"key": "go to card number %d",
+			"message": "go to card number %d",
+			"translation": "%dのカードに",
+			"translatorComment": "Copied from source: (add $idx 1)"
+		},
+		{
+			"id": "go to the next card",
+			"key": "go to the next card",
+			"message": "go to the next card",
+			"translation": "次のカードにd",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "go to the previous card",
+			"key": "go to the previous card",
+			"message": "go to the previous card",
+			"translation": "前のカードに",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "page heading navigation link",
+			"key": "page heading navigation link",
+			"message": "page heading navigation link",
+			"translation": "ディープリンク",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "toggle search",
+			"key": "toggle search",
+			"message": "toggle search",
+			"translation": "検索の表示・非表示",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "toggle side menu",
+			"key": "toggle side menu",
+			"message": "toggle side menu",
+			"translation": "サイドメニューの表示・非表示",
+			"translatorComment": "Copied from source"
+		},
+		{
+			"id": "top",
+			"key": "top",
+			"message": "top",
+			"translation": "トップ",
+			"translatorComment": "Copied from source"
+		}
+	]
+}
