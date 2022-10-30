@@ -332,13 +332,13 @@ header nav .menu-item > .parent:after {
     border-right: 1px solid var(--secondary--fg);
     font-size: 14px;
     line-height: 14px;
-    width: 149px;
+    min-width: 150px;
   }
 
   .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li :is(ul,ol) li,
   .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li :is(ul,ol) li {
     border-right: none;
-    width: 150px;
+    min-width: 150px;
   }
 
   .masthead .menus[data-desktop-style='mega'] nav li label,
