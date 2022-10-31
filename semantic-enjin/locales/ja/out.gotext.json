@@ -9,6 +9,13 @@
 			"translatorComment": "Copied from source"
 		},
 		{
+			"id": "Site theme by: %s",
+			"key": "Site theme by: %s",
+			"message": "Site theme by: %s",
+			"translation": "このサイトthemeのクリエーター: %s",
+			"translatorComment": "Copied from source"
+		},
+		{
 			"id": "back to top",
 			"key": "back to top",
 			"message": "back to top",
