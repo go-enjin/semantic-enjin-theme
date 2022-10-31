@@ -55,10 +55,14 @@
             {{- if .Theme.Authors }}
                 {{ range $author := .Theme.Authors }}
                     <div class="center" style="font-size:xx-small;">
-                        {{ if $author.Homepage }}
+                        {{ if $author.Homepage -}}
                         <a href="{{ $author.Homepage }}" target="_blank">
                             {{- end -}}
-                            <span>({{ _ "Site theme by:" }} {{- if $author.Name }} {{ $author.Name }}{{ else if $author.Homepage }} {{ $author.Homepage }}{{- end -}})</span>
+                            {{- if $author.Name -}}
+                                <span>{{- _ "Site theme by: %s" $author.Name -}}</span>
+                            {{- else if $author.Homepage -}}
+                                <span>{{- _ "Site theme by: %s" $author.Homepage -}}</span>
+                            {{- end -}}
                             {{- if $author.Homepage }}
                         </a>
                         {{- end -}}
