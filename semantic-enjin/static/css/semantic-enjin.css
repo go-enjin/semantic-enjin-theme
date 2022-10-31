@@ -50552,3 +50552,10 @@ aside > [data-block-type='link-list'] > .content.content > section > ul li {
     order: 2; } }
 
 /* 2 bookends: desktop responsiveness */
+body[data-page-format="md"] > main h1, body[data-page-format="md"] > main h2, body[data-page-format="md"] > main h3, body[data-page-format="md"] > main h4, body[data-page-format="md"] > main h5, body[data-page-format="md"] > main h6 {
+  margin-top: calc(var(--main--block--content--margin-top) * 2);
+  margin-bottom: var(--main--block--content--margin-bottom); }
+
+body[data-page-format="md"] > main p {
+  margin-top: var(--main--block--margins);
+  margin-bottom: var(--main--block--margins); }
