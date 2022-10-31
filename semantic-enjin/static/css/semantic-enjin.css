@@ -50556,6 +50556,9 @@ body[data-page-format="md"] > main h1, body[data-page-format="md"] > main h2, bo
   margin-top: calc(var(--main--block--content--margin-top) * 2);
   margin-bottom: var(--main--block--content--margin-bottom); }
 
+body[data-page-format="md"] > main h1 {
+  margin-top: 0; }
+
 body[data-page-format="md"] > main p {
   margin-top: var(--main--block--margins);
   margin-bottom: var(--main--block--margins); }
@@ -50563,6 +50566,9 @@ body[data-page-format="md"] > main p {
 body[data-page-format="org"] > main h1, body[data-page-format="org"] > main h2, body[data-page-format="org"] > main h3, body[data-page-format="org"] > main h4, body[data-page-format="org"] > main h5, body[data-page-format="org"] > main h6 {
   margin-top: calc(var(--main--block--content--margin-top) * 2);
   margin-bottom: var(--main--block--content--margin-bottom); }
+
+body[data-page-format="org"] > main h1.title {
+  margin-top: 0; }
 
 body[data-page-format="org"] > main .outline-1,
 body[data-page-format="org"] > main .outline-2,

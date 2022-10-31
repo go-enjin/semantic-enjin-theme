@@ -18,6 +18,9 @@ body[data-page-format="org"] > main {
     margin-top: calc(var(--main--block--content--margin-top) * 2);
     margin-bottom: var(--main--block--content--margin-bottom);
   }
+  h1.title {
+    margin-top: 0;
+  }
 
   .outline-1,
   .outline-2,

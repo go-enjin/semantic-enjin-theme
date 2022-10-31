@@ -18,6 +18,9 @@ body[data-page-format="md"] > main {
     margin-top: calc(var(--main--block--content--margin-top) * 2);
     margin-bottom: var(--main--block--content--margin-bottom);
   }
+  h1 {
+    margin-top: 0;
+  }
 
   p {
     margin-top: var(--main--block--margins);
