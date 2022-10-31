@@ -27,16 +27,16 @@
     <div class="banner page-column">
         <div class="brand">
             <a class="site-home" href="{{ __ "/" }}">
-                {{- if or .SiteLogoUrl .SiteName .SiteTagLine }}
+                {{- if or .SiteLogoUrl .SiteInfo.Name .SiteInfo.TagLine }}
                 {{- if .SiteLogoUrl }}
                     <span class="site-logo"><img src="{{- .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
                 {{- end }}
                 <div class="brand--copy">
-                    {{- if .SiteName }}
-                        <span class="site-name">{{- _ .SiteName -}}</span>
+                    {{- if .SiteInfo.Name }}
+                        <span class="site-name">{{- _ .SiteInfo.Name -}}</span>
                     {{- end }}
-                    {{- if .SiteTagLine }}
-                        <span class="site-tag-line"><small>{{ _ .SiteTagLine }}</small></span>
+                    {{- if .SiteInfo.TagLine }}
+                        <span class="site-tag-line"><small>{{ _ .SiteInfo.TagLine }}</small></span>
                     {{- end }}
                 </div>
                 {{- end }}
