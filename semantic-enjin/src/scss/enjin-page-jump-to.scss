@@ -13,6 +13,7 @@
 }
 
 .jump-to.top {
+  position: relative;
   text-align: center;
   padding: 0;
   color: #ffffff;
@@ -62,6 +63,9 @@
   display: none;
   font-size: 12px;
   text-align: right;
+  position: absolute;
+  bottom: var(--page--flex--gap--sm);
+  right: var(--page--flex--gap--sm);
 }
 
 @media screen and (max-width: 768px) {
