@@ -3,8 +3,9 @@
   {{ template "partials/head.tmpl" . }}
   <body
           {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
-          {{- if .Format }} data-page-format="{{ .Format }}"{{ end -}}
           {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+          {{- if .Format }} data-page-format="{{ .Format }}"{{ end -}}
+          {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
   >
     {{ template "partials/header.tmpl" . }}
     <main>
