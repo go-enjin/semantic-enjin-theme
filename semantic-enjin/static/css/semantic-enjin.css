@@ -190,7 +190,7 @@ input[type='radio'][name='main-menu'] {
   position: fixed;
   top: 0;
   z-index: var(--z--page--nav);
-  width: 100vw;
+  width: 100%;
   height: var(--page--masthead--full-height);
   border-bottom: 3px solid var(--page--masthead--fg);
   background: var(--page--masthead--bg);
@@ -802,6 +802,10 @@ body > footer a {
 
 #secondary--footer #copyright {
   text-align: center; }
+
+@media screen and (max-width: 299px) {
+  #secondary--footer ul {
+    flex-direction: column; } }
 
 #top {
   padding-bottom: var(--page--masthead--full-height); }
