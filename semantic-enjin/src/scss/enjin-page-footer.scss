@@ -70,3 +70,9 @@ body > footer a {
 #secondary--footer #copyright {
   text-align: center;
 }
+
+@media screen and (max-width: 299px) {
+  #secondary--footer ul {
+    flex-direction: column;
+  }
+}
