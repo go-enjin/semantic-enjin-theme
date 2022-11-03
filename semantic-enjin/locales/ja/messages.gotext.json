@@ -6,91 +6,91 @@
 			"key": "Search",
 			"message": "Search",
 			"translation": "検索",
-			"translatorComment": "Copied from source"
+			"translatorComment": "main menu search field placeholder text [from: header.tmpl], screen reader only [from: header.tmpl]"
 		},
 		{
 			"id": "Site theme by: %s",
 			"key": "Site theme by: %s",
 			"message": "Site theme by: %s",
 			"translation": "このサイトthemeのクリエーター: %s",
-			"translatorComment": "Copied from source"
+			"translatorComment": "site theme design credit [from: footer.tmpl]"
 		},
 		{
 			"id": "back to top",
 			"key": "back to top",
 			"message": "back to top",
 			"translation": "トップに戻る",
-			"translatorComment": "Copied from source"
+			"translatorComment": "screen reader only [from: footer.tmpl]"
 		},
 		{
 			"id": "close main menu",
 			"key": "close main menu",
 			"message": "close main menu",
 			"translation": "メインメニューを閉じる",
-			"translatorComment": "Copied from source"
+			"translatorComment": "screen reader only [from: header.tmpl]"
 		},
 		{
 			"id": "close menu",
 			"key": "close menu",
 			"message": "close menu",
 			"translation": "メニューを閉じる",
-			"translatorComment": "Copied from source"
+			"translatorComment": "screen reader only [from: header.tmpl]"
 		},
 		{
 			"id": "close side menu",
 			"key": "close side menu",
 			"message": "close side menu",
 			"translation": "サイドメニューを閉じる",
-			"translatorComment": "Copied from source"
+			"translatorComment": "screen reader only [from: header.tmpl]"
 		},
 		{
 			"id": "go to card number %d",
 			"key": "go to card number %d",
 			"message": "go to card number %d",
 			"translation": "%dのカードに",
-			"translatorComment": "Copied from source: (add $idx 1)"
+			"translatorComment": "move carousel to specific item [from: carousel.tmpl]"
 		},
 		{
 			"id": "go to the next card",
 			"key": "go to the next card",
 			"message": "go to the next card",
 			"translation": "次のカードにd",
-			"translatorComment": "Copied from source"
+			"translatorComment": "move carousel to next item [from: carousel.tmpl]"
 		},
 		{
 			"id": "go to the previous card",
 			"key": "go to the previous card",
 			"message": "go to the previous card",
 			"translation": "前のカードに",
-			"translatorComment": "Copied from source"
+			"translatorComment": "move carousel to previous item [from: carousel.tmpl]"
 		},
 		{
-			"id": "page heading navigation link",
-			"key": "page heading navigation link",
-			"message": "page heading navigation link",
-			"translation": "ディープリンク",
-			"translatorComment": "Copied from source"
+			"id": "page title heading deeplink",
+			"key": "page title heading deeplink",
+			"message": "page title heading deeplink",
+			"translation": "page title heading deeplink (ja)",
+			"translatorComment": "deeplink to the page title header block [from: block-header.tmpl]"
 		},
 		{
 			"id": "toggle search",
 			"key": "toggle search",
 			"message": "toggle search",
 			"translation": "検索の表示・非表示",
-			"translatorComment": "Copied from source"
+			"translatorComment": "screen reader only, show/hide search menu [from: header.tmpl]"
 		},
 		{
 			"id": "toggle side menu",
 			"key": "toggle side menu",
 			"message": "toggle side menu",
-			"translation": "サイドメニューの表示・非表示"
-			"translatorComment": "Copied from source"
+			"translation": "サイドメニューの表示・非表示",
+			"translatorComment": "screen reader only, show/hide side menu [from: header.tmpl]"
 		},
 		{
 			"id": "top",
 			"key": "top",
 			"message": "top",
 			"translation": "トップ",
-			"translatorComment": "Copied from source"
+			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl]"
 		}
 	]
 }
