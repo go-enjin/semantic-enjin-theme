@@ -23,9 +23,9 @@
     <meta name="title" content="{{ .Title }}"/>
     {{- if .Description }}
     <meta name="description" content="{{ .Description }}"/>
+    {{- end }}
     {{- if fsExists "/favicon.ico" }}
     <link href="{{ fsUrl "/favicon.ico" }}" rel="shortcut icon" type="image/x-icon"/>
-    {{- end }}
     {{- end }}
     <meta property="og:title" content="{{ .Title }}"/>
     <meta property="og:site_name" content="{{ .SiteInfo.Name }}"/>
