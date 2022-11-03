@@ -23,10 +23,10 @@
                         {{ range $idx, $card := .Cards }}
                             <li>
                                 <a data-card="{{ $idx }}" class="previous" href="#{{ $.Tag }}--{{ $card.PreviousCard.Tag }}">
-                                    {{ _ "go to the previous card" }}
+                                    {{ _ "go to the previous card" /* move carousel to previous item */ }}
                                 </a>
                                 <a data-card="{{ $idx }}" class="next" href="#{{ $.Tag }}--{{ $card.NextCard.Tag }}">
-                                    {{ _ "go to the next card" }}
+                                    {{ _ "go to the next card" /* move carousel to next item */ }}
                                 </a>
                             </li>
                         {{ end }}
@@ -38,7 +38,7 @@
                     {{ range $idx, $card := .Cards }}
                     <li data-card="{{ $idx }}">
                         <a href="#{{ $.Tag }}--{{ $card.Tag}}">
-                            <span class="sr-only">{{ _ "go to card number %d" (add $idx 1) }}</span>
+                            <span class="sr-only">{{ _ "go to card number %d" (add $idx 1) /* move carousel to specific item */ }}</span>
                             <i class="fa-solid fa-circle"></i>
                         </a>
                     </li>

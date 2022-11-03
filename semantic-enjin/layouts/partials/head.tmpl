@@ -4,11 +4,11 @@
             {{- .Title -}}
             {{- if .SiteInfo.Name -}}
                 {{- if .SiteTitleSeparator }}{{ .SiteTitleSeparator }}{{ else }}: {{ end -}}
-                {{- .SiteInfo.Name -}}
+                {{- _ .SiteInfo.Name /* enjin site name (browser tab title) */ -}}
             {{ end -}}
         {{- else -}}
             {{- if .SiteInfo.Name -}}
-                {{- .SiteInfo.Name -}}
+                {{- _ .SiteInfo.Name /* enjin site name (browser tab title) */ -}}
                 {{- if .SiteTitleSeparator }}{{ .SiteTitleSeparator }}{{ else }}: {{ end -}}
             {{ end -}}
             {{- .Title -}}

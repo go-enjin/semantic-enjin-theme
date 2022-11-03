@@ -43,12 +43,12 @@
                 <div id="copyright">
                     {{- if .CopyrightNotice -}}
                         {{- if .CopyrightName -}}
-                            <span class="name d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightName -}}</span>
+                            <span class="name d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightName /* site copyright name */ -}}</span>
                             <span class="d--mobile--lg--inline-block">—</span>
                         {{- end -}}
-                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightNotice -}}</span>
+                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightNotice /* site copyright notice */ -}}</span>
                     {{- else -}}
-                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .Copyright -}}</span>
+                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .Copyright /* site copyright (custom) */ -}}</span>
                     {{- end -}}
                 </div>
             {{- end -}}
@@ -59,9 +59,9 @@
                         <a href="{{ $author.Homepage }}" target="_blank">
                             {{- end -}}
                             {{- if $author.Name -}}
-                                <span>{{- _ "Site theme by: %s" $author.Name -}}</span>
+                                <span>{{- _ "Site theme by: %s" $author.Name /* site theme design credit */ -}}</span>
                             {{- else if $author.Homepage -}}
-                                <span>{{- _ "Site theme by: %s" $author.Homepage -}}</span>
+                                <span>{{- _ "Site theme by: %s" $author.Homepage /* site theme design credit */ -}}</span>
                             {{- end -}}
                             {{- if $author.Homepage }}
                         </a>
@@ -75,6 +75,6 @@
 </footer>
 <a href="#top" class="jump-to anchor">
     <div class="jump-to top">
-        <span class="sr-only">{{ _ "back to top" }}</span>
+        <span class="sr-only">{{ _ "back to top" /* screen reader only */ }}</span>
     </div>
 </a>

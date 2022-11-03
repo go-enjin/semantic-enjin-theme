@@ -3,7 +3,7 @@
                 {{ template "partials/njn/block-heading.tmpl" . }}
                 {{ if .JumpLink }}
                     <a class="jump-link" href="#{{ .Tag }}">
-                        <span class="sr-only">{{ _ "page heading navigation link" }}</span>
+                        <span class="sr-only">{{ _ "page title heading deeplink" /* deeplink to the page title header block */ }}</span>
                     </a>
                 {{ end }}
             </header>

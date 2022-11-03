@@ -33,10 +33,10 @@
                 {{- end }}
                 <div class="brand--copy">
                     {{- if .SiteInfo.Name }}
-                        <span class="site-name">{{- _ .SiteInfo.Name -}}</span>
+                        <span class="site-name">{{- _ .SiteInfo.Name /* enjin site name */ -}}</span>
                     {{- end }}
                     {{- if .SiteInfo.TagLine }}
-                        <span class="site-tag-line"><small>{{ _ .SiteInfo.TagLine }}</small></span>
+                        <span class="site-tag-line"><small>{{ _ .SiteInfo.TagLine /* enjin site tag-line */ }}</small></span>
                     {{- end }}
                 </div>
                 {{- end }}
@@ -47,8 +47,8 @@
                     {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
                     {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
             >
-                <label for="side-menu" id="side-close--label"><span class="sr-only">{{ _ "close side menu" }}</span></label>
-                <label for="menu-close" id="menu-close--label"><span class="sr-only">{{ _ "close main menu" }}</span></label>
+                <label for="side-menu" id="side-close--label"><span class="sr-only">{{ _ "close side menu" /* screen reader only */ }}</span></label>
+                <label for="menu-close" id="menu-close--label"><span class="sr-only">{{ _ "close main menu" /* screen reader only */ }}</span></label>
 
                 <nav>
                     <ol>
@@ -60,7 +60,7 @@
                                 </label>
                                 {{- if $item.SubMenu }}
                                     <label class="close" for="menu-close" id="menu-item-{{- add $i 1 -}}--close">
-                                        <span class="sr-only">{{ _ "close menu" }}</span>
+                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
                                     </label>
                                     <ol class="sub-menu">
                                         {{- range $j, $sub_item := $item.SubMenu }}
@@ -70,7 +70,7 @@
                                                 </label>
                                                 {{- if $sub_item.SubMenu }}
                                                     <label class="close" for="menu-{{- add $i 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}--close">
-                                                        <span class="sr-only">{{ _ "close menu" }}</span>
+                                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
                                                     </label>
                                                     <ol class="sub-menu">
                                                         {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
@@ -80,7 +80,7 @@
                                                                 </label>
                                                                 {{- if $sub_sub_item.SubMenu }}
                                                                     <label class="close" for="menu-{{- add $i 1 -}}-{{- add $j 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--close">
-                                                                        <span class="sr-only">{{ _ "close menu" }}</span>
+                                                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
                                                                     </label>
                                                                     <ol class="sub-menu">
                                                                         {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
@@ -132,10 +132,10 @@
                     <div class="search">
                         <form method="get" action="{{ __ .SiteSearchPath }}">
                             <input type="hidden" name="nonce" value="{{ Nonce "site-search-form" }}" />
-                            <input type="text" name="query" placeholder="{{ _ "Search" }}" value="{{ .SiteSearchQuery }}" />
+                            <input type="text" name="query" placeholder="{{ _ "Search" /* main menu search field placeholder text */ }}" value="{{ .SiteSearchQuery }}" />
                             <button type="submit" value="submit">
                                 <i class="fas fa-search"></i>
-                                <span class="sr-only">{{ _ "Search" }}</span>
+                                <span class="sr-only">{{ _ "Search" /* screen reader only */ }}</span>
                             </button>
                         </form>
                     </div>
@@ -143,7 +143,7 @@
                         <label for="search-menu" id="search-menu--label">
                             <i class="fa-solid fa-search closed"></i>
                             <i class="fa-solid fa-xmark opened"></i>
-                            <span class="sr-only">{{ _ "toggle search" }}</span>
+                            <span class="sr-only">{{ _ "toggle search" /* screen reader only, show/hide search menu */ }}</span>
                         </label>
                     </div>
                     {{- end }}
@@ -151,7 +151,7 @@
                         <label for="side-menu" id="side-menu--label">
                             <i class="fa-solid fa-bars closed"></i>
                             <i class="fa-solid fa-xmark opened"></i>
-                            <span class="sr-only">{{ _ "toggle side menu" }}</span>
+                            <span class="sr-only">{{ _ "toggle side menu" /* screen reader only, show/hide side menu */ }}</span>
                         </label>
                     </div>
                 </div>
