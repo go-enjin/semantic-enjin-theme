@@ -27,4 +27,8 @@ body[data-page-format="md"] > main {
     margin-bottom: var(--main--block--margins);
   }
 
+  .content > section > div > hr:first-child {
+      margin-top: calc(var(--main--block--margins) * 2);
+  }
+
 }
