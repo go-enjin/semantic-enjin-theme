@@ -1,5 +1,5 @@
 <img
-        {{- if .Src    }} src="{{ .Src }}"{{- end -}}
+        {{- if .Src    }} src="{{ fsUrl .Src }}"{{- end -}}
         {{- if .Alt    }} alt="{{ .Alt }}"{{- end -}}
         {{- if .Width  }} width="{{ .Width }}"{{- end -}}
         {{- if .Height }} height="{{ .Height }}"{{- end -}}

@@ -29,7 +29,7 @@
             <a class="site-home" href="{{ __ "/" }}">
                 {{- if or .SiteLogoUrl .SiteInfo.Name .SiteInfo.TagLine }}
                 {{- if .SiteLogoUrl }}
-                    <span class="site-logo"><img src="{{- .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
+                    <span class="site-logo"><img src="{{- fsUrl .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
                 {{- end }}
                 <div class="brand--copy">
                     {{- if .SiteInfo.Name }}
