@@ -14,6 +14,11 @@ build:
 		&& make build \
 		&& popd > /dev/null
 
+gen-locales:
+	@pushd ./semantic-enjin > /dev/null \
+		&& make gen-locales \
+		&& popd > /dev/null
+
 tidy:
 	@go mod tidy
 
