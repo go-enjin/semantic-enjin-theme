@@ -68,7 +68,7 @@
 			"id": "page title heading deeplink",
 			"key": "page title heading deeplink",
 			"message": "page title heading deeplink",
-			"translation": "page title heading deeplink (ja)",
+			"translation": "ページタイトルのヘディング・ディープリンク",
 			"translatorComment": "deeplink to the page title header block [from: block-header.tmpl]"
 		},
 		{
