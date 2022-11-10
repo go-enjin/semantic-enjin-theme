@@ -2,11 +2,12 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.19
 
-require github.com/go-enjin/be v0.0.0-20221108201303-c1f09c5dabac
+require github.com/go-enjin/be v0.0.0-20221110215001-a4b6f5d2cdfe
 
 require (
 	github.com/BurntSushi/toml v1.2.0 // indirect
 	github.com/RoaringBitmap/roaring v1.2.1 // indirect
+	github.com/alecthomas/participle/v2 v2.0.0-beta.5 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bits-and-blooms/bitset v1.3.3 // indirect
 	github.com/blevesearch/bleve/v2 v2.3.4 // indirect
