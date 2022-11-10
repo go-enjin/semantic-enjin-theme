@@ -1,0 +1,7 @@
+<ol>
+    {{ range $idx,$page := .Results }}
+        <li>
+            <a class="decorated" href="{{ __ $page.Language $page.Url }}">{{ $page.Title }}</a>
+        </li>
+    {{ end }}
+</ol>

@@ -10,6 +10,8 @@
     {{ template "partials/njn/block/icon.tmpl" . }}
 {{ else if eq .Type "image" }}
     {{ template "partials/njn/block/image.tmpl" . }}
+{{ else if eq .Type "index" }}
+    {{ template "partials/njn/block/index.tmpl" . }}
 {{ else if eq .Type "link-list" }}
     {{ template "partials/njn/block/link-list.tmpl" . }}
 {{ else if eq .Type "notice" }}
