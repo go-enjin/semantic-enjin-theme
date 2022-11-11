@@ -76,8 +76,8 @@ github.com/fvbommel/sortorder v1.0.2 h1:mV4o8B2hKboCdkJm+a7uX/SIpZob4JzUpc5GGnM4
 github.com/fvbommel/sortorder v1.0.2/go.mod h1:uk88iVf1ovNn1iLfgUVU2F9o5eO30ui720w+kxuqRs0=
 github.com/gabriel-vasile/mimetype v1.4.1 h1:TRWk7se+TOjCYgRth7+1/OYLNiRNIotknkFtf/dnN7Q=
 github.com/gabriel-vasile/mimetype v1.4.1/go.mod h1:05Vi0w3Y9c/lNvJOdmIwvrrAhX3rYhfQQCaf9VJcv7M=
-github.com/go-enjin/be v0.0.0-20221110215001-a4b6f5d2cdfe h1:Q7i2aprIKOUxwEM2poFs0vZK9G4zRgwJNy4Y9dnOlTw=
-github.com/go-enjin/be v0.0.0-20221110215001-a4b6f5d2cdfe/go.mod h1:3dhXfdcUyxDVMgPNvY9xw2v9qqcyOVuVYzR3FW7HY8s=
+github.com/go-enjin/be v0.0.0-20221111231119-045996f6c737 h1:tvNSlM4USt1YQT6b3RnGiKIIOmS/v0eGrZzwMt00+1Q=
+github.com/go-enjin/be v0.0.0-20221111231119-045996f6c737/go.mod h1:3dhXfdcUyxDVMgPNvY9xw2v9qqcyOVuVYzR3FW7HY8s=
 github.com/go-enjin/github-com-djherbis-times v0.0.0-20221101184323-aeef8854ee8a h1:Qr7FpRTxEBnNJtyYj6TyVPs12bn45xSLFkygcSby1g4=
 github.com/go-enjin/github-com-djherbis-times v0.0.0-20221101184323-aeef8854ee8a/go.mod h1:hId0+St26leJQkTRaFYATZHMGja4wrv0hzf5SwKs3hA=
 github.com/go-enjin/golang-org-x-text v0.0.0-20221026190533-d0e9c4fd3b27 h1:aDbd1N1mD8V225rsaYCd7kbt7WFVaDCWwVPpEZscAs0=
