@@ -1,39 +1,64 @@
 <!-- index block -->
 {{- template "partials/njn/block-open.tmpl" . -}}
-    <div class="content">
-        {{ template "partials/njn/block-header.tmpl" . }}
-        <section>
-            {{ if gt (len .Results) 0 }}
-                {{ if gt (len .Views) 1 }}
-                    {{ range $idx,$view := .Views }}
-                        <div class="anchor" data-view="{{ $idx }}" id="{{ $.Tag }}-{{ $view }}"></div>
-                    {{ end }}
-                    <nav>
-                        <ul>
-                            {{ range $idx,$view := .Views }}
-                                <li data-view="{{ $idx }}">
-                                    <a href="#{{ $.Tag }}-{{ $view }}">{{ $view }}</a>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    </nav>
-                {{ end }}
-                {{ range $idx,$view := .Views }}
-                    <section data-view="{{ $idx }}" data-index-view="{{ $view }}">
-                        {{ if eq $view "link-list" }}
-                            {{ template "partials/njn/block/index-view--link-list.tmpl" $ }}
-                        {{ else if eq $view "profile" }}
-                            {{ template "partials/njn/block/index-view--profile.tmpl" $ }}
-                        {{ end }}
-                    </section>
-                {{ end }}
-            {{ else }}
-                <p>no pages found</p>
+<div class="content">
+    {{ template "partials/njn/block-header.tmpl" . }}
+    <section>
+        {{ if gt (len .Views) 1 }}
+            {{ range $idx,$view := .Views }}
+                <div class="anchor" data-view="{{ $idx }}" id="{{ $.Tag }}-{{ $view }}"></div>
             {{ end }}
-        </section>
-        {{ template "partials/njn/block-footer.tmpl" . }}
-        {{ if .JumpTop }}
-            <a class="jump-top" href="#top">{{ _ "top" }}</a>
+            <nav>
+                <ul class="index-views">
+                    {{ range $idx,$view := .Views }}
+                        <li data-view="{{ $idx }}">
+                            <a href="#{{ $.Tag }}-{{ $view }}">{{ $view }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+                {{ if .Filters }}
+                    <ul class="index-filters">
+                        {{ range $idx,$group := .Filters }}
+                            <li>
+                                {{ if eq (len $group) 1 }}
+                                    {{ with $filter := (index $group 0) }}
+                                        <a href="{{ $filter.Url }}#{{ $.Tag }}">
+                                            <i class="fa-solid fa-{{ if $filter.Present }}check-{{ end }}square"></i>
+                                            {{ $filter.Label }}
+                                        </a>
+                                    {{ end }}
+                                {{ else }}
+                                    {{ range $jdx,$filter := $group }}
+                                        {{ if $filter.Present }}
+                                            <i class="fa-solid fa-check-square"></i>
+                                        {{ else }}
+                                            <i class="fa-solid fa-square"></i>
+                                        {{ end }}
+                                        <a href="{{ $filter.Url }}#{{ $.Tag }}">{{ $filter.Label }}</a>
+                                    {{ end }}
+                                {{ end }}
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </nav>
         {{ end }}
-    </div>
+        {{ if gt (len .Results) 0 }}
+            {{ range $idx,$view := .Views }}
+                <section data-view="{{ $idx }}" data-index-view="{{ $view }}">
+                    {{ if eq $view "link-list" }}
+                        {{ template "partials/njn/block/index-view--link-list.tmpl" $ }}
+                    {{ else if eq $view "profile" }}
+                        {{ template "partials/njn/block/index-view--profile.tmpl" $ }}
+                    {{ end }}
+                </section>
+            {{ end }}
+        {{ else }}
+            <p>no pages found</p>
+        {{ end }}
+    </section>
+    {{ template "partials/njn/block-footer.tmpl" . }}
+    {{ if .JumpTop }}
+        <a class="jump-top" href="#top">{{ _ "top" }}</a>
+    {{ end }}
+</div>
 {{- template "partials/njn/block-close.tmpl" . -}}

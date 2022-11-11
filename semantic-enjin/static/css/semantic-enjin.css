@@ -2619,7 +2619,7 @@ a.decorated[target='_blank']:after {
   flex-direction: row;
   align-items: center;
   align-content: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
   color: var(--style--accent--fg);
   background-color: var(--style--accent--bg); }
   [data-block-type="index"] > .content > section nav a {
