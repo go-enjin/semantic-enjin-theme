@@ -2611,340 +2611,332 @@ a.decorated[target='_blank']:after {
   right: -100%;
   transform: translateX(-100%); }
 
-[data-block-type="index"] > .content > section {
-  /*
-    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ section[data-view-present="false"],
-    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ footer[data-view-present="false"],
-    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="1"]:target ~ section[data-view="0"],
-    .anchor[data-view="2"]:target ~ section[data-view="0"],
-    .anchor[data-view="3"]:target ~ section[data-view="0"],
-    .anchor[data-view="4"]:target ~ section[data-view="0"],
-    .anchor[data-view="1"]:target ~ footer[data-view="0"],
-    .anchor[data-view="2"]:target ~ footer[data-view="0"],
-    .anchor[data-view="3"]:target ~ footer[data-view="0"],
-    .anchor[data-view="4"]:target ~ footer[data-view="0"] {
-      display: none;
-    }
-    */ }
-  [data-block-type="index"] > .content > section nav {
-    width: 100%;
-    height: 50px;
-    margin-bottom: var(--page--flex--gap);
+[data-block-type="index"] > .content > section nav {
+  width: 100%;
+  height: 50px;
+  margin-bottom: var(--page--flex--gap);
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-between;
+  color: var(--style--accent--fg);
+  background-color: var(--style--accent--bg); }
+  [data-block-type="index"] > .content > section nav a {
+    color: var(--style--accent--fg); }
+  [data-block-type="index"] > .content > section nav ul {
+    list-style: none;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
     align-content: flex-start;
-    justify-content: space-between;
-    color: var(--style--accent--fg);
-    background-color: var(--style--accent--bg); }
-    [data-block-type="index"] > .content > section nav a {
-      color: var(--style--accent--fg); }
-    [data-block-type="index"] > .content > section nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      align-items: center;
-      align-content: flex-start;
-      justify-content: flex-start;
-      margin-left: 10px;
-      margin-right: 10px; }
-      [data-block-type="index"] > .content > section nav ul.index-views li {
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-right: 10px; }
+    [data-block-type="index"] > .content > section nav ul.index-views li {
+      display: inline-block;
+      margin: 5px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      border: 1px solid var(--style--accent--fg); }
+      [data-block-type="index"] > .content > section nav ul.index-views li .deeplink {
         display: inline-block;
-        margin: 5px;
-        padding: 1px 5px;
-        border-radius: 3px;
-        border: 1px solid var(--style--accent--fg); }
-        [data-block-type="index"] > .content > section nav ul.index-views li .deeplink {
-          display: inline-block;
-          font-size: smaller;
-          opacity: 0.34; }
-        [data-block-type="index"] > .content > section nav ul.index-views li:hover .deeplink {
-          opacity: 0.77; }
-      [data-block-type="index"] > .content > section nav ul.index-filters li {
-        position: relative; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"] {
-          display: none; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown > .dropdown-selected > :is(.open, .close) {
-          display: none; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:checked ~ .dropdown > .dropdown-selected > .close,
-        [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:not(:checked) ~ .dropdown > .dropdown-selected > .open {
-          display: inline-block; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:checked ~ .dropdown > .dropdown-menu {
-          display: flex; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown {
+        font-size: smaller;
+        opacity: 0.34; }
+      [data-block-type="index"] > .content > section nav ul.index-views li:hover .deeplink {
+        opacity: 0.77; }
+    [data-block-type="index"] > .content > section nav ul.index-filters li {
+      position: relative; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"] {
+        display: none; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown > .dropdown-selected > :is(.open, .close) {
+        display: none; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:checked ~ .dropdown > .dropdown-selected > .close,
+      [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:not(:checked) ~ .dropdown > .dropdown-selected > .open {
+        display: inline-block; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li input[type="checkbox"]:checked ~ .dropdown > .dropdown-menu {
+        display: flex; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        position: relative;
+        padding: 0 5px; }
+        [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-selected {
           display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-selected label {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+        [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-menu {
+          display: none;
           flex-direction: column;
           flex-wrap: nowrap;
-          position: relative;
-          padding: 0 5px; }
-          [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-selected {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between; }
-            [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-selected label {
-              width: 100%;
-              white-space: nowrap;
-              text-overflow: ellipsis; }
-          [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-menu {
-            display: none;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            position: absolute;
-            z-index: var(--z--menus);
-            top: 35px;
-            padding: 5px;
-            min-width: 100%;
-            color: var(--style--accent--fg);
-            background-color: var(--style--accent--bg); }
-            [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-menu a {
-              white-space: nowrap;
-              text-overflow: ellipsis; }
-        [data-block-type="index"] > .content > section nav ul.index-filters li.reset-filters {
-          margin-left: 5px; }
-  [data-block-type="index"] > .content > section nav .index-filters[data-view],
-  [data-block-type="index"] > .content > section section[data-view],
-  [data-block-type="index"] > .content > section footer[data-view] {
-    display: none; }
-  [data-block-type="index"] > .content > section .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ section[data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ footer[data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ section[data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ footer[data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav .index-filters[data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav .index-filters[data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav .index-filters[data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav .index-filters[data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav .index-filters[data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="4"] {
-    display: flex; }
-  [data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section nav > .index-views > [data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"][data-view-present]:target ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"][data-view-present]:target ~ nav > .index-views > [data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"][data-view-present]:target ~ nav > .index-views > [data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"][data-view-present]:target ~ nav > .index-views > [data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"][data-view-present]:target ~ nav > .index-views > [data-view="4"] {
-    color: var(--style--accent--bg);
-    background-color: var(--style--accent--fg); }
-    [data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section nav > .index-views > [data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"][data-view-present]:target ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"][data-view-present]:target ~ nav > .index-views > [data-view="1"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"][data-view-present]:target ~ nav > .index-views > [data-view="2"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"][data-view-present]:target ~ nav > .index-views > [data-view="3"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"][data-view-present]:target ~ nav > .index-views > [data-view="4"] a {
-      color: inherit; }
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"] {
+          position: absolute;
+          z-index: var(--z--menus);
+          top: 35px;
+          padding: 5px;
+          min-width: 100%;
+          color: var(--style--accent--fg);
+          background-color: var(--style--accent--bg); }
+          [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-menu a {
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li.reset-filters {
+        margin-left: 5px; }
+
+[data-block-type="index"] > .content > section nav .index-filters[data-view],
+[data-block-type="index"] > .content > section section[data-view],
+[data-block-type="index"] > .content > section footer[data-view] {
+  display: none; }
+
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ nav .index-filters[data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ section[data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ footer[data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav .index-filters[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ section[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ footer[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav .index-filters[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav .index-filters[data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav .index-filters[data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav .index-filters[data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav .index-filters[data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="4"] {
+  display: flex; }
+
+[data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section nav > .index-views > [data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"][data-view-present]:target ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"][data-view-present]:target ~ nav > .index-views > [data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"][data-view-present]:target ~ nav > .index-views > [data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"][data-view-present]:target ~ nav > .index-views > [data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"][data-view-present]:target ~ nav > .index-views > [data-view="4"] {
+  color: var(--style--accent--bg);
+  background-color: var(--style--accent--fg); }
+  [data-block-type="index"] > .content > section .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section nav > .index-views > [data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"][data-view-present]:target ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"][data-view-present]:target ~ nav > .index-views > [data-view="1"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"][data-view-present]:target ~ nav > .index-views > [data-view="2"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"][data-view-present]:target ~ nav > .index-views > [data-view="3"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"][data-view-present]:target ~ nav > .index-views > [data-view="4"] a {
+    color: inherit; }
+
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"] {
+  color: var(--style--accent--fg);
+  background-color: var(--style--accent--bg); }
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"] a,
+  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"] a {
+    color: inherit; }
+
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="0"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="4"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="1"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="2"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="3"][data-view-present="true"],
+[data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="0"][data-view-present="true"] {
+  display: none; }
+
+[data-block-type="index"] > .content > section section[data-index-view="link-list"] ol {
+  list-style: decimal; }
+  [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol li {
+    display: inline-flex; }
+    [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol li a {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      width: 200px;
+      margin: 5px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+
+[data-block-type="index"] > .content > section section[data-index-view="profile"] ul {
+  list-style: none;
+  width: 100%; }
+  [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li {
+    display: flex;
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+    height: 100px; }
+    [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li img {
+      display: inline-block;
+      width: auto;
+      height: 77px;
+      background-color: var(--color--resting); }
+    [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li div {
+      display: inline-flex;
+      flex-direction: column;
+      width: 100%;
+      margin-left: 10px; }
+  [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li:nth-child(odd) {
     color: var(--style--accent--fg);
     background-color: var(--style--accent--bg); }
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"] a,
-    [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"] a {
-      color: inherit; }
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ section[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ section[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ section[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ section[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ section[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="0"]:target ~ footer[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="1"]:target ~ footer[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="2"]:target ~ footer[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="0"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="3"]:target ~ footer[data-view="4"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="1"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="2"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="3"][data-view-present="true"],
-  [data-block-type="index"] > .content > section .anchor[data-view="4"]:target ~ footer[data-view="0"][data-view-present="true"] {
-    display: none; }
-  [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol {
-    list-style: decimal; }
-    [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol li {
-      display: inline-flex; }
-      [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol li a {
-        display: inline-flex;
-        flex-wrap: nowrap;
-        width: 200px;
-        margin: 5px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis; }
-  [data-block-type="index"] > .content > section section[data-index-view="profile"] ul {
-    list-style: none;
-    width: 100%; }
-    [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li {
-      display: flex;
-      margin: 5px 0;
-      padding: 10px;
-      width: 100%;
-      height: 100px; }
-      [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li img {
-        display: inline-block;
-        width: auto;
-        height: 77px;
-        background-color: var(--color--resting); }
-      [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li div {
-        display: inline-flex;
-        flex-direction: column;
-        width: 100%;
-        margin-left: 10px; }
-    [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li:nth-child(odd) {
-      color: var(--style--accent--fg);
-      background-color: var(--style--accent--bg); }
-      [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li:nth-child(odd) a {
-        color: var(--style--accent--fg); }
-  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="more"] {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
-    width: 100%; }
-    [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="more"] a {
-      display: inline-flex;
-      width: 134px;
-      height: 34px;
-      margin-top: var(--page--flex--gap);
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--alternate--bg);
-      color: var(--alternate--fg); }
-  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] {
-    display: flex;
-    align-items: center;
+    [data-block-type="index"] > .content > section section[data-index-view="profile"] ul li:nth-child(odd) a {
+      color: var(--style--accent--fg); }
+
+[data-block-type="index"] > .content > section footer .index-pagination[data-paginate="more"] {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%; }
+  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="more"] a {
+    display: inline-flex;
+    width: 134px;
+    height: 34px;
+    margin-top: var(--page--flex--gap);
     align-content: center;
     justify-content: center;
-    width: 100%; }
-    [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > :is(div, span, a) {
-      display: inline-flex;
-      width: 34px;
-      height: 34px;
-      margin-top: var(--page--flex--gap);
-      align-content: center;
-      justify-content: center;
-      align-items: center; }
-    [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > :is(div, span) {
-      opacity: 0.34; }
-    [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > span {
-      width: auto;
-      min-width: 42px; }
-    [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > a:hover {
-      color: var(--style--accent--bg); }
+    align-items: center;
+    background-color: var(--alternate--bg);
+    color: var(--alternate--fg); }
+
+[data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%; }
+  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > :is(div, span, a) {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    margin-top: var(--page--flex--gap);
+    align-content: center;
+    justify-content: center;
+    align-items: center; }
+  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > :is(div, span) {
+    opacity: 0.34; }
+  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > span {
+    width: auto;
+    min-width: 42px; }
+  [data-block-type="index"] > .content > section footer .index-pagination[data-paginate="page"] > a:hover {
+    color: var(--style--accent--bg); }
 
 :is([data-block-type='link-list'], [data-block-aside-type='link-list'])
 > .content > section > ul {

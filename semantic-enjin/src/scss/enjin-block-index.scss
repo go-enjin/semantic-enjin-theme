@@ -143,33 +143,10 @@
       display: none;
     }
 
-    //nav .index-filters[data-view="0"],
-    //.anchor[data-view-count="2"]:not([data-view-present="true"]):nth-last-child(2) ~ section[data-view="0"],
-    //.anchor[data-view-count="2"]:not([data-view-present="true"]):nth-last-child(2) ~ footer[data-view="0"] {
-    //  display: flex;
-    //}
-
-    /*
-    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ section[data-view-present="false"],
-    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ footer[data-view-present="false"],
-    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="1"]:target ~ section[data-view="0"],
-    .anchor[data-view="2"]:target ~ section[data-view="0"],
-    .anchor[data-view="3"]:target ~ section[data-view="0"],
-    .anchor[data-view="4"]:target ~ section[data-view="0"],
-    .anchor[data-view="1"]:target ~ footer[data-view="0"],
-    .anchor[data-view="2"]:target ~ footer[data-view="0"],
-    .anchor[data-view="3"]:target ~ footer[data-view="0"],
-    .anchor[data-view="4"]:target ~ footer[data-view="0"] {
-      display: none;
-    }
-    */
-
+    .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ nav .index-filters[data-view-present="true"],
     .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ section[data-view-present="true"],
     .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ footer[data-view-present="true"],
+    .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav .index-filters[data-view="0"],
     .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ section[data-view="0"],
     .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ footer[data-view="0"],
     .anchor[data-view="0"]:target ~ nav .index-filters[data-view="0"],
