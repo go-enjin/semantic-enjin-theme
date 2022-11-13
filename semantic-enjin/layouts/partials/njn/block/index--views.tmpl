@@ -1,0 +1,9 @@
+{{ range $idx,$view := .Views }}
+    <section data-view="{{ $idx }}" data-index-view="{{ $view.Key }}">
+        {{ if eq $view.Key "link-list" }}
+            {{ template "partials/njn/block/index-view--link-list.tmpl" $ }}
+        {{ else if eq $view.Key "profile" }}
+            {{ template "partials/njn/block/index-view--profile.tmpl" $ }}
+        {{ end }}
+    </section>
+{{ end }}
