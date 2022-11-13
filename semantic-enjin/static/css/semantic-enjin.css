@@ -2724,6 +2724,8 @@ a.decorated[target='_blank']:after {
           [data-block-type="index"] > .content > section nav ul.index-filters li .dropdown .dropdown-menu a {
             white-space: nowrap;
             text-overflow: ellipsis; }
+      [data-block-type="index"] > .content > section nav ul.index-filters li.reset-filters {
+        margin-left: 5px; }
 
 [data-block-type="index"] > .content > section section[data-index-view="link-list"] ol {
   list-style: decimal; }

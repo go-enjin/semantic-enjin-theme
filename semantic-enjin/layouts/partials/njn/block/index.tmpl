@@ -38,7 +38,11 @@
                                             <div class="dropdown">
                                                 <div class="dropdown-selected">
                                                     <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="open">
-                                                        <i class="fa-solid fa-square-caret-right"></i>
+                                                        {{ if ($view.GroupHasFilterPresent $jdx) }}
+                                                            <i class="fa-solid fa-square-caret-right"></i>
+                                                        {{ else }}
+                                                            <i class="fa-regular fa-square-caret-right"></i>
+                                                        {{ end }}
                                                         <span class="sr-only">open filter dropdown menu</span>
                                                         {{ if ($view.GroupHasFilterPresent $jdx) }}
                                                             {{ range $kdx,$filter := $group }}
@@ -52,7 +56,11 @@
                                                         {{ end }}
                                                     </label>
                                                     <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="close">
-                                                        <i class="fa-solid fa-square-caret-down"></i>
+                                                        {{ if ($view.GroupHasFilterPresent $jdx) }}
+                                                            <i class="fa-solid fa-square-caret-down"></i>
+                                                        {{ else }}
+                                                            <i class="fa-regular fa-square-caret-down"></i>
+                                                        {{ end }}
                                                         <span class="sr-only">close filter dropdown menu</span>
                                                         <span>{{ _ "Select a filter" }}</span>
                                                     </label>
@@ -67,6 +75,14 @@
                                                 </div>
                                             </div>
                                         {{ end }}
+                                    </li>
+                                {{ end }}
+                                {{ if ($.Views.HasFilterPresent) }}
+                                    <li class="reset-filters">
+                                        <a href="{{ $view.Url }}">
+                                            <i class="fa-solid fa-square-xmark"></i>
+                                            <span class="sr-only">{{ _ "reset filters" }}</span>
+                                        </a>
                                     </li>
                                 {{ end }}
                             </ul>
