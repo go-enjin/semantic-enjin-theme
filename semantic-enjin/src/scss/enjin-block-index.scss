@@ -16,51 +16,6 @@
 
   & > .content > section {
 
-    nav .index-filters[data-view],
-    section[data-view],
-    footer[data-view] {
-      display: none;
-    }
-
-    nav .index-filters[data-view="0"],
-    section[data-view="0"],
-    footer[data-view="0"] {
-      display: flex;
-    }
-
-    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="1"]:target ~ section[data-view="0"],
-    .anchor[data-view="2"]:target ~ section[data-view="0"],
-    .anchor[data-view="3"]:target ~ section[data-view="0"],
-    .anchor[data-view="4"]:target ~ section[data-view="0"],
-    .anchor[data-view="1"]:target ~ footer[data-view="0"],
-    .anchor[data-view="2"]:target ~ footer[data-view="0"],
-    .anchor[data-view="3"]:target ~ footer[data-view="0"],
-    .anchor[data-view="4"]:target ~ footer[data-view="0"] {
-      display: none;
-    }
-
-    .anchor[data-view="0"]:target ~ nav .index-filters[data-view="0"],
-    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="1"],
-    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="2"],
-    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="3"],
-    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="4"],
-    .anchor[data-view="0"]:target ~ section[data-view="0"],
-    .anchor[data-view="1"]:target ~ section[data-view="1"],
-    .anchor[data-view="2"]:target ~ section[data-view="2"],
-    .anchor[data-view="3"]:target ~ section[data-view="3"],
-    .anchor[data-view="4"]:target ~ section[data-view="4"],
-    .anchor[data-view="0"]:target ~ footer[data-view="0"],
-    .anchor[data-view="1"]:target ~ footer[data-view="1"],
-    .anchor[data-view="2"]:target ~ footer[data-view="2"],
-    .anchor[data-view="3"]:target ~ footer[data-view="3"],
-    .anchor[data-view="4"]:target ~ footer[data-view="4"] {
-      display: flex;
-    }
-
     nav {
       width: 100%;
       height: 50px;
@@ -95,6 +50,9 @@
         &.index-views li {
           display: inline-block;
           margin: 5px;
+          padding: 1px 5px;
+          border-radius: 3px;
+          border: 1px solid var(--style--accent--fg);
 
           .deeplink {
             display: inline-block;
@@ -177,6 +135,163 @@
         }
 
       }
+    }
+
+    nav .index-filters[data-view],
+    section[data-view],
+    footer[data-view] {
+      display: none;
+    }
+
+    //nav .index-filters[data-view="0"],
+    //.anchor[data-view-count="2"]:not([data-view-present="true"]):nth-last-child(2) ~ section[data-view="0"],
+    //.anchor[data-view-count="2"]:not([data-view-present="true"]):nth-last-child(2) ~ footer[data-view="0"] {
+    //  display: flex;
+    //}
+
+    /*
+    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ section[data-view-present="false"],
+    .anchor[data-view-count="2"]:not(:target):nth-last-child(2) ~ footer[data-view-present="false"],
+    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="0"],
+    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="0"],
+    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="0"],
+    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="0"],
+    .anchor[data-view="1"]:target ~ section[data-view="0"],
+    .anchor[data-view="2"]:target ~ section[data-view="0"],
+    .anchor[data-view="3"]:target ~ section[data-view="0"],
+    .anchor[data-view="4"]:target ~ section[data-view="0"],
+    .anchor[data-view="1"]:target ~ footer[data-view="0"],
+    .anchor[data-view="2"]:target ~ footer[data-view="0"],
+    .anchor[data-view="3"]:target ~ footer[data-view="0"],
+    .anchor[data-view="4"]:target ~ footer[data-view="0"] {
+      display: none;
+    }
+    */
+
+    .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ section[data-view-present="true"],
+    .anchor[data-view-count="2"]:not(:target):nth-child(2) ~ footer[data-view-present="true"],
+    .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ section[data-view="0"],
+    .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ footer[data-view="0"],
+    .anchor[data-view="0"]:target ~ nav .index-filters[data-view="0"],
+    .anchor[data-view="1"]:target ~ nav .index-filters[data-view="1"],
+    .anchor[data-view="2"]:target ~ nav .index-filters[data-view="2"],
+    .anchor[data-view="3"]:target ~ nav .index-filters[data-view="3"],
+    .anchor[data-view="4"]:target ~ nav .index-filters[data-view="4"],
+    .anchor[data-view="0"]:target ~ section[data-view="0"],
+    .anchor[data-view="1"]:target ~ section[data-view="1"],
+    .anchor[data-view="2"]:target ~ section[data-view="2"],
+    .anchor[data-view="3"]:target ~ section[data-view="3"],
+    .anchor[data-view="4"]:target ~ section[data-view="4"],
+    .anchor[data-view="0"]:target ~ footer[data-view="0"],
+    .anchor[data-view="1"]:target ~ footer[data-view="1"],
+    .anchor[data-view="2"]:target ~ footer[data-view="2"],
+    .anchor[data-view="3"]:target ~ footer[data-view="3"],
+    .anchor[data-view="4"]:target ~ footer[data-view="4"] {
+      display: flex;
+    }
+
+    .anchor[data-view-count="2"][data-view-present="false"]:not(:target):nth-child(2) ~ nav > .index-views > [data-view="0"],
+    nav > .index-views > [data-view-present="true"],
+    .anchor[data-view="0"][data-view-present]:target ~ nav > .index-views > [data-view="0"],
+    .anchor[data-view="1"][data-view-present]:target ~ nav > .index-views > [data-view="1"],
+    .anchor[data-view="2"][data-view-present]:target ~ nav > .index-views > [data-view="2"],
+    .anchor[data-view="3"][data-view-present]:target ~ nav > .index-views > [data-view="3"],
+    .anchor[data-view="4"][data-view-present]:target ~ nav > .index-views > [data-view="4"] {
+      color: var(--style--accent--bg);
+      background-color: var(--style--accent--fg);
+      a {
+        color: inherit;
+      }
+    }
+
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="1"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="2"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="3"],
+    .anchor[data-view="0"]:target ~ nav > .index-views > [data-view="4"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="2"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="3"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="4"],
+    .anchor[data-view="1"]:target ~ nav > .index-views > [data-view="0"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="3"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="4"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="0"],
+    .anchor[data-view="2"]:target ~ nav > .index-views > [data-view="1"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="4"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="0"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="1"],
+    .anchor[data-view="3"]:target ~ nav > .index-views > [data-view="2"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="0"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="1"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="2"],
+    .anchor[data-view="4"]:target ~ nav > .index-views > [data-view="3"] {
+      color: var(--style--accent--fg);
+      background-color: var(--style--accent--bg);
+      a {
+        color: inherit;
+      }
+    }
+
+    .anchor[data-view="0"]:target ~ section[data-view="1"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ section[data-view="2"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ section[data-view="3"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ section[data-view="4"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ section[data-view="0"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ section[data-view="2"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ section[data-view="3"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ section[data-view="4"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ section[data-view="1"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ section[data-view="0"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ section[data-view="3"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ section[data-view="4"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ section[data-view="1"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ section[data-view="2"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ section[data-view="0"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ section[data-view="4"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ section[data-view="1"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ section[data-view="2"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ section[data-view="3"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ section[data-view="0"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ footer[data-view="1"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ footer[data-view="2"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ footer[data-view="3"][data-view-present="true"],
+    .anchor[data-view="0"]:target ~ footer[data-view="4"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ footer[data-view="0"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ footer[data-view="2"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ footer[data-view="3"][data-view-present="true"],
+    .anchor[data-view="1"]:target ~ footer[data-view="4"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ footer[data-view="1"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ footer[data-view="0"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ footer[data-view="3"][data-view-present="true"],
+    .anchor[data-view="2"]:target ~ footer[data-view="4"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ footer[data-view="1"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ footer[data-view="2"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ footer[data-view="0"][data-view-present="true"],
+    .anchor[data-view="3"]:target ~ footer[data-view="4"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ footer[data-view="1"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ footer[data-view="2"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ footer[data-view="3"][data-view-present="true"],
+    .anchor[data-view="4"]:target ~ footer[data-view="0"][data-view-present="true"] {
+      display: none;
     }
 
     section[data-index-view="link-list"] {

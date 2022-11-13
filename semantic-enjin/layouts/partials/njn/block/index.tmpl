@@ -5,13 +5,13 @@
         <section>
             {{ if or (gt (len .Views) 1) (.Views.HasFilters) }}
                 {{ range $idx,$view := .Views }}
-                    <div class="anchor" data-view="{{ $idx }}" id="{{ $.Tag }}-{{ $view.Key }}"></div>
+                    <div class="anchor" id="{{ $.Tag }}-{{ $view.Key }}" data-view="{{ $idx }}" data-view-present="{{ $view.Present }}" data-view-count="{{ len $.Views }}"></div>
                 {{ end }}
                 <nav>
                     {{ if gt (len .Views) 1 }}
                         <ul class="index-views">
                             {{ range $idx,$view := .Views }}
-                                <li data-view="{{ $idx }}">
+                                <li data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
                                     <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ $view.Label }}</a>
                                     <a class="deeplink" href="{{ $view.Url }}" title="{{ _ "deeplink to %s view" $view.Label }}">
                                         <i class="fa-solid fa-link"></i>
@@ -23,7 +23,7 @@
                     {{ end }}
                     {{ range $idx,$view := .Views }}
                         {{ with $groups := $view.Filters }}
-                            <ul class="index-filters" data-view="{{ $idx }}">
+                            <ul class="index-filters" data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
                                 {{ range $jdx,$group := $groups }}
                                     <li>
                                         {{ if eq (len $group) 1 }}
