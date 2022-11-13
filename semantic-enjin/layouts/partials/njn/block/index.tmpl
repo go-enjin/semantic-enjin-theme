@@ -34,12 +34,38 @@
                                                 </a>
                                             {{ end }}
                                         {{ else }}
-                                            {{ range $jdx,$filter := $group }}
-                                                <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
-                                                    <i class="fa-solid fa-{{ if $filter.Present }}check-{{ end }}square"></i>
-                                                    {{ $filter.Label }}
-                                                </a>
-                                            {{ end }}
+                                            <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" />
+                                            <div class="dropdown">
+                                                <div class="dropdown-selected">
+                                                    <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="open">
+                                                        <i class="fa-solid fa-square-caret-right"></i>
+                                                        <span class="sr-only">open filter dropdown menu</span>
+                                                        {{ if ($view.GroupHasFilterPresent $jdx) }}
+                                                            {{ range $kdx,$filter := $group }}
+                                                                {{ if $filter.Present }}
+                                                                    {{ $filter.Label }}
+                                                                    {{ break }}
+                                                                {{ end }}
+                                                            {{ end }}
+                                                        {{ else }}
+                                                            <span>{{ _ "Select a filter" }}</span>
+                                                        {{ end }}
+                                                    </label>
+                                                    <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="close">
+                                                        <i class="fa-solid fa-square-caret-down"></i>
+                                                        <span class="sr-only">close filter dropdown menu</span>
+                                                        <span>{{ _ "Select a filter" }}</span>
+                                                    </label>
+                                                </div>
+                                                <div class="dropdown-menu">
+                                                    {{ range $kdx,$filter := $group }}
+                                                        <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
+                                                            <i class="fa-solid fa-{{ if $filter.Present }}check-{{ end }}square"></i>
+                                                            {{ $filter.Label }}
+                                                        </a>
+                                                    {{ end }}
+                                                </div>
+                                            </div>
                                         {{ end }}
                                     </li>
                                 {{ end }}
