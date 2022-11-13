@@ -91,9 +91,21 @@
     {{ range $url := .Theme.Context.PageFontStyleSheets }}
     <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url | unescapeHTML | asHTMLAttr }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
     {{- end }}
-    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/fontawesome.css" }}"/>
-    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/brands.css" }}"/>
-    <link rel="stylesheet" href="{{ fsUrl "/fontawesome-free-6.2.0-web/css/solid.css" }}"/>
+
+    {{- if gt (len .Theme.FontawesomeClasses) 0 -}}
+        {{- range $idx,$class := .Theme.FontawesomeClasses -}}
+            {{- with $link := (index $.Theme.FontawesomeLinks $class) -}}
+                {{- if eq $link "" -}}
+                    <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.2.0-web/css/%s.css" $class) }}"/>
+                {{ else -}}
+                    <link rel="stylesheet" href="{{ fsUrl $link }}"/>
+                {{ end -}}
+            {{ else }}
+                <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.2.0-web/css/%s.css" $class) }}"/>
+            {{- end -}}
+        {{- end -}}
+    {{- end }}
+
     <link rel="stylesheet" href="{{ fsUrl "/css/semantic-enjin.css" }}"/>
 
     {{ if gt (len .Theme.RootStyles) 0 }}
