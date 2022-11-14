@@ -29,7 +29,11 @@
                                         {{ if eq (len $group) 1 }}
                                             {{ with $filter := (index $group 0) }}
                                                 <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
-                                                    <i class="fa-solid fa-{{ if $filter.Present }}check-{{ end }}square"></i>
+                                                    {{ if $filter.Present }}
+                                                        <i class="fa-solid fa-check-square"></i>
+                                                    {{ else }}
+                                                        <i class="fa-regular fa-square"></i>
+                                                    {{ end }}
                                                     {{ $filter.Label }}
                                                 </a>
                                             {{ end }}
@@ -68,7 +72,11 @@
                                                 <div class="dropdown-menu">
                                                     {{ range $kdx,$filter := $group }}
                                                         <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
-                                                            <i class="fa-solid fa-{{ if $filter.Present }}check-{{ end }}square"></i>
+                                                            {{ if $filter.Present }}
+                                                                <i class="fa-solid fa-check-square"></i>
+                                                            {{ else }}
+                                                                <i class="fa-regular fa-square"></i>
+                                                            {{ end }}
                                                             {{ $filter.Label }}
                                                         </a>
                                                     {{ end }}
