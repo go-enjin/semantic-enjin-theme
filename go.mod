@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.19
 
-require github.com/go-enjin/be v0.0.0-20221113205851-b6ed6130c372
+require github.com/go-enjin/be v0.0.0-20221115034328-11421c0d5b87
 
 require (
 	github.com/BurntSushi/toml v1.2.0 // indirect
