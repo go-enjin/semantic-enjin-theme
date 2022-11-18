@@ -122,7 +122,7 @@
             {{ if and .SearchEnabled (or .SearchResults .SearchError) }}
                 <aside class="search-results">
                     {{ if and .SearchResults (gt .SearchTotal 0) }}
-                        <p>{{ _ "Showing %d of %d pages found within %d total" (len .SearchResults.Hits) .SearchTotal .SearchWithinTotal }}</p>
+                        <p>{{ _ "Showing %d of %d pages found within %d total" (len .Results) .SearchTotal .SearchWithinTotal }}</p>
                     {{ end }}
                     {{ if  .SearchError }}
                         <p>{{ _ "Search form error: %s" .SearchError }}</p>
