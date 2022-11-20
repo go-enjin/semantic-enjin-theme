@@ -207,10 +207,14 @@ a.decorated[target='_blank']:after {
 
 .block > .content table {
   width: 100%;
-  margin: var(--page--flex--gap) auto;
   border-collapse: collapse;
   overflow-x: auto;
   max-width: 100%;
+  margin: var(--page--flex--gap) auto;
+}
+
+.block > .content table:first-child {
+  margin-top: 0;
 }
 
 .block > .content table > thead {
