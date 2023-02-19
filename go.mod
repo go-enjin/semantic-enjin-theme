@@ -2,15 +2,15 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.19
 
-require github.com/go-enjin/be v0.0.0-20230202203032-d6578a153b4c
+require github.com/go-enjin/be v0.0.0-20230219182730-fdabda8c29d2
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/alecthomas/participle/v2 v2.0.0-beta.1 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
-	github.com/blevesearch/bleve/v2 v2.3.4 // indirect
-	github.com/blevesearch/bleve_index_api v1.0.3 // indirect
-	github.com/blevesearch/geo v0.1.15 // indirect
+	github.com/blevesearch/bleve/v2 v2.3.6 // indirect
+	github.com/blevesearch/bleve_index_api v1.0.5 // indirect
+	github.com/blevesearch/geo v0.1.16 // indirect
 	github.com/blevesearch/go-porterstemmer v1.0.3 // indirect
 	github.com/blevesearch/segment v0.9.0 // indirect
 	github.com/blevesearch/snowballstem v0.9.0 // indirect
@@ -53,11 +53,11 @@ require (
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2 // indirect
 	github.com/yookoala/realpath v1.0.0 // indirect
-	golang.org/x/crypto v0.0.0-20221012134737-56aed061732a // indirect
-	golang.org/x/net v0.0.0-20221014081412-f15817d10f9b // indirect
-	golang.org/x/sys v0.0.0-20221013171732-95e765b1cc43 // indirect
-	golang.org/x/term v0.0.0-20220919170432-7a66f970e087 // indirect
-	golang.org/x/text v0.3.8 // indirect
+	golang.org/x/crypto v0.6.0 // indirect
+	golang.org/x/net v0.7.0 // indirect
+	golang.org/x/sys v0.5.0 // indirect
+	golang.org/x/term v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/mysql v1.4.1 // indirect
