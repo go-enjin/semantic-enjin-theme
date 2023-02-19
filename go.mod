@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.19
 
-require github.com/go-enjin/be v0.0.0-20230219182730-fdabda8c29d2
+require github.com/go-enjin/be v0.0.0-20230219212728-0eada5880a1d
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
@@ -18,7 +18,7 @@ require (
 	github.com/fvbommel/sortorder v1.0.2 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.1 // indirect
 	github.com/go-enjin/github-com-djherbis-times v0.0.0-20221101184323-aeef8854ee8a // indirect
-	github.com/go-enjin/golang-org-x-text v0.0.0-20221026190533-d0e9c4fd3b27 // indirect
+	github.com/go-enjin/golang-org-x-text v0.0.0-20230219204830-4f2b7b481f16 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goccy/go-json v0.9.11 // indirect
 	github.com/gofrs/uuid v4.3.0+incompatible // indirect
