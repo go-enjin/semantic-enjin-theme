@@ -3263,8 +3263,9 @@ aside > [data-block-type='link-list'] > .content.content > section > ul li {
   flex-direction: var(--block--sidebar--content--flex-direction); }
 
 [data-block-type='sidebar'] > .content > .blocks {
-  width: 100%;
-  flex-grow: 1; }
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 70%; }
 
 [data-block-type='sidebar'] > .content > .aside {
   flex-grow: 0;
