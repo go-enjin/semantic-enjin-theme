@@ -1,10 +1,24 @@
 #!/usr/bin/make -f
 
+# Copyright (c) 2023  The Go-Enjin Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 SHELL = /bin/bash
 
-.PHONY = all build tidy local unlocal
+.PHONY = all build locales tidy local unlocal be-update
 
-BE_REPO_PATH ?= ../be
+BE_LOCAL_PATH = ../be
 
 help:
 	@echo "# usage: make <help|build|tidy|local|unlocal|be-update>"
@@ -14,15 +28,14 @@ build:
 		&& make build \
 		&& popd > /dev/null
 
-gen-locales:
+locales:
 	@pushd ./semantic-enjin > /dev/null \
-		&& make gen-locales \
+		&& make locales \
 		&& popd > /dev/null
 
 tidy:
 	@go mod tidy
 
-local: export BE_LOCAL_PATH=${BE_REPO_PATH}
 local:
 	@echo "# go.mod local: github.com/go-enjin/be"
 	@enjenv go-local
@@ -37,4 +50,3 @@ be-update: export GOPROXY=direct
 be-update:
 	@echo "# updating github.com/go-enjin/be"
 	@go get github.com/go-enjin/be@latest
-	@go mod tidy
