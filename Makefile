@@ -16,16 +16,21 @@
 
 SHELL = /bin/bash
 
-.PHONY = all build locales tidy local unlocal be-update
+.PHONY = all build release locales tidy local unlocal be-update
 
 BE_LOCAL_PATH = ../be
 
 help:
-	@echo "# usage: make <help|build|tidy|local|unlocal|be-update>"
+	@echo "# usage: make <help|build|release|tidy|local|unlocal|be-update>"
 
 build:
 	@pushd ./semantic-enjin > /dev/null \
 		&& make build \
+		&& popd > /dev/null
+
+release:
+	@pushd ./semantic-enjin > /dev/null \
+		&& make release \
 		&& popd > /dev/null
 
 locales:
