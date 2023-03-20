@@ -2,11 +2,74 @@
 	"language": "en",
 	"messages": [
 		{
+			"id": "%d of %d",
+			"key": "%d of %d",
+			"message": "%d of %d",
+			"translation": "%d of %d",
+			"translatorComment": ".PageNumber .TotalPages [from: index-paginate--page.tmpl]"
+		},
+		{
+			"id": "Go to the first page",
+			"key": "Go to the first page",
+			"message": "Go to the first page",
+			"translation": "Go to the first page",
+			"translatorComment": "[from: index-paginate--page.tmpl]"
+		},
+		{
+			"id": "Go to the last page",
+			"key": "Go to the last page",
+			"message": "Go to the last page",
+			"translation": "Go to the last page",
+			"translatorComment": "[from: index-paginate--page.tmpl]"
+		},
+		{
+			"id": "Go to the next page",
+			"key": "Go to the next page",
+			"message": "Go to the next page",
+			"translation": "Go to the next page",
+			"translatorComment": "[from: index-paginate--page.tmpl]"
+		},
+		{
+			"id": "Go to the previous page",
+			"key": "Go to the previous page",
+			"message": "Go to the previous page",
+			"translation": "Go to the previous page",
+			"translatorComment": "[from: index-paginate--page.tmpl]"
+		},
+		{
+			"id": "More",
+			"key": "More",
+			"message": "More",
+			"translation": "More",
+			"translatorComment": "index block pagination, asking for another batch of pages [from: index-paginate--more.tmpl]"
+		},
+		{
 			"id": "Search",
 			"key": "Search",
 			"message": "Search",
 			"translation": "Search",
 			"translatorComment": "main menu search field placeholder text [from: header.tmpl], screen reader only [from: header.tmpl]"
+		},
+		{
+			"id": "Search form error: %s",
+			"key": "Search form error: %s",
+			"message": "Search form error: %s",
+			"translation": "Search form error: %s",
+			"translatorComment": ".SearchError [from: index.tmpl]"
+		},
+		{
+			"id": "Select a filter",
+			"key": "Select a filter",
+			"message": "Select a filter",
+			"translation": "Select a filter",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "Showing %d of %d indexed, %d total",
+			"key": "Showing %d of %d indexed, %d total",
+			"message": "Showing %d of %d indexed, %d total",
+			"translation": "Showing %d of %d indexed, %d total",
+			"translatorComment": "(len) .TotalFound .SiteContext.SiteTotalPages [from: index.tmpl]"
 		},
 		{
 			"id": "Site theme by: %s",
@@ -21,6 +84,13 @@
 			"message": "back to top",
 			"translation": "back to top",
 			"translatorComment": "screen reader only [from: footer.tmpl]"
+		},
+		{
+			"id": "close filter dropdown menu",
+			"key": "close filter dropdown menu",
+			"message": "close filter dropdown menu",
+			"translation": "close filter dropdown menu",
+			"translatorComment": "[from: index.tmpl]"
 		},
 		{
 			"id": "close main menu",
@@ -44,6 +114,20 @@
 			"translatorComment": "screen reader only [from: header.tmpl]"
 		},
 		{
+			"id": "close the search menu",
+			"key": "close the search menu",
+			"message": "close the search menu",
+			"translation": "close the search menu",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "deeplink to %s view",
+			"key": "deeplink to %s view",
+			"message": "deeplink to %s view",
+			"translation": "deeplink to %s view",
+			"translatorComment": "$view.Label [from: index.tmpl]"
+		},
+		{
 			"id": "go to card number %d",
 			"key": "go to card number %d",
 			"message": "go to card number %d",
@@ -65,11 +149,53 @@
 			"translatorComment": "move carousel to previous item [from: carousel.tmpl]"
 		},
 		{
+			"id": "open filter dropdown menu",
+			"key": "open filter dropdown menu",
+			"message": "open filter dropdown menu",
+			"translation": "open filter dropdown menu",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "open the search menu",
+			"key": "open the search menu",
+			"message": "open the search menu",
+			"translation": "open the search menu",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "page thumbnail image placeholder",
+			"key": "page thumbnail image placeholder",
+			"message": "page thumbnail image placeholder",
+			"translation": "page thumbnail image placeholder",
+			"translatorComment": "[from: index-view--profile.tmpl]"
+		},
+		{
 			"id": "page title heading deeplink",
 			"key": "page title heading deeplink",
 			"message": "page title heading deeplink",
 			"translation": "page title heading deeplink",
 			"translatorComment": "deeplink to the page title header block [from: block-header.tmpl]"
+		},
+		{
+			"id": "reset filters",
+			"key": "reset filters",
+			"message": "reset filters",
+			"translation": "reset filters",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "search",
+			"key": "search",
+			"message": "search",
+			"translation": "search",
+			"translatorComment": "[from: index.tmpl]"
+		},
+		{
+			"id": "search...",
+			"key": "search...",
+			"message": "search...",
+			"translation": "search...",
+			"translatorComment": "[from: index.tmpl]"
 		},
 		{
 			"id": "toggle search",
@@ -90,7 +216,7 @@
 			"key": "top",
 			"message": "top",
 			"translation": "top",
-			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl]"
+			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: index.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl]"
 		}
 	]
 }
