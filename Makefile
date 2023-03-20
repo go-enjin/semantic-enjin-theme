@@ -18,7 +18,7 @@ SHELL = /bin/bash
 
 .PHONY = all build release locales tidy local unlocal be-update
 
-BE_LOCAL_PATH = ../be
+export BE_LOCAL_PATH ?= ../be
 
 help:
 	@echo "# usage: make <help|build|release|tidy|local|unlocal|be-update>"
