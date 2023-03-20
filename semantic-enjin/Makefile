@@ -25,7 +25,7 @@ OUTPUT_LOCALES   := en,ja
 .PHONY: all help build release clean locales
 
 help:
-	@echo "usage: make [help|build|release|clean|locales]"
+	@echo "usage: make <help|build|release|clean|locales>"
 
 build: clean locales
 	@gassc --output-file=${OUTPUT_CSS} ${INPUT_SCSS}
