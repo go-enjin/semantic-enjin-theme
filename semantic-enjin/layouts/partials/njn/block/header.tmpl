@@ -5,12 +5,14 @@
 <section {{- template "partials/njn/block/header-attributes.tmpl" . -}}>
 {{ end }}
     <div class="content">
-        <h{{ .HeadingLevel }}>{{ template "partials/njn/field-list.tmpl" .Heading }}</h{{ .HeadingLevel }}>
-        {{ if .JumpLink }}
-            <a class="jump-link" href="#{{ .Tag }}">
-                <span class="sr-only">permalink</span>
-            </a>
-        {{ end }}
+        <header>
+            <h{{ .HeadingLevel }}>{{ template "partials/njn/field-list.tmpl" .Heading }}</h{{ .HeadingLevel }}>
+            {{ if .JumpLink }}
+                <a class="jump-link" href="#{{ .Tag }}">
+                    <span class="sr-only">permalink</span>
+                </a>
+            {{ end }}
+        </header>
     </div>
     {{ if .Nav }}
         <nav>
