@@ -1,3 +1,7 @@
+{{- if .GoogleTagManagerContainerId }}
+{{ gtmNoScriptTag .GoogleTagManagerContainerId }}
+{{ end -}}
+
 <input type="checkbox" name="side-menu" id="side-menu"/>
 {{- if .SiteSearchPath }}
 <input type="checkbox" name="search-menu" id="search-menu"/>

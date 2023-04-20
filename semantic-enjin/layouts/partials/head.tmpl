@@ -133,4 +133,8 @@
     {{ range $url := .Theme.Context.PageStyleSheets }}
     <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
     {{- end }}
+
+{{- if .GoogleTagManagerContainerId }}
+{{ gtmHeadScriptTag .GoogleTagManagerContainerId .GoogleTagManagerScriptNonce }}
+{{ end -}}
 </head>
