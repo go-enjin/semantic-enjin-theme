@@ -29,7 +29,7 @@ help:
 
 build: clean locales
 	@gassc --output-file=${OUTPUT_CSS} ${INPUT_SCSS}
-	@sha256sum ./static/css/semantic-enjin.css*
+	@sha256sum ${OUTPUT_CSS}*
 
 release: clean locales
 	@gassc --release --output-file=${OUTPUT_CSS} ${INPUT_SCSS}

@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+THEME_NAME := semantic-enjin
+
 SHELL = /bin/bash
 
 .PHONY = all build release locales tidy local unlocal be-update
@@ -24,17 +26,19 @@ help:
 	@echo "# usage: make <help|build|release|tidy|local|unlocal|be-update>"
 
 build:
-	@pushd ./semantic-enjin > /dev/null \
+	@pushd ./${THEME_NAME} > /dev/null \
 		&& make build \
 		&& popd > /dev/null
+	@echo "# build-testing ${THEME_NAME}-theme package"
+	@go build -v -tags embeds
 
 release:
-	@pushd ./semantic-enjin > /dev/null \
+	@pushd ./${THEME_NAME} > /dev/null \
 		&& make release \
 		&& popd > /dev/null
 
 locales:
-	@pushd ./semantic-enjin > /dev/null \
+	@pushd ./${THEME_NAME} > /dev/null \
 		&& make locales \
 		&& popd > /dev/null
 
