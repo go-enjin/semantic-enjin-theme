@@ -21,22 +21,16 @@ import (
 	"github.com/go-enjin/be/pkg/theme"
 )
 
+const Name = "semantic-enjin"
+
 //go:embed semantic-enjin/**
 //go:embed semantic-enjin/layouts/_default/**
-var semanticEnjinThemeFS embed.FS
+var themeFS embed.FS
 
-var semanticEnjinThemeInstance *theme.Theme = nil
-
-func SemanticEnjinTheme() *theme.Theme {
-	if semanticEnjinThemeInstance != nil {
-		return semanticEnjinThemeInstance
+func Theme() (t *theme.Theme) {
+	var err error
+	if t, err = theme.NewEmbed(Name, themeFS); err != nil {
+		log.FatalDF(1, "error loading %v theme: %v", Name, err)
 	}
-	if dt, err := theme.NewEmbed("semantic-enjin", semanticEnjinThemeFS); err != nil {
-		log.FatalF("error loading semantic-enjin theme: %v", err)
-	} else {
-		log.DebugF("included semantic-enjin theme")
-		semanticEnjinThemeInstance = dt
-		return dt
-	}
-	return nil
+	return
 }
