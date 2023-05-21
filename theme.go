@@ -29,7 +29,7 @@ var themeFS embed.FS
 
 func Theme() (t *theme.Theme) {
 	var err error
-	if t, err = theme.NewEmbed(Name, themeFS); err != nil {
+	if t, err = theme.NewEmbed(Name, Name, themeFS); err != nil {
 		log.FatalDF(1, "error loading %v theme: %v", Name, err)
 	}
 	return
