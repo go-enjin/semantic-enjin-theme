@@ -13,8 +13,8 @@
     {{ template "partials/header.tmpl" . }}
     <main>
       <div id="top"></div>
-      {{ if eq .Content "" }}
-        {{ template "partials/page-search.tmpl" }}
+      {{ if isEmptyString .Content }}
+        {{ template "partials/page-search.tmpl" . }}
       {{ else }}
         {{ .Content }}
       {{ end }}
