@@ -4,16 +4,20 @@
     (eval "(%d * %d) + %d" .PageIndex .NumPerPage .ResultCount)
     }}
     {{ if eq .ResultCount .TotalFound }}
-        {{ $showing = _ "all" }}
+        {{ $showing = (_ "all" /* used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' */ ) }}
     {{ end }}
 
-    {{ if or .SearchResults .SearchError }}
+    {{ if eq .ResultCount 0 }}
+
+        <p>{{ _ "No results found within %d total" .TotalFound }}</p>
+
+    {{ else if or .SearchResults .SearchError }}
 
         {{ if and .SearchResults (gt .SearchTotal 0) }}
             {{ if eq .SearchWithinTotal .TotalFound }}
-                <p>{{ _ "Showing %s of %d results (%d total)" $showing .SearchTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %s of %d results, %d total" $showing .SearchTotal .TotalFound }}</p>
             {{ else }}
-                <p>{{ _ "Showing %s of %d results (%d filtered of %d total)" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %s of %d results, %d filtered, %d total" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
             {{ end }}
         {{ end }}
         {{ if  .SearchError }}
@@ -23,9 +27,9 @@
     {{ else }}
 
         {{ if eq .TotalFound .TotalFiltered }}
-            <p>{{ _ "Showing %s of %d" $showing .TotalFound }}</p>
+            <p>{{ _ "Showing %s of %d total" $showing .TotalFound }}</p>
         {{ else }}
-            <p>{{ _ "Showing %s of %d (%d total)" $showing .TotalFiltered .TotalFound }}</p>
+            <p>{{ _ "Showing %s of %d filtered, %d total" $showing .TotalFiltered .TotalFound }}</p>
         {{ end }}
 
     {{ end }}

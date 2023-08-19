@@ -3,14 +3,21 @@
     (eval "(%d * %d) + 1" .PageIndex .NumPerPage)
     (eval "(%d * %d) + %d" .PageIndex .NumPerPage .ResultCount)
     }}
+    {{ if eq .ResultCount 1 }}
+        {{ if gt .TotalFiltered 0 }}
+            {{ $showing = printf "#%d" .TotalFiltered }}
+        {{ else }}
+            {{ $showing = printf "#%d" .TotalFound }}
+        {{ end }}
+    {{ end }}
 
     {{ if or .SearchResults .SearchError }}
 
         {{ if and .SearchResults (gt .SearchTotal 0) }}
             {{ if eq .SearchWithinTotal .TotalFound }}
-                <p>{{ _ "Showing %s of %d results (%d total)" $showing .SearchTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %s of %d results, %d total" $showing .SearchTotal .TotalFound }}</p>
             {{ else }}
-                <p>{{ _ "Showing %s of %d results (%d filtered of %d total)" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %s of %d results, %d filtered, %d total" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
             {{ end }}
         {{ end }}
         {{ if  .SearchError }}
@@ -20,9 +27,9 @@
     {{ else }}
 
         {{ if eq .TotalFound .TotalFiltered }}
-            <p>{{ _ "Showing %s of %d" $showing .TotalFound }}</p>
+            <p>{{ _ "Showing %s of %d total" $showing .TotalFound }}</p>
         {{ else }}
-            <p>{{ _ "Showing %s of %d (%d total)" $showing .TotalFiltered .TotalFound }}</p>
+            <p>{{ _ "Showing %s of %d filtered, %d total" $showing .TotalFiltered .TotalFound }}</p>
         {{ end }}
 
     {{ end }}
