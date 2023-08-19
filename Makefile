@@ -30,12 +30,14 @@ build:
 		&& make build \
 		&& popd > /dev/null
 	@echo "# build-testing ${THEME_NAME}-theme package"
-	@go build -v -tags embeds
+	@go build -v -tags fs_theme,locals
 
 release:
 	@pushd ./${THEME_NAME} > /dev/null \
 		&& make release \
 		&& popd > /dev/null
+	@echo "# release-testing ${THEME_NAME}-theme package"
+	@go build -v -tags fs_theme,embeds
 
 locales:
 	@pushd ./${THEME_NAME} > /dev/null \
