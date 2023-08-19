@@ -107,14 +107,14 @@
                             <li class="menu-item">
                                 <div class="language-switcher">
                                     {{ range $idx,$tag := .SiteInfo.Locales }}
-                                        {{ if CmpLang $tag $.Request.Language }}
-                                            {{ if CmpLang $tag $.SiteInfo.DefaultLang }}
+                                        {{ if cmpLang $tag $.Request.Language }}
+                                            {{ if cmpLang $tag $.SiteInfo.DefaultLang }}
                                                 <a class="selected" href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
                                                 <a class="selected" href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ end }}
                                         {{ else }}
-                                            {{ if CmpLang $tag $.SiteInfo.DefaultLang }}
+                                            {{ if cmpLang $tag $.SiteInfo.DefaultLang }}
                                                 <a href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
                                                 <a href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
