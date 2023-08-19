@@ -9,21 +9,41 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 10px;
   font-weight: bold;
 }
-h1, .h1 { font-size: var(--page--h1--font-size); }
-h2, .h2 { font-size: var(--page--h2--font-size); }
-h3, .h3 { font-size: var(--page--h3--font-size); }
-h4, .h4 { font-size: var(--page--h4--font-size); }
-h5, .h5 { font-size: var(--page--h5--font-size); }
-h6, .h6 { font-size: var(--page--h6--font-size); }
+
+h1, .h1 {
+  font-size: var(--page--h1--font-size);
+}
+
+h2, .h2 {
+  font-size: var(--page--h2--font-size);
+}
+
+h3, .h3 {
+  font-size: var(--page--h3--font-size);
+}
+
+h4, .h4 {
+  font-size: var(--page--h4--font-size);
+}
+
+h5, .h5 {
+  font-size: var(--page--h5--font-size);
+}
+
+h6, .h6 {
+  font-size: var(--page--h6--font-size);
+}
 
 .auto-scroll-x {
   overflow-x: auto;
 }
+
 .auto-scroll-x :first-child {
-  margin-top: 0!important;
+  margin-top: 0 !important;
 }
+
 .auto-scroll-x :last-child {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .block > .content > :is(header,summary) > :is(h1,.h1),
@@ -44,7 +64,7 @@ p.dropcap:first-child:first-letter {
   float: left;
   font-weight: bold;
   font-family: var(--page--dropcap--font-family);
-  font-size:   var(--page--dropcap--font-size);
+  font-size: var(--page--dropcap--font-size);
   padding: 0;
   margin: 0;
 }
@@ -142,9 +162,9 @@ a.decorated[target='_blank']:after {
   right: -1px;
   width: 0;
   height: 0;
-  border-top:    5px solid transparent;
+  border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left:   5px solid;
+  border-left: 5px solid;
   transform: rotate(-45deg);
   transition-delay: var(--page--ani--duration--short);
 }
@@ -153,8 +173,8 @@ a.decorated[target='_blank']:after {
 /* description lists */
 
 .block > .content dl {
-  max-width:  100%;
-  margin:     var(--page--flex--gap) auto;
+  max-width: 100%;
+  margin: var(--page--flex--gap) auto;
 }
 
 .block > .content dl > dt {
@@ -183,7 +203,7 @@ a.decorated[target='_blank']:after {
 /* list fields */
 
 .block > .content :not(nav,.carousel) > :is(ul,ol) {
-  margin-top:  10px;
+  margin-top: 10px;
   margin-left: 34px;
 }
 
@@ -192,7 +212,7 @@ a.decorated[target='_blank']:after {
 }
 
 .block > .content :not(nav,.carousel) > :is(ul,ol) > li > :is(ul,ol) {
-  margin-top:  0;
+  margin-top: 0;
 }
 
 .block > .content :not(nav,.carousel) > :is(ul,ol) > li::marker {
@@ -221,7 +241,7 @@ a.decorated[target='_blank']:after {
   --style--bg: var(--style--accent--bg);
   --style--fg: var(--style--accent--fg);
   background-color: var(--style--bg);
-  color:            var(--style--fg);
+  color: var(--style--fg);
   border: 1px solid var(--style--bg);
 }
 
@@ -241,7 +261,7 @@ a.decorated[target='_blank']:after {
 
 .block > .content table > tbody > tr:nth-child(even) {
   background-color: var(--style--alternate--bg);
-  color:            var(--style--alternate--fg);
+  color: var(--style--alternate--fg);
 }
 
 @media screen and (max-width: 1024px) {
@@ -264,7 +284,9 @@ a.decorated[target='_blank']:after {
     border: none;
   }
 
-} /* end media screen max-width 1024px */
+}
+
+/* end media screen max-width 1024px */
 
 @media screen and (max-width: 420px) {
   .block > .content :is(table,thead,tbody,tfoot,tr,th,td) {
@@ -277,19 +299,19 @@ a.decorated[target='_blank']:after {
 
 :root {
   --field--code--font-family: var(--page--monospace--font-family);
-  --field--code--font-size:   12px;
+  --field--code--font-size: 12px;
   --field--code--line-height: 16px;
   --field--code--font-weight: bold;
 }
 
 .block > .content code {
-  display:     block;
-  overflow-x:  auto;
-  padding:     calc(var(--page--flex--gap) / 2) var(--page--flex--gap);
+  display: block;
+  overflow-x: auto;
+  padding: calc(var(--page--flex--gap) / 2) var(--page--flex--gap);
   padding-right: 0;
-  color:       var(--style--accent--fg);
-  background:  var(--style--accent--bg);
-  font-size:   var(--field--code--font-size);
+  color: var(--style--accent--fg);
+  background: var(--style--accent--bg);
+  font-size: var(--field--code--font-size);
   font-family: var(--field--code--font-family);
   font-weight: var(--field--code--font-weight);
   line-height: var(--field--code--line-height);
@@ -334,7 +356,7 @@ body[data-page-format="md"] .block > .content code {
 }
 
 .block > .content :not(p) > code.decorated ol > li:hover {
-  color:      var(--style--highlight--fg);
+  color: var(--style--highlight--fg);
   background: var(--style--highlight--bg);
   width: 100%;
   min-width: fit-content;
@@ -351,9 +373,9 @@ body[data-page-format="md"] .block > .content code {
 
 .block > .content blockquote {
   margin: 0;
-  padding:       25px;
+  padding: 25px;
   border-radius: 5px;
-  color:      var(--style--accent--fg);
+  color: var(--style--accent--fg);
   background: var(--style--accent--bg);
 }
 
@@ -409,7 +431,7 @@ body[data-page-format="md"] .block > .content code {
   display: flex;
   flex-direction: column;
   max-height: 200px;
-  max-width:  200px;
+  max-width: 200px;
 }
 
 .block > .content figure[data-field-figure-float='left'] {
@@ -423,7 +445,7 @@ body[data-page-format="md"] .block > .content code {
 }
 
 .block > .content figure[data-field-figure-size='big'] {
-  max-width:  500px;
+  max-width: 500px;
   max-height: 500px;
 }
 
@@ -444,7 +466,7 @@ body[data-page-format="md"] .block > .content code {
 
 .block > .content figure > figcaption {
   background: var(--style--fg);
-  color:      var(--style--bg);
+  color: var(--style--bg);
   text-align: center;
   font-style: italic;
 }
@@ -482,13 +504,13 @@ body[data-page-format="md"] .block > .content code {
 .block > .content button {
   --style--fg: var(--field--button--default--fg);
   --style--bg: var(--field--button--default--bg);
-  display:    inline-block;
-  min-width:  110px;
-  border:     none;
-  padding:    10px;
-  color:      var(--style--fg);
+  display: inline-block;
+  min-width: 110px;
+  border: none;
+  padding: 10px;
+  color: var(--style--fg);
   background: var(--style--bg);
-  cursor:     pointer;
+  cursor: pointer;
 }
 
 .block > .content button:hover {
@@ -514,5 +536,5 @@ body[data-page-format="md"] .block > .content code {
 .block > .content fieldset legend {
   padding: 5px;
   background: var(--style--fg);
-  color:      var(--style--bg);
+  color: var(--style--bg);
 }
