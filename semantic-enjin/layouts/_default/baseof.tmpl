@@ -11,7 +11,7 @@
   >
     {{ featurePartials "body" "head" }}
     {{ template "partials/header.tmpl" . }}
-    <main>
+    <main data-layout-view="baseof.tmpl">
       <div id="top"></div>
       {{ .Content }}
     </main>
