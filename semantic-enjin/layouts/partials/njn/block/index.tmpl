@@ -117,28 +117,39 @@
                     {{ end }}
                 </nav>
             {{ end }}
+
+            {{ $data := dict
+            "ResultCount" (len .Results)
+            "TotalFound" .TotalFound
+            "TotalFiltered" .TotalFiltered
+            }}
+
             {{ if and .SearchEnabled (or .SearchResults .SearchError) }}
-                <aside class="search-results">
-                    {{ if and .SearchResults (gt .SearchTotal 0) }}
-                        {{ if eq .SearchWithinTotal .TotalFound }}
-                            <p>{{ _ "Showing %d of %d results (%d indexed, %d total)" (len .Results) .SearchTotal .TotalFound .SiteContext.SiteTotalPages }}</p>
-                        {{ else }}
-                            <p>{{ _ "Showing %d of %d results (%d filtered of %d indexed, %d total)" (len .Results) .SearchTotal .SearchWithinTotal .TotalFound .SiteContext.SiteTotalPages }}</p>
-                        {{ end }}
-                    {{ end }}
-                    {{ if  .SearchError }}
-                        <p>{{ _ "Search form error: %s" .SearchError }}</p>
-                    {{ end }}
-                </aside>
-            {{ else }}
-                <aside class="search-results">
-                    {{ if eq .TotalFound .TotalFiltered }}
-                        <p>{{ _ "Showing %d of %d indexed, %d total" (len .Results) .TotalFound .SiteContext.SiteTotalPages }}</p>
-                    {{ else }}
-                        <p>{{ _ "Showing %d of %d filtered (%d indexed, %d total)" (len .Results) .TotalFiltered .TotalFound .SiteContext.SiteTotalPages }}</p>
-                    {{ end }}
-                </aside>
+                {{ $data.SET
+                "SearchEnabled" true
+                "SearchResults" .SearchResults
+                "SearchError" .SearchError
+                "SearchTotal" .SearchTotal
+                "SearchWithinTotal" .SearchWithinTotal
+                }}
             {{ end }}
+
+            {{ if ne .View "" }}
+                {{ range $idx,$view := .Views }}
+                    {{ if eq $view.Key $.View }}
+                        {{ $data.SET
+                        "Paginate" $view.Paginate
+                        "PageIndex" $view.PageIndex
+                        "PageNumber" $view.PageNumber
+                        "TotalPages" $view.TotalPages
+                        "NumPerPage" $view.NumPerPage
+                        }}
+                        {{ template "partials/njn/block/index--summary.tmpl" $data }}
+                        {{ break }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
             {{ if gt (len .Results) 0 }}
                 {{ template "partials/njn/block/index--views.tmpl" . }}
                 {{ range $idx,$view := .Views }}
