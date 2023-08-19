@@ -295,6 +295,7 @@ a.decorated[target='_blank']:after {
   line-height: var(--field--code--line-height);
 }
 
+body[data-page-format="md"] .block > .content code,
 .block > .content p > code {
   display: inline-block;
   padding: 0px 2px;
@@ -305,6 +306,11 @@ a.decorated[target='_blank']:after {
   white-space: pre;
   border: 1px solid;
   margin: var(--page--flex--gap) auto;
+}
+
+body[data-page-format="md"] .block > .content code {
+  margin: 0;
+  border: none;
 }
 
 .block > .content :not(p) > code.decorated {
