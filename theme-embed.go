@@ -1,6 +1,6 @@
-//go:build fs_theme || all
+//go:build fs_theme && !all && (drivers_fs_embed || drivers_fs || drivers || embeds)
 
-// Copyright (c) 2022  The Go-Enjin Authors
+// Copyright (c) 2023  The Go-Enjin Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,4 +16,19 @@
 
 package theme
 
-const Name = "semantic-enjin"
+import (
+	"embed"
+
+	"github.com/go-enjin/be/features/fs/themes"
+)
+
+//go:embed semantic-enjin/**
+//go:embed semantic-enjin/layouts/_default/**
+var themeFS embed.FS
+
+func Theme() themes.Feature {
+	return themes.
+		NewTagged(Name).
+		EmbedTheme(Name, themeFS).
+		Make()
+}

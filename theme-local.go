@@ -1,6 +1,6 @@
-//go:build fs_theme || all
+//go:build (fs_theme && (drivers_fs_local || drivers_fs || drivers || locals)) || all
 
-// Copyright (c) 2022  The Go-Enjin Authors
+// Copyright (c) 2023  The Go-Enjin Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,4 +16,18 @@
 
 package theme
 
-const Name = "semantic-enjin"
+import (
+	"path/filepath"
+	"runtime"
+
+	"github.com/go-enjin/be/features/fs/themes"
+)
+
+func Theme() themes.Feature {
+	_, fn, _, _ := runtime.Caller(0)
+	path, _ := filepath.Abs(filepath.Join(filepath.Dir(fn), Name))
+	return themes.
+		NewTagged(Name).
+		LocalTheme(path).
+		Make()
+}
