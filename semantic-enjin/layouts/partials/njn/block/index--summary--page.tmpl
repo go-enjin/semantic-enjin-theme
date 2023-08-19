@@ -1,0 +1,30 @@
+<aside class="search-results">
+    {{ $showing := printf "%d-%d"
+    (eval "(%d * %d) + 1" .PageIndex .NumPerPage)
+    (eval "(%d * %d) + %d" .PageIndex .NumPerPage .ResultCount)
+    }}
+
+    {{ if or .SearchResults .SearchError }}
+
+        {{ if and .SearchResults (gt .SearchTotal 0) }}
+            {{ if eq .SearchWithinTotal .TotalFound }}
+                <p>{{ _ "Showing %s of %d results (%d total)" $showing .SearchTotal .TotalFound }}</p>
+            {{ else }}
+                <p>{{ _ "Showing %s of %d results (%d filtered of %d total)" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
+            {{ end }}
+        {{ end }}
+        {{ if  .SearchError }}
+            <p>{{ _ "Search form error: %s" .SearchError }}</p>
+        {{ end }}
+
+    {{ else }}
+
+        {{ if eq .TotalFound .TotalFiltered }}
+            <p>{{ _ "Showing %s of %d" $showing .TotalFound }}</p>
+        {{ else }}
+            <p>{{ _ "Showing %s of %d (%d total)" $showing .TotalFiltered .TotalFound }}</p>
+        {{ end }}
+
+    {{ end }}
+
+</aside>
