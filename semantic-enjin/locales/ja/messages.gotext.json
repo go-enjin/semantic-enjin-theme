@@ -6,56 +6,77 @@
 			"key": "%d of %d",
 			"message": "%d of %d",
 			"translation": "%[2]dページ中の%[1]d",
-			"translatorComment": ".PageNumber .TotalPages [from: index-paginate--page.tmpl]"
+			"translatorComment": ".PageNumber .TotalPages [from: index--paginate--page.tmpl]"
 		},
 		{
 			"id": "Go to the first page",
 			"key": "Go to the first page",
 			"message": "Go to the first page",
 			"translation": "最初のページに",
-			"translatorComment": "[from: index-paginate--page.tmpl]"
+			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
 		},
 		{
 			"id": "Go to the last page",
 			"key": "Go to the last page",
 			"message": "Go to the last page",
 			"translation": "最後のページに",
-			"translatorComment": "[from: index-paginate--page.tmpl]"
+			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
 		},
 		{
 			"id": "Go to the next page",
 			"key": "Go to the next page",
 			"message": "Go to the next page",
 			"translation": "次のページに",
-			"translatorComment": "[from: index-paginate--page.tmpl]"
+			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
 		},
 		{
 			"id": "Go to the previous page",
 			"key": "Go to the previous page",
 			"message": "Go to the previous page",
 			"translation": "前のページに",
-			"translatorComment": "[from: index-paginate--page.tmpl]"
+			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
 		},
 		{
 			"id": "More",
 			"key": "More",
 			"message": "More",
 			"translation": "さらに",
-			"translatorComment": "index block pagination, asking for another batch of pages [from: index-paginate--more.tmpl]"
+			"translatorComment": "index block pagination, asking for another batch of pages [from: index--paginate--more.tmpl]"
+		},
+		{
+			"id": "No results found within %d total",
+			"key": "No results found within %d total",
+			"message": "No results found within %d total",
+			"translation": "%d中検索結果はありません",
+			"translatorComment": ".TotalFound [from: index--summary--more.tmpl]"
+		},
+		{
+			"id": "Results",
+			"key": "Results",
+			"message": "Results",
+			"translation": "結果",
+			"translatorComment": "search page results heading [from: page-search.tmpl]"
 		},
 		{
 			"id": "Search",
 			"key": "Search",
 			"message": "Search",
 			"translation": "検索",
-			"translatorComment": "main menu search field placeholder text [from: header.tmpl], screen reader only [from: header.tmpl]"
+			"translatorComment": "main menu search field placeholder text [from: header.tmpl], screen reader only [from: header.tmpl], screen reader only [from: page-search.tmpl]"
+		},
+		{
+			"id": "Search error: %s",
+			"key": "Search error: %s",
+			"message": "Search error: %s",
+			"translation": "検索エラー: %s ",
+			"translatorComment": "search error happened [from: page-search.tmpl]"
 		},
 		{
 			"id": "Search form error: %s",
 			"key": "Search form error: %s",
 			"message": "Search form error: %s",
 			"translation": "エラー修正を検索: %s",
-			"translatorComment": ".SearchError [from: index.tmpl]"
+			"translatorComment": ".SearchError [from: index--summary--more.tmpl], .SearchError [from: index--summary--page.tmpl]"
 		},
 		{
 			"id": "Select a filter",
@@ -65,11 +86,39 @@
 			"translatorComment": "[from: index.tmpl]"
 		},
 		{
-			"id": "Showing %d of %d indexed, %d total",
-			"key": "Showing %d of %d indexed, %d total",
-			"message": "Showing %d of %d indexed, %d total",
-			"translation": "表示 %d of %d インデックス化, %d トータル",
-			"translatorComment": "(len) .TotalFound .SiteContext.SiteTotalPages [from: index.tmpl]"
+			"id": "Showing %s of %d filtered, %d total",
+			"key": "Showing %s of %d filtered, %d total",
+			"message": "Showing %s of %d filtered, %d total",
+			"translation": "全 %[3]d 件中%[2]d 件はフィルターされ%[1]sを表示",
+			"translatorComment": "$showing .TotalFiltered .TotalFound [from: index--summary--more.tmpl], $showing .TotalFiltered .TotalFound [from: index--summary--page.tmpl]"
+		},
+		{
+			"id": "Showing %s of %d results, %d filtered, %d total",
+			"key": "Showing %s of %d results, %d filtered, %d total",
+			"message": "Showing %s of %d results, %d filtered, %d total",
+			"translation": "全 %[4]d 件中 %[3]d 件はフィルターされ、検索結果%[2]d件中%[1]sを表示",
+			"translatorComment": "$showing .SearchTotal .SearchWithinTotal .TotalFound [from: index--summary--more.tmpl], $showing .SearchTotal .SearchWithinTotal .TotalFound [from: index--summary--page.tmpl]"
+		},
+		{
+			"id": "Showing %s of %d results, %d total",
+			"key": "Showing %s of %d results, %d total",
+			"message": "Showing %s of %d results, %d total",
+			"translation": "全 %[3]d件、%[2]d件の中の検索結果%[1]s件を表示",
+			"translatorComment": "$showing .SearchTotal .TotalFound [from: index--summary--more.tmpl], $showing .SearchTotal .TotalFound [from: index--summary--page.tmpl]"
+		},
+		{
+			"id": "Showing %s of %d total",
+			"key": "Showing %s of %d total",
+			"message": "Showing %s of %d total",
+			"translation": "%[2]d 件の中　%[1]s 件を表示",
+			"translatorComment": "$showing .TotalFound [from: index--summary--more.tmpl], $showing .TotalFound [from: index--summary--page.tmpl]"
+		},
+		{
+			"id": "Site Search",
+			"key": "Site Search",
+			"message": "Site Search",
+			"translation": "サイト内検索",
+			"translatorComment": "title heading of search page [from: page-search.tmpl]"
 		},
 		{
 			"id": "Site theme by: %s",
@@ -77,6 +126,13 @@
 			"message": "Site theme by: %s",
 			"translation": "このサイトthemeのクリエーター: %s",
 			"translatorComment": "site theme design credit [from: footer.tmpl]"
+		},
+		{
+			"id": "all",
+			"key": "all",
+			"message": "all",
+			"translation": "すべて",
+			"translatorComment": "used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' [from: index--summary--more.tmpl]"
 		},
 		{
 			"id": "back to top",
@@ -191,6 +247,13 @@
 			"translatorComment": "[from: index.tmpl]"
 		},
 		{
+			"id": "search terms +must should -not ...",
+			"key": "search terms +must should -not ...",
+			"message": "search terms +must should -not ...",
+			"translation": "search terms +must should -not ... (ja)",
+			"translatorComment": "search field placeholder text [from: page-search.tmpl]"
+		},
+		{
 			"id": "search...",
 			"key": "search...",
 			"message": "search...",
@@ -216,7 +279,7 @@
 			"key": "top",
 			"message": "top",
 			"translation": "トップ",
-			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: index.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl]"
+			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: index.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl], [from: page-search.tmpl]"
 		}
 	]
 }
