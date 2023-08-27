@@ -15,6 +15,7 @@
 # limitations under the License.
 
 THEME_NAME := semantic-enjin
+THEME_PATH := ./${THEME_NAME}
 
 SHELL = /bin/bash
 
@@ -26,21 +27,21 @@ help:
 	@echo "# usage: make <help|build|release|tidy|local|unlocal|be-update>"
 
 build:
-	@pushd ./${THEME_NAME} > /dev/null \
+	@pushd ${THEME_PATH} > /dev/null \
 		&& make build \
 		&& popd > /dev/null
 	@echo "# build-testing ${THEME_NAME}-theme package"
 	@go build -v -tags fs_theme,locals
 
 release:
-	@pushd ./${THEME_NAME} > /dev/null \
+	@pushd ${THEME_PATH} > /dev/null \
 		&& make release \
 		&& popd > /dev/null
 	@echo "# release-testing ${THEME_NAME}-theme package"
 	@go build -v -tags fs_theme,embeds
 
 locales:
-	@pushd ./${THEME_NAME} > /dev/null \
+	@pushd ${THEME_PATH} > /dev/null \
 		&& make locales \
 		&& popd > /dev/null
 
