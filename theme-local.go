@@ -1,4 +1,4 @@
-//go:build (fs_theme && (drivers_fs_local || drivers_fs || drivers || locals)) || all
+//go:build (fs_theme && (drivers_fs_local || drivers_fs || drivers || locals) && !drivers_fs_embed && !embeds) || all
 
 // Copyright (c) 2023  The Go-Enjin Authors
 //
