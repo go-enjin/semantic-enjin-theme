@@ -14,7 +14,7 @@
 <main data-layout-view="search-single.tmpl">
     <div id="top"></div>
     {{ if isEmptyString .Content }}
-        {{ template "partials/page-search.tmpl" . }}
+        {{ template "partials/page/search.tmpl" . }}
     {{ else }}
         {{ .Content }}
     {{ end }}
