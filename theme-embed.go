@@ -23,7 +23,6 @@ import (
 )
 
 //go:embed semantic-enjin/**
-//go:embed semantic-enjin/layouts/_default/**
 var themeFS embed.FS
 
 func Theme() themes.Feature {
