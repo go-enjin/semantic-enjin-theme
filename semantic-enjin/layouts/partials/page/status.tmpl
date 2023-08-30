@@ -1,0 +1,37 @@
+{{ if eq .StatusCode 404 }}
+    {{ template "partials/page/status--404.tmpl" . }}
+{{ else if eq .StatusCode 500 }}
+    {{ template "partials/page/status--500.tmpl" . }}
+{{ else }}
+<section
+        class="block"
+        id="main-header"
+        data-block-tag="main-header"
+        data-block-type="header"
+        data-block-profile="outer--inner"
+        data-block-padding="top"
+        data-block-margins="bottom"
+        data-header-reset=""
+        data-header-level="1"
+        data-header-count="1">
+    <div class="content">
+        <h1>{{ .StatusCode }} - {{ .StatusText }}</h1>
+    </div>
+</section>
+<article
+        class="block"
+        id="http-status-{{ .StatusCode }}"
+        data-block-tag="http-status-{{ .StatusCode }}"
+        data-block-type="content"
+        data-block-profile="outer--inner"
+        data-block-padding="both"
+        data-block-margins="both"
+        data-block-jump-top="true"
+        data-block-jump-link="true">
+    <div class="content">
+        <section>
+            <p>{{ .StatusText }}</p>
+        </section>
+    </div>
+</article>
+{{ end }}
