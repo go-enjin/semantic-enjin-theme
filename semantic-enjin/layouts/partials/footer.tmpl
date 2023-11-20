@@ -5,12 +5,12 @@
                 <ul>
                     {{- range $item := .SiteMenu.PrimaryFooterMenu -}}
                         <li>
-                            {{- template "partials/menu-link.tmpl" $item -}}
+                            {{- template "partials/menu/menu-link.tmpl" $item -}}
                             {{- if $item.SubMenu -}}
                                 <ul>
                                     {{- range $sub_item := $item.SubMenu -}}
                                         <li>
-                                            {{- template "partials/menu-link.tmpl" $sub_item -}}
+                                            {{- template "partials/menu/menu-link.tmpl" $sub_item -}}
                                         </li>
                                     {{- end -}}
                                 </ul>
@@ -25,12 +25,12 @@
                 <ul>
                     {{- range $item := .SiteMenu.SecondaryFooterMenu -}}
                         <li>
-                            {{- template "partials/menu-link.tmpl" $item -}}
+                            {{- template "partials/menu/menu-link.tmpl" $item -}}
                             {{- if $item.SubMenu -}}
                                 <ul>
                                     {{- range $sub_item := $item.SubMenu -}}
                                         <li>
-                                            {{- template "partials/menu-link.tmpl" $sub_item -}}
+                                            {{- template "partials/menu/menu-link.tmpl" $sub_item -}}
                                         </li>
                                     {{- end -}}
                                 </ul>
