@@ -1,0 +1,33 @@
+<article class="block user-notice"
+         data-block-tag="notice-{{ .Type }}"
+         data-block-type="notice"
+         data-block-profile="full--inner"
+         data-block-padding="none"
+         data-block-margins="none"
+         data-notice-type="{{ .Type }}"
+>
+    <div class="content">
+        {{ if .Dismiss }}
+            <input type="checkbox" name="dismiss-notice" title="{{ _ "dismiss notice" }}"/>
+        {{ end }}
+        <details open>
+            <summary>
+                {{ .Summary }}
+                {{ if gt (len .Actions) 0 }}
+                    <ul class="user-notice--actions">
+                        {{ range $idx,$action := .Actions }}
+                            <li><a href="{{ $action.Href }}">{{ $action.Text | asHTML }}</a></li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </summary>
+            {{ if gt (len .Content) 0 }}
+                <ul class="user-notice--content">
+                    {{ range $idx,$content := .Content }}
+                        <li>{{ $content }}</li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </details>
+    </div>
+</article>

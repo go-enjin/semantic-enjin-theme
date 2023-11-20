@@ -1,0 +1,7 @@
+{{ if gt (len .UserNotices) 0 }}
+    <div id="user-notices">
+        {{ range $idx,$notice := .UserNotices }}
+            {{ template "partials/notice.tmpl" $notice }}
+        {{ end }}
+    </div>
+{{ end }}
