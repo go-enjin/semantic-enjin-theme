@@ -38,7 +38,7 @@
                     {{ range $idx, $card := .Cards }}
                     <li data-card="{{ $idx }}">
                         <a href="#{{ $.Tag }}--{{ $card.Tag}}">
-                            <span class="sr-only">{{ _ "go to card number %d" (add $idx 1) /* move carousel to specific item */ }}</span>
+                            <span class="sr-only">{{ _ "go to card number %[1]d" (add $idx 1) /* move carousel to specific item */ }}</span>
                             <i class="fa-solid fa-circle"></i>
                         </a>
                     </li>
