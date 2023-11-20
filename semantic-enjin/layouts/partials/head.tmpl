@@ -3,13 +3,13 @@
     <title>
         {{- if .SiteTitleReversed -}}
             {{- .Title -}}
-            {{- if .SiteInfo.Name -}}
+            {{- if .EnjinInfo.Name -}}
                 {{- if .SiteTitleSeparator }}{{ .SiteTitleSeparator }}{{ else }}: {{ end -}}
-                {{- _ .SiteInfo.Name /* enjin site name (browser tab title) */ -}}
+                {{- _ .EnjinInfo.Name /* enjin site name (browser tab title) */ -}}
             {{ end -}}
         {{- else -}}
-            {{- if .SiteInfo.Name -}}
-                {{- _ .SiteInfo.Name /* enjin site name (browser tab title) */ -}}
+            {{- if .EnjinInfo.Name -}}
+                {{- _ .EnjinInfo.Name /* enjin site name (browser tab title) */ -}}
                 {{- if .SiteTitleSeparator }}{{ .SiteTitleSeparator }}{{ else }}: {{ end -}}
             {{ end -}}
             {{- .Title -}}
@@ -29,7 +29,7 @@
     <link href="{{ fsUrl "/favicon.ico" }}" rel="shortcut icon" type="image/x-icon"/>
     {{- end }}
     <meta property="og:title" content="{{ .Title }}"/>
-    <meta property="og:site_name" content="{{ .SiteInfo.Name }}"/>
+    <meta property="og:site_name" content="{{ .EnjinInfo.Name }}"/>
     <meta property="og:image" content="/media/logo-000.png"/>
     <meta property="og:property" content="website"/>
     <meta property="og:url" content="{{ .BaseUrl }}"/>
@@ -46,7 +46,7 @@
         <meta property="twitter:creator" content="{{ .TwitterCreator }}"/>
     {{ end -}}
     <!-- Google Locales - see: https://developers.google.com/search/blog/2011/12/new-markup-for-multilingual-content -->
-    {{- range $idx,$tag := .SiteInfo.Locales }}
+    {{- range $idx,$tag := .EnjinInfo.Locales }}
         {{- with $link := ( __ $tag.String "/err" $.Url ) }}
             {{- if ne $link "/err" }}
                 <link rel="alternate" hreflang="{{ $tag.String }}" href="{{ $link }}" />
