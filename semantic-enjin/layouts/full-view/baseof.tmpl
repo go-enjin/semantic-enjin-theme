@@ -13,6 +13,7 @@
     {{ template "partials/header.tmpl" . }}
     <main>
       <div id="top"></div>
+      {{ template "partials/notices.tmpl" . }}
       {{ .Content }}
     </main>
     {{ template "partials/footer.tmpl" . }}

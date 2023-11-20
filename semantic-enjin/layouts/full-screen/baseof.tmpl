@@ -12,6 +12,7 @@
     {{ featurePartials "body" "head" }}
     <main>
       <div id="top"></div>
+      {{ template "partials/notices.tmpl" . }}
       <article
               class="block"
               data-block-type="content"
