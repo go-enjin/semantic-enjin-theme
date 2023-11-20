@@ -58,7 +58,7 @@
                     <span style="text-align:right;">{{ .SiteSearchHitsSummary }}<br />{{ .SiteSearchPageSummary }}</span>
                 </div>
             {{- else if .SiteSearchError -}}
-                <p>{{ _ "Search error: %s" .SiteSearchError /* search error happened */ }}</p>
+                <p>{{ _ "Search error: %[1]s" .SiteSearchError /* search error happened */ }}</p>
             {{- end -}}
             <ol class="search-results" start="{{ add 1 (mul .SiteSearchPage .SiteSearchSize) }}">
                 {{- range $idx, $hit := .SiteSearchResults.Hits }}
