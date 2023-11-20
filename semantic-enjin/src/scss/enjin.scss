@@ -82,3 +82,23 @@ main {
 .d--desktop--inline-block, .d--desktop--lg--inline-block, .d--desktop--md--inline-block, .d--desktop--sm--inline-block {
   display: none;
 }
+
+/* Works on Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--page--scrollbar--fg) var(--page--scrollbar--bg);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--page--scrollbar--bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--page--scrollbar--fg);
+  border-radius: 34px;
+}
