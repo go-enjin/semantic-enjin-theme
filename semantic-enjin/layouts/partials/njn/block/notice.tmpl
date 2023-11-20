@@ -6,7 +6,7 @@
 {{ end }}
     <div class="content">
         {{- if eq .Dismiss "true" }}
-            <input type="checkbox" name="dismiss-notice"/>
+            <input type="checkbox" name="dismiss-notice" title="{{ _ "dismiss notice" }}" />
         {{- end -}}
         <details{{- if eq .Open "true" }} open{{- end -}}>
             {{- if .Summary }}
