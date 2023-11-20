@@ -17,7 +17,7 @@
             {{ else }}
                 <div><i class="fa-solid fa-angle-left"></i></div>
             {{ end }}
-            <span>{{ _ "%d of %d" .PageNumber .TotalPages }}</span>
+            <span>{{ _ "%[1]d of %[2]d" .PageNumber .TotalPages }}</span>
             {{ if ne .NextPage "" }}
                 <a title="{{ _ "Go to the next page" }}" href="{{ .NextPage }}">
                     <i class="fa-solid fa-angle-right"></i>

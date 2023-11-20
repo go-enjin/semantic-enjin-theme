@@ -5,17 +5,19 @@
         <section>
             {{ if or (gt (len .Views) 1) (.Views.HasFilters) }}
                 {{ range $idx,$view := .Views }}
-                    <div class="anchor" id="{{ $.Tag }}-{{ $view.Key }}" data-view="{{ $idx }}" data-view-present="{{ $view.Present }}" data-view-count="{{ len $.Views }}"></div>
+                    <div class="anchor" id="{{ $.Tag }}-{{ $view.Key }}" data-view="{{ $idx }}"
+                         data-view-present="{{ $view.Present }}" data-view-count="{{ len $.Views }}"></div>
                 {{ end }}
                 <nav>
                     {{ if gt (len .Views) 1 }}
                         <ul class="index-views">
                             {{ range $idx,$view := .Views }}
                                 <li data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
-                                    <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ $view.Label }}</a>
-                                    <a class="deeplink" href="{{ $view.Url }}" title="{{ _ "deeplink to %s view" $view.Label }}">
+                                    <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ _ $view.Label }}</a>
+                                    <a class="deeplink" href="{{ $view.Url }}"
+                                       title="{{ _ "deeplink to %[1]s view" $view.Label }}">
                                         <i class="fa-solid fa-link"></i>
-                                        <span class="sr-only">{{ _ "deeplink to %s view" $view.Label }}</span>
+                                        <span class="sr-only">{{ _ "deeplink to %[1]s view" $view.Label }}</span>
                                     </a>
                                 </li>
                             {{ end }}
@@ -37,7 +39,7 @@
                                             </a>
                                         {{ end }}
                                     {{ else }}
-                                        <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" />
+                                        <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}"/>
                                         <div class="dropdown">
                                             <div class="dropdown-selected">
                                                 <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="open">
@@ -86,14 +88,17 @@
                             {{ end }}
                             {{ if $.SearchEnabled }}
                                 <li class="search-filter">
-                                    <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-search-menu" {{ if $.SearchQuery }} checked{{ end }}/>
+                                    <input type="checkbox"
+                                           id="{{ $.Tag }}-{{ $view.Key }}-search-menu" {{ if $.SearchQuery }} checked{{ end }}/>
                                     <form class="search-form" method="get" action="{{ $view.SearchAction }}">
                                         <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="close-search-menu">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             <span class="sr-only">{{ _ "close the search menu" }}</span>
                                         </label>
-                                        <input type="hidden" name="nonce" value="{{ $.SearchNonce }}" />
-                                        <input type="search" name="query" class="search-query" placeholder="{{ _ "search..." }}" value="{{ $.SearchQuery | asHTMLAttr }}" />
+                                        <input type="hidden" name="nonce" value="{{ $.SearchNonce }}"/>
+                                        <input type="search" name="query" class="search-query"
+                                               placeholder="{{ _ "search..." }}"
+                                               value="{{ $.SearchQuery | asHTMLAttr }}"/>
                                         <button class="search-button">
                                             <i class="fa-solid fa-search"></i>
                                             <span class="sr-only">{{ _ "search" }}</span>

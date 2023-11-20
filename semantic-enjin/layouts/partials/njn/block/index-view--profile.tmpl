@@ -2,12 +2,15 @@
     {{ range $idx,$page := .Results }}
         <li>
             {{ if $page.Context.ThumbnailUrl -}}
-                <img src="{{ fsUrl $page.Context.ThumbnailUrl }}" alt="{{ _ $page.Context.ThumbnailAlt }}" />
+                <img src="{{ fsUrl $page.Context.ThumbnailUrl }}" alt="{{ _ $page.Context.ThumbnailAlt }}"/>
             {{ else }}
-                <img src="{{ fsUrl "/media/transparent--resting.png" }}" alt="{{ _ "page thumbnail image placeholder" }}" />
+                <img src="{{ fsUrl "/media/transparent--resting.png" }}"
+                     alt="{{ _ "page thumbnail image placeholder" }}"/>
             {{- end }}
             <div>
-                <a class="decorated" href="{{ __ $page.Language $page.Url }}">{{ $page.Title }}</a>
+                <a class="decorated"
+                   href="{{ __ $page.Language $page.Url }}"><span>{{ $page.Title }}</span>{{ if $page.Context.ReadingMinutes }}
+                <span>{{ $page.Context.ReadingMinutes }}</span>{{ end }}</a>
                 {{ if $page.Description }}<p>{{ $page.Description }}</p>{{ end }}
             </div>
         </li>

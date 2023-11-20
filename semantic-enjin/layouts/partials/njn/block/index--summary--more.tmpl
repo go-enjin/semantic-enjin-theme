@@ -9,27 +9,27 @@
 
     {{ if eq .ResultCount 0 }}
 
-        <p>{{ _ "No results found within %d total" .TotalFound }}</p>
+        <p>{{ _ "No results found within %[1]d total" .TotalFound }}</p>
 
     {{ else if or .SearchResults .SearchError }}
 
         {{ if and .SearchResults (gt .SearchTotal 0) }}
             {{ if eq .SearchWithinTotal .TotalFound }}
-                <p>{{ _ "Showing %s of %d results, %d total" $showing .SearchTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %[1]s of %[2]d results, %[3]d total" $showing .SearchTotal .TotalFound }}</p>
             {{ else }}
-                <p>{{ _ "Showing %s of %d results, %d filtered, %d total" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
+                <p>{{ _ "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total" $showing .SearchTotal .SearchWithinTotal .TotalFound }}</p>
             {{ end }}
         {{ end }}
         {{ if  .SearchError }}
-            <p>{{ _ "Search form error: %s" .SearchError }}</p>
+            <p>{{ _ "Search form error: %[1]s" .SearchError }}</p>
         {{ end }}
 
     {{ else }}
 
         {{ if eq .TotalFound .TotalFiltered }}
-            <p>{{ _ "Showing %s of %d total" $showing .TotalFound }}</p>
+            <p>{{ _ "Showing %[1]s of %[2]d total" $showing .TotalFound }}</p>
         {{ else }}
-            <p>{{ _ "Showing %s of %d filtered, %d total" $showing .TotalFiltered .TotalFound }}</p>
+            <p>{{ _ "Showing %[1]s of %[2]d filtered, %[3]d total" $showing .TotalFiltered .TotalFound }}</p>
         {{ end }}
 
     {{ end }}
