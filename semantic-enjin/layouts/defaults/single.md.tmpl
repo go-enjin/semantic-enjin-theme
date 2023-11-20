@@ -11,9 +11,24 @@
   >
     {{ featurePartials "body" "head" }}
     {{ template "partials/header.tmpl" . }}
-    <main data-layout-view="baseof.tmpl">
+    <main data-layout-view="defaults/single.md.tmpl">
       <div id="top"></div>
-      {{ .Content }}
+      {{ template "partials/notices.tmpl" . }}
+      <article
+              class="block"
+              data-block-type="content"
+              data-block-tag="single-markdown-content"
+              data-block-profile="outer--inner"
+              data-block-margins="both"
+              data-block-padding="both"
+      >
+        <div class="content">
+          <section>
+            {{ .Content }}
+          </section>
+          <a class="jump-top" href="#top">{{ _ "top" }}</a>
+        </div>
+      </article>
     </main>
     {{ template "partials/footer.tmpl" . }}
     {{ featurePartials "body" "tail" }}

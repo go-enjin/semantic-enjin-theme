@@ -11,8 +11,9 @@
 >
 {{ featurePartials "body" "head" }}
 {{ template "partials/header.tmpl" . }}
-<main data-layout-view="search-single.tmpl">
+<main data-layout-view="defaults/search-single.tmpl">
     <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
     {{ if isEmptyString .Content }}
         {{ template "partials/page/search.tmpl" . }}
     {{ else }}

@@ -11,13 +11,24 @@
   >
     {{ featurePartials "body" "head" }}
     {{ template "partials/header.tmpl" . }}
-    <main>
-        <div id="top"></div>
-        {{ if isEmptyString .Content }}
-            {{ template "partials/page/status.tmpl" . }}
-        {{ else }}
+    <main data-layout-view="defaults/single.org.tmpl">
+      <div id="top"></div>
+      {{ template "partials/notices.tmpl" . }}
+      <article
+              class="block"
+              data-block-type="content"
+              data-block-tag="single-org-content"
+              data-block-profile="outer--inner"
+              data-block-margins="both"
+              data-block-padding="both"
+      >
+        <div class="content">
+          <section>
             {{ .Content }}
-        {{ end }}
+          </section>
+          <a class="jump-top" href="#top">{{ _ "top" }}</a>
+        </div>
+      </article>
     </main>
     {{ template "partials/footer.tmpl" . }}
     {{ featurePartials "body" "tail" }}
