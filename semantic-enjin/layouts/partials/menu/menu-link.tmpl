@@ -1,0 +1,21 @@
+{{- if .Href -}}
+    {{- if eq .Lang "" }}
+        <a href="{{- .Href -}}" title="{{ .Text }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
+            {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
+                <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
+            {{- end -}}
+        </a>
+    {{- else }}
+        <a href="{{- __ .Lang .Href -}}" title="{{ .Text }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
+            {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
+                <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
+            {{- end -}}
+        </a>
+    {{- end }}
+{{- else -}}
+    <span title="{{ .Text }}">
+        {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
+            <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
+        {{- end -}}
+    </span>
+{{- end -}}
