@@ -75,6 +75,10 @@
         {{- end -}}
     {{- end }}
 
+    {{ range $url := .Theme.Context.PageEarlyStyleSheets }}
+    <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url | unescapeHTML | asHTMLAttr }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
+    {{- end }}
+
     <link rel="stylesheet" href="{{ fsUrl "/css/semantic-enjin.css" }}"/>
 
     {{ if gt (len .Theme.RootStyles) 0 }}
