@@ -57,7 +57,7 @@ body {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -66,15 +66,15 @@ body {
 }
 
 .d--none,
-.d--mobile,                .d--mobile--lg,                .d--mobile--md,                .d--mobile--sm,
-.d--mobile--flex,          .d--mobile--lg--flex,          .d--mobile--md--flex,          .d--mobile--sm--flex,
-.d--mobile--inline-flex,   .d--mobile--lg--inline-flex,   .d--mobile--md--inline-flex,   .d--mobile--sm--inline-flex,
-.d--mobile--block,         .d--mobile--lg--block,         .d--mobile--md--block,         .d--mobile--sm--block,
-.d--mobile--inline-block,  .d--mobile--lg--inline-block,  .d--mobile--md--inline-block,  .d--mobile--sm--inline-block,
-.d--desktop,               .d--desktop--lg,               .d--desktop--md,               .d--desktop--sm,
-.d--desktop--flex,         .d--desktop--lg--flex,         .d--desktop--md--flex,         .d--desktop--sm--flex,
-.d--desktop--inline-flex,  .d--desktop--lg--inline-flex,  .d--desktop--md--inline-flex,  .d--desktop--sm--inline-flex,
-.d--desktop--block,        .d--desktop--lg--block,        .d--desktop--md--block,        .d--desktop--sm--block,
+.d--mobile, .d--mobile--lg, .d--mobile--md, .d--mobile--sm,
+.d--mobile--flex, .d--mobile--lg--flex, .d--mobile--md--flex, .d--mobile--sm--flex,
+.d--mobile--inline-flex, .d--mobile--lg--inline-flex, .d--mobile--md--inline-flex, .d--mobile--sm--inline-flex,
+.d--mobile--block, .d--mobile--lg--block, .d--mobile--md--block, .d--mobile--sm--block,
+.d--mobile--inline-block, .d--mobile--lg--inline-block, .d--mobile--md--inline-block, .d--mobile--sm--inline-block,
+.d--desktop, .d--desktop--lg, .d--desktop--md, .d--desktop--sm,
+.d--desktop--flex, .d--desktop--lg--flex, .d--desktop--md--flex, .d--desktop--sm--flex,
+.d--desktop--inline-flex, .d--desktop--lg--inline-flex, .d--desktop--md--inline-flex, .d--desktop--sm--inline-flex,
+.d--desktop--block, .d--desktop--lg--block, .d--desktop--md--block, .d--desktop--sm--block,
 .d--desktop--inline-block, .d--desktop--lg--inline-block, .d--desktop--md--inline-block, .d--desktop--sm--inline-block {
   display: none;
 }
