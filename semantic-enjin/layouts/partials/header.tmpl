@@ -1,44 +1,35 @@
 <input type="checkbox" name="side-menu" id="side-menu"/>
 {{- if .SiteSearchPath }}
-<input type="checkbox" name="search-menu" id="search-menu"/>
+    <input type="checkbox" name="search-menu" id="search-menu"/>
 {{- end }}
-<input type="radio" name="main-menu" id="menu-close" checked=""/>
+{{ $noActiveItems := true }}
+
+<input type="radio" name="main-menu" id="menu-close" checked/>
+
 {{- if .SiteMenu.MainMenu -}}
-    {{- range $i, $item := .SiteMenu.MainMenu }}
-        <input type="radio" name="main-menu" id="menu-{{- add $i 1 -}}"/>
-        {{- if $item.SubMenu -}}
-            {{- range $j, $sub_item := $item.SubMenu }}
-                <input type="radio" name="main-menu" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}"/>
-                {{- if $sub_item.SubMenu -}}
-                    {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
-                        <input type="radio" name="main-menu" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}"/>
-                        {{- if $sub_sub_item.SubMenu -}}
-                            {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
-                                <input type="radio" name="main-menu" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{ add $l 1 }}"/>
-                            {{- end -}}
-                        {{- end -}}
-                    {{- end -}}
-                {{- end -}}
-            {{- end -}}
-        {{- end -}}
-    {{- end -}}
+    {{- template "partials/menu/menu-inputs.tmpl" (dict $ "MenuKey" "main-menu" "Menu" .SiteMenu.MainMenu ) -}}
 {{- end -}}
-<header class="masthead">
+
+<header class="masthead"
+        {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
+        {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
+>
     <div class="banner page-column">
         <div class="brand">
-            <a class="site-home" href="{{ __ "/" }}">
-                {{- if or .SiteLogoUrl .SiteInfo.Name .SiteInfo.TagLine }}
-                {{- if .SiteLogoUrl }}
-                    <span class="site-logo"><img src="{{- fsUrl .SiteLogoUrl -}}" alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
-                {{- end }}
-                <div class="brand--copy">
-                    {{- if .SiteInfo.Name }}
-                        <span class="site-name">{{- _ .SiteInfo.Name /* enjin site name */ -}}</span>
+            <a class="site-home" href="{{ __ .HomePath }}">
+                {{- if or .SiteLogoUrl .EnjinInfo.Name .EnjinInfo.TagLine }}
+                    {{- if .SiteLogoUrl }}
+                        <span class="site-logo"><img src="{{- fsUrl .SiteLogoUrl -}}"
+                                                     alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
                     {{- end }}
-                    {{- if .SiteInfo.TagLine }}
-                        <span class="site-tag-line"><small>{{ _ .SiteInfo.TagLine /* enjin site tag-line */ }}</small></span>
-                    {{- end }}
-                </div>
+                    <div class="brand--copy">
+                        {{- if .EnjinInfo.Name }}
+                            <span class="site-name">{{- _ .EnjinInfo.Name /* enjin site name */ -}}</span>
+                        {{- end }}
+                        {{- if .EnjinInfo.TagLine }}
+                            <span class="site-tag-line"><small>{{ _ .EnjinInfo.TagLine /* enjin site tag-line */ }}</small></span>
+                        {{- end }}
+                    </div>
                 {{- end }}
             </a>
         </div>
@@ -47,74 +38,35 @@
                     {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
                     {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
             >
-                <label for="side-menu" id="side-close--label"><span class="sr-only">{{ _ "close side menu" /* screen reader only */ }}</span></label>
-                <label for="menu-close" id="menu-close--label"><span class="sr-only">{{ _ "close main menu" /* screen reader only */ }}</span></label>
+                <label for="side-menu" id="side-close--label"><span
+                            class="sr-only">{{ _ "close side menu" /* screen reader only */ }}</span></label>
+                <label for="menu-close" id="menu-close--label"><span
+                            class="sr-only">{{ _ "close main menu" /* screen reader only */ }}</span></label>
 
                 <nav>
                     <ol>
                         {{ if .SiteMenu.MainMenu }}
-                        {{- range $i, $item := .SiteMenu.MainMenu }}
-                            <li class="menu-item" id="menu-item-{{- add $i 1 -}}">
-                                <label class="{{- if $item.SubMenu -}}parent{{- else -}}child{{- end -}}" for="menu-{{- add $i 1 -}}" id="menu-item-{{- add $i 1 -}}--label">
-                                    {{ template "partials/menu-link.tmpl" $item }}
-                                </label>
-                                {{- if $item.SubMenu }}
-                                    <label class="close" for="menu-close" id="menu-item-{{- add $i 1 -}}--close">
-                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
-                                    </label>
-                                    <ol class="sub-menu">
-                                        {{- range $j, $sub_item := $item.SubMenu }}
-                                            <li class="menu-item" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}">
-                                                <label class="{{- if $sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}" for="menu-{{- add $i 1 -}}-{{- add $j 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}--label">
-                                                    {{ template "partials/menu-link.tmpl" $sub_item }}
-                                                </label>
-                                                {{- if $sub_item.SubMenu }}
-                                                    <label class="close" for="menu-{{- add $i 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}--close">
-                                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
-                                                    </label>
-                                                    <ol class="sub-menu">
-                                                        {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
-                                                            <li class="menu-item" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}">
-                                                                <label class="{{- if $sub_sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}" for="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--label">
-                                                                    {{ template "partials/menu-link.tmpl" $sub_sub_item }}
-                                                                </label>
-                                                                {{- if $sub_sub_item.SubMenu }}
-                                                                    <label class="close" for="menu-{{- add $i 1 -}}-{{- add $j 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--close">
-                                                                        <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
-                                                                    </label>
-                                                                    <ol class="sub-menu">
-                                                                        {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
-                                                                            <li class="menu-item" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}">
-                                                                                <label class="child" for="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}" id="menu-item-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}--label">
-                                                                                    {{ template "partials/menu-link.tmpl" $sub_sub_sub_item }}
-                                                                                </label>
-                                                                            </li>
-                                                                        {{- end }}
-                                                                    </ol>
-                                                                {{- end }}
-                                                            </li>
-                                                        {{- end }}
-                                                    </ol>
-                                                {{- end }}
-                                            </li>
-                                        {{- end }}
-                                    </ol>
-                                {{- end }}
-                            </li>
-                        {{- end }}
+                            {{ $lastItemIdx := (sub (len .SiteMenu.MainMenu) 1) }}
+                            {{- range $i,$item := .SiteMenu.MainMenu }}
+                                {{ if $item.Text }}
+                                    {{- template "partials/menu/menu-controls.tmpl" (dict $ "Idx" $i "Item" $item "LastIdx" $lastItemIdx) -}}
+                                {{ end }}
+                            {{- end }}
                         {{ end }}
-                        {{ if gt (len .SiteInfo.Locales) 1 }}
+                        {{ if gt (len .EnjinInfo.Locales) 1 }}
                             <li class="menu-item">
                                 <div class="language-switcher">
-                                    {{ range $idx,$tag := .SiteInfo.Locales }}
+                                    {{ range $idx,$tag := .EnjinInfo.Locales }}
                                         {{ if cmpLang $tag $.Request.Language }}
-                                            {{ if cmpLang $tag $.SiteInfo.DefaultLang }}
-                                                <a class="selected" href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
+                                            {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
+                                                <a class="selected"
+                                                   href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
-                                                <a class="selected" href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a class="selected"
+                                                   href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ end }}
                                         {{ else }}
-                                            {{ if cmpLang $tag $.SiteInfo.DefaultLang }}
+                                            {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
                                                 <a href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
                                                 <a href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
@@ -129,23 +81,25 @@
 
                 <div class="controls">
                     {{- if .SiteSearchPath }}
-                    <div class="search">
-                        <form method="get" action="{{ __ .SiteSearchPath }}">
-                            <input type="hidden" name="nonce" value="{{ Nonce "site-search-form" }}" />
-                            <input type="text" name="query" placeholder="{{ _ "Search" /* main menu search field placeholder text */ }}" value="{{ .SiteSearchQuery }}" />
-                            <button type="submit" value="submit">
-                                <i class="fas fa-search"></i>
-                                <span class="sr-only">{{ _ "Search" /* screen reader only */ }}</span>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="search--toggle">
-                        <label for="search-menu" id="search-menu--label">
-                            <i class="fa-solid fa-search closed"></i>
-                            <i class="fa-solid fa-xmark opened"></i>
-                            <span class="sr-only">{{ _ "toggle search" /* screen reader only, show/hide search menu */ }}</span>
-                        </label>
-                    </div>
+                        <div class="search">
+                            <form method="get" action="{{ __ .SiteSearchPath }}">
+                                <input type="hidden" name="nonce" value="{{ Nonce "site-search-form" }}"/>
+                                <input type="search" name="query"
+                                       placeholder="{{ _ "Search" /* main menu search field placeholder text */ }}"
+                                       value="{{ .SiteSearchQuery }}"/>
+                                <button type="submit" value="submit">
+                                    <i class="fas fa-search"></i>
+                                    <span class="sr-only">{{ _ "Search" /* screen reader only */ }}</span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="search--toggle">
+                            <label for="search-menu" id="search-menu--label">
+                                <i class="fa-solid fa-search closed"></i>
+                                <i class="fa-solid fa-xmark opened"></i>
+                                <span class="sr-only">{{ _ "toggle search" /* screen reader only, show/hide search menu */ }}</span>
+                            </label>
+                        </div>
                     {{- end }}
                     <div class="side-menu--toggle">
                         <label for="side-menu" id="side-menu--label">
