@@ -56,38 +56,6 @@
     {{- if .Canonical }}
         <link rel="canonical" href="{{ .Canonical }}"/>
     {{ end -}}
-    {{- if .SiteLoadingEffect }}
-        <style>
-            @keyframes loading {
-                from {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                50% {
-                    opacity: 0.5;
-                }
-                to {
-                    opacity: 0;
-                    visibility: hidden;
-                    display: none;
-                }
-            }
-
-            body::after {
-                content: "";
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background: #ffffff;
-                z-index: 1000;
-                animation: loading 0.34s 0.54s;
-                animation-fill-mode: forwards;
-            }
-        </style>
-    {{ end -}}
 
     {{ range $url := .Theme.Context.PageFontStyleSheets }}
     <link rel="stylesheet" href="{{ if isUrl $url }}{{ $url | unescapeHTML | asHTMLAttr }}{{ else }}{{ fsUrl $url }}{{ end }}"/>
