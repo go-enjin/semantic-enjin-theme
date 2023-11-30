@@ -61,7 +61,7 @@
                             {{- end }}
                         {{ end }}
                         {{ if gt (len .EnjinInfo.Locales) 1 }}
-                            <li class="menu-item">
+                            <li class="menu-item menu-item--locale">
                                 <div class="language-switcher">
                                     {{ range $idx,$tag := .EnjinInfo.Locales }}
                                         {{ if cmpLang $tag $.Request.Language }}
