@@ -51,11 +51,15 @@ tidy:
 local:
 	@echo "# go.mod local: github.com/go-enjin/be"
 	@enjenv go-local
+	@echo "# go.mod local: github.com/go-enjin/golang-org-x-text"
+	@enjenv go-local github.com/go-enjin/golang-org-x-text ../golang-org-x-text
 	@go mod tidy
 
 unlocal:
 	@echo "# go.mod unlocal: github.com/go-enjin/be"
 	@enjenv go-unlocal
+	@echo "# go.mod unlocal: github.com/go-enjin/golang-org-x-text"
+	@enjenv go-unlocal github.com/go-enjin/golang-org-x-text
 	@go mod tidy
 
 be-update: export GOPROXY=direct
