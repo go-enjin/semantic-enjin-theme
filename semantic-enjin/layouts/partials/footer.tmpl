@@ -51,21 +51,24 @@
                     </span>
                 </div>
             {{- end -}}
-            {{- if .Theme.Authors }}
+
+            {{- if and (not .OmitThemeAuthors) .Theme.Authors }}
                 {{ range $author := .Theme.Authors }}
-                    <div class="center" style="font-size:xx-small;">
-                        {{ if $author.Homepage -}}
-                        <a href="{{ $author.Homepage }}" target="_blank">
-                            {{- end -}}
-                            {{- if $author.Name -}}
-                                <span>{{- _ "Site theme by: %[1]s" $author.Name /* site theme design credit */ -}}</span>
-                            {{- else if $author.Homepage -}}
-                                <span>{{- _ "Site theme by: %[1]s" $author.Homepage /* site theme design credit */ -}}</span>
-                            {{- end -}}
-                            {{- if $author.Homepage }}
-                        </a>
-                        {{- end -}}
-                    </div>
+                    {{ if $author.Homepage }}
+                        <div class="center" style="font-size:xx-small;">
+                            <a href="{{ $author.Homepage }}" target="_blank">
+                                {{- if $author.Name -}}
+                                    <span>{{- _ "Theme by: %[1]s" $author.Name /* site theme design credit */ -}}</span>
+                                {{- else -}}
+                                    <span>{{- _ "Theme by: %[1]s" $author.Homepage /* site theme design credit */ -}}</span>
+                                {{- end -}}
+                            </a>
+                        </div>
+                    {{ else if $author.Name }}
+                        <div class="center" style="font-size:xx-small;">
+                            <span>{{- _ "Theme by: %[1]s" $author.Name /* site theme design credit */ -}}</span>
+                        </div>
+                    {{ end }}
                 {{- end -}}
             {{- end -}}
         </nav>
