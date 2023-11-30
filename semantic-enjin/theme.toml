@@ -8,6 +8,21 @@ homepage = "https://go-enjin.github.io/"
     name = "The Go-Enjin Team"
     homepage = "https://go-enjin.github.io"
 
+[supports]
+    locales = ["en", "ja"]
+[[supports.menus]]
+    key = "main-menu"
+    name = "Main"
+    area = "page-header"
+[[supports.menus]]
+    key = "primary-footer-menu"
+    name = "Primary Footer"
+    area = "page-footer"
+[[supports.menus]]
+    key = "secondary-footer-menu"
+    name = "Secondary Footer"
+    area = "page-footer"
+
 [fontawesome]
     classes = ["fontawesome", "brands", "solid", "regular"]
     # solid = "/fontawesome-free-6.2.0-web/css/solid.css"
