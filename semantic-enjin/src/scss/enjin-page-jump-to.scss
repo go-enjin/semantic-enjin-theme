@@ -29,7 +29,7 @@
 .jump-to.top:after {
   font-weight: var(--fa-solid--font-weight);
   font-family: var(--fa-solid--font-family);
-  content:     var(--icon--jumptop--content);
+  content: var(--icon--jumptop--content);
 }
 
 .jump-link {
@@ -48,8 +48,8 @@
 .jump-link:after {
   font-weight: var(--fa-solid--font-weight);
   font-family: var(--fa-solid--font-family);
-  content:     var(--icon--link--content);
-  font-size:   var(--page--h3--font-size);
+  content: var(--icon--link--content);
+  font-size: var(--page--h3--font-size);
   line-height: var(--page--h3--line-height);
 }
 
@@ -66,6 +66,50 @@
   position: absolute;
   bottom: var(--page--flex--gap--sm);
   right: var(--page--flex--gap--sm);
+}
+
+
+ul#page-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  list-style: none;
+
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 64px;
+
+  z-index: var(--z--page--nav);
+
+  & > li > form > :is(.button,button) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 24px;
+
+    color: var(--style--fg);
+    background-color: var(--style--bg);
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    &:hover, &:focus, &:active, &:visited {
+
+      opacity: 0.77;
+
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
