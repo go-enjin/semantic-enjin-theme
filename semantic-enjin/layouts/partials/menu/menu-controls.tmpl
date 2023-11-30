@@ -1,68 +1,46 @@
-<li class="menu-item{{ if $.Item.SubMenu }} parent{{ end }}{{ if $.Item.Href }} linked{{ end }}{{- if and (ne $.Item.Image "") (ne $.Item.ImgAlt "") }} with-image{{ end }}"
-    id="menu-item-{{- add $.Idx 1 -}}">
+<li id="menu-item-{{- add $.Idx 1 -}}" class="menu-item{{ if $.Item.SubMenu }} parent{{ end }}{{ if $.Item.Href }} linked{{ end }}{{- if and (ne $.Item.Image "") (ne $.Item.ImgAlt "") }} with-image{{ end }}">
     {{- if not $.Item.SubMenu }}
         {{- template "partials/menu/menu-label-link.tmpl" $.Item -}}
     {{- else }}
-        <label class="parent{{ if $.Item.Active }} active{{ end }}"
-               for="menu-{{- add $.Idx 1 -}}"
-               id="menu-item-{{- add $.Idx 1 -}}--label">
+        <label class="parent{{ if $.Item.Active }} active{{ end }}" for="menu-{{- add $.Idx 1 -}}"id="menu-item-{{- add $.Idx 1 -}}--label">
             {{ template "partials/menu/menu-link.tmpl" $.Item }}
         </label>
-        <label class="close parent{{ if $.Item.Active }} active{{ end }}"
-               for="menu-close"
-               id="menu-item-{{- add $.Idx 1 -}}--close">
+        <label class="close parent{{ if $.Item.Active }} active{{ end }}" for="menu-close" id="menu-item-{{- add $.Idx 1 -}}--close">
             <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
         </label>
         <ol class="sub-menu{{ if eq $.Idx $.LastIdx }} last{{ end }}">
             {{- if and (ne $.Item.Image "") (ne $.Item.ImgAlt "") -}}
-                <li class="top-item--image"
-                    style="--menu-item--image: url({{ $.Item.Image }});"
-                    title="{{ $.Item.ImgAlt }}">
-                </li>
+                <li class="top-item--image" style="--menu-item--image: url({{ $.Item.Image }});" title="{{ $.Item.ImgAlt }}"></li>
             {{- end -}}
             {{- range $j, $sub_item := $.Item.SubMenu }}
-                <li class="menu-item{{ if gt (len $sub_item.SubMenu) 0 }} parent{{ end }}{{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") }} with-image{{ end }}"
-                    id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}">
+                <li id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}" class="menu-item{{ if gt (len $sub_item.SubMenu) 0 }} parent{{ end }}{{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") }} with-image{{ end }}">
                     {{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") -}}
-                        <div class="menu-item--image"
-                             style="--menu-item--image: url({{ $sub_item.Image }});"
-                             title="{{ $sub_item.ImgAlt }}">
-                        </div>
+                        <div class="menu-item--image" style="--menu-item--image: url({{ $sub_item.Image }});" title="{{ $sub_item.ImgAlt }}"></div>
                     {{- end -}}
                     {{- if not $sub_item.SubMenu }}
                         {{- template "partials/menu/menu-label-link.tmpl" $sub_item -}}
                     {{- else }}
-                        <label class="{{- if $sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}{{ if $sub_item.Active }} active{{ end }}"
-                               for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}"
-                               id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}--label">
+                        <label class="{{- if $sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}{{ if $sub_item.Active }} active{{ end }}" for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}--label">
                             {{ template "partials/menu/menu-link.tmpl" $sub_item }}
                         </label>
-                        <label class="close{{ if $sub_item.Active }} active{{ end }}"
-                               for="menu-{{- add $.Idx 1 -}}"
-                               id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}--close">
+                        <label class="close{{ if $sub_item.Active }} active{{ end }}" for="menu-{{- add $.Idx 1 -}}" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}--close">
                             <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
                         </label>
                         <ol class="sub-menu">
                             {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
-                                <li class="menu-item"
-                                    id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}">
+                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}">
                                     {{- if not $sub_sub_item.SubMenu }}
                                         {{- template "partials/menu/menu-label-link.tmpl" $sub_sub_item -}}
                                     {{- else }}
-                                        <label class="{{- if $sub_sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}{{ if $sub_sub_item.Active }} active{{ end }}"
-                                               for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}"
-                                               id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--label">
+                                        <label class="{{- if $sub_sub_item.SubMenu -}}parent{{- else -}}child{{- end -}}{{ if $sub_sub_item.Active }} active{{ end }}" for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--label">
                                             {{ template "partials/menu/menu-link.tmpl" $sub_sub_item }}
                                         </label>
-                                        <label class="close{{ if $sub_sub_item.Active }} active{{ end }}"
-                                               for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}"
-                                               id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--close">
+                                        <label class="close{{ if $sub_sub_item.Active }} active{{ end }}" for="menu-{{- add $.Idx 1 -}}-{{- add $j 1 -}}" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}--close">
                                             <span class="sr-only">{{ _ "close menu" /* screen reader only */ }}</span>
                                         </label>
                                         <ol class="sub-menu">
                                             {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
-                                                <li class="menu-item"
-                                                    id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}">
+                                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}">
                                                     {{- template "partials/menu/menu-label-link.tmpl" $sub_sub_sub_item -}}
                                                 </li>
                                             {{- end }}

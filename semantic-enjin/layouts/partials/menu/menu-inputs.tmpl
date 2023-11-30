@@ -1,24 +1,14 @@
 {{- range $i, $item := .Menu }}
-    <input type="radio" style="display:none;"
-           name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}"
-    />
+    <input type="radio" style="display:none;" name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}" {{ if $item.Active }}class="active"{{ end }}/>
     {{- if $item.SubMenu -}}
         {{- range $j, $sub_item := $item.SubMenu }}
-            <input type="radio" style="display:none;"
-                   name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}"
-            />
+            <input type="radio" style="display:none;" name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}" {{ if $sub_item.Active }}class="active"{{ end }}/>
             {{- if $sub_item.SubMenu -}}
                 {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
-                    <input type="radio" style="display:none;"
-                           name="{{ $.MenuKey }}"
-                           id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}"
-                    />
+                    <input type="radio" style="display:none;" name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}" {{ if $sub_sub_item.Active }}class="active"{{ end }}/>
                     {{- if $sub_sub_item.SubMenu -}}
                         {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
-                            <input type="radio" style="display:none;"
-                                   name="{{ $.MenuKey }}"
-                                   id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{ add $l 1 }}"
-                            />
+                            <input type="radio" style="display:none;" name="{{ $.MenuKey }}" id="menu-{{- add $i 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{ add $l 1 }}" {{ if $sub_sub_sub_item.Active }}class="active"{{ end }}/>
                         {{- end -}}
                     {{- end -}}
                 {{- end -}}
