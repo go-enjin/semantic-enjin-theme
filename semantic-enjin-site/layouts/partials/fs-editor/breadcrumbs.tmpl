@@ -1,0 +1,44 @@
+<ul class="editor--breadcrumbs">
+    <li class="breadcrumb root" title="{{ _ "go to the top-level of editing %[1]s" .EditorFeatureKey }}">
+        <a href="{{ .EditorFeaturePath }}">{{ .EditorFeatureKey }}</a>
+    </li>
+    {{ if .EditFSID }}
+        <li class="breadcrumb fs-separator"><span>&gt;</span></li>
+        <li class="breadcrumb fsid"
+            title="{{ _ "go to the %[1]s %[2]s filesystem" .EditorFeatureKey .EditFSID }}">
+            <a href="{{ .EditorFeaturePath }}/{{ .EditFSID }}">{{ .EditFSID }}</a>
+        </li>
+        {{ if or .EditCode .EditLang }}
+            <li class="breadcrumb fs-separator"><span>://</span></li>
+            {{ $code := .EditLang }}
+            {{ if .EditCode }}
+                {{ $code = .EditCode }}
+            {{ end }}
+            <li class="breadcrumb lang"
+                title="{{ _ "go to the %[1]s %[2]s %[3]s filesystem" .EditorFeatureKey .EditFSID $code }}">
+                <a href="{{ .EditorFeaturePath }}/{{ .EditFSID }}/{{ $code }}">{{ $code }}</a>
+            </li>
+            {{ if .FileInfo }}
+                <li class="breadcrumb fs-separator"><span>/</span></li>
+                {{ template "partials/fs-editor/breadcrumbs/path.tmpl" (dict
+                "EditorFeaturePath" .EditorFeaturePath
+                "EditFSID" .EditFSID
+                "EditLang" $code
+                "FilePath" .FileInfo.EditPath
+                "IsFile" true
+                ) }}
+            {{ else if .EditPath  }}
+                {{ if ne .EditPath .EditLang }}
+                    <li class="breadcrumb fs-separator"><span>/</span></li>
+                {{ end }}
+                {{ template "partials/fs-editor/breadcrumbs/path.tmpl" (dict
+                "EditorFeaturePath" .EditorFeaturePath
+                "EditFSID" .EditFSID
+                "EditLang" $code
+                "FilePath" .EditPath
+                "IsFile" false
+                ) }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</ul>

@@ -1,0 +1,4 @@
+{{ if gt .TotalPages 1 }}
+    <input type="hidden" name=".pagination.num-per-page" value="{{ .NumPerPage }}"/>
+    <input type="hidden" name=".pagination.page-index" value="{{ .PageIndex }}"/>
+{{ end }}

@@ -1,0 +1,1 @@
+<input type="hidden" name="{{ .Name }}" value="{{ if .Value }}{{ .Value }}{{ else }}{{ Nonce .Key }}{{ end }}" />

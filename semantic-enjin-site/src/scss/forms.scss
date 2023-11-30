@@ -1,0 +1,184 @@
+// Copyright (c) 2023  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+body {
+
+  & form {
+    &.file-editor {
+      display: flex;
+      justify-content: center;
+    }
+
+
+    :is(:hover,:focus,:active,:visited):disabled,
+    :disabled,
+    .disabled {
+      cursor: auto;
+      opacity: 0.34;
+    }
+
+    & #editor-textarea,
+    & #aside-settings {
+      & :is(fieldset,.fieldset) {
+        & > legend {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+
+          width: 100%;
+
+          & > .file-name {
+            font-size: 24px;
+          }
+
+          & > .file-actions {
+            display: inline-flex;
+            align-items: center;
+
+            position: relative;
+
+            min-height: 36px;
+
+            & #file-actions-menu-underlay {
+
+              background-color: transparent;
+
+              z-index: var(--z--menus);
+            }
+
+            & #show-file-actions-picker,
+            & #hide-file-actions-picker {
+
+              cursor: pointer;
+
+            }
+
+            & #file-actions-list {
+
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-end;
+
+              & i {
+                text-shadow: 1px 1px 1px var(--color--light);
+              }
+
+            }
+
+            & #file-actions-menu {
+              position: absolute;
+
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              align-items: stretch;
+              justify-content: flex-start;
+
+              top: -2px;
+              right: 0;
+
+              min-width: 154px;
+              max-width: 177px;
+
+              background-color: var(--color--secondary);
+
+              border: 2px solid var(--color--secondary);
+              border-radius: 5px;
+
+              z-index: var(--z--menus--overlay);
+
+              overflow: hidden;
+
+              & #hide-file-actions-picker {
+                text-align: right;
+              }
+
+            }
+
+          }
+
+          #show-file-actions-menu:checked ~ #file-actions-list,
+          #show-file-actions-menu:not(:checked) ~ #file-actions-menu {
+            display: none;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  & .feature-group {
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2rem;
+
+    & > * {
+      min-width: 25%;
+      min-height: 36px;
+
+      margin-bottom: 2rem;
+    }
+
+    & > label {
+
+      min-height: auto;
+
+      margin-bottom: 0 !important;
+      padding: 0.5rem;
+
+      text-align: center;
+
+      border-top: 1px solid var(--color--secondary);
+      border-radius: 5px;
+    }
+
+    & > .feature-item {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      & > label {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 36px;
+
+        border-bottom: 1px solid var(--color--secondary);
+        border-radius: 5px;
+      }
+
+    }
+
+  }
+
+}

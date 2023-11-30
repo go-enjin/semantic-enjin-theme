@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/app-totp--setup.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Setup %[1]s" .FeatureInfo.Label) "WithBreadcrumbs" true) }}
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ `To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.` }}</p>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="authenticator"
+             data-block-tag="authenticator"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <form method="post" action="{{ .FormAction }}">
+                    {{ template "partials/common/nonces.tmpl" .Nonces }}
+                    <input type="hidden" name="provider" value="{{ .FeatureInfo.Tag }}"/>
+
+                    <fieldset class="feature-group">
+                        <legend>{{ _ "Setup and confirm authenticator app" }}</legend>
+
+                        <label for="provision-label">{{ _ "Give this provision a unique name" }}</label>
+                        <input id="provision-label" type="text" name="provision"
+                               autocomplete="false" spellcheck="false"
+                               placeholder="{{ _ "custom label" }}"
+                               value="{{ .ProvisionLabel }}"
+                        />
+
+                        <div class="totp-info">
+                            <span class="totp-instruction">{{ _ "Add the following to your authenticator app" }}</span>
+                            {{- template "partials/common/img.tmpl" (dict $
+                            "Src" .TotpQrcodeUri
+                            "Alt" (_ "authenticator qrcode")
+                            "Class" "totp-qrcode"
+                            ) -}}
+                            <a class="totp-link" href="{{ .TotpUri | asURL }}">{{ _ "App setup link" }}</a>
+                            <span class="totp-secret" title="{{ _ "Secret" }}">{{ .TotpSecret }}</span>
+                        </div>
+
+                        <label for="verify-code">{{ _ "Enter the current authenticator code" }}</label>
+                        <input id="verify-code" type="text" name="challenge"
+                               autocomplete="false" spellcheck="false"
+                               placeholder="000000"
+                        />
+
+                        <div class="form-controls">
+                            <button class="primary" type="submit" name="submit" value="setup">{{ _ "Verify app setup" }}</button>
+                            <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+                        </div>
+                    </fieldset>
+
+                </form>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

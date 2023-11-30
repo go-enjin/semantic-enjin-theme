@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/email-hotp--setup.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Setup %[1]s" .FeatureInfo.Label) "WithBreadcrumbs" true) }}
+
+    <article class="block" id="email-hotp"
+             data-block-tag="email-hotp"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <form method="post" action="{{ .FormAction }}">
+                    {{ template "partials/common/nonces.tmpl" .Nonces }}
+                    <input type="hidden" name="provider" value="{{ .FeatureInfo.Tag }}"/>
+
+                    <fieldset class="feature-group">
+
+                        {{ if .BackupEmailAddress  }}
+                            <legend>{{ _ "Awaiting confirmation" }}</legend>
+                        {{ else }}
+                            <legend>{{ _ "Enter an email address" }}</legend>
+                        {{ end }}
+
+                        <label for="provision-label">{{ _ "Give this provision a unique name" }}</label>
+                        <input id="provision-label" type="text" name="provision"
+                               autocomplete="false"
+                               spellcheck="true"
+                               value="{{ .ProvisionLabel }}"
+                        />
+
+                        {{ if .EmailAddress  }}
+                            <label for="email">{{ _ "Setting up this email" }}</label>
+                            <input id="email" type="email" name="email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   value="{{ .EmailAddress }}"
+                                   readonly
+                            />
+                            <input id="token" type="text" name="challenge"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "confirmation token" }}"
+                            />
+
+                        {{ else }}
+                            <label for="email">{{ _ "Enter email address" }}</label>
+                            <input id="email" type="email" name="email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "email address" }}"
+                            />
+                        {{ end }}
+
+                        <div class="form-controls">
+                            {{ if .EmailAddress  }}
+                                <button class="caution" type="submit" name="submit" value="setup-confirm">{{ _ "Confirm" }}</button>
+                            {{ else }}
+                                <button class="caution" type="submit" name="submit" value="setup">{{ _ "Setup" }}</button>
+                            {{ end }}
+                            <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+                        </div>
+
+                    </fieldset>
+
+                </form>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

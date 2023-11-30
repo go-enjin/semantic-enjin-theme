@@ -1,0 +1,19 @@
+{{ if ne .Cell.Msg nil }}
+    {{ if .Cell.Src.Translation.Select }}
+        {{ if .Cell.Msg.Translation.Select }}
+            {{ template "partials/fs-editor/locale-editor/cell-plural.tmpl" (dict . "Locale" .Cell.Locale "Message" .Cell.Msg "Select" .Cell.Msg.Translation.Select) }}
+        {{ else }}
+            {{ template "partials/fs-editor/locale-editor/cell-plural.tmpl" (dict . "Locale" .Cell.Locale "Message" .Cell.Src "Select" .Cell.Src.Translation.Select) }}
+        {{ end }}
+    {{ else }}
+        <input type="text" name=".tx.{{ .Cell.Locale.String }}.{{ .Cell.Src.Shasum }}"
+               class="message--translation--string"
+               placeholder="{{ _ "translation..." }}"
+               value="{{ if ne .Cell.Msg.Translation.String "" }}{{ .Cell.Msg.Translation.String }}{{ else }}{{ .Cell.Src.Translation.String }}{{ end }}"
+               spellcheck="false"
+               {{ if .LocaleInfo.ReadOnly }}disabled{{ end }}
+        />
+    {{ end }}
+{{ else }}
+    <p>{{ _ "(missing translation)" }}</p>
+{{ end }}

@@ -1,0 +1,22 @@
+{{ $parts := splitString .FilePath "/" }}
+{{ $last := sub (len $parts) 1 }}
+{{ $tmp := "" }}
+{{ range $idx,$part := $parts }}
+    {{ if eq $idx 0 }}
+        {{ $tmp = $part }}
+    {{ else }}
+        {{ $tmp = printf "%s/%s" $tmp $part }}
+    {{ end }}
+    {{ if gt $idx 0 }}
+        <li class="breadcrumb fs-separator"><span>/</span></li>
+    {{ end }}
+    {{ if and ($.IsFile) (eq $idx $last) }}
+        <li class="breadcrumb file-name" title="{{ _ "file name" }}">
+            <a href="{{ $.EditorFeaturePath }}/{{ $.EditFsid }}/{{ $.EditLang }}/{{ $tmp }}">{{ $part }}</a>
+        </li>
+    {{ else }}
+        <li class="breadcrumb file-path" title="{{ _ "file path" }}">
+            <a href="{{ $.EditorFeaturePath }}/{{ $.EditFsid }}/{{ $.EditLang }}/{{ $tmp }}">{{ $part }}</a>
+        </li>
+    {{ end }}
+{{ end }}

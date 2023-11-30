@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site/user-profile.tmpl">
+    <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
+
+    <section class="block" id="main-header"
+             data-block-tag="main-header"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="top"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h1>{{ _ "User Profile" }}</h1>
+            </header>
+        </div>
+    </section>
+
+    <section class="block" id="user"
+             data-block-tag="user"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h2 class="user-summary">
+                    {{- if .User.ProfileImage -}}
+                        <a class="profile-image" target="_blank"
+                           href="{{ .User.ProfileImage }}"
+                           title="{{ _ "view profile image in new tab" }}"
+                        >
+                        {{- template "partials/common/img.tmpl" (dict $
+                        "Src" (fsUrl .User.ProfileImage)
+                        "Alt" (_ "current profile image")
+                        ) -}}
+                        </a>
+                    {{- else -}}
+                        <span class="profile-default"><i class="fa-solid fa-user" title="{{ _ "default user image" }}"></i></span>
+                    {{- end -}}
+                    <span class="display-name">{{- if .User.DisplayName }}{{ .User.DisplayName }}{{- else }}({{ _ "unnamed" }}){{- end -}}</span>
+                    <span class="email-address">{{- .User.Email -}}</span>
+                </h2>
+            </header>
+        </div>
+    </section>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

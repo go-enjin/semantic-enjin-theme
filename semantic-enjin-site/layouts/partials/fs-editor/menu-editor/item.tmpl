@@ -1,0 +1,158 @@
+{{ $isParent := (gt (len .MenuItem.SubMenu) 0) }}
+{{ $idThis := (printf "menu--%s" .MenuTag ) }}
+{{ $idText := (printf ".menu%s.text" .MenuKey) }}
+{{ $idHref := (printf ".menu%s.href" .MenuKey) }}
+{{ $idIcon := (printf ".menu%s.icon" .MenuKey) }}
+{{ $idImage := (printf ".menu%s.image" .MenuKey) }}
+{{ $idImgAlt := (printf ".menu%s.img-alt" .MenuKey) }}
+{{ $idTarget := (printf ".menu%s.target" .MenuKey) }}
+{{ $idExpand := (printf "menu--%s--expand" .MenuTag ) }}
+{{ $nameExpand := (printf ".menu%s.expand" .MenuKey ) }}
+{{ $idExpandExtras := (printf "menu--%s--expand-extras" .MenuTag ) }}
+{{ $nameExpandExtras := (printf ".menu%s.expand-extras" .MenuKey ) }}
+<li class="edit-menu--list--item" id="{{ $idThis }}" data-menu-parent="{{ $isParent }}">
+    <input type="checkbox" id="{{ $idExpand }}" name="{{ $nameExpand }}"
+           style="display:none!important;"
+           value="true"
+           {{ if .MenuItem.Expand }}checked{{ end }}
+    />
+
+    {{ if $isParent }}
+        {{ printf `
+<style>
+#%[1]s:checked ~ ul { display: block; }
+#%[1]s:not(:checked) ~ ul { display: none; }
+#%[1]s:not(:checked) ~ div > label.expand-menu-label   { display: inline-flex; }
+#%[1]s:checked       ~ div > label.expand-menu-label   { display: none; }
+#%[1]s:not(:checked) ~ div > label.collapse-menu-label { display: none; }
+#%[1]s:checked       ~ div > label.collapse-menu-label { display: inline-flex; }
+</style>
+` $idExpand | asHTML }}
+    {{ end }}
+
+    <div class="edit-menu--list--item--inner">
+        {{ if $isParent }}
+            <label for="{{ $idExpand }}" class="expand-menu-label">
+                <i class="fa-solid fa-chevron-right"></i>
+                <span class="sr-only">{{ _ "Expand menu" }}</span>
+            </label>
+            <label for="{{ $idExpand }}" class="collapse-menu-label">
+                <i class="fa-solid fa-chevron-down"></i>
+                <span class="sr-only">{{ _ "Collapse menu" }}</span>
+            </label>
+        {{ end }}
+
+
+        <div class="edit-menu--list--item">
+            <input type="checkbox" id="{{ $idExpandExtras }}"
+                   name="{{ $nameExpandExtras }}"
+                   class="expand-menu-extras"
+                   style="display:none;"
+                   value="true"
+                   {{ if .MenuItem.ExpandExtras }}checked{{ end }}
+            />
+
+            <div class="edit-menu--list--item--inputs">
+                <input type="text" class="edit-menu--list--item--text" id="{{ $idText }}" name="{{ $idText }}"
+                       value="{{ .MenuItem.Text }}"
+                       placeholder="{{ _ "(text)" }}"
+                       title="{{ _ "menu item label" }}"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                />
+                <input type="text" class="edit-menu--list--item--href" id="{{ $idHref }}" name="{{ $idHref }}"
+                       value="{{ .MenuItem.Href }}"
+                       placeholder="{{ _ "(link)" }}"
+                       title="{{ _ "menu item link (optional)" }}"
+                       spellcheck="false"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                />
+                <div class="edit-menu--list--item--toggle--extras">
+                    <label for="{{ $idExpandExtras }}" class="expand-menu-extras-label"
+                           title="{{ _ "expand menu item extra settings" }}">
+                        <i class="fa-solid fa-square-caret-right"></i>
+                    </label>
+                    <label for="{{ $idExpandExtras }}" class="collapse-menu-extras-label"
+                           title="{{ _ "collapse menu item extra settings" }}">
+                        <i class="fa-solid fa-square-caret-down"></i>
+                    </label>
+                </div>
+            </div>
+
+            <div class="edit-menu--list--item--extras">
+                <input type="text" class="edit-menu--list--item--icon" id="{{ $idIcon }}" name="{{ $idIcon }}"
+                       value="{{ .MenuItem.Icon }}"
+                       placeholder="{{ _ "(icon class)" }}"
+                       title="{{ _ "menu item icon class (optional)" }}"
+                       spellcheck="false"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                />
+                <input type="text" class="edit-menu--list--item--image" id="{{ $idImage }}" name="{{ $idImage }}"
+                       value="{{ .MenuItem.Image }}"
+                       placeholder="{{ _ "(image url)" }}"
+                       title="{{ _ "menu item image url (optional)" }}"
+                       spellcheck="false"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                />
+                <input type="text" class="edit-menu--list--item--img-alt" id="{{ $idImgAlt }}" name="{{ $idImgAlt }}"
+                       value="{{ .MenuItem.ImgAlt }}"
+                       placeholder="{{ _ "(image alt text)" }}"
+                       title="{{ _ "menu item image alt text (optional)" }}"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                />
+                <select class="edit-menu--list--item--target" id="{{ $idTarget }}" name="{{ $idTarget }}"
+                       title="{{ _ "menu item image target (optional)" }}"
+                       {{ if .ReadOnly }}disabled{{ end }}
+                >
+                    <option value="">{{ _ "(unset)" }}</option>
+                    {{ range $idx,$target := (makeStringSlice "_self" "_blank" "_parent" "_top") }}
+                        <option value="{{ $target }}"{{ if eq $.MenuItem.Target $target }} selected{{ end }}>{{ $target }}</option>
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+
+        <div class="edit-menu--list--item--actions">
+            <!--
+             * move up
+             * move down
+             * prepend new sub-menu item
+             * remove (prompt if isParent)
+             -->
+            <button class="primary fit" type="submit" name="submit"
+                    value="{{ printf "change.menu%s.move-up" .MenuKey }}"
+                    title="{{ _ "move menu item up" }}"
+                    {{ if or (.ReadOnly) (eq .MenuPos 0) }}disabled{{ end }}
+            >
+                <i class="fa-solid fa-caret-up"></i>
+                <span class="sr-only">{{ _ "move menu item up" }}</span>
+            </button>
+            <button class="primary fit" type="submit" name="submit"
+                    value="{{ printf "change.menu%s.move-down" .MenuKey }}"
+                    title="{{ _ "move menu item down" }}"
+                    {{ if or (.ReadOnly) (eq .MenuPos .MenuLast) }}disabled{{ end }}
+            >
+                <i class="fa-solid fa-caret-down"></i>
+                <span class="sr-only">{{ _ "move menu item down" }}</span>
+            </button>
+            <button class="primary fit" type="submit" name="submit" value="{{ printf "change.menu%s.append" .MenuKey }}"
+                    title="{{ _ "add sub-menu item" }}"
+                    {{ if .ReadOnly }}disabled{{ end }}
+            >
+                <i class="fa-solid fa-plus"></i>
+                <span class="sr-only">{{ _ "add sub-menu item" }}</span>
+            </button>
+            <button class="danger fit" type="submit" name="submit" value="{{ printf "change.menu%s.delete" .MenuKey }}"
+                    title="{{ _ "delete menu item" }}"
+                    {{ if .ReadOnly }}disabled{{ end }}
+            >
+                <i class="fa-solid fa-delete-left"></i>
+                <span class="sr-only">{{ _ "delete menu item" }}</span>
+            </button>
+        </div>
+    </div>
+
+    {{ if $isParent }}
+        {{ $ctx := dict $ "TopMenu" .MenuItem.SubMenu }}
+        {{ template "partials/fs-editor/menu-editor/items.tmpl" $ctx }}
+    {{ end }}
+</li>

@@ -1,0 +1,76 @@
+{{ $locale := .Locale }}
+{{ $shasum := .Message.Shasum }}
+<div class="message--translation--select">
+    <div class="message--translation--select--arg">
+        <label for="tx--{{ $shasum }}--arg">{{ _ "Pluralize" }}</label>
+        <select id="tx--{{ $shasum }}--arg"
+                class="message--translation--select--arg"
+                name=".tx.{{ $locale }}.{{ $shasum }}.arg">
+            {{ range $idx,$placeholder := .Message.Placeholders.Numeric }}
+                <option value="{{ $placeholder.ID }}"
+                        {{- if eq $.Select.Arg $placeholder.ID }} selected{{ end -}}
+                >{{ $placeholder.ID }}</option>
+            {{ end }}
+        </select>
+        <div class="message--translation--select--cases--actions">
+
+            {{ $data := (dict $
+            "Idx" 0
+            "Locale" $locale
+            "Shasum" $shasum
+            "Message" $.Message
+            ) }}
+            {{ template "partials/fs-editor/actions/field.tmpl" (dict $data "Action" (dict
+            "Key" (printf "change.add-translation-case.%v.%v" $locale $shasum)
+            "Name" (_ "Add new plural case")
+            "Icon" "fa-solid fa-plus"
+            "Class" "important"
+            "Prompt" (_ `Add new plural translation case.`)
+            "Active" true
+            "Order" 1
+            "Dialog" "add-tx-case"
+            "IconWithName" nil
+            "Inverted" nil
+            )) }}
+
+        </div>
+    </div>
+    <div class="message--translation--select--cases">
+        {{ range $idx,$key := sortedKeys .Select.Cases }}
+            <div class="message--translation--select--cases--case">
+                <input type="text"
+                       class="message--translation--select--cases--case--key"
+                       name=".tx.{{ $locale }}.{{ $shasum }}.cases[{{ $idx }}].key"
+                       value="{{ $key }}"
+                       readonly
+                />
+                <span class="message--case--arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+                <input type="text" id="tx--{{ $shasum }}--cases--{{ $idx }}--value"
+                       class="message--translation--select--cases--case--value"
+                       name=".tx.{{ $locale }}.{{ $shasum }}.cases[{{ $idx }}].value"
+                       value="{{ index $.Select.Cases $key }}"
+                />
+
+                {{ if ne $key "other" }}
+                    <input type="hidden"
+                           name="delete-translation-case.{{ $locale }}.{{ $shasum }}.{{ $idx }}"
+                           value="{{ $key }}"
+                    />
+
+                    {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Idx" $idx "Action" (dict
+                    "Key" (printf "change.delete-translation-case.%v.%v.%v" $locale $shasum $idx)
+                    "Name" (_ "Delete this plural case")
+                    "Icon" "fa-solid fa-delete-left"
+                    "Class" "danger"
+                    "Prompt" (_ `Really delete the "%[1]s" translation case?` $key)
+                    "Active" true
+                    "Order" 1
+                    "IconWithName" false
+                    "Inverted" false
+                    )) }}
+                {{ end }}
+
+            </div>
+        {{ end }}
+    </div>
+</div>

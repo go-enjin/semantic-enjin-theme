@@ -1,0 +1,156 @@
+{{ $defLang := .EnjinInfo.DefaultLang }}
+{{ $locales := .EnjinInfo.Locales }}
+{{ range $idx,$tag := $locales }}
+    {{ printf `<style>
+#show-lang--%[1]s:not(:checked) ~ .edit-locales-table th[data-tx="%[1]s"] > .expanded,
+#show-lang--%[1]s:checked       ~ .edit-locales-table th[data-tx="%[1]s"] > .collapsed,
+#show-lang--%[1]s:not(:checked) ~ .edit-locales-table td[data-tx="%[1]s"] > *         { display: none; }
+#show-lang--%[1]s:not(:checked) ~ .edit-locales-table td[data-tx="%[1]s"]             { width: 7%%; min-width: 90px; max-width: 150px; background-color: rgba(0.68,0.68,0.68,0.34); }
+</style>` $tag.String | asHTML }}
+    <input id="show-lang--{{ $tag.String }}" type="radio" name=".matter.~.show-language" style="display:none;"
+           value="{{ $tag.String }}"
+           {{ if eq $.ReqLangTag.String $tag.String }}checked{{ end }}
+    />
+{{ end }}
+<table class="edit-locales-table">
+    <thead>
+    <th>#</th>
+    <th>{{ _ "source text" }}</th>
+    {{ range $idx,$tag := $locales }}
+        <th data-tx="{{ $tag.String }}">
+            <span class="expanded" title="{{ _ "editing the %[1]s language" (__tag $.ReqLangTag $tag) }}">
+                {{ $tag.String }}
+                <i class="show fa-solid fa-pencil"></i>
+            </span>
+            <label class="collapsed" for="show-lang--{{ $tag.String }}"
+                   title="{{ _ "click to edit the %[1]s language" (__tag $.ReqLangTag $tag) }}"
+            >
+                {{ $tag.String }}
+                <i class="show fa-solid fa-hand-point-left"></i>
+            </label>
+        </th>
+    {{ end }}
+    <th>{{ _ "actions" }}</th>
+    </thead>
+    <tbody>
+    {{ range $idx,$row := .LocalesTable }}
+        <tr>
+            <td>
+                <div class="message--index">
+                    {{- if $.Pagination -}}
+                        {{- add $.Pagination.StartItem $idx -}}
+                    {{- else -}}
+                        {{- add $idx 1 -}}
+                    {{- end -}}
+                </div>
+            </td>
+
+            {{ $firstCell := index $row 0 }}
+
+            <td data-tx="source"
+                    {{- if $firstCell.Src.TranslatorComment }}
+                        title="{{ printf "%v" $firstCell.Src.TranslatorComment }}"
+                    {{- end -}}
+            >
+                {{ if $firstCell.Src.Placeholders }}
+                    {{ with $modified := $firstCell.Src.ID }}
+                        {{ range $jdx,$placeholder := $firstCell.Src.Placeholders }}
+                            {{ $modified = rplString $modified
+                            (printf `{%s}` $placeholder.ID)
+                            (printf
+                            `<span class="message--placeholder" title="(%[1]s) %[2]s">{%[3]s}</span>`
+                            $placeholder.Type
+                            $placeholder.String
+                            $placeholder.ID
+                            ) }}
+                        {{ end }}
+                        <div class="message--translation"><p>{{ $modified | asHTML }}</p></div>
+                    {{ end }}
+                {{ else }}
+                    <div class="message--translation"><p>{{ $firstCell.Src.ID }}</p></div>
+                {{ end }}
+            </td>
+
+            {{ range $jdx,$cell := $row }}
+
+                {{ if ne $jdx 0 }}
+
+                    <td data-tx="{{ $cell.Locale.String }}">
+                        <div class="message--translation">
+
+                            {{ template "partials/fs-editor/locale-editor/cell.tmpl" (dict $ "InfoIdx" $idx "Cell" $cell) }}
+
+                        </div>
+                    </td>
+
+                {{ end }}
+
+            {{ end }}
+
+            <td class="message--translation--actions">
+                <div class="message--translation">
+                    {{ if not $.LocaleInfo.ReadOnly }}
+                        {{ if gt (len $firstCell.Src.Placeholders.Numeric) 0 }}
+                            {{ if $firstCell.Src.Translation.Select }}
+
+                                {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "InfoIdx" $idx "Idx" 0 "Action" (dict
+                                "Key" (printf "change.flatten-translation.%v" $firstCell.Src.Shasum)
+                                "Name" (_ "Convert to singular form")
+                                "Icon" "fa-solid fa-arrow-rotate-left"
+                                "Class" "caution fit"
+                                "Prompt" (_ `Convert the "%[1]s" translation to singular form from plural?` $firstCell.Src.ID)
+                                "Active" true
+                                "Order" 1
+                                "Dialog" "yesno"
+                                "Inverted" true
+                                )) }}
+
+                            {{ else }}
+
+
+                                {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "InfoIdx" $idx "Idx" 0 "Action" (dict
+                                "Key" (printf "change.pluralize-translation.%v" $firstCell.Src.Shasum)
+                                "Name" (_ "Convert to plural form")
+                                "Icon" "fa-solid fa-arrows-turn-right"
+                                "Class" "caution fit"
+                                "Prompt" (_ `Convert the "%[1]s" translation to plural form from singular?` $firstCell.Src.ID)
+                                "Active" true
+                                "Order" 1
+                                "Dialog" "yesno"
+                                "Inverted" true
+                                )) }}
+
+                            {{ end }}
+                        {{ end }}
+
+                        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "InfoIdx" $idx "Idx" 1 "Action" (dict
+                        "Key" (printf "change.copy-translation.%v" $firstCell.Src.Shasum)
+                        "Name" (_ "Copy this translation")
+                        "Icon" "fa-solid fa-clone"
+                        "Class" "important fit"
+                        "Prompt" (_ `Copy the "%[1]s" translation?` $firstCell.Src.ID)
+                        "Active" true
+                        "Order" 1
+                        "Dialog" "copy-translation"
+                        "Inverted" true
+                        )) }}
+
+                        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "InfoIdx" $idx "Idx" 2 "Action" (dict
+                        "Key" (printf "change.delete-translation.%v" $firstCell.Src.Shasum)
+                        "Name" (_ "Delete this translation")
+                        "Icon" "fa-solid fa-delete-left"
+                        "Class" "danger fit"
+                        "Prompt" (_ `Delete the "%[1]s" translation?` $firstCell.Src.ID)
+                        "Active" true
+                        "Order" 1
+                        "Dialog" "yesno"
+                        "Inverted" true
+                        )) }}
+
+                    {{ end }}
+                </div>
+            </td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>

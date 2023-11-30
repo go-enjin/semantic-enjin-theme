@@ -1,0 +1,226 @@
+{{ if .LocaleInfo.Locked }}
+    {{ template "partials/notice.tmpl" (dict
+    "Type" "warn"
+    "Summary" (_ "File is locked by another user.")
+    ) }}
+{{ end }}
+
+<section class="block" id="main-header"
+         data-block-tag="main-header"
+         data-block-type="header"
+         data-block-profile="outer--inner"
+         data-block-padding="top"
+         data-block-margins="bottom"
+         data-header-level="1"
+         data-header-count="1"
+>
+    <div class="content">
+        <header>
+            <h1>{{ _ "Locales Editor" }}</h1>
+        </header>
+    </div>
+    <nav>
+        {{ template "partials/fs-editor/breadcrumbs.tmpl" . }}
+    </nav>
+</section>
+
+{{ if .Content }}
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ .Content }}
+            </section>
+        </div>
+    </article>
+{{ end }}
+
+<form name="file-editor" method="post"
+      action="{{ .EditorFeaturePath }}/{{ .EditFSID }}{{ if .EditCode }}/{{ .EditCode }}{{ end }}"
+>
+    <input type="hidden" name="nonce" value="{{- Nonce "file-editor-form" -}}"/>
+
+    {{ `
+<style>
+#show-sidebar:checked ~ .block[data-block-type="sidebar"] #show-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] #hide-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .aside  { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .blocks {
+  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+#page-details {
+  display: none;
+}
+#pick-details-tab:checked ~ #aside-settings #details-tab-picker {
+  background-color: var(--secondary--fg);
+  color: var(--secondary--bg);
+}
+#pick-details-tab:checked ~ #aside-settings #page-details {
+  display: flex;
+}
+
+</style>
+` | asHTML }}
+
+    <input type="radio" name=".matter.~.show-sidebar" id="show-sidebar" value="true" style="display:none;"
+           {{ if eq $.ShowSidebar "true" }}checked{{ end }}
+    />
+    <input type="radio" name=".matter.~.show-sidebar" id="hide-sidebar" value="false" style="display:none;"
+           {{ if ne $.ShowSidebar "true" }}checked{{ end }}
+    />
+
+
+    {{ if .Pagination }}
+        {{ template "partials/fs-editor/pagination/inputs.tmpl" .Pagination }}
+    {{ end }}
+
+    <article class="block" id="editor-form"
+             data-block-tag="editor-form"
+             data-block-type="sidebar"
+             data-block-profile="full--outer"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+             data-sidebar-side="right"
+             data-sidebar-stack="top"
+             data-sidebar-sticky="true"
+    >
+        <div class="content">
+
+            <div class="blocks">
+
+                <article class="block" id="editor-textarea"
+                         data-block-tag="editor-textarea"
+                         data-block-type="content"
+                         data-block-profile="full--full"
+                         data-block-padding="none"
+                         data-block-margins="none"
+                         data-block-jump-top="false"
+                         data-block-jump-link="true"
+                >
+                    <div class="content">
+                        <section>
+                            <fieldset>
+                                <legend>
+                                    <span class="file-name">{{ if .LocaleInfo.Code }}{{ .LocaleInfo.Code }}{{ else }}{{ .LocaleInfo.FSID }}{{ end }}</span>
+                                    <div class="file-actions">
+                                        {{ template "partials/fs-editor/actions/menu.tmpl" (dict . "FileInfo" .LocaleInfo) }}
+                                    </div>
+                                </legend>
+                                <section>
+
+                                    <input id="show-search-field" type="checkbox" style="display:none;"
+                                            {{ if ne .Pagination.SearchQuery "" }}
+                                                checked
+                                            {{ end }}
+                                    />
+
+                                    {{ `
+<style>
+#show-search-field:checked       ~ div.search-field { display: flex; }
+#show-search-field:not(:checked) ~ div.search-field { display: none; }
+#show-search-field:not(:checked) ~ nav #show-search-field-picker { display: inline-block; }
+#show-search-field:checked       ~ nav #show-search-field-picker { display: none; }
+#show-search-field:not(:checked) ~ nav #hide-search-field-picker { display: none; }
+#show-search-field:checked       ~ nav #hide-search-field-picker { display: inline-block; }
+</style>
+` | asHTML }}
+
+                                    <nav>
+                                        <ul>
+                                            <li>
+                                                {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "InfoIdx" 0 "Idx" 0
+                                                "IconWithName" true
+                                                "Action" (dict
+                                                "Key" "change.add-translation"
+                                                "Name" (_ "Add new translation")
+                                                "Icon" "fa-solid fa-plus"
+                                                "Class" "primary fit"
+                                                "Prompt" (_ `Create a new translation?`)
+                                                "Active" true
+                                                "Order" 1
+                                                "Dialog" "create-translation"
+                                                "Inverted" true
+                                                )) }}
+                                            </li>
+                                            {{ if or (ne .Pagination.SearchQuery "") (gt .Pagination.TotalPages 1) }}
+                                                <li>
+                                                    {{ if eq .Pagination.SearchQuery "" }}
+                                                        <label id="show-search-field-picker" for="show-search-field"
+                                                               class="button primary fit">
+                                                            <i class="fa-solid fa-search"></i>
+                                                            {{ _ "Search within" }}
+                                                        </label>
+                                                        <label id="hide-search-field-picker" for="show-search-field"
+                                                               class="button primary fit">
+                                                            <i class="fa-solid fa-xmark"></i>
+                                                            {{ _ "Close search" }}
+                                                        </label>
+                                                    {{ else }}
+                                                        <button id="stop-search-field-picker" class="primary fit"
+                                                                type="submit" name="submit"
+                                                                value="search.cancel"
+                                                        >
+                                                            <i class="fa-solid fa-xmark"></i>
+                                                            {{ _ "Cancel searching" }}
+                                                        </button>
+                                                    {{ end }}
+                                                </li>
+                                            {{ end }}
+                                        </ul>
+                                    </nav>
+
+                                    {{ if or (ne .Pagination.SearchQuery "") (gt .Pagination.TotalPages 1) }}
+                                        <div class="search-field">
+                                            <input type="search" name="search.query" id="search--query"
+                                                   value="{{ .Pagination.SearchQuery }}"
+                                                   title="{{ _ "Keyword search" }}"
+                                                   placeholder="{{ _ "search..." }}"
+                                                   autocomplete="false"
+                                                   autocapitalize="none"
+                                            />
+                                            <button class="primary fit" type="submit" name="submit"
+                                                    value="search"
+                                                    title="{{ _ "Search" }}"
+                                            >
+                                                <i class="fa-solid fa-search"></i>
+                                            </button>
+                                        </div>
+                                    {{ end }}
+
+                                </section>
+                                <section>
+                                    {{ if .Pagination }}
+                                        {{ template "partials/fs-editor/pagination/summary.tmpl" .Pagination }}
+                                    {{ end }}
+                                    {{ if .LocalesTable }}
+                                        {{ template "partials/fs-editor/locale-editor/table.tmpl" . }}
+                                    {{ else }}
+                                        <div class="empty-menu-message">{{ _ "(no translations present)" }}</div>
+                                    {{ end }}
+                                    {{ if .Pagination }}
+                                        {{ template "partials/fs-editor/pagination/footer.tmpl" .Pagination }}
+                                    {{ end }}
+                                </section>
+                            </fieldset>
+                        </section>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </article>
+
+</form>

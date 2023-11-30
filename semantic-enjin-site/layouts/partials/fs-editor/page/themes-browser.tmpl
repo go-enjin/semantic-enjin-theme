@@ -1,0 +1,157 @@
+<section class="block"
+         id="main-header"
+         data-block-tag="main-header"
+         data-block-type="header"
+         data-block-profile="outer--inner"
+         data-block-padding="top"
+         data-block-margins="bottom"
+         data-header-level="1"
+         data-header-count="1"
+>
+    <div class="content">
+        <header>
+            <h1>{{ _ "%[1]s File Browser" .EditorFeatureLabel }}</h1>
+        </header>
+    </div>
+    <nav>
+        {{ template "partials/fs-editor/breadcrumbs.tmpl" . }}
+    </nav>
+</section>
+
+{{ if .Content }}
+    <article class="block"
+             id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ .Content }}
+            </section>
+        </div>
+    </article>
+{{ end }}
+
+{{- $nonce := Nonce "file-editor-form" -}}
+
+<article class="block"
+         id="browser"
+         data-block-tag="browser"
+         data-block-type="content"
+         data-block-profile="outer--inner"
+         data-block-padding="none"
+         data-block-margins="both"
+         data-block-jump-top="false"
+         data-block-jump-link="true"
+>
+    <div class="content">
+        <section>
+            <table class="file-browser">
+                <thead>
+                <tr>
+                    <th>{{ _ "Name" }}</th>
+                    <th>{{ _ "Type" }}</th>
+                    <th>{{ _ "Date" }}</th>
+                    <th>{{ _ "Actions" }}</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {{ if and (.EditFiles) (gt (len .EditFiles) 0) }}
+
+                    {{ range $idx,$info := .EditFiles }}
+                        {{ $mimeType := pruneCharset $info.MimeType }}
+                        {{ if not $mimeType }}{{ $mimeType = (_ "(unknown)") }}{{ end }}
+
+                        <tr>
+                            <td class="file-editor--entry--name">
+                                {{ if eq $mimeType "inode/directory" }}
+                                    <a class="file-browser--directory"
+                                       href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">{{ $info.Name }}</a>
+                                {{ else }}
+                                    <a class="file-browser--file"
+                                       href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">{{ $info.Name }}</a>
+                                {{ end }}
+
+                                {{ if gt (len $info.Indicators) 0 }}
+                                    <a class="file-browser--indicators"
+                                       href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">
+                                        {{ range $idx,$note := $info.Indicators }}
+                                            <i class="indicator {{ $note.Icon }}" title="{{ $note.Message }}"></i>
+                                        {{ end }}
+                                    </a>
+                                {{ end }}
+                            </td>
+
+                            <td class="file-editor--entry--mime">
+                                <a class="file-browser--mime"
+                                   href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">
+                                    {{ $mimeType }}
+                                </a>
+                            </td>
+
+                            <td class="file-editor--entry--dates">
+                                <a class="file-browser--dates"
+                                   href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">
+                                    {{ if eq $info.Created.Unix $info.Updated.Unix }}
+                                        {{ if gt $info.Created.Unix 0 }}
+                                            <span title="Created: {{ fmtDateTime $info.Created }}">
+                                                {{ fmtDate $info.Created }}
+                                            </span>
+                                        {{ else }}-{{ end }}
+                                    {{ else }}
+                                        {{ if gt $info.Updated.Unix 0 }}
+                                            <span title="Updated: {{ fmtDateTime $info.Updated }}">
+                                                {{ fmtDate $info.Updated }}
+                                            </span>
+                                        {{ else }}-{{ end }}
+                                        {{ if gt $info.Created.Unix 0 }}
+                                            <span title="Created: {{ fmtDateTime $info.Created }}">
+                                                {{ if gt $info.Updated.Unix 0 }}({{ end }}{{ fmtDate $info.Created }}{{ if gt $info.Updated.Unix 0 }}){{ end }}
+                                            </span>
+                                        {{ else }}-{{ end }}
+                                    {{ end }}
+                                </a>
+                            </td>
+
+                            <td class="file-editor--entry--actions">
+
+                                {{ template "partials/fs-editor/actions/form.tmpl" (dict $ "Info" $info "InfoIdx" $idx "Nonce" $nonce "EditTarget" $info.EditCodeDirectoryPath) }}
+
+                                {{ if eq $mimeType "inode/directory" }}
+                                    <a class="file-browser--actions--chdir"
+                                       href="{{ $.EditorFeaturePath }}/{{ $info.EditCodeFilePath }}">
+                                        {{ if eq $info.Name ".." }}
+                                            <i class="fa-solid fa-arrow-turn-up"></i>
+                                        {{ else }}
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        {{ end }}
+                                    </a>
+                                {{ end }}
+                            </td>
+
+                        </tr>
+
+                    {{ end }}
+
+                {{ else }}
+
+                    <tr>
+                        <td class="no-files-found" colspan="5">
+                            {{ _ "no files found" }}
+                        </td>
+                    </tr>
+
+                {{ end }}
+
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+</article>

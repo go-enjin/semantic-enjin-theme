@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site/dashboard.tmpl">
+    <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
+
+    <section class="block" id="main-header"
+             data-block-tag="main-header"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="top"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h1>{{ _ "Users" }}</h1>
+            </header>
+        </div>
+    </section>
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ "There are %d users in total." .TotalUsers }}</p>
+
+                {{ if .CreateUserAction }}
+                    <div style="float: right">
+                        <form method="post" action="{{ $.FormAction }}">
+                            {{ template "partials/common/nonces.tmpl" $.Nonces }}
+                            {{ template "partials/common/field.tmpl" (dict $
+                            "Idx" 0
+                            "Jdx" 0
+                            "Action" .CreateUserAction
+                            "Target" $.FormAction
+                            "Inverted" false
+                            "IconWithName" true
+                            ) }}
+                        </form>
+                    </div>
+                {{ end }}
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ _ "Enjin ID" }}</th>
+                        <th>{{ _ "Email" }}</th>
+                        <th>{{ _ "Name" }}</th>
+                        <th>{{ _ "Image" }}</th>
+                        <th>{{ _ "Actions" }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {{ range $idx,$user := .UserList }}
+                        <tr>
+                            <td class="center">{{ $user.Eid }}</td>
+                            <td class="center">{{ $user.Email }}</td>
+                            <td class="center">{{ $user.DisplayName }}</td>
+                            <td class="center">
+                                {{ if $user.ProfileImage }}
+                                <a href="{{ $user.ProfileImage }}" target="_blank" title="{{ _ "view image in new tab" }}">
+                                {{- template "partials/common/img.tmpl" (dict $
+                                "Src" (fsUrl $user.ProfileImage)
+                                "Alt" (_ "profile image")
+                                "Style" "height:20px;"
+                                ) -}}
+                                </a>
+                                {{ else }}
+                                    &mdash;
+                                {{ end }}
+                            </td>
+                            <td class="center action-group">
+                                <form method="post" action="{{ $.FormAction }}">
+                                    {{ template "partials/common/nonces.tmpl" $.Nonces }}
+                                    <input type="hidden" name="target" value="{{ $user.Eid }}" />
+                                    <div>
+                                        {{ range $jdx,$action := $user.Info.Actions }}
+                                            {{ template "partials/common/field.tmpl" (dict $
+                                            "Idx" $idx
+                                            "Jdx" $jdx
+                                            "Action" $action
+                                            "Target" $.FormAction
+                                            "Inverted" false
+                                            "IconWithName" false
+                                            ) }}
+                                        {{ end }}
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    {{ end }}
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

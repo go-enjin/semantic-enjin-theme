@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/sign-in.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Sign-In")) }}
+
+    <section class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <section>
+                <p>
+                    {{ _ "Select one of the account options to begin the sign-in process." }}
+                    {{ if .PublicSignups }}
+                        {{ _ "New accounts will be automatically created." }}
+                    {{ else if .PrivateSignups }}
+                        {{ _ "Only invited accounts may sign-in." }}
+                    {{ else }}
+                        {{ _ "Only existing accounts may sign-in." }}
+                    {{ end }}
+                </p>
+            </section>
+        </div>
+    </section>
+
+    <article class="block" id="sign-in"
+             data-block-tag="sign-in"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section class="sign-in">
+
+                    <fieldset class="feature-group" id="primary-providers">
+                        <legend>{{ _ "account options" }}</legend>
+
+                        <div class="accounts">
+                            {{ range $idx,$key := $.Providers.Keys }}
+                                {{ with $provider := $.Providers.Get $key }}
+                                    <div class="primary-account">
+                                        <form method="post" action="{{ $.FormAction }}">
+                                            {{ template "partials/common/nonces.tmpl" $.Nonces }}
+                                            <input type="hidden" name="audience" value="{{ $provider.Key }}"/>
+                                            <button class="primary" type="submit" name="submit" value="{{ $provider.Key }}">
+                                                {{ if $provider.Icon }}<i class="{{ $provider.Icon }}"></i>{{ end }}
+                                                <span>{{ $provider.Label }}</span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+
+                    </fieldset>
+
+                    {{ `<style>
+#show-backups:not(:checked) ~ #hide-backups-picker { display: none; }
+#show-backups:not(:checked) ~ #backup-providers    { display: none; }
+#show-backups:checked       ~ #show-backups-picker { display: none; }
+</style>` | asHTML }}
+                    <input id="show-backups" type="checkbox" style="display:none;"/>
+                    <label id="show-backups-picker" for="show-backups" class="backups-toggle" title="{{ _ "show backup options" }}">
+                        <i class="fa-solid fa-caret-down"></i>
+                    </label>
+                    <label id="hide-backups-picker" for="show-backups" class="backups-toggle" title="{{ _ "hide backup options" }}">
+                        <i class="fa-solid fa-caret-up"></i>
+                    </label>
+
+                    <fieldset class="feature-group" id="backup-providers">
+                        <legend>{{ _ "backup options" }}</legend>
+
+                        <div class="accounts">
+                            {{ range $idx,$key := $.BackupProviders.Keys }}
+                                {{ with $provider := $.BackupProviders.Get $key }}
+                                    <div class="backup-account">
+                                        <form method="post" action="{{ $.FormAction }}">
+                                            {{ template "partials/common/nonces.tmpl" $.Nonces }}
+                                            <input type="hidden" name="audience" value="{{ $provider.Key }}"/>
+                                            <button class="caution" type="submit" name="submit" value="{{ $provider.Key }}">
+                                                {{ if $provider.Icon }}<i class="{{ $provider.Icon }}"></i>{{ end }}
+                                                <span>{{ $provider.Label }}</span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                {{ end }}
+                            {{ end }}
+                        </div>
+
+                    </fieldset>
+
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

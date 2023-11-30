@@ -1,0 +1,11 @@
+<form id="file-editor--{{ $.InfoIdx }}" class="file-editor" name="file-editor" method="post"
+      action="{{ $.EditorFeaturePath }}/{{ $.Info.EditFilePath }}"
+>
+    <input type="hidden" name="nonce" value="{{ $.Nonce }}"/>
+    <input type="hidden" name="return" value="directory"/>
+
+    {{ range $idx,$action := $.Info.Actions }}
+        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Inverted" true "Idx" $idx "Action" $action )}}
+    {{ end }}
+
+</form>

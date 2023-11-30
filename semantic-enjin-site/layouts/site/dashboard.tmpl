@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site/dashboard.tmpl">
+    <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
+
+    <section class="block" id="main-header"
+             data-block-tag="main-header"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="top"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h1>{{ _ "Dashboard" }}</h1>
+            </header>
+        </div>
+    </section>
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ "TODO: figure out dashboard gadgets" }}</p>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

@@ -1,0 +1,269 @@
+// Copyright (c) 2023  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+body {
+
+  & .dialog {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+
+    min-width: 300px;
+    max-width: 77%;
+    min-height: 150px;
+
+    background-color: var(--style--bg);
+    color: var(--style--fg);
+
+    border-radius: 10px;
+    border: 1px solid var(--color--dark);
+
+    box-sizing: border-box;
+    box-shadow: 0 0 10px;
+
+    z-index: var(--z--menus--overlay);
+
+    overflow: hidden;
+
+    &--underlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(68, 68, 68, 0.77);
+      z-index: var(--z--menus);
+    }
+
+    & > .dialog--title {
+      display: flex;
+      flex-grow: 0;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 2rem;
+
+      padding: 0.5rem;
+
+      border-bottom: 1px dashed var(--secondary--bg);
+    }
+
+    & > .dialog--body {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      flex-grow: 2;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 7rem;
+
+      padding: 1rem;
+
+      & .dialog--tab-sentence {
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        height: 36px;
+
+        margin-bottom: 1rem;
+
+        & > span {
+
+          display: inline-flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          width: 100%;
+          height: 36px;
+
+          padding: 0 1rem;
+
+          white-space: nowrap;
+
+          border-bottom: 1px solid var(--color--primary);
+
+          &:first-of-type {
+            justify-content: right;
+          }
+
+          &:last-of-type {
+            justify-content: left;
+          }
+
+        }
+
+        & > label {
+
+          display: inline-flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          height: 36px;
+
+          margin: 0;
+          padding: 0 0.5rem;
+
+          color: var(--color--primary);
+
+          border: 1px solid var(--color--primary);
+          border-bottom: none;
+          border-radius: 5px 5px 0 0;
+
+          text-align: center;
+          line-height: 28px;
+
+        }
+
+      }
+
+      & .dialog--fields {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+
+        &.column {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        & > .dialog--fields--dst-fsid {
+          appearance: none;
+
+          width: 5rem;
+
+          text-align: right;
+        }
+
+        & > .dialog--fields--dst-lang {
+
+          width: 3.5rem;
+
+          text-align: center;
+
+        }
+
+        & > .dialog--fields--dst-path {
+          text-align: left;
+        }
+
+        & > .dialog--fields--dst-name {
+          text-align: left;
+        }
+
+        & > .dialog--fields--page-fmt {
+          color: var(--secondary--bg);
+        }
+      }
+
+      & > .dialog--fields--dst-fmt {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        margin-bottom: 1rem;
+      }
+
+    }
+
+    & > .dialog--button {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center !important;
+
+      flex-grow: 1;
+
+      width: 50%;
+
+      height: auto;
+      min-height: 36px;
+
+      color: var(--style--fg);
+      background-color: var(--style--bg);
+
+      font-size: var(--page--content--font-size);
+      font-family: var(--page--content--font-family);
+
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 0.77 !important;
+
+        cursor: pointer;
+      }
+
+      &.danger {
+        color: var(--color--light) !important;
+        background-color: var(--color--danger) !important;
+      }
+
+      &.caution {
+        color: var(--color--dark) !important;
+        background-color: var(--color--caution) !important;
+      }
+
+      &.cancel {
+        color: var(--color--light) !important;
+        background-color: var(--color--secondary) !important;
+      }
+
+      &.secondary {
+        color: var(--color--light) !important;
+        background-color: var(--color--secondary) !important;
+      }
+
+      &.primary {
+        color: var(--color--dark) !important;
+        background-color: var(--color--primary) !important;
+      }
+
+      &.important {
+        color: var(--color--dark) !important;
+        background-color: var(--color--important) !important;
+      }
+
+    }
+
+  }
+
+}

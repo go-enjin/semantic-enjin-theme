@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/backup-codes--setup.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Setup %[1]s" .FeatureInfo.Label) "WithBreadcrumbs" true) }}
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ `You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.` }}</p>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="backup-codes"
+             data-block-tag="backup-codes"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <form method="post" action="{{ .FormAction }}">
+                    {{ template "partials/common/nonces.tmpl" .Nonces }}
+                    <input type="hidden" name="provider" value="{{ .FeatureInfo.Tag }}"/>
+
+                    <fieldset class="feature-group">
+
+                        {{ if .BackupCodes  }}
+                            <legend>{{ _ "Confirm you have recorded these safely" }}</legend>
+                        {{ else }}
+                            <legend>{{ _ "Request to see new backup codes" }}</legend>
+                        {{ end }}
+
+                        <label for="provision-label">{{ _ "Give this provision a unique name" }}</label>
+                        <input id="provision-label" type="text" name="provision"
+                               autocomplete="false"
+                               spellcheck="true"
+                               value="{{ .ProvisionLabel }}"
+                        />
+
+                        {{ if .BackupCodes  }}
+
+                            <div class="backup-codes">
+                                <label for="email">{{ _ "Copy these to a secure location" }}</label>
+                                <ul>
+                                    {{ range $idx,$code := .BackupCodes }}
+                                        <li>{{ $code }}</li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+
+                        {{ end }}
+
+                        <div class="form-controls">
+                            {{ if not .BackupCodes }}
+                                <button class="primary" type="submit" name="submit" value="setup-confirm">{{ _ "Generate codes associated with the above label." }}</button>
+                            {{ else }}
+                                <button class="primary" type="submit" name="submit" value="setup">{{ _ "I confirm that I have copied these codes to a safe location." }}</button>
+                            {{ end }}
+                            <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+                        </div>
+
+                    </fieldset>
+
+                </form>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

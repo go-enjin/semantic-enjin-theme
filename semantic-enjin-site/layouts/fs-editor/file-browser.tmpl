@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="fs-editor/file-browser.tmpl">
+    <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
+
+    {{ if stringInStrings .EditorType "unsafe" "locale" "menu" "page" }}
+        {{ template "partials/fs-editor/page/default-browser.tmpl" . }}
+    {{ else if eq .EditorType "theme" }}
+        {{ template "partials/fs-editor/page/themes-browser.tmpl" . }}
+    {{ else }}
+
+        <article class="block"
+                 id="information"
+                 data-block-tag="information"
+                 data-block-type="content"
+                 data-block-profile="outer--inner"
+                 data-block-padding="none"
+                 data-block-margins="both"
+                 data-block-jump-top="false"
+                 data-block-jump-link="true"
+        >
+            <div class="content">
+                <header>
+                    <h1>{{ _ "Unsupported Editor Feature" }}</h1>
+                </header>
+                <section>
+                    {{ _ "The %[1]s theme does not support the %[2]s editor feature." .Theme.Name .EditorFeatureLabel }}
+                </section>
+            </div>
+        </article>
+
+    {{ end }}
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

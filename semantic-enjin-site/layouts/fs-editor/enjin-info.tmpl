@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="fs-editor/dashboard.tmpl">
+    <div id="top"></div>
+    {{ template "partials/notices.tmpl" . }}
+
+    <section class="block" id="main-header"
+             data-block-tag="main-header"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="top"
+             data-block-margins="bottom"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h1>{{ .EditorFeatureLabel }}</h1>
+            </header>
+        </div>
+    </section>
+
+    <article class="block" id="enjin-info"
+             data-block-tag="enjin-info"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <table class="dashboard--information">
+                    <tbody>
+                    <tr>
+                        <td>{{ _ "Server" }}</td>
+                        <td>{{ .Server }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _ "Site Name" }}</td>
+                        <td>{{ .SiteName }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _ "Site Tag" }}</td>
+                        <td>{{ .SiteTag }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _ "Default Locale" }}</td>
+                        <td>{{ .DefaultLanguage }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _ "Supported Locales" }}</td>
+                        <td>{{ joinStrings .AllLocales " " }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ _ "Language Mode" }}</td>
+                        <td>{{ _ "%[1]s based" .LanguageMode.Name }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="enjin-context"
+             data-block-tag="enjin-context"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <header><h2>{{ _ "Context" }}</h2></header>
+            <section>
+                <table class="dashboard--context">
+                    <tbody>
+                    <tr><td>1</td><td>SiteName</td><td>"{{ .EnjinInfo.Name }}"</td></tr>
+                    <tr><td>2</td><td>TagLine</td><td>"{{ .EnjinInfo.TagLine }}"</td></tr>
+                    <tr><td>3</td><td>CopyrightName</td><td>"{{ .EnjinInfo.CopyrightName }}"</td></tr>
+                    <tr><td>4</td><td>CopyrightYear</td><td>"{{ .EnjinInfo.CopyrightYear }}"</td></tr>
+                    <tr><td>5</td><td>CopyrightNotice</td><td>"{{ .EnjinInfo.CopyrightNotice }}"</td></tr>
+                    {{ $counter := 5 }}
+                    {{ range $idx,$key := sortedKeys .EnjinContext }}
+                        {{ $value := index $.EnjinContext $key }}
+                        {{ if not $value }}{{ continue }}{{ end }}
+                        {{ if stringInStrings $key
+                        "EnjinInfo" "LanguageMode" "DefaultLanguage" "DefaultLanguageTag" "PrefixLabel" "Server"
+                        "EnjinBase" "SiteTag" "SiteName" "SiteTagLine" "CurrentYear" "Year"
+                        "CopyrightName" "CopyrightYear" "CopyrightNotice"
+                        }}{{ continue }}{{ end }}
+                        <tr>
+                            <td>{{ $counter = add $counter 1 }}{{ $counter }}</td>
+                            <td>{{ $key }}</td>
+                            <td>{{ printf `"%v"` $value }}</td>
+                        </tr>
+                    {{ end }}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="enjin-features"
+             data-block-tag="enjin-features"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <header><h2>{{ _ "Features" }}</h2></header>
+            <section>
+                <table class="dashboard--features">
+                    <tbody>
+                    {{ range $idx,$feature := .EnjinFeatures.List }}
+                        <tr>
+                            <td>{{ add $idx 1 }}</td>
+                            <td>{{ $feature.Tag.String }}</td>
+                            <td>({{ $feature.BaseTag.String }})</td>
+                        </tr>
+                    {{ end }}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

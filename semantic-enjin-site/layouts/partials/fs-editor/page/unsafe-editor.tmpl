@@ -1,0 +1,83 @@
+<section class="block" id="main-header"
+         data-block-tag="main-header"
+         data-block-type="header"
+         data-block-profile="outer--inner"
+         data-block-padding="top"
+         data-block-margins="bottom"
+         data-header-level="1"
+         data-header-count="1"
+>
+    <div class="content">
+        <header>
+            <h1>{{ _ "%[1]s File Editor" .EditorFeatureLabel }}</h1>
+        </header>
+    </div>
+    <nav>
+        {{ template "partials/fs-editor/breadcrumbs.tmpl" . }}
+    </nav>
+</section>
+
+{{ if .Content }}
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ .Content }}
+            </section>
+        </div>
+    </article>
+{{ end }}
+
+{{ if .FileInfo.Locked }}
+    {{ template "partials/notice.tmpl" (dict
+    "Type" "warn"
+    "Summary" (_ "File is locked by another user.")
+    ) }}
+{{ end }}
+
+
+{{- $nonce := Nonce "file-editor-form" -}}
+{{ template "partials/fs-editor/file-editor/form-open.tmpl" (dict . "FormNonce" $nonce) }}
+
+
+<article class="block" id="editor-textarea"
+         data-block-tag="editor-textarea"
+         data-block-type="content"
+         data-block-profile="outer--outer"
+         data-block-padding="none"
+         data-block-margins="bottom"
+         data-block-jump-top="false"
+         data-block-jump-link="true"
+>
+    <div class="content">
+        <section>
+            <fieldset>
+                <legend>
+                    <span class="file-name">{{ .FileInfo.Name }}</span>
+                    <div class="file-actions">
+                        {{ template "partials/fs-editor/actions/menu.tmpl" . }}
+                    </div>
+                </legend>
+                <section>
+                    <ul>
+                        <li><label for="editor-body">{{ _ "Contents" }}</label></li>
+                        <li><textarea id="editor-body" name="body"
+                                      autocomplete="off"
+                                      spellcheck="false"
+                                      {{ if $.FileInfo.ReadOnly }}disabled{{ end }}
+                            >{{ .Body }}</textarea></li>
+                    </ul>
+                </section>
+            </fieldset>
+        </section>
+    </div>
+</article>
+
+{{ template "partials/fs-editor/file-editor/form-close.tmpl" . }}

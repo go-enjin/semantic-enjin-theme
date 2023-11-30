@@ -1,0 +1,17 @@
+{{- $depth := 0 }}{{ if .Depth }}{{ $depth = .Depth }}{{ end }}
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+{{- $language := .Language }}{{ if and (not .Language) .Page.Locale }}{{ $language = .Page.Locale.String }}{{ end }}
+{{- $matter := .Matter }}
+{{- $canCustom := false }}{{ if .IsTmplPage }}{{ $canCustom = true }}{{ end }}
+
+{{ if $canCustom }}
+    <ul class="edit-page--matter--custom" data-matter-depth="{{ $depth }}" data-read-only="{{ $readOnly }}">
+        {{ range $idx,$key := (sortedKeys $matter) }}
+            {{ if or (eq $key "~") (withinStrings $key $.Fields.SortedKeys) }}
+                {{ continue }}
+            {{ end }}
+            {{ $v := index $matter $key }}
+            {{ template "partials/fs-editor/page-editor/key-pair.tmpl" (dict $ "Depth" (add $depth 1) "ReadOnly" $readOnly "Language" $language "Key" $key "Value" $v )}}
+        {{ end }}
+    </ul>
+{{ end }}

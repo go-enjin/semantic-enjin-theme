@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/sign-in--otp--challenge.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Verify Access")) }}
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ `Your request requires additional authentication.` }}</p>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="authenticator"
+             data-block-tag="authenticator"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ if .MultiFactorKeys }}
+
+                <div class="form-panels-container">
+
+                    {{ $checked := false }}
+                    {{ range $idx,$key := .MultiFactorKeys }}
+                        {{ with $mfp := index $.MultiFactorLookup $key }}
+                                {{ printf `<style>
+#form-panel--%[1]d--tab:not(:checked) ~ .form-panels #form-panel--%[1]d { display:none; }
+#form-panel--%[1]d--tab:checked       ~ .form-panel--tabs label[for="form-panel--%[1]d--tab"] {
+  color: var(--secondary--fg);
+  background: var(--secondary--bg);
+}
+</style>` $idx | asHTML }}
+
+                                <input id="form-panel--{{ $idx }}--tab"
+                                       style="display:none;"
+                                       type="radio"
+                                       name="panel-tab"
+                                       value="{{ $mfp.Tag }}"
+                                        {{ if not $checked }}
+                                            {{ if $.ProvisionTag }}
+                                                {{ if eq $.ProvisionTag $mfp.Tag }}
+                                                    {{ $checked = true }}
+                                                    checked
+                                                {{ end }}
+                                            {{ else }}
+                                                {{ $checked = true }}
+                                                checked
+                                            {{ end }}
+                                        {{ end }}
+                                />
+                        {{ end }}
+                    {{ end }}
+
+                    <div class="form-panel--tabs">
+                        {{ range $idx,$key := .MultiFactorKeys }}
+                            {{ with $mfp := index $.MultiFactorLookup $key }}
+                                    <label for="form-panel--{{ $idx }}--tab">{{ $mfp.Label }}</label>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+
+                    <div class="form-panels">
+
+                        {{ range $idx,$key := .MultiFactorKeys }}
+                            {{ with $mfp := index $.MultiFactorLookup $key }}
+                                    <form method="post" action="{{ $.FormAction }}">
+                                        {{ template "partials/common/nonces.tmpl" $.Nonces }}
+                                        <div id="form-panel--{{ $idx }}" class="form-panel">
+                                            <input type="hidden" name="provider" value="{{ $mfp.Tag }}"/>
+
+                                            <div class="usage">{{ $mfp.Usage }}</div>
+
+                                            <div class="provisions">
+                                                {{ $checked = false }}
+                                                {{ range $jdx,$factor := $mfp.Factors }}
+                                                    {{ printf `<style>
+#factor-submit--%[1]d--%[2]d:checked + label {
+    background-color: var(--color--highlight);
+}
+</style>` $idx $jdx | asHTML }}
+                                                    <input id="factor-submit--{{ $idx }}--{{ $jdx }}"
+                                                           style="display:none;"
+                                                           type="radio"
+                                                           name="provision"
+                                                           value="{{ $mfp.Tag }};{{ $factor }}"
+                                                            {{ if not $checked }}
+                                                                {{ if and $.ProvisionTag $.ProvisionFactor }}
+                                                                    {{ if and (eq $.ProvisionTag $mfp.Tag) (eq $.ProvisionFactor $factor) }}
+                                                                        {{ $checked = true }}
+                                                                        checked
+                                                                    {{ end }}
+                                                                {{ else }}
+                                                                    {{ $checked = true }}
+                                                                    checked
+                                                                {{ end }}
+                                                            {{ end }}
+                                                    />
+                                                    <label for="factor-submit--{{ $idx }}--{{ $jdx }}">
+                                                        <span>{{ $factor }}</span>
+                                                        {{ if $mfp.Submit }}
+                                                            <button id="factor-submit--{{ $idx }}--{{ $jdx }}"
+                                                                    class="primary fit"
+                                                                    type="submit"
+                                                                    name="submit"
+                                                                    value="{{ $mfp.Tag }}"
+                                                                    title="{{ $mfp.Hint }}"
+                                                            ><i class="fa-solid fa-rotate-left"></i></button>
+                                                        {{ end }}
+                                                    </label>
+                                                {{ end }}
+                                            </div>
+
+                                            <fieldset class="panel-controls feature-group">
+                                                <legend><label for="verify-code">{{ _ "Enter one-time passcode" }}</label></legend>
+                                                <input id="verify-code" type="text" name="challenge"
+                                                       autocomplete="false" spellcheck="false"
+                                                       placeholder="{{ $mfp.Placeholder }}"
+                                                />
+                                                <button id="verify-challenge" class="primary" type="submit" name="submit" value="challenge">{{ _ "Verify" }}</button>
+                                            </fieldset>
+
+                                        </div>
+                                    </form>
+                            {{ end }}
+                        {{ end }}
+
+                    </div>
+
+                </div>
+
+                {{ else }}
+                    <p>{{ _ "There are no multi-factor authentication features available." }}</p>
+                {{ end }}
+
+               <!--
+
+                {{ if .MultiFactorKeys }}
+                    <form method="post" action="{{ .FormAction }}">
+                        {{ template "partials/common/nonces.tmpl" .Nonces }}
+
+                        <fieldset class="verify-authenticator">
+                            <div>
+                                <ul>
+                                    {{ range $idx,$key := .MultiFactorKeys }}
+                                        {{ with $mfp := index $.MultiFactorLookup $key }}
+                                            {{ if gt (len $mfp.Factors) 0 }}
+                                                <li>
+                                                    <div>{{ $mfp.Label }}</div>
+                                                    {{ range $jdx,$factor := $mfp.Factors }}
+                                                        <label>
+                                                            <input type="radio" name="provision" value="{{ $mfp.Tag }};{{ $factor }}" {{ if eq $idx 0 }}checked{{ end }}/>
+                                                            <span>{{ $factor }}</span>
+                                                        </label>
+                                                    {{ end }}
+                                                </li>
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
+                                </ul>
+                                <input id="verify-code" type="text" name="challenge"
+                                       autocomplete="false" spellcheck="false"
+                                       placeholder="{{ _ "enter code" }}"
+                                />
+                                <button class="primary" type="submit" name="submit" value="challenge">{{ _ "Verify" }}</button>
+                            </div>
+                        </fieldset>
+
+                    </form>
+                {{ else }}
+                    <p>{{ _ "There are no multi-factor authentication features available." }}</p>
+                {{ end }}
+
+                -->
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

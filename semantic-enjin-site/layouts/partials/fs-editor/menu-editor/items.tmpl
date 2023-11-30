@@ -1,0 +1,32 @@
+{{ $depth := 0 }}{{ if .Depth }}
+    {{ $depth = .Depth }}
+{{ end }}
+{{ $readOnly := false }}{{ if .FileInfo.ReadOnly }}
+    {{ $readOnly = .FileInfo.ReadOnly }}
+{{ else if .ReadOnly }}
+    {{ $readOnly = .ReadOnly }}
+{{ end }}
+<ul class="edit-menu--list" data-menu-depth="{{ $depth }}" data-menu-key="{{ .MenuKey }}">
+    {{ $menuLast := (sub (len .TopMenu) 1) }}
+    {{ range $idx,$item := .TopMenu }}
+        {{ $tag := "" }}{{ if and $.MenuTag (ne $.MenuTag "") }}
+            {{ $tag = printf "%v--%d" $.MenuTag $idx }}
+        {{ else }}
+            {{ $tag = printf "%d" $idx }}
+        {{ end }}
+        {{ $key := "" }}{{ if and $.MenuKey (ne $.MenuKey "") }}
+            {{ $key = printf "%v.sub-menu[%d]" $.MenuKey $idx }}
+        {{ else }}
+            {{ $key = printf "[%d]" $idx }}
+        {{ end }}
+        {{ template "partials/fs-editor/menu-editor/item.tmpl" (dict
+        "Depth" (add $depth 1)
+        "ReadOnly" $readOnly
+        "MenuTag" $tag
+        "MenuKey" $key
+        "MenuItem" $item
+        "MenuPos" $idx
+        "MenuLast" $menuLast
+        ) }}
+    {{ end }}
+</ul>

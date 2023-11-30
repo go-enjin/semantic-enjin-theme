@@ -1,0 +1,46 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+{{ $key := "" }}{{ if .MatterKey }}{{ $key = .MatterKey }}{{ end }}
+{{ $tag := "" }}{{ if .MatterTag }}{{ $tag = .MatterTag }}{{ end }}
+{{ printf `
+<style>
+.matter--add-new--prompt%[1]s { display: none; }
+#change--add-new%[1]s:checked ~ .controls > .matter--add-new--prompt%[1]s {
+  display: inline-flex;
+}
+#change--add-new%[1]s:checked ~ .controls > .open-prompt { display: none; }
+</style>
+` $tag | asHTML }}
+<input type="checkbox" style="display:none;" id="change--add-new{{ $tag }}"
+       {{ if $readOnly }}disabled{{ end }}
+/>
+<div class="controls">
+    <label for="change--add-new{{ $tag }}" class="button primary fit open-prompt{{ if $readOnly }} disabled{{ end }}">
+        <i class="fa-solid fa-plus"></i>
+        <span>{{ _ "Add new key/value pair" }}</span>
+    </label>
+    <div class="matter--add-new--prompt matter--add-new--prompt{{ $tag }}">
+        <input type="text" name="change~add-new~key{{ $key }}"
+               placeholder="{{ _ "kebab-cased-name" }}"
+               title="{{ _ "new context key name to add" }}"
+               {{ if $readOnly }}disabled{{ end }}
+        />
+        <button class="primary fit" type="submit" name="submit"
+                value="change.~add-new.value{{ $key }}"
+                title="{{ _ "create the new key with a plain text value" }}"
+                {{ if $readOnly }}disabled{{ end }}
+        ><i class="fa-solid fa-font"></i></button>
+        <button class="primary fit" type="submit" name="submit"
+                value="change.~add-new.list{{ $key }}"
+                title="{{ _ "create the new key with a plain text list value" }}"
+                {{ if $readOnly }}disabled{{ end }}
+        ><i class="fa-solid fa-list"></i></button>
+        <button class="primary fit" type="submit" name="submit"
+                value="change.~add-new.dictionary{{ $key }}"
+                title="{{ _ "create the new key with a dictionary value" }}"
+                {{ if $readOnly }}disabled{{ end }}
+        ><i class="fa-solid fa-book"></i></button>
+        <label for="change--add-new{{ $tag }}" class="button danger invert fit cancel-prompt"
+               title="{{ _ "cancel adding the new key/value pair" }}"
+        ><i class="fa-solid fa-cancel"></i></label>
+    </div>
+</div>

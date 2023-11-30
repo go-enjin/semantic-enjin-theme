@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/settings--setup-selector.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "%[1]s Setup" .FeatureInfo.Label)) }}
+
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <p>{{ _ "One (or more) of the available multi-factor authentication features are required." }}</p>
+                <p>{{ _ "Please select one to continue the account setup process." }}</p>
+            </section>
+        </div>
+    </article>
+
+    <article class="block" id="settings"
+             data-block-tag="settings"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+
+                {{ if .PanelsOrder }}
+
+                    <ul class="settings-panel-list">
+                        {{ range $idx,$key := .PanelsOrder }}
+                            {{ with $info := index $.PanelsInfos $key }}
+                                {{ with $href := index $.PanelsPaths $key }}
+                                    <li class="settings-panel-item">
+                                        <a class="button caution" href="{{ $href }}">
+                                            {{ if $info.Icon }}
+                                                <i class="{{ $info.Icon }}"></i>
+                                            {{ end }}
+                                            <span>{{ $info.Label }}</span>
+                                        </a>
+                                    </li>
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+
+                {{ else }}
+                    <p>{{ _ "No multi-Factor authentication features are present." }}</p>
+                {{ end }}
+
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

@@ -1,0 +1,98 @@
+{{ $idx := .Idx }}
+{{ $action := .Action }}
+
+{{ if or ($action.Prompt) ($action.Dialog) }}
+
+    {{ $dialog := (dict
+    $
+    "Key" $action.Key
+    "Tag" (printf "%s--%d--%d" (toKebab $action.Key) $.InfoIdx $idx)
+    "Name" $action.Name
+    "Icon" $action.Icon
+    "Class" $action.Class
+    "Message" $action.Prompt
+    "IconWithName" $.IconWithName
+    "Order" $action.Order
+    ) }}
+
+    {{ if eq $action.Dialog "move-file" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/move-file.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "copy-file" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/copy-file.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "create-page" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/create-page.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "create-menu" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/create-menu.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "translate-file" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/translate-file.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "add-tx-case" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/add-tx-case.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "copy-translation" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/copy-translation.tmpl" $dialog }}
+    {{ else if eq $action.Dialog "create-translation" }}
+        {{ $dialog.SET "file-info" $.Info "all-fsids" $.AllFSIDs "fsbt-lookup" $.FSBTLookup "all-locales" $.AllLocales }}
+        {{ template "partials/fs-editor/dialog/create-translation.tmpl" $dialog }}
+    {{ else }}
+        {{ template "partials/fs-editor/dialog/yesno.tmpl" $dialog }}
+    {{ end }}
+
+{{ else if $action.Active }}
+
+    {{ if eq $action.Method "post" }}
+
+        <button class="{{ $action.Class }} {{ if $.IconWithName }}icon name{{ else if $.Inverted }}invert{{ else }}icon{{ end }} fit"
+                type="submit" name="submit"
+                value="{{ $action.Key }}"
+                title="{{ $action.Name }}"
+                data-order="{{ $action.Order }}"
+        >
+            {{ if $action.Icon }}
+                <i class="{{ $action.Icon }}"></i>
+                <span class="sr-only">{{ $action.Name }}</span>
+            {{ end }}
+            {{ if or (not $action.Icon) ($.IconWithName) }}
+                <span class="action-label">{{ $action.Name }}</span>
+            {{ end }}
+        </button>
+
+    {{ else }}
+
+        <a class="button {{ $action.Class }} {{ if $.IconWithName }}icon name{{ else if $.Inverted }}invert{{ else }}icon{{ end }} fit"
+           href="{{ $.EditorFeaturePath }}/{{ $.Info.EditFilePath }}{{ if $action.Tilde }}.~{{ $action.Tilde }}{{ end }}"
+           title="{{ $action.Name }} - {{ $.Info.EditFilePath }}"
+           data-order="{{ $action.Order }}"
+        >
+            {{ if $action.Icon }}
+                <i class="{{ $action.Icon }}"></i>
+                <span class="sr-only">{{ $action.Name }}</span>
+            {{ end }}
+            {{ if or (not $action.Icon) ($.IconWithName) }}
+                <span class="action-label">{{ $action.Name }}</span>
+            {{ end }}
+        </a>
+
+    {{ end }}
+
+{{ else }}
+
+    <div class="button {{ $action.Class }} {{ if $.IconWithName }}icon name{{ else if $.Inverted }}invert{{ else }}icon{{ end }} fit"
+         title="{{ $action.Name }}"
+         data-order="{{ $action.Order }}"
+    >
+        {{ if $action.Icon }}
+            <i class="{{ $action.Icon }}"></i>
+            <span class="sr-only">{{ $action.Name }}</span>
+        {{ end }}
+        {{ if or (not $action.Icon) ($.IconWithName) }}
+            <span class="action-label">{{ $action.Name }}</span>
+        {{ end }}
+    </div>
+
+{{ end }}

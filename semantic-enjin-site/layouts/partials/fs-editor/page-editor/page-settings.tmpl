@@ -1,0 +1,107 @@
+{{- $depth := 0 }}{{ if .Depth }}{{ $depth = .Depth }}{{ end }}
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+{{- $language := .Language }}{{ if and (not .Language) .Page.Locale }}{{ $language = .Page.Locale.String }}{{ end }}
+{{- $matter := .Matter }}
+{{- $pageType := index .Matter "type" }}
+{{- $tabCount := 0 }}
+{{- $catCount := (dict "page" 0) }}
+{{- range $idx,$tab := .Fields.TabNames }}
+    {{- range $jdx,$category := $.Fields.CategoryNames }}
+        {{- $fields := $.Fields.TabCategoryFields $tab $category "title" "description" }}
+        {{- if gt (len $fields) 0 }}
+            {{- $catCount.SET $tab (add ($catCount.GET $tab 0) 1) }}
+        {{- end }}
+    {{- end }}
+    {{- if and (ne $tab "page") (ne $tab $pageType) }}
+        {{- continue }}
+    {{- end }}
+    {{- $tabCount = (add $tabCount 1) }}
+{{- end }}
+{{- $onlyOneTab := (eq $tabCount 1) }}
+
+{{ range $idx,$tab := .Fields.TabNames }}
+    <input type="radio" style="display:none;"
+           id="field-tab--{{ $tab }}"
+           name=".matter.~.sidebar-field-tab"
+           value="{{ $tab }}"
+           {{ if eq $.SidebarFieldTab $tab }}checked{{ end }}
+    />
+    {{ printf `
+<style>
+#field-tab--%[1]s:not(:checked) ~ .edit-page--matter--fields #field-tab--%[1]s--fields { display: none; }
+#field-tab--%[1]s:checked       ~ .edit-page--matter--tabs   #field-tab--%[1]s--picker {
+  background-color: var(--secondary--bg);
+  color: var(--secondary--fg);
+}
+</style>
+` $tab | asHTML }}
+{{ end }}
+
+{{ range $idx,$category := .Fields.CategoryNames }}
+    <input type="radio" style="display:none;"
+           id="field-category--{{ $category }}"
+           name=".matter.~.sidebar-field-category-tab"
+           value="{{ $category }}"
+           {{ if eq $.SidebarFieldCategoryTab $category }}checked{{ end }}
+    />
+    {{ printf `
+<style>
+#field-category--%[1]s:not(:checked) ~ .edit-page--matter--fields #field-category--%[1]s--fields { display: none; }
+#field-category--%[1]s:checked       ~ .edit-page--matter--fields #field-category--%[1]s--picker {
+  background-color: var(--secondary--bg);
+  color: var(--secondary--fg);
+}
+</style>
+` $category | asHTML }}
+{{ end }}
+
+{{ if not $onlyOneTab }}
+    <ul class="edit-page--matter--tabs">
+        {{ range $idx,$tab := .Fields.TabNames }}
+            {{ if and (ne $tab "page") (ne $tab $pageType) }}
+                {{ continue }}
+            {{ end }}
+            <li><label id="field-tab--{{ $tab }}--picker" for="field-tab--{{ $tab }}">{{ $tab }}</label></li>
+        {{ end }}
+    </ul>
+{{ end }}
+
+<ul class="edit-page--matter--fields">
+
+    {{ range $idx,$tab := .Fields.TabNames }}
+        {{ if and (ne $tab "page")  (ne $tab $pageType) }}
+            {{ continue }}
+        {{ end }}
+        <li id="field-tab--{{ $tab }}--fields">
+            {{ range $jdx,$category := $.Fields.CategoryNames }}
+                {{ $fields := $.Fields.TabCategoryFields $tab $category "title" "description" }}
+                {{ if gt (len $fields) 0 }}
+                    {{ with $override := true }}
+                        {{ if gt ($catCount.GET $tab) 1 }}
+                            {{ $override = false }}
+                            <div id="field-category--{{ $category }}--picker"
+                                 class="edit-page--matter--field--category">
+                                <label for="field-category--{{ $category }}">{{ $category }}</label>
+                            </div>
+                        {{ end }}
+                        <ul id="field-category--{{ $category }}--fields"
+                            class="edit-page--matter--field--category--fields"
+                            {{ if $override }}style="display:flex;"{{ end }}
+                        >
+                            {{ range $kdx,$key := $fields.SortedKeys }}
+                                {{ with $field := (index $.Fields $key) }}
+                                    <li>
+                                        <div class="edit-page--matter--fields--field">
+                                            {{ template "partials/fs-editor/page-editor/field.tmpl" (dict "ReadOnly" $readOnly "Matter" $matter "Field" $field "FieldErrors" $.FieldErrors) }}
+                                        </div>
+                                    </li>
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </li>
+    {{ end }}
+
+</ul>

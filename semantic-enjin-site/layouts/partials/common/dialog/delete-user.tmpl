@@ -1,0 +1,63 @@
+{{ $key := .Key }}{{ if and (not $key) (.Action) }}{{ $key = .Action.Key }}{{ end }}
+{{ $tag := .Tag }}{{ if not $tag }}{{ $tag = (toKebab $key) }}{{ end }}
+{{ $name := .Name }}{{ if and (not $name) (.Action) }}{{ $name = .Action.Name }}{{ end }}
+{{ $icon := .Icon }}{{ if and (not $icon) (.Action) }}{{ $icon = .Action.Icon }}{{ end }}
+{{ $class := .Class }}{{ if and (not $class) (.Action) }}{{ $class = .Action.Class }}{{ end }}
+{{ $title := .Title }}{{ if not $title }}
+    {{ if (.Action) }}{{ $title = .Action.Name }}{{ else }}{{ $title = $name }}{{ end }}
+{{ end }}
+{{ $message := .Message }}{{ if and (not $message) (.Action) }}{{ $message = .Action.Prompt }}{{ end }}
+
+{{ printf `
+<style>
+#%[1]s, #%[1]s--underlay, #%[1]s--confirmed { display: none; }
+#%[1]s--confirmed:checked ~ #%[1]s,
+#%[1]s--confirmed:checked ~ #%[1]s--underlay { display: flex; }
+</style>
+` $tag | asHTML }}
+
+<input id="{{ $tag }}--confirmed"
+       type="checkbox" style="display:none;"
+       name="{{ $key }}-confirmed"
+       value="true"
+/>
+
+<label id="confirm-{{ $tag }}"
+       class="button {{ $.ButtonClass }} fit"
+       for="{{ $tag }}--confirmed"
+       title="{{ $name }}"
+       data-order="{{ .Order }}"
+>
+    {{ if $icon }}
+        <i class="{{ $icon }}"></i>
+        <span class="sr-only">{{ $name }}</span>
+    {{ end }}
+    {{ if or (not $icon) ($.IconWithName) }}
+        <span class="action-label">{{ $name }}</span>
+    {{ end }}
+</label>
+
+<label id="{{ $tag }}--underlay" class="dialog--underlay" for="{{ $tag }}--confirmed">&nbsp;</label>
+
+<div id="{{ $tag }}" class="dialog dialog--delete-user">
+    <div class="dialog--title">{{ $title }}</div>
+    <div class="dialog--body">
+
+        <div class="dialog--fields">
+
+            <input type="hidden" name="{{ $key }}~eid" value="{{ $.Info.Name }}" />
+
+            <input type="text" name="{{ $key }}~email" class="dialog--fields--email"
+                   title="{{ _ "user's email address to confirm this action" }}"
+                   placeholder="{{ _ "email address" }}"
+            />
+
+        </div>
+
+        {{ if $message }}
+            <p>{{ $message }}</p>
+        {{ end }}
+    </div>
+    <button class="dialog--button {{ $class }} fit" type="submit" name="submit" value="{{ $key }}">{{ _ "Delete" }}</button>
+    <label class="dialog--button button cancel fit" for="{{ $tag }}--confirmed">{{ _ "Cancel" }}</label>
+</div>

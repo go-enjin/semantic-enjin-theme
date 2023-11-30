@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/sign-in--email-token.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Backup Email Sign-In")) }}
+
+    <article class="block" id="sign-in"
+             data-block-tag="sign-in"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                <form method="post" action="{{ .FormAction }}">
+                    {{ template "partials/common/nonces.tmpl" .Nonces }}
+                    <input type="hidden" name="audience" value="{{ .FeatureInfo.Key }}"/>
+
+                    <fieldset class="feature-group">
+
+                        {{ if and .EmailAddress .BackupEmailAddress  }}
+                            <legend>{{ _ "Awaiting confirmation" }}</legend>
+                            <input id="email" type="email" name="email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   value="{{ .EmailAddress }}"
+                                   readonly
+                            />
+                            <input id="backup-email" type="email" name="backup-email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   value="{{ .BackupEmailAddress }}"
+                                   readonly
+                            />
+                            <input id="token" type="text" name="token"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "confirmation token" }}"
+                            />
+
+                        {{ else if .EmailAddress }}
+                            <legend>{{ _ "Enter backup email address" }}</legend>
+                            <input id="email" type="email" name="email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "email address" }}"
+                                   value="{{ .EmailAddress }}"
+                            />
+                            <input id="backup-email" type="email" name="backup-email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "backup email address" }}"
+                            />
+
+                        {{ else }}
+                            <legend>{{ _ "Enter your primary email address" }}</legend>
+                            <input id="email" type="email" name="email"
+                                   autocomplete="false"
+                                   spellcheck="false"
+                                   placeholder="{{ _ "email address" }}"
+                            />
+                        {{ end }}
+
+                        <div class="form-controls">
+                            <button class="caution" type="submit" name="submit" value="{{ .FeatureInfo.Key }}">{{ _ "Sign-in" }}</button>
+                            <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

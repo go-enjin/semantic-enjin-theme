@@ -1,0 +1,5 @@
+<form name="file-editor" method="post"
+      action="{{ .EditorFeaturePath }}/{{ if .EditCode }}{{ .FileInfo.EditCodeFilePath }}{{ else }}{{ .FileInfo.EditFilePath }}{{ end }}"
+>
+    <input type="hidden" name="nonce" value="{{ .FormNonce }}"/>
+    <input type="hidden" name="shasum" value="{{ .FileInfo.Shasum }}"/>

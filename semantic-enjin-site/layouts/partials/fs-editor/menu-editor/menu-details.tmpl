@@ -1,0 +1,61 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+
+<div class="edit-page--matter--details">
+
+    <div class="page-detail--fileinfo">
+        <table>
+            <tbody>
+            <tr class="table-row--centered">
+                <td colspan="2" title="{{ _ "menu name" }}">
+                    {{ basepath $.FileInfo.Name }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{ _ "Created" }}</td>
+                <td title="{{ fmtDateTime .FileInfo.Created }}">{{ fmtDate .FileInfo.Created }}</td>
+            </tr>
+            <tr>
+                <td>{{ _ "Updated" }}</td>
+                <td title="{{ fmtDateTime .FileInfo.Updated }}">{{ fmtDate .FileInfo.Updated }}</td>
+            </tr>
+
+            {{ if eq $.FileInfo.Code $.EnjinInfo.DefaultLang.String }}
+                <tr>
+                    <td>{{ _ "Translations" }}</td>
+                    <td>
+                        {{ if and $.TranslatedLocales (gt (len $.TranslatedLocales) 0) }}
+                            {{ range $k,$v := $.TranslatedLocales }}
+                                <a class="button primary fit"
+                                   href="{{ $.SelfEditorPath }}/{{ $v }}"
+                                   title="{{ _ "go to translation" }}"
+                                >{{ $k }}</a>
+                            {{ end }}
+                        {{ else }}
+                            &mdash;
+                        {{ end }}
+                    </td>
+                </tr>
+            {{ else }}
+                <tr>
+                    <td>{{ _ "Translates" }}</td>
+                    <td>
+                        {{ if and $.TranslatedLocales (gt (len $.TranslatedLocales) 0) }}
+                            {{ range $k,$v := $.TranslatedLocales }}
+                                <a class="button primary fit"
+                                   href="{{ $.SelfEditorPath }}/{{ $v }}"
+                                   title="{{ _ "go to translation" }}"
+                                >{{ $k }}</a>
+                            {{ end }}
+                        {{ else }}
+                            &mdash;
+                        {{ end }}
+                    </td>
+                </tr>
+            {{ end }}
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

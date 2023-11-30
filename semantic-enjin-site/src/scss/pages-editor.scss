@@ -1,0 +1,619 @@
+// Copyright (c) 2023  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+main[data-layout-view^="fs-editor/"] {
+
+  & .block :not(nav, .carousel) {
+
+    & .matter--add-new--prompt {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+
+      width: 100%;
+
+      & input[type="text"] {
+
+        flex-grow: 1;
+
+        width: 134px;
+        height: 36px;
+
+        padding: 0.25rem;
+
+        margin: 0 0 0 0.25rem;
+
+        line-height: 20px;
+
+        border: none;
+        border-bottom: 1px solid var(--color--primary);
+
+      }
+
+      & :is(button,.button,label) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 36px;
+        height: 36px;
+
+        padding: 0 1rem;
+      }
+
+    }
+
+    & :is(fieldset,.fieldset) {
+
+      & > section {
+
+        &:first-of-type {
+          margin: 0 0 1rem 0;
+        }
+
+        &:not(:first-of-type) {
+          margin-top: 2rem;
+        }
+
+        & > ul {
+          display: block;
+
+          list-style: none;
+
+          margin: 0;
+
+          & > li {
+            display: flex;
+            align-items: center;
+
+            min-height: 36px;
+
+            & > label {
+              flex-grow: 0;
+
+              width: 150px;
+
+              color: var(--secondary--bg);
+
+              font-size: 25px;
+            }
+
+            & > input {
+              flex-grow: 1;
+
+              height: 34px;
+              line-height: 34px;
+
+              font-size: 18px;
+              font-weight: normal;
+
+              padding: 0 0.5rem;
+
+            }
+          }
+        }
+
+      }
+
+    }
+
+    & #aside-settings {
+
+      & .aside-settings--tabs {
+        height: 36px;
+        padding: 0 0 0 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        & label {
+
+          padding: 0.5rem;
+          margin: 0;
+
+          color: var(--secondary--fg);
+
+          background-color: var(--secondary--bg);
+
+          border-radius: 5px 5px 0 0;
+          border: 2px solid var(--secondary--bg);
+          border-bottom: none;
+
+          cursor: pointer;
+
+        }
+
+        & span.spanner {
+          width: 100%;
+          height: 4px;
+
+          margin-top: 38px;
+
+          border-top: 2px solid var(--color--secondary);
+          border-top-right-radius: 5px;
+        }
+
+      }
+
+      & > .content > section > fieldset {
+        //padding-bottom: 0;
+
+        & > section {
+          margin-bottom: 0;
+        }
+      }
+
+      & > .content {
+
+        gap: 0;
+
+      }
+
+      & #page-details,
+      & #page-settings,
+      & #page-variables {
+        flex-wrap: nowrap;
+        flex-direction: column;
+      }
+
+      & #page-variables {
+
+        & .controls {
+
+          background-color: var(--color--primary);
+
+          & > :is(button,label) {
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            width: 100%;
+
+          }
+
+        }
+
+        & ul {
+          list-style: none;
+
+          & li {
+
+            min-height: 36px;
+
+            padding: 0.5rem 0;
+
+          }
+        }
+
+        & .edit-page--matter--custom {
+
+          list-style: none;
+
+          margin: 0;
+          padding: 0;
+
+
+          & .edit-page--matter--list {
+
+            margin: 0;
+
+            & > li {
+
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+
+              & > input {
+
+                flex-grow: 1;
+
+              }
+
+              & > :is(label,button) {
+                flex-grow: 0;
+              }
+
+            }
+
+          }
+
+          & .edit-page--matter--key {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &--label {
+              display: inline-flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            &--type {
+              color: var(--secondary--bg);
+            }
+          }
+
+          & .edit-page--matter--data {
+
+            border-left: 1px solid var(--secondary--bg);
+
+            & > li {
+
+              width: 100%;
+
+              padding: 0 0 0 0.25rem;
+
+              & > .edit-page--matter--value {
+
+                width: 100%;
+
+              }
+
+            }
+          }
+
+        }
+      }
+
+    }
+
+    & .edit-page--matter {
+
+      &--details {
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 1rem;
+
+        &:empty {
+          margin-bottom: 25px;
+        }
+
+        & > .page-detail--fileinfo {
+
+          & > table {
+
+            margin: 0;
+
+            & > tbody {
+
+              border: none;
+
+              & > tr {
+
+                & > td {
+                  text-align: center;
+                }
+
+                &:hover,
+                &:focus,
+                &:focus-within {
+                  background-color: var(--color--highlight);
+                }
+
+              }
+            }
+
+          }
+
+        }
+
+        & > .page-detail--links {
+          padding: 1rem 0;
+
+          text-align: center;
+        }
+
+        & > .page-detail--thumbnail {
+
+          display: block;
+          height: 100px;
+          width: 100%;
+
+          & > .page-detail--thumbnail--thumbnail {
+            display: block;
+            height: 100px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+          }
+
+          &:hover,
+          &:focus,
+          &:focus-within {
+
+            background-color: var(--color--highlight);
+
+          }
+
+        }
+
+      }
+
+      &--tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-items: flex-start;
+
+        list-style: none;
+
+        margin: 0;
+
+        border-bottom: 1px solid var(--secondary--bg);
+
+        & > li {
+
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          align-items: center;
+          justify-items: flex-start;
+
+          & > label {
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            justify-items: center;
+
+            flex-grow: 1;
+
+            height: 36px;
+
+            padding: 0 1rem;
+
+            border: 1px solid var(--secondary--bg);
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+
+            text-align: center;
+          }
+
+        }
+      }
+
+      &--field--category {
+
+        cursor: pointer;
+
+        & > label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: 100%;
+
+          padding: 0.1rem;
+
+          border: 1px solid var(--secondary--bg);
+
+          cursor: pointer;
+
+          &:hover {
+            color: var(--color--dark);
+            background-color: var(--color--highlight);
+          }
+        }
+
+        &--fields {
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.5rem;
+
+          list-style: none;
+
+          margin: 0;
+          padding: 0.5rem 0.5rem 1rem 0.5rem;
+
+          border: 1px solid var(--secondary--bg);
+
+          & .edit-page--matter--fields--field {
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+
+            & > .field--label {
+
+              flex-grow: 1;
+
+              & .expand-menu-label,
+              & .collapse-menu-label {
+
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                width: 100%;
+                height: 36px;
+
+                cursor: pointer;
+
+                & > i {
+                  width: 25px;
+                  text-align: center;
+
+                  color: var(--secondary--bg);
+                }
+              }
+
+              &:hover {
+                color: var(--color--dark);
+                background-color: var(--color--highlight);
+              }
+
+            }
+
+            & > .field--controls,
+            & > .field--error,
+            & > .field--hint {
+
+              display: flex;
+              align-items: center;
+
+              margin: 0 0 0 2rem;
+              padding: 0.5rem;
+              border-left: 1px solid var(--secondary--bg);
+
+            }
+
+            & > .field--controls {
+
+              padding-bottom: 0.25rem;
+
+              & > :not(.field--controls--actions) {
+                flex-grow: 1;
+              }
+
+              & > .field--controls--actions {
+                flex-grow: 0;
+                min-width: fit-content;
+              }
+
+              & > .field--controls--label {
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                cursor: pointer;
+
+              }
+
+
+              &:hover,
+              & > *:hover {
+                color: var(--color--dark);
+                background-color: var(--color--highlight);
+              }
+
+
+              & .field--controls--string-map {
+
+                & > .controls > :is(button,label) {
+
+                  display: flex;
+                  flex-wrap: nowrap;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 1rem;
+
+                  width: 100%;
+
+                }
+
+                & .edit-page--matter--fields--field--string-map {
+
+                  list-style: none;
+
+                  margin: 0.5rem 0;
+
+                  & > li {
+
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 10px;
+
+                    & > label {
+                      flex-grow: 0;
+                    }
+
+                    & > input {
+                      flex-grow: 1;
+                    }
+
+                  }
+
+                }
+
+              }
+
+            }
+
+            & > .field--error {
+              color: var(--color--error);
+              background-color: var(--color--caution);
+
+              font-weight: bold;
+            }
+
+            & > .field--hint {
+              margin-bottom: 1rem;
+            }
+
+
+          }
+
+        }
+
+      }
+
+      &--fields {
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+
+        list-style: none;
+
+        margin: 0;
+        padding: 0;
+
+        & > li {
+
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-start;
+
+          width: 100%;
+          min-height: 36px;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

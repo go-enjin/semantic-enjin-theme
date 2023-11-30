@@ -1,0 +1,58 @@
+{{ template "partials/notices.tmpl" . }}
+
+{{ if .Title }}
+    <section class="block" id="title-header"
+             data-block-tag="title-header"
+             data-block-type="header"
+             data-block-profile="outer--inner"
+             data-block-padding="top"
+             data-block-margins="{{ if .WithBreadcrumbs }}none{{ else }}bottom{{ end }}"
+             data-header-level="1"
+             data-header-count="1"
+    >
+        <div class="content">
+            <header>
+                <h1>{{ .Title }}</h1>
+            </header>
+        </div>
+    </section>
+{{ end }}
+
+{{ if .WithBreadcrumbs }}
+    <article class="block" id="site-header"
+             data-block-tag="site-header"
+             data-block-type="content"
+             data-block-profile="full--inner"
+             data-block-padding="none"
+             data-block-margins="bottom"
+             data-block-nav-type="primary"
+    >
+        <div class="content">
+            <header>
+                <nav>
+                    {{ template "partials/common/breadcrumbs.tmpl" (dict "Path" .R.URL.Path "WithRoot" false) }}
+                </nav>
+            </header>
+        </div>
+    </article>
+{{ end }}
+
+{{ if .FeatureInfo }}
+    {{ if .FeatureInfo.Usage }}
+        <section class="block" id="instructions"
+                 data-block-tag="instructions"
+                 data-block-type="content"
+                 data-block-profile="outer--inner"
+                 data-block-padding="top"
+                 data-block-margins="bottom"
+                 data-header-level="1"
+                 data-header-count="1"
+        >
+            <div class="content">
+                <section>
+                    <p>{{ .FeatureInfo.Usage }}</p>
+                </section>
+            </div>
+        </section>
+    {{ end }}
+{{ end }}

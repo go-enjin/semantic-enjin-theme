@@ -1,0 +1,235 @@
+<section class="block" id="main-header"
+         data-block-tag="main-header"
+         data-block-type="header"
+         data-block-profile="outer--inner"
+         data-block-padding="top"
+         data-block-margins="bottom"
+         data-header-level="1"
+         data-header-count="1"
+>
+    <div class="content">
+        <header>
+            <h1>{{ _ "Page Editor" }}</h1>
+        </header>
+    </div>
+    <nav>
+        {{ template "partials/fs-editor/breadcrumbs.tmpl" . }}
+    </nav>
+</section>
+
+{{ if .Content }}
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ .Content }}
+            </section>
+        </div>
+    </article>
+{{ end }}
+
+{{ if .FileInfo.Locked }}
+    {{ template "partials/notice.tmpl" (dict
+    "Type" "warn"
+    "Summary" (_ "File is locked by another user.")
+    ) }}
+{{ end }}
+
+{{ if .Page }}
+    {{- $nonce := Nonce "file-editor-form" -}}
+    {{ template "partials/fs-editor/file-editor/form-open.tmpl" (dict . "FormNonce" $nonce) }}
+
+    {{ `
+<style>
+#show-sidebar:checked ~ .block[data-block-type="sidebar"] #show-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] #hide-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .aside  { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .blocks {
+  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+#page-details,
+#page-settings,
+#page-variables {
+  display: none;
+}
+#pick-details-tab:checked ~ #aside-settings #details-tab-picker {
+  background-color: var(--secondary--fg);
+  color: var(--secondary--bg);
+}
+#pick-details-tab:checked ~ #aside-settings #page-details {
+  display: flex;
+}
+#pick-settings-tab:checked ~ #aside-settings #settings-tab-picker {
+  background-color: var(--secondary--fg);
+  color: var(--secondary--bg);
+}
+#pick-settings-tab:checked ~ #aside-settings #page-settings {
+  display: flex;
+}
+#pick-variables-tab:checked ~ #aside-settings #variables-tab-picker {
+  background-color: var(--secondary--fg);
+  color: var(--secondary--bg);
+}
+#pick-variables-tab:checked ~ #aside-settings #page-variables {
+  display: flex;
+}
+</style>
+` | asHTML }}
+
+    <input type="radio" name=".matter.~.show-sidebar" id="show-sidebar" value="true" style="display:none;"
+           {{ if eq $.ShowSidebar "true" }}checked{{ end }}
+    />
+    <input type="radio" name=".matter.~.show-sidebar" id="hide-sidebar" value="false" style="display:none;"
+           {{ if ne $.ShowSidebar "true" }}checked{{ end }}
+    />
+
+    <article class="block" id="editor-form"
+             data-block-tag="editor-form"
+             data-block-type="sidebar"
+             data-block-profile="full--outer"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+             data-sidebar-side="right"
+             data-sidebar-stack="top"
+             data-sidebar-sticky="true"
+    >
+        <div class="content">
+
+            <div class="blocks">
+
+                <article class="block" id="editor-textarea"
+                         data-block-tag="editor-textarea"
+                         data-block-type="content"
+                         data-block-profile="outer--outer"
+                         data-block-padding="none"
+                         data-block-margins="bottom"
+                         data-block-jump-top="false"
+                         data-block-jump-link="true"
+                >
+                    <div class="content">
+                        <section>
+                            <fieldset>
+                                <legend>
+                                    <span class="file-name">{{ .FileInfo.Name }}</span>
+                                    <div class="file-actions">
+                                        {{ template "partials/fs-editor/actions/menu.tmpl" . }}
+                                        <label for="show-sidebar" class="button secondary icon light fit"
+                                               id="show-sidebar-picker"
+                                               title="{{ _ "Show sidebar" }}"
+                                        ><i class="fa-solid fa-bars"></i></label>
+                                        <label for="hide-sidebar" class="button secondary icon light fit"
+                                               id="hide-sidebar-picker"
+                                               title="{{ _ "Hide sidebar" }}"
+                                        ><i class="fa-solid fa-expand"></i></label>
+                                    </div>
+                                </legend>
+                                <section>
+                                    <ul>
+                                        <li>
+                                            <label for="editor-matter--title">{{ _ "Title" }}</label>
+                                            <input type="text" id="editor-matter--title" name=".matter.title"
+                                                   value="{{ index .Page.Matter "title" }}"
+                                                   {{ if $.FileInfo.ReadOnly }}disabled{{ end }}
+                                            />
+                                        </li>
+                                        <li>
+                                            <label for="editor-matter--description">{{ _ "Description" }}</label>
+                                            <input type="text" id="editor-matter--description"
+                                                   name=".matter.description"
+                                                   value="{{ index .Page.Matter "description" }}"
+                                                   {{ if $.FileInfo.ReadOnly }}disabled{{ end }}
+                                            />
+                                        </li>
+                                        <li><label for="editor-body">{{ _ "Contents" }}</label></li>
+                                        <li>
+                                            <textarea id="editor-body" name="body"
+                                                      autocomplete="off"
+                                                      spellcheck="false"
+                                                      {{ if $.FileInfo.ReadOnly }}disabled{{ end }}
+                                            >{{ .Page.Body }}</textarea>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </fieldset>
+                        </section>
+                    </div>
+                </article>
+
+            </div>
+            <div class="aside">
+                <aside>
+                    <input type="radio" style="display:none;"
+                           id="pick-details-tab" name=".matter.~.sidebar-tab"
+                           value="details"
+                           {{ if eq .SidebarTab "details" }}checked{{ end }}
+                    />
+                    <input type="radio" style="display:none;"
+                           id="pick-settings-tab" name=".matter.~.sidebar-tab"
+                           value="settings"
+                           {{ if eq .SidebarTab "settings" }}checked{{ end }}
+                    />
+                    {{ if .IsTmplPage }}
+                        <input type="radio" style="display:none;"
+                               id="pick-variables-tab" name=".matter.~.sidebar-tab"
+                               value="variables"
+                               {{ if eq .SidebarTab "variables" }}checked{{ end }}
+                        />
+                    {{ end }}
+
+                    <section class="block" id="aside-settings"
+                             data-block-tag="aside-settings"
+                             data-block-type="content"
+                             data-block-profile="full--full"
+                             data-block-padding="none"
+                             data-block-margins="none">
+                        <div class="content">
+                            <section>
+                                <div class="aside-settings--tabs">
+                                    <label id="details-tab-picker" for="pick-details-tab">{{ _ "Details" }}</label>
+                                    <label id="settings-tab-picker" for="pick-settings-tab">{{ _ "Settings" }}</label>
+                                    {{ if .IsTmplPage }}
+                                        <label id="variables-tab-picker"
+                                               for="pick-variables-tab">{{ _ "Variables" }}</label>
+                                    {{ end }}
+                                </div>
+                                <fieldset>
+                                    <section>
+                                        <div id="page-details">
+                                            {{ template "partials/fs-editor/page-editor/page-details.tmpl" (dict $ "Matter" .Page.Matter) }}
+                                        </div>
+
+                                        <div id="page-settings">
+                                            {{ template "partials/fs-editor/page-editor/page-settings.tmpl" (dict $ "Matter" .Page.Matter) }}
+                                        </div>
+
+                                        {{ if .IsTmplPage }}
+                                            <div id="page-variables">
+                                                {{ template "partials/fs-editor/page-editor/add-new.tmpl" (dict $ "Matter" .Page.Matter) }}
+                                                {{ template "partials/fs-editor/page-editor/page-variables.tmpl" (dict $ "Matter" .Page.Matter) }}
+                                            </div>
+                                        {{ end }}
+                                    </section>
+                                </fieldset>
+                            </section>
+                        </div>
+                    </section>
+
+                </aside>
+            </div>
+        </div>
+    </article>
+
+    {{ template "partials/fs-editor/file-editor/form-close.tmpl" . }}
+{{ end }}

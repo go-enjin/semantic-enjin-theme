@@ -1,0 +1,40 @@
+<input type="checkbox" style="display:none;" id="show-file-actions-menu"/>
+{{ `
+<style>
+#show-file-actions-menu:not(:checked) ~ #file-actions-menu          { display: none; }
+#show-file-actions-menu:not(:checked) ~ #file-actions-menu-underlay { display: none; }
+#show-file-actions-menu:checked       ~ #show-file-actions-picker   { display: none; }
+#show-file-actions-menu:not(:checked) ~ #file-actions-menu > #hide-file-actions-picker   { display: none; }
+#show-file-actions-menu:checked       ~ #file-actions-menu > #hide-file-actions-picker   { display: block; }
+</style>
+` | asHTML }}
+
+<div id="file-actions-list">
+    {{ range $idx,$action := $.FileInfo.Actions }}
+
+        {{ if lt $action.Order 10 }}
+            {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 0 "IconWithName" false "Idx" $idx "Action" $action )}}
+        {{ end }}
+
+    {{ end }}
+</div>
+
+<label id="file-actions-menu-underlay" class="dialog--underlay"
+       for="show-file-actions-menu">&nbsp;</label>
+<label id="show-file-actions-picker" for="show-file-actions-menu"
+       class="button secondary icon light fit"
+       title="{{ _ "Open file actions menu" }}">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+</label>
+<div id="file-actions-menu">
+    <label id="hide-file-actions-picker" for="show-file-actions-menu"
+           class="button secondary icon light fit"
+           title="{{ _ "Close file actions menu" }}">
+        <i class="fa-solid fa-xmark"></i>
+    </label>
+    {{ range $idx,$action := $.FileInfo.Actions }}
+
+        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 1 "IconWithName" true "Idx" $idx "Action" $action )}}
+
+    {{ end }}
+</div>

@@ -1,0 +1,198 @@
+<section class="block" id="main-header"
+         data-block-tag="main-header"
+         data-block-type="header"
+         data-block-profile="outer--inner"
+         data-block-padding="top"
+         data-block-margins="bottom"
+         data-header-level="1"
+         data-header-count="1"
+>
+    <div class="content">
+        <header>
+            <h1>{{ _ "Menu Editor" }}</h1>
+        </header>
+    </div>
+    <nav>
+        {{ template "partials/fs-editor/breadcrumbs.tmpl" . }}
+    </nav>
+</section>
+
+{{ if .Content }}
+    <article class="block" id="introduction"
+             data-block-tag="introduction"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ .Content }}
+            </section>
+        </div>
+    </article>
+{{ end }}
+
+{{ if .FileInfo.Locked }}
+    {{ template "partials/notice.tmpl" (dict
+    "Type" "warn"
+    "Summary" (_ "File is locked by another user.")
+    ) }}
+{{ end }}
+
+{{- $nonce := Nonce "file-editor-form" -}}
+{{ template "partials/fs-editor/file-editor/form-open.tmpl" (dict . "FormNonce" $nonce) }}
+
+{{ `
+<style>
+#show-sidebar:checked ~ .block[data-block-type="sidebar"] #show-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] #hide-sidebar-picker { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .aside  { display: none; }
+#hide-sidebar:checked ~ .block[data-block-type="sidebar"] > .content > .blocks {
+  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+#page-details {
+  display: none;
+}
+#pick-details-tab:checked ~ #aside-settings #details-tab-picker {
+  background-color: var(--secondary--fg);
+  color: var(--secondary--bg);
+}
+#pick-details-tab:checked ~ #aside-settings #page-details {
+  display: flex;
+}
+
+</style>
+` | asHTML }}
+
+<input type="radio" name=".matter.~.show-sidebar" id="show-sidebar" value="true" style="display:none;"
+       {{ if eq $.ShowSidebar "true" }}checked{{ end }}
+/>
+<input type="radio" name=".matter.~.show-sidebar" id="hide-sidebar" value="false" style="display:none;"
+       {{ if ne $.ShowSidebar "true" }}checked{{ end }}
+/>
+
+
+<article class="block" id="editor-form"
+         data-block-tag="editor-form"
+         data-block-type="sidebar"
+         data-block-profile="full--outer"
+         data-block-padding="none"
+         data-block-margins="both"
+         data-block-jump-top="false"
+         data-block-jump-link="true"
+         data-sidebar-side="right"
+         data-sidebar-stack="top"
+         data-sidebar-sticky="true"
+>
+    <div class="content">
+
+        <div class="blocks">
+
+            <article class="block" id="editor-textarea"
+                     data-block-tag="editor-textarea"
+                     data-block-type="content"
+                     data-block-profile="full--full"
+                     data-block-padding="none"
+                     data-block-margins="none"
+                     data-block-jump-top="false"
+                     data-block-jump-link="true"
+            >
+                <div class="content">
+                    <section>
+                        <fieldset>
+                            <legend>
+                                <span class="file-name">{{ .FileInfo.Name }}</span>
+                                <div class="file-actions">
+                                    {{ template "partials/fs-editor/actions/menu.tmpl" . }}
+                                    <label for="show-sidebar" class="button secondary icon light fit"
+                                           id="show-sidebar-picker"
+                                           title="{{ _ "Show sidebar" }}"
+                                    ><i class="fa-solid fa-bars"></i></label>
+                                    <label for="hide-sidebar" class="button secondary icon light fit"
+                                           id="hide-sidebar-picker"
+                                           title="{{ _ "Hide sidebar" }}"
+                                    ><i class="fa-solid fa-expand"></i></label>
+                                </div>
+                            </legend>
+                            <section>
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <button class="primary fit" type="submit" name="submit"
+                                                    value="change.append"{{ if .FileInfo.ReadOnly }} disabled{{ end }}>
+                                                <i class="fa-solid fa-plus"></i>
+                                                {{ _ "add menu item" }}
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="primary fit" type="submit" name="submit"
+                                                    value="change.expand"{{ if .FileInfo.ReadOnly }} disabled{{ end }}>
+                                                <i class="fa-solid fa-expand"></i>
+                                                {{ _ "Expand all" }}
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="primary fit" type="submit" name="submit"
+                                                    value="change.collapse"{{ if .FileInfo.ReadOnly }} disabled{{ end }}>
+                                                <i class="fa-solid fa-minimize"></i>
+                                                {{ _ "Collapse all" }}
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </section>
+                            <section>
+                                {{ if .TopMenu }}
+                                    {{ template "partials/fs-editor/menu-editor/items.tmpl" . }}
+                                {{ else }}
+                                    <div class="empty-menu-message">{{ _ "(empty menu)" }}</div>
+                                {{ end }}
+                            </section>
+                        </fieldset>
+                    </section>
+                </div>
+            </article>
+
+        </div>
+        <div class="aside">
+            <aside>
+                <input type="radio" style="display:none;"
+                       id="pick-details-tab" name=".matter.~.sidebar-tab"
+                       value="details"
+                       checked
+                />
+
+                <section class="block" id="aside-settings"
+                         data-block-tag="aside-settings"
+                         data-block-type="content"
+                         data-block-profile="full--full"
+                         data-block-padding="none"
+                         data-block-margins="none">
+                    <div class="content">
+                        <section>
+                            <div class="aside-settings--tabs">
+                                <label id="details-tab-picker" for="pick-details-tab">{{ _ "Details" }}</label>
+                            </div>
+                            <fieldset>
+                                <section>
+                                    <div id="page-details">
+                                        {{ template "partials/fs-editor/menu-editor/menu-details.tmpl" (dict .) }}
+                                    </div>
+                                </section>
+                            </fieldset>
+                        </section>
+                    </div>
+                </section>
+
+            </aside>
+        </div>
+    </div>
+</article>
+
+{{ template "partials/fs-editor/file-editor/form-close.tmpl" . }}

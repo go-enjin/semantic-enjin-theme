@@ -1,0 +1,24 @@
+{{ if gt .TotalPages 1 }}
+    <div class="pagination-summary" style="display:flex;justify-content: space-between;">
+        {{ if eq .SearchQuery "" }}
+            <div class="pagination-summary--search" style="text-align:left;"></div>
+        {{ else }}
+            <div class="pagination-summary--search" style="text-align:left;">
+                <span>{{ _ "%[1]d results found" .TotalItems }}</span>
+                <span><mark>{{ .SearchQuery}}</mark></span>
+            </div>
+        {{ end }}
+        <div class="pagination-summary--results" style="text-align:right;">
+            <div class="pagination-summary--results--showing">
+                {{- if eq .StartItem .EndItem -}}
+                    {{ _ `Showing #%[1]d of %[3]d` .StartItem .EndItem .TotalItems }}
+                {{- else -}}
+                    {{ _ `Showing #%[1]d-%[2]d of %[3]d` .StartItem .EndItem .TotalItems }}
+                {{- end -}}
+            </div>
+            <div class="pagination-summary--results--pages">
+                {{ _ "Page %[1]d of %[2]d" .PageNumber .TotalPages }}
+            </div>
+        </div>
+    </div>
+{{ end }}

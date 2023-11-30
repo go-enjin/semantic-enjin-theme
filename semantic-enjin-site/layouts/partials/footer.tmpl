@@ -1,0 +1,102 @@
+<footer>
+    <div class="page-column">
+        {{- if .SiteMenu.PrimaryFooterMenu -}}
+            <nav id="primary--footer">
+                <ul>
+                    {{- range $item := .SiteMenu.PrimaryFooterMenu -}}
+                        <li>
+                            {{- template "partials/menu/menu-link.tmpl" $item -}}
+                            {{- if $item.SubMenu -}}
+                                <ul>
+                                    {{- range $sub_item := $item.SubMenu -}}
+                                        <li>
+                                            {{- template "partials/menu/menu-link.tmpl" $sub_item -}}
+                                        </li>
+                                    {{- end -}}
+                                </ul>
+                            {{- end -}}
+                        </li>
+                    {{- end -}}
+                </ul>
+            </nav>
+        {{- end -}}
+        <nav id="secondary--footer">
+            {{- if .SiteMenu.SecondaryFooterMenu -}}
+                <ul>
+                    {{- range $item := .SiteMenu.SecondaryFooterMenu -}}
+                        <li>
+                            {{- template "partials/menu/menu-link.tmpl" $item -}}
+                            {{- if $item.SubMenu -}}
+                                <ul>
+                                    {{- range $sub_item := $item.SubMenu -}}
+                                        <li>
+                                            {{- template "partials/menu/menu-link.tmpl" $sub_item -}}
+                                        </li>
+                                    {{- end -}}
+                                </ul>
+                            {{- end -}}
+                        </li>
+                    {{- end -}}
+                </ul>
+            {{- end -}}
+
+            {{- if not .OmitCopyright -}}
+                <div id="copyright">
+                    <span class="name d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .EnjinInfo.CopyrightName  -}}</span>
+                    <span class="d--mobile--lg--inline-block">—</span>
+                    <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">&copy;
+                        {{- .EnjinInfo.CopyrightYear -}}
+                        &nbsp;
+                        {{- _ .EnjinInfo.CopyrightNotice -}}
+                    </span>
+                </div>
+            {{- end -}}
+
+            {{- if and (not .OmitThemeAuthors) .Theme.Authors }}
+                {{ range $author := .Theme.Authors }}
+                    {{ if $author.Homepage }}
+                        <div class="center" style="font-size:xx-small;">
+                            <a href="{{ $author.Homepage }}" target="_blank">
+                                {{- if $author.Name -}}
+                                    <span>{{- _ "Theme by: %[1]s" $author.Name /* site theme design credit */ -}}</span>
+                                {{- else -}}
+                                    <span>{{- _ "Theme by: %[1]s" $author.Homepage /* site theme design credit */ -}}</span>
+                                {{- end -}}
+                            </a>
+                        </div>
+                    {{ else if $author.Name }}
+                        <div class="center" style="font-size:xx-small;">
+                            <span>{{- _ "Theme by: %[1]s" $author.Name /* site theme design credit */ -}}</span>
+                        </div>
+                    {{ end }}
+                {{- end -}}
+            {{- end -}}
+        </nav>
+
+    </div>
+</footer>
+<ul id="page-actions">
+    {{ if and (ne $.EditFSID "") (ne $.EditLang "") }}
+        <!-- TODO: make a better .PageActions implementation -->
+        {{ with $actions := .PageActions }}
+            {{- $nonce := Nonce "file-editor-form" -}}
+            {{ range $idx,$action := $actions }}
+                <li class="action">
+                    <form method="{{ $action.Method }}"
+                          action="{{ $.EditorFeaturePath }}/{{ $.EditFSID }}/{{ $.EditLang }}/{{ $.EditPath }}">
+                        <input type="hidden" name="nonce" value="{{ $nonce }}"/>
+                        <input type="hidden" name="return" value="directory"/>
+                        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.BrowseInfo "InfoIdx" $idx "Idx" 0 "Action" $action )}}
+                    </form>
+                </li>
+            {{ end }}
+        {{ end }}
+    {{ end  }}
+    <li>
+        <a href="#top" class="jump-to-top anchor">
+            <div class="jump-to top">
+                <span class="sr-only">{{ _ "back to top" /* screen reader only */ }}</span>
+            </div>
+        </a>
+    </li>
+</ul>

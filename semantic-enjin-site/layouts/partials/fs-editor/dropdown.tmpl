@@ -1,0 +1,60 @@
+<!--
+* .InputKey is the prefix for the input id attributes
+* .InputName is the common input name attribute
+* .Options is a slice of Key/Label/Value options (dictionaries)
+* .Selected is the default option key to select on first load
+ -->
+<input id="{{ $.InputKey }}--toggle" type="checkbox" style="display:none;"/>
+{{ range $idx,$option := .Options }}
+    <input id="{{ $.InputKey }}--{{ $option.Key }}" value="{{ $option.Value }}"
+           type="radio" name="{{ $.InputName }}" style="display:none;"
+           {{ if eq $.Selected $option.Key }}checked{{ end }}
+    />
+{{ end }}
+
+{{ printf `
+<style>
+.editor-dropdown .editor-dropdown--item { display: none; }
+.editor-dropdown > ul {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+  position: relative;
+
+  list-style: none;
+}
+#%[1]s--toggle:checked ~ .editor-dropdown > ul > li { display: flex; }
+</style>
+` $.InputKey | asHTML }}
+
+{{ range $idx,$option := .Options }}
+    {{ printf `
+<style>
+#%[1]s--%[2]s:checked ~ .editor-dropdown #%[1]s--item--%[2]s { display: flex; }
+</style>
+` $.InputKey $option.Key | asHTML }}
+{{ end }}
+
+<div class="editor-dropdown">
+
+    {{ if $.TextBefore }}
+        <span>{{ $.TextBefore }}</span>
+    {{ end }}
+
+    <ul>
+        {{ range $idx,$option := $.Options }}
+            <li id="{{ $.InputKey }}--item--{{ $option.Key }}" class="editor-dropdown--item">
+                <label for="{{ $.InputKey }}--{{ $option.Key }}">{{ $option.Label }}</label>
+            </li>
+        {{ end }}
+    </ul>
+    <label id="{{ $.InputKey }}--picker" class="editor-dropdown--picker" for="{{ $.InputKey }}--toggle">
+        <i class="fa-solid fa-chevron-down"></i>
+        <span class="sr-only">{{ _ "show/hide dropdown menu" }}</span>
+    </label>
+
+    {{ if $.TextAfter }}
+        <span>{{ $.TextAfter }}</span>
+    {{ end }}
+</div>

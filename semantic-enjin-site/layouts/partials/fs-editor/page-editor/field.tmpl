@@ -1,0 +1,247 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+{{- $error := "" -}}
+{{ if and ($.FieldErrors) (gt (len $.FieldErrors) 0) }}
+    {{ $err := index $.FieldErrors $.Field.Key }}
+    {{ if $err }}
+        {{ $error = printf "%v" $err }}
+    {{ end }}
+{{ end }}
+
+
+{{ printf `
+<style>
+#expand--%[1]s:not(:checked) ~ .field--label .expand-menu-label   { display: inline-flex; }
+#expand--%[1]s:not(:checked) ~ .field--label .collapse-menu-label { display: none; }
+#expand--%[1]s:checked       ~ .field--label .expand-menu-label   { display: none; }
+#expand--%[1]s:checked       ~ .field--label .collapse-menu-label { display: inline-flex; }
+#expand--%[1]s:not(:checked) ~ :is(.field--controls,.field--hint) { display: none; }
+</style>
+` (toKebab .Field.Key) | asHTML }}
+<input style="display:none;" type="checkbox"
+       id="expand--{{ toKebab .Field.Key }}"
+       name=".matter.~.expand.{{ .Field.Key }}"
+       {{ if ne $error "" }}checked{{ end }}
+/>
+
+<div class="field--label">
+    <label for="expand--{{ toKebab .Field.Key }}" title="{{ _ "Expand setting" }}"
+           class="expand-menu-label"
+    >
+        <i class="fa-solid fa-chevron-right"></i>
+        <span title="{{ _ "this key is stored as: %[1]s and accessible as the .%[2]s variable" .Field.Key (toCamel .Field.Key) }}">.{{ toCamel .Field.Key }}</span>
+    </label>
+    <label for="expand--{{ toKebab .Field.Key }}" title="{{ _ "Collapse setting" }}"
+           class="collapse-menu-label"
+    >
+        <i class="fa-solid fa-chevron-down"></i>
+        <span title="{{ .Field.Key }}">.{{ toCamel .Field.Key }}</span>
+    </label>
+</div>
+
+{{ $value := (.Matter.Get .Field.Key) }}
+{{ $stringValue := printf "%v" $value }}{{ if eq $stringValue "<nil>" }}
+    {{ $stringValue = "" }}
+{{ end }}
+{{ $stringDefault := printf "%v" .Field.DefaultValue }}{{ if eq $stringDefault "<nil>" }}
+    {{ $stringDefault = "" }}
+{{ end }}
+{{ $typedDefault := printf "%T" .Field.DefaultValue }}
+{{ $showReset := false }}{{ if (or (not .Field.LockNonEmpty) (eq $stringValue "")) }}
+    {{ $showReset = true }}
+{{ end }}
+
+<div class="field--controls">
+    {{ if eq .Field.Format "string-map" }}
+
+        {{ $key := printf ".matter.%s" .Field.Key }}
+        {{ $tag := printf "--%s" .Field.Key }}
+        {{ $depth := 0 }}
+        {{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+        {{- $language := .Language }}{{ if and (not .Language) .Page.Locale }}{{ $language = .Page.Locale.String }}{{ end }}
+
+        <div class="field--controls--string-map">
+            <input type="checkbox" style="display:none;"
+                   id="change--add-new{{ $tag }}"
+                   {{ if $readOnly }}disabled{{ end }}
+            />
+            <div class="controls">
+                {{ printf `
+<style>
+.matter--add-new--prompt%[1]s { display: none; }
+#change--add-new%[1]s:checked ~ .controls > .matter--add-new--prompt%[1]s {
+  display: inline-flex;
+}
+#change--add-new%[1]s:checked ~ .controls > .open-prompt { display: none; }
+</style>
+` $tag | asHTML }}
+                <label for="change--add-new{{ $tag }}" class="button primary fit open-prompt">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>{{ _ "Add new key/value pair" }}</span>
+                </label>
+                <div class="matter--add-new--prompt matter--add-new--prompt{{ $tag }}">
+                    <input type="text" name="change~add-new~key{{ $key }}"
+                           placeholder="{{ _ "kebab-cases-key-name" }}"
+                           title="{{ _ "new context key name to add" }}"
+                           {{ if $readOnly }}disabled{{ end }}
+                    />
+                    <button class="primary fit" type="submit" name="submit"
+                            value="change.~add-new.value{{ $key }}"
+                            title="{{ _ "create the new key value" }}"
+                            {{ if $readOnly }}disabled{{ end }}
+                    ><i class="fa-solid fa-plus"></i></button>
+                    <label for="change--add-new{{ $tag }}" class="button danger invert fit cancel-prompt"
+                           title="{{ _ "cancel adding the new key/value pair" }}"
+                    ><i class="fa-solid fa-cancel"></i></label>
+                </div>
+            </div>
+            <ul class="edit-page--matter--fields--field--string-map" data-matter-depth="{{ $depth }}"
+                data-read-only="{{ $readOnly }}">
+                {{ if and $value (gt (len $value) 0) }}
+                    {{ range $idx,$key := (sortedKeys $value) }}
+                        <li>
+                            {{ $thisValue := (index $value $key) }}
+                            <label for="">.{{ toCamel $key }}:</label>
+                            <button class="danger invert fit" type="submit" name="submit"
+                                    value="change.~delete.matter.{{ $.Field.Key }}.{{ $key }}"
+                                    title="{{ _ "delete this item" }}"
+                                    {{ if $readOnly }}disabled{{ end }}
+                            ><i class="fa-solid fa-delete-left"></i></button>
+                            <input type="text" class="edit-page--matter--value"
+                                   name=".matter.{{ $.Field.Key }}.{{ $key }}"
+                                   value="{{ $thisValue }}"
+                                   {{ if $readOnly }}disabled{{ end }}
+                            />
+
+                        </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+
+    {{ else if eq .Field.Input "select" }}
+
+        <select id="matter--{{ .Field.Key }}" class="edit-page--matter--value"
+                name=".matter.{{ .Field.Key }}"
+                {{ if or ($readOnly) (and .Field.LockNonEmpty (ne $stringValue "")) }}disabled{{ end }}
+        >
+            {{ range $idx,$name := .Field.ValueOptions }}
+                <option value="{{ $name }}"
+                        {{- if or (eq $name $value) (and (not $value) (eq $name $stringDefault)) }}
+                            selected
+                        {{- end -}}
+                >{{ $name }}</option>
+            {{ end }}
+        </select>
+        {{ if and $showReset (eq $typedDefault "string") (ne $stringDefault $stringValue) }}
+            <div class="field--controls--actions">
+                <button type="submit" name="submit" class="danger invert fit"
+                        value="change.~default.{{ .Field.Key }}"
+                        title="{{ _ "Reset to default value of: %[1]s" $stringDefault }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+        {{ end }}
+
+    {{ else if eq .Field.Input "checkbox" }}
+
+        <label class="field--controls--label">
+            <input id="matter--{{ .Field.Key }}" type="checkbox" class="edit-page--matter--value"
+                   name=".matter.{{ .Field.Key }}"
+                   value="true"
+                   {{ if $value }}checked{{ end }}
+                    {{ if or ($readOnly) (and .Field.LockNonEmpty (ne $stringValue "")) }}disabled{{ end }}
+            /> {{ _ "Enable" }}
+        </label>
+        {{ if and $showReset (eq $typedDefault "bool") (ne $stringDefault $stringValue) }}
+            <div class="field--controls--actions">
+                <button type="submit" name="submit" class="danger invert fit"
+                        value="change.~default.{{ .Field.Key }}"
+                        title="{{ _ "Reset to default value of: %[1]s" $stringDefault }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+        {{ end }}
+
+    {{ else if eq .Field.Input "range" }}
+
+        <input id="matter--{{ .Field.Key }}" type="range" class="edit-page--matter--value"
+               name=".matter.{{ .Field.Key }}"
+               value="{{ $value }}"
+               min="{{ .Field.Minimum }}"
+               max="{{ .Field.Maximum }}"
+               step="{{ if .Field.Step }}{{ .Field.Step }}{{ else }}any{{ end }}"
+               {{ if or ($readOnly) (and .Field.LockNonEmpty (ne $stringValue "")) }}disabled{{ end }}
+        />
+        {{ if and $showReset (or (eq $typedDefault "int") (eq $typedDefault "float64")) (ne $stringDefault $stringValue) }}
+            <div class="field--controls--actions">
+                <button type="submit" name="submit" class="danger invert fit"
+                        value="change.~default.{{ .Field.Key }}"
+                        title="{{ _ "Reset to default value of: %[1]s" $stringDefault }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+        {{ end }}
+
+    {{ else if eq .Field.Input "datetime-local" }}
+
+        <input id="matter--{{ .Field.Key }}" type="{{ .Field.Input }}" class="edit-page--matter--value"
+               name=".matter.{{ .Field.Key }}"
+               value="{{ $value.Format "2006-01-02T15:04" }}"
+               {{ if or ($readOnly) (and .Field.LockNonEmpty (ne $stringValue "")) }}disabled{{ end }}
+        />
+        {{ if and $showReset (eq $typedDefault "time.Time") (ne $stringDefault $stringValue) }}
+            <div class="field--controls--actions">
+                <button type="submit" name="submit" class="danger invert fit"
+                        value="change.~default.{{ .Field.Key }}"
+                        title="{{ _ "Reset to default value of: %[1]s" (.Field.DefaultValue.Format "2006-01-02 15:04 MST") }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+        {{ end }}
+
+    {{ else }}
+
+        <input id="matter--{{ .Field.Key }}" type="{{ .Field.Input }}" class="edit-page--matter--value"
+               name=".matter.{{ .Field.Key }}"
+               value="{{ $value }}"
+               {{ if or ($readOnly) (and .Field.LockNonEmpty (ne $stringValue "")) }}disabled{{ end }}
+        />
+        {{ if and $showReset (eq $typedDefault "string") (ne $stringDefault $stringValue) }}
+            <div class="field--controls--actions">
+                <button type="submit" name="submit" class="danger invert fit"
+                        value="change.~default.{{ .Field.Key }}"
+                        {{ if eq .Field.Format "uuid" }}
+                            title="{{ _ "Set new UUID value" }}"
+                        {{ else }}
+                            title="{{ _ "Reset to default value of: %[1]s" $stringDefault }}"
+                        {{ end }}
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+            </div>
+        {{ end }}
+
+    {{ end }}
+
+</div>
+
+{{ if ne $error "" }}
+    <div class="field--error">
+        <span>{{ $error }}</span>
+    </div>
+{{ end }}
+
+{{ if .Field.Label }}
+    <div class="field--hint">
+        <span>{{ .Field.Label }}</span>
+    </div>
+{{ end }}

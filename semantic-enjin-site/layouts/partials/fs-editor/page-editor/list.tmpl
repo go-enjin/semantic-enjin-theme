@@ -1,0 +1,25 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+<ul class="edit-page--matter--list">
+    {{ range $idx,$item := .List }}
+        <li>
+            {{ $t := typeOf $item }}
+            {{ if or (eq $t "map[string]interface{}") (eq $t "context.Context") }}
+                {{ template "partials/fs-editor/page-editor/dictionary.tmpl" (dict $ "Matter" $item) }}
+            {{ else }}
+                {{ $itemKey := printf "%s[%d]" $.MatterKey $idx }}
+                <input class="edit-page--matter--value" type="text"
+                       name="{{ $itemKey }}"
+                       value="{{ printf "%v" $item }}"
+                       title="{{ _ "list item" }}"
+                       {{ if $readOnly }}disabled{{ end }}
+                />
+                <button class="danger invert fit" type="submit" name="submit" value="change.~delete{{ $itemKey }}"
+                        title="{{ _ "delete this list item" }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                >
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+            {{ end }}
+        </li>
+    {{ end }}
+</ul>

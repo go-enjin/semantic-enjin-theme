@@ -1,0 +1,1020 @@
+{
+	"language": "ja",
+	"messages": [
+		{
+			"id": "%[1]s Dashboard",
+			"key": "%[1]s Dashboard",
+			"message": "%[1]s Dashboard",
+			"translatorComment": "(toTitle) [from: editor-dashboard.tmpl]",
+			"translation": "%[1]s Dashboard (ja)"
+		},
+		{
+			"id": "%[1]s File Browser",
+			"key": "%[1]s File Browser",
+			"message": "%[1]s File Browser",
+			"translatorComment": "(toTitle) [from: default-browser.tmpl], (toTitle) [from: themes-browser.tmpl]",
+			"translation": "%[1]s File Browser (ja!)"
+		},
+		{
+			"id": "%[1]s File Editor",
+			"key": "%[1]s File Editor",
+			"message": "%[1]s File Editor",
+			"translatorComment": "(toTitle) [from: themes-editor.tmpl], (toTitle) [from: unsafe-editor.tmpl]",
+			"translation": "%[1]s File Editor (ja)"
+		},
+		{
+			"id": "%[1]s based",
+			"key": "%[1]s based",
+			"message": "%[1]s based",
+			"translatorComment": ".LanguageMode.Name [from: editor-dashboard.tmpl]",
+			"translation": "%[1]s based (ja)"
+		},
+		{
+			"id": "(dictionary)",
+			"key": "(dictionary)",
+			"message": "(dictionary)",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "(dictionary) (ja)"
+		},
+		{
+			"id": "(empty)",
+			"key": "(empty)",
+			"message": "(empty)",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl]",
+			"translation": "(empty) (ja)"
+		},
+		{
+			"id": "(link)",
+			"key": "(link)",
+			"message": "(link)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "(link) (ja)"
+		},
+		{
+			"id": "(list)",
+			"key": "(list)",
+			"message": "(list)",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "(list) (ja)"
+		},
+		{
+			"id": "(missing)",
+			"key": "(missing)",
+			"message": "(missing)",
+			"translatorComment": "[from: cell.tmpl]",
+			"translation": "(missing) (ja)"
+		},
+		{
+			"id": "(nil)",
+			"key": "(nil)",
+			"message": "(nil)",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "(nil) (ja)"
+		},
+		{
+			"id": "(none)",
+			"key": "(none)",
+			"message": "(none)",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "(none) (ja)"
+		},
+		{
+			"id": "(optional)",
+			"key": "(optional)",
+			"message": "(optional)",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "(optional) (ja)"
+		},
+		{
+			"id": "(plain)",
+			"key": "(plain)",
+			"message": "(plain)",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "(plain) (ja)"
+		},
+		{
+			"id": "(required)",
+			"key": "(required)",
+			"message": "(required)",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "(required) (ja)"
+		},
+		{
+			"id": "(text)",
+			"key": "(text)",
+			"message": "(text)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "(text) (ja)"
+		},
+		{
+			"id": "=0, =1, other...",
+			"key": "=0, =1, other...",
+			"message": "=0, =1, other...",
+			"translatorComment": "[from: add-tx-case.tmpl]",
+			"translation": "=0, =1, other... (ja)"
+		},
+		{
+			"id": "A case matches based on the condition in relation to the variable number and matches if:",
+			"key": "A case matches based on the condition in relation to the variable number and matches if:",
+			"message": "A case matches based on the condition in relation to the variable number and matches if:",
+			"translatorComment": "[from: add-tx-case.tmpl]",
+			"translation": "A case matches based on the condition in relation to the variable number and matches if: (ja)"
+		},
+		{
+			"id": "Actions",
+			"key": "Actions",
+			"message": "Actions",
+			"translatorComment": "[from: default-browser.tmpl], [from: themes-browser.tmpl]",
+			"translation": "Actions (ja)"
+		},
+		{
+			"id": "Add",
+			"key": "Add",
+			"message": "Add",
+			"translatorComment": "[from: add-tx-case.tmpl]",
+			"translation": "Add (ja)"
+		},
+		{
+			"id": "Add new key/value pair",
+			"key": "Add new key/value pair",
+			"message": "Add new key/value pair",
+			"translatorComment": "[from: add-new.tmpl], [from: field.tmpl]",
+			"translation": "Add new key/value pair (ja)"
+		},
+		{
+			"id": "Add new plural case",
+			"key": "Add new plural case",
+			"message": "Add new plural case",
+			"translatorComment": ")\n            \"Icon\" \"fa-solid fa-plus\"\n            \"Class\" \"important\"\n            \"Prompt\" (_ `Add new plural translation case.`)\n            \"Active\" true\n            \"Order\" 1\n            \"Dialog\" \"add-tx-case\"\n            \"IconWithName\" nil\n            \"Inverted\" nil\n            ) [from: cell-plural.tmpl]",
+			"translation": "Add new plural case (ja)"
+		},
+		{
+			"id": "Append new list item",
+			"key": "Append new list item",
+			"message": "Append new list item",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "Append new list item (ja)"
+		},
+		{
+			"id": "Archetype",
+			"key": "Archetype",
+			"message": "Archetype",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "Archetype (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: add-tx-case.tmpl], [from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Close file actions menu",
+			"key": "Close file actions menu",
+			"message": "Close file actions menu",
+			"translatorComment": "[from: actions-menu.tmpl]",
+			"translation": "Close file actions menu (ja)"
+		},
+		{
+			"id": "Collapse all",
+			"key": "Collapse all",
+			"message": "Collapse all",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl]",
+			"translation": "Collapse all (ja)"
+		},
+		{
+			"id": "Collapse menu",
+			"key": "Collapse menu",
+			"message": "Collapse menu",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "Collapse menu (ja)"
+		},
+		{
+			"id": "Collapse setting",
+			"key": "Collapse setting",
+			"message": "Collapse setting",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Collapse setting (ja)"
+		},
+		{
+			"id": "Contents",
+			"key": "Contents",
+			"message": "Contents",
+			"translatorComment": "[from: pages-editor.tmpl], [from: themes-editor.tmpl], [from: unsafe-editor.tmpl]",
+			"translation": "Contents (ja)"
+		},
+		{
+			"id": "Convert this translation to plural form",
+			"key": "Convert this translation to plural form",
+			"message": "Convert this translation to plural form",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "Convert this translation to plural form (ja)"
+		},
+		{
+			"id": "Convert this translation to singular form",
+			"key": "Convert this translation to singular form",
+			"message": "Convert this translation to singular form",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "Convert this translation to singular form (ja)"
+		},
+		{
+			"id": "Convert to plural form",
+			"key": "Convert to plural form",
+			"message": "Convert to plural form",
+			"translatorComment": ")\n                            \"Icon\" \"fa-solid fa-arrow-right-arrow-left\"\n                            \"Class\" \"caution\"\n                            \"Prompt\" (_ `Convert the \"%[1]s\" translation to plural form from singular?` $firstCell.Src.ID)\n                            \"Active\" true\n                            \"Order\" 1\n                            \"Dialog\" \"yesno\"\n                            \"Inverted\" true\n                            ) [from: table.tmpl]",
+			"translation": "Convert to plural form (ja)"
+		},
+		{
+			"id": "Convert to singular form",
+			"key": "Convert to singular form",
+			"message": "Convert to singular form",
+			"translatorComment": ")\n                            \"Icon\" \"fa-solid fa-arrow-rotate-left\"\n                            \"Class\" \"caution\"\n                            \"Prompt\" (_ `Convert the \"%[1]s\" translation to singular form from plural?` $firstCell.Src.ID)\n                            \"Active\" true\n                            \"Order\" 1\n                            \"Dialog\" \"yesno\"\n                            \"Inverted\" true\n                            ) [from: table.tmpl]",
+			"translation": "Convert to singular form (ja)"
+		},
+		{
+			"id": "Copy",
+			"key": "Copy",
+			"message": "Copy",
+			"translatorComment": "[from: copy-file.tmpl]",
+			"translation": "Copy (ja)"
+		},
+		{
+			"id": "Create",
+			"key": "Create",
+			"message": "Create",
+			"translatorComment": "[from: create-menu.tmpl], [from: create-page.tmpl]",
+			"translation": "Create (ja)"
+		},
+		{
+			"id": "Create a new %[1]s page:",
+			"key": "Create a new %[1]s page:",
+			"message": "Create a new %[1]s page:",
+			"translatorComment": "$standardOrCustom [from: create-page.tmpl]",
+			"translation": "Create a new %[1]s page: (ja)"
+		},
+		{
+			"id": "Created",
+			"key": "Created",
+			"message": "Created",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "Created (ja)"
+		},
+		{
+			"id": "Date",
+			"key": "Date",
+			"message": "Date",
+			"translatorComment": "[from: default-browser.tmpl], [from: themes-browser.tmpl]",
+			"translation": "Date (ja)"
+		},
+		{
+			"id": "Default Locale",
+			"key": "Default Locale",
+			"message": "Default Locale",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Default Locale (ja)"
+		},
+		{
+			"id": "Delete this plural case",
+			"key": "Delete this plural case",
+			"message": "Delete this plural case",
+			"translatorComment": ")\n                \"Icon\" \"fa-solid fa-delete-left\"\n                \"Class\" \"danger\"\n                \"Prompt\" (_ `Really delete the \"%[1]s\" translation case?` $key)\n                \"Active\" true\n                \"Order\" 1\n                \"IconWithName\" false\n                \"Inverted\" false\n                ) [from: cell-plural.tmpl]",
+			"translation": "Delete this plural case (ja)"
+		},
+		{
+			"id": "Delete this translation",
+			"key": "Delete this translation",
+			"message": "Delete this translation",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "Delete this translation (ja)"
+		},
+		{
+			"id": "Description",
+			"key": "Description",
+			"message": "Description",
+			"translatorComment": "[from: pages-editor.tmpl]",
+			"translation": "Description (ja)"
+		},
+		{
+			"id": "Details",
+			"key": "Details",
+			"message": "Details",
+			"translatorComment": "[from: menus-editor.tmpl], [from: pages-editor.tmpl]",
+			"translation": "Details (ja)"
+		},
+		{
+			"id": "Enable",
+			"key": "Enable",
+			"message": "Enable",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Enable (ja)"
+		},
+		{
+			"id": "Enjin Info",
+			"key": "Enjin Info",
+			"message": "Enjin Info",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Enjin Info (ja)"
+		},
+		{
+			"id": "Expand all",
+			"key": "Expand all",
+			"message": "Expand all",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl]",
+			"translation": "Expand all (ja)"
+		},
+		{
+			"id": "Expand menu",
+			"key": "Expand menu",
+			"message": "Expand menu",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "Expand menu (ja)"
+		},
+		{
+			"id": "Expand setting",
+			"key": "Expand setting",
+			"message": "Expand setting",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Expand setting (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": ") [from: locales-editor.tmpl], ) [from: menus-editor.tmpl], ) [from: pages-editor.tmpl], ) [from: themes-editor.tmpl], ) [from: unsafe-editor.tmpl]",
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "Format",
+			"key": "Format",
+			"message": "Format",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "Format (ja)"
+		},
+		{
+			"id": "Hide sidebar",
+			"key": "Hide sidebar",
+			"message": "Hide sidebar",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl], [from: pages-editor.tmpl]",
+			"translation": "Hide sidebar (ja)"
+		},
+		{
+			"id": "Language Mode",
+			"key": "Language Mode",
+			"message": "Language Mode",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Language Mode (ja)"
+		},
+		{
+			"id": "Layout",
+			"key": "Layout",
+			"message": "Layout",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "Layout (ja)"
+		},
+		{
+			"id": "Locales Editor",
+			"key": "Locales Editor",
+			"message": "Locales Editor",
+			"translatorComment": "[from: locales-editor.tmpl]",
+			"translation": "Locales Editor (ja!)"
+		},
+		{
+			"id": "Menu Editor",
+			"key": "Menu Editor",
+			"message": "Menu Editor",
+			"translatorComment": "[from: menus-editor.tmpl]",
+			"translation": "Menu Editor (ja)"
+		},
+		{
+			"id": "Move",
+			"key": "Move",
+			"message": "Move",
+			"translatorComment": "[from: move-file.tmpl]",
+			"translation": "Move (ja)"
+		},
+		{
+			"id": "Name",
+			"key": "Name",
+			"message": "Name",
+			"translatorComment": "[from: default-browser.tmpl], [from: themes-browser.tmpl]",
+			"translation": "Name (ja)"
+		},
+		{
+			"id": "No",
+			"key": "No",
+			"message": "No",
+			"translatorComment": "[from: yesno.tmpl]",
+			"translation": "No (ja)"
+		},
+		{
+			"id": "Open file actions menu",
+			"key": "Open file actions menu",
+			"message": "Open file actions menu",
+			"translatorComment": "[from: actions-menu.tmpl]",
+			"translation": "Open file actions menu (ja)"
+		},
+		{
+			"id": "Page Editor",
+			"key": "Page Editor",
+			"message": "Page Editor",
+			"translatorComment": "[from: pages-editor.tmpl]",
+			"translation": "Page Editor (ja)"
+		},
+		{
+			"id": "Permalink",
+			"key": "Permalink",
+			"message": "Permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "Permalink (ja)"
+		},
+		{
+			"id": "Pluralize",
+			"key": "Pluralize",
+			"message": "Pluralize",
+			"translatorComment": "[from: cell-plural.tmpl]",
+			"translation": "Pluralize (ja)"
+		},
+		{
+			"id": "Reset to default value of: %[1]s",
+			"key": "Reset to default value of: %[1]s",
+			"message": "Reset to default value of: %[1]s",
+			"translatorComment": "$stringDefault [from: field.tmpl], (.Field.DefaultValue.Format) [from: field.tmpl]",
+			"translation": "Reset to default value of: %[1]s (ja)"
+		},
+		{
+			"id": "Server",
+			"key": "Server",
+			"message": "Server",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Server (ja)"
+		},
+		{
+			"id": "Set new UUID value",
+			"key": "Set new UUID value",
+			"message": "Set new UUID value",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Set new UUID value (ja)"
+		},
+		{
+			"id": "Settings",
+			"key": "Settings",
+			"message": "Settings",
+			"translatorComment": "[from: pages-editor.tmpl]",
+			"translation": "Settings (ja)"
+		},
+		{
+			"id": "Show sidebar",
+			"key": "Show sidebar",
+			"message": "Show sidebar",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl], [from: pages-editor.tmpl]",
+			"translation": "Show sidebar (ja)"
+		},
+		{
+			"id": "Site Name",
+			"key": "Site Name",
+			"message": "Site Name",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Site Name (ja)"
+		},
+		{
+			"id": "Site Tag",
+			"key": "Site Tag",
+			"message": "Site Tag",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Site Tag (ja)"
+		},
+		{
+			"id": "Site theme by: %[1]s",
+			"key": "Site theme by: %[1]s",
+			"message": "Site theme by: %[1]s",
+			"translatorComment": "site theme design credit [from: footer.tmpl]",
+			"translation": "このサイトthemeのクリエーター: %[1]s"
+		},
+		{
+			"id": "Supported Locales",
+			"key": "Supported Locales",
+			"message": "Supported Locales",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Supported Locales (ja)"
+		},
+		{
+			"id": "The %[1]s theme does not support the %[2]s editor feature.",
+			"key": "The %[1]s theme does not support the %[2]s editor feature.",
+			"message": "The %[1]s theme does not support the %[2]s editor feature.",
+			"translatorComment": ".Theme.Name .EditorFeatureName [from: file-browser.tmpl], .Theme.Name .EditorFeatureName [from: file-editor.tmpl]",
+			"translation": "The %[1]s theme does not support the %[2]s editor feature. (ja)"
+		},
+		{
+			"id": "Title",
+			"key": "Title",
+			"message": "Title",
+			"translatorComment": "[from: pages-editor.tmpl]",
+			"translation": "Title (ja)"
+		},
+		{
+			"id": "Translate",
+			"key": "Translate",
+			"message": "Translate",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "Translate (ja)"
+		},
+		{
+			"id": "Translates",
+			"key": "Translates",
+			"message": "Translates",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "Translates (ja)"
+		},
+		{
+			"id": "Translations",
+			"key": "Translations",
+			"message": "Translations",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "Translations (ja)"
+		},
+		{
+			"id": "Type",
+			"key": "Type",
+			"message": "Type",
+			"translatorComment": "[from: page-details.tmpl], [from: default-browser.tmpl], [from: themes-browser.tmpl]",
+			"translation": "Type (ja)"
+		},
+		{
+			"id": "Unsupported Editor Feature",
+			"key": "Unsupported Editor Feature",
+			"message": "Unsupported Editor Feature",
+			"translatorComment": "[from: file-browser.tmpl], [from: file-editor.tmpl]",
+			"translation": "Unsupported Editor Feature (ja)"
+		},
+		{
+			"id": "Updated",
+			"key": "Updated",
+			"message": "Updated",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "Updated (ja)"
+		},
+		{
+			"id": "Variables",
+			"key": "Variables",
+			"message": "Variables",
+			"translatorComment": "[from: pages-editor.tmpl]",
+			"translation": "Variables (ja)"
+		},
+		{
+			"id": "Yes",
+			"key": "Yes",
+			"message": "Yes",
+			"translatorComment": "[from: yesno.tmpl]",
+			"translation": "Yes (ja)"
+		},
+		{
+			"id": "actions",
+			"key": "actions",
+			"message": "actions",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "actions (ja)"
+		},
+		{
+			"id": "actual",
+			"key": "actual",
+			"message": "actual",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "actual (ja)"
+		},
+		{
+			"id": "add menu item",
+			"key": "add menu item",
+			"message": "add menu item",
+			"translatorComment": "[from: menus-editor.tmpl]",
+			"translation": "add menu item (ja)"
+		},
+		{
+			"id": "add sub-menu item",
+			"key": "add sub-menu item",
+			"message": "add sub-menu item",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "add sub-menu item (ja)"
+		},
+		{
+			"id": "add translation message",
+			"key": "add translation message",
+			"message": "add translation message",
+			"translatorComment": "[from: locales-editor.tmpl]",
+			"translation": "add translation message (ja)"
+		},
+		{
+			"id": "back to top",
+			"key": "back to top",
+			"message": "back to top",
+			"translatorComment": "screen reader only [from: footer.tmpl]",
+			"translation": "back to top (ja)"
+		},
+		{
+			"id": "cancel adding the new key/value pair",
+			"key": "cancel adding the new key/value pair",
+			"message": "cancel adding the new key/value pair",
+			"translatorComment": "[from: add-new.tmpl], [from: field.tmpl]",
+			"translation": "cancel adding the new key/value pair (ja)"
+		},
+		{
+			"id": "create the new key value",
+			"key": "create the new key value",
+			"message": "create the new key value",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "create the new key value (ja)"
+		},
+		{
+			"id": "create the new key with a dictionary value",
+			"key": "create the new key with a dictionary value",
+			"message": "create the new key with a dictionary value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a dictionary value (ja)"
+		},
+		{
+			"id": "create the new key with a plain text list value",
+			"key": "create the new key with a plain text list value",
+			"message": "create the new key with a plain text list value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a plain text list value (ja)"
+		},
+		{
+			"id": "create the new key with a plain text value",
+			"key": "create the new key with a plain text value",
+			"message": "create the new key with a plain text value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a plain text value (ja)"
+		},
+		{
+			"id": "custom",
+			"key": "custom",
+			"message": "custom",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "custom (ja)"
+		},
+		{
+			"id": "delete menu item",
+			"key": "delete menu item",
+			"message": "delete menu item",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "delete menu item (ja)"
+		},
+		{
+			"id": "delete this dictionary",
+			"key": "delete this dictionary",
+			"message": "delete this dictionary",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this dictionary (ja)"
+		},
+		{
+			"id": "delete this item",
+			"key": "delete this item",
+			"message": "delete this item",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "delete this item (ja)"
+		},
+		{
+			"id": "delete this list",
+			"key": "delete this list",
+			"message": "delete this list",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this list (ja)"
+		},
+		{
+			"id": "delete this list item",
+			"key": "delete this list item",
+			"message": "delete this list item",
+			"translatorComment": "[from: list.tmpl]",
+			"translation": "delete this list item (ja)"
+		},
+		{
+			"id": "delete this value",
+			"key": "delete this value",
+			"message": "delete this value",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this value (ja)"
+		},
+		{
+			"id": "destination file name",
+			"key": "destination file name",
+			"message": "destination file name",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination file name (ja)"
+		},
+		{
+			"id": "destination file path",
+			"key": "destination file path",
+			"message": "destination file path",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination file path (ja)"
+		},
+		{
+			"id": "destination filesystem",
+			"key": "destination filesystem",
+			"message": "destination filesystem",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "destination filesystem (ja)"
+		},
+		{
+			"id": "destination locale",
+			"key": "destination locale",
+			"message": "destination locale",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination locale (ja)"
+		},
+		{
+			"id": "file name",
+			"key": "file name",
+			"message": "file name",
+			"translatorComment": "[from: path.tmpl]",
+			"translation": "file name (ja)"
+		},
+		{
+			"id": "file path",
+			"key": "file path",
+			"message": "file path",
+			"translatorComment": "[from: path.tmpl]",
+			"translation": "file path (ja)"
+		},
+		{
+			"id": "formal",
+			"key": "formal",
+			"message": "formal",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "formal (ja)"
+		},
+		{
+			"id": "go to the %[1]s %[2]s %[3]s filesystem",
+			"key": "go to the %[1]s %[2]s %[3]s filesystem",
+			"message": "go to the %[1]s %[2]s %[3]s filesystem",
+			"translatorComment": ".EditorFeatureName .EditFSID $code [from: breadcrumbs.tmpl]",
+			"translation": "go to the %[1]s %[2]s %[3]s filesystem (ja)"
+		},
+		{
+			"id": "go to the %[1]s %[2]s filesystem",
+			"key": "go to the %[1]s %[2]s filesystem",
+			"message": "go to the %[1]s %[2]s filesystem",
+			"translatorComment": ".EditorFeatureName .EditFSID [from: breadcrumbs.tmpl]",
+			"translation": "go to the %[1]s %[2]s filesystem (ja)"
+		},
+		{
+			"id": "go to the top-level of editing %[1]s",
+			"key": "go to the top-level of editing %[1]s",
+			"message": "go to the top-level of editing %[1]s",
+			"translatorComment": ".EditorFeatureName [from: breadcrumbs.tmpl]",
+			"translation": "go to the top-level of editing %[1]s (ja)"
+		},
+		{
+			"id": "go to translation",
+			"key": "go to translation",
+			"message": "go to translation",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "go to translation (ja)"
+		},
+		{
+			"id": "kebab-cased-name",
+			"key": "kebab-cased-name",
+			"message": "kebab-cased-name",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "kebab-cased-name (ja)"
+		},
+		{
+			"id": "kebab-cases-key-name",
+			"key": "kebab-cases-key-name",
+			"message": "kebab-cases-key-name",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "kebab-cases-key-name (ja)"
+		},
+		{
+			"id": "list item",
+			"key": "list item",
+			"message": "list item",
+			"translatorComment": "[from: list.tmpl]",
+			"translation": "list item (ja)"
+		},
+		{
+			"id": "long",
+			"key": "long",
+			"message": "long",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "long (ja)"
+		},
+		{
+			"id": "long-form permalink",
+			"key": "long-form permalink",
+			"message": "long-form permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "long-form permalink (ja)"
+		},
+		{
+			"id": "menu file extension",
+			"key": "menu file extension",
+			"message": "menu file extension",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "menu file extension (ja)"
+		},
+		{
+			"id": "menu item label",
+			"key": "menu item label",
+			"message": "menu item label",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "menu item label (ja)"
+		},
+		{
+			"id": "menu item link (optional)",
+			"key": "menu item link (optional)",
+			"message": "menu item link (optional)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "menu item link (optional) (ja)"
+		},
+		{
+			"id": "menu name",
+			"key": "menu name",
+			"message": "menu name",
+			"translatorComment": "[from: menu-details.tmpl]",
+			"translation": "menu name (ja)"
+		},
+		{
+			"id": "message",
+			"key": "message",
+			"message": "message",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "message (ja)"
+		},
+		{
+			"id": "move menu item down",
+			"key": "move menu item down",
+			"message": "move menu item down",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "move menu item down (ja)"
+		},
+		{
+			"id": "move menu item up",
+			"key": "move menu item up",
+			"message": "move menu item up",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "move menu item up (ja)"
+		},
+		{
+			"id": "new context key name to add",
+			"key": "new context key name to add",
+			"message": "new context key name to add",
+			"translatorComment": "[from: add-new.tmpl], [from: field.tmpl]",
+			"translation": "new context key name to add (ja)"
+		},
+		{
+			"id": "new menu's file path",
+			"key": "new menu's file path",
+			"message": "new menu's file path",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's file path (ja)"
+		},
+		{
+			"id": "new menu's locale",
+			"key": "new menu's locale",
+			"message": "new menu's locale",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's locale (ja)"
+		},
+		{
+			"id": "new menu's name",
+			"key": "new menu's name",
+			"message": "new menu's name",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's name (ja)"
+		},
+		{
+			"id": "new page's archetype",
+			"key": "new page's archetype",
+			"message": "new page's archetype",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's archetype (ja)"
+		},
+		{
+			"id": "new page's file path",
+			"key": "new page's file path",
+			"message": "new page's file path",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's file path (ja)"
+		},
+		{
+			"id": "new page's format",
+			"key": "new page's format",
+			"message": "new page's format",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's format (ja)"
+		},
+		{
+			"id": "new page's locale",
+			"key": "new page's locale",
+			"message": "new page's locale",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's locale (ja)"
+		},
+		{
+			"id": "new page's name",
+			"key": "new page's name",
+			"message": "new page's name",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's name (ja)"
+		},
+		{
+			"id": "no files found",
+			"key": "no files found",
+			"message": "no files found",
+			"translatorComment": "[from: default-browser.tmpl], [from: themes-browser.tmpl]",
+			"translation": "no files found (ja)"
+		},
+		{
+			"id": "page URL",
+			"key": "page URL",
+			"message": "page URL",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "page URL (ja)"
+		},
+		{
+			"id": "short",
+			"key": "short",
+			"message": "short",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "short (ja)"
+		},
+		{
+			"id": "short-form permalink",
+			"key": "short-form permalink",
+			"message": "short-form permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "short-form permalink (ja)"
+		},
+		{
+			"id": "show/hide dropdown menu",
+			"key": "show/hide dropdown menu",
+			"message": "show/hide dropdown menu",
+			"translatorComment": "[from: dropdown.tmpl]",
+			"translation": "show/hide dropdown menu (ja)"
+		},
+		{
+			"id": "standard",
+			"key": "standard",
+			"message": "standard",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "standard (ja)"
+		},
+		{
+			"id": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"key": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"message": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"translatorComment": ".Field.Key (toCamel) [from: field.tmpl], .Key (toCamel) [from: key-pair.tmpl], .Field.Key (toCamel) [from: key-pair.tmpl]",
+			"translation": "this key is stored as: %[1]s and accessible as the .%[2]s variable (ja)"
+		},
+		{
+			"id": "this page has been indexed with the permalink set and this is the actual permalink",
+			"key": "this page has been indexed with the permalink set and this is the actual permalink",
+			"message": "this page has been indexed with the permalink set and this is the actual permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "this page has been indexed with the permalink set and this is the actual permalink (ja)"
+		},
+		{
+			"id": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"key": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"message": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page (ja)"
+		},
+		{
+			"id": "thumbnail image (missing)",
+			"key": "thumbnail image (missing)",
+			"message": "thumbnail image (missing)",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "thumbnail image (missing) (ja)"
+		},
+		{
+			"id": "translation file name",
+			"key": "translation file name",
+			"message": "translation file name",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation file name (ja)"
+		},
+		{
+			"id": "translation file path",
+			"key": "translation file path",
+			"message": "translation file path",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation file path (ja)"
+		},
+		{
+			"id": "translation locale",
+			"key": "translation locale",
+			"message": "translation locale",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation locale (ja)"
+		},
+		{
+			"id": "translation...",
+			"key": "translation...",
+			"message": "translation...",
+			"translatorComment": "[from: cell.tmpl]",
+			"translation": "translation... (ja)"
+		}
+	]
+}

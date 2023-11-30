@@ -1,0 +1,16 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+
+<div class="edit-page--matter--details">
+
+    <div class="page-detail--fileinfo">
+        <table>
+            <tbody>
+            <tr class="table-row--centered">
+                -
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

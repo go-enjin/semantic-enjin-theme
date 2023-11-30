@@ -1,0 +1,107 @@
+<!--
+    .Idx - the primary index for this field within the overall page of listed fields
+    .Jdx - the secondary index for this field within the list of fields
+    .Action - the editor.Action representing this fields
+    .Target - the href for anchor links and form actions
+    .Inverted - is a bool indicating that the button styles should swap the fg/bg colours
+    .IconWithName - is a bool indicating that the button name should be visible with any icon specified in the action
+
+    Example dictionary:
+
+    template "partials/common/field.tmpl" (dict $
+    "Idx" $idx
+    "Jdx" $jdx
+    "Action" $action
+    "Target" $.FormAction
+    "Inverted" true
+    "IconWithName" false
+    )
+-->
+
+{{ $buttonClass := $.Action.Class }}
+{{ if $.IconWithName }}
+{{ else if $.Inverted }}
+    {{ $buttonClass = printf "%s invert" $buttonClass }}
+{{ else }}
+    {{ $buttonClass = printf "%s icon" $buttonClass }}
+{{ end }}
+
+{{ if or ($.Action.Prompt) ($.Action.Dialog) }}
+
+    {{ $dialog := (dict
+    $
+    "Key" $.Action.Key
+    "Tag" (printf "%s--%d--%d" (toKebab $.Action.Key) $.Idx $.Jdx)
+    "Name" $.Action.Name
+    "Icon" $.Action.Icon
+    "Class" $.Action.Class
+    "Message" $.Action.Prompt
+    "Order" $.Action.Order
+    "Target" $.Target
+    "IconWithName" $.IconWithName
+    "ButtonClass" $buttonClass
+    ) }}
+
+
+    {{ if eq $.Action.Dialog "create-user" }}
+        {{ template "partials/common/dialog/create-user.tmpl" $dialog }}
+    {{ else if eq $.Action.Dialog "delete-user" }}
+        {{ template "partials/common/dialog/delete-user.tmpl" $dialog }}
+    {{ else if eq $.Action.Dialog "reset-user-otp" }}
+        {{ template "partials/common/dialog/reset-user-otp.tmpl" $dialog }}
+    {{ else }}
+        {{ template "partials/common/dialog/yesno.tmpl" $dialog }}
+    {{ end }}
+
+{{ else if $.Action.Active }}
+
+    {{ if eq $.Action.Method "post" }}
+
+        <button class="{{ $buttonClass }} fit"
+                type="submit" name="submit"
+                value="{{ $.Action.Key }}"
+                title="{{ $.Action.Name }}"
+                data-order="{{ $.Action.Order }}">
+            {{ if $.Action.Icon }}
+                <i class="{{ $.Action.Icon }}"></i>
+                <span class="sr-only">{{ $.Action.Name }}</span>
+            {{ end }}
+            {{ if or (not $.Action.Icon) ($.IconWithName) }}
+                <span class="action-label">{{ $.Action.Name }}</span>
+            {{ end }}
+        </button>
+
+    {{ else }}
+
+        <a class="button {{ $buttonClass }} fit"
+           href="{{ $.Target }}{{ if $.Action.Tilde }}.~{{ $.Action.Tilde }}{{ end }}"
+           title="{{ $.Action.Name }}"
+           data-order="{{ $.Action.Order }}"
+        >
+            {{ if $.Action.Icon }}
+                <i class="{{ $.Action.Icon }}"></i>
+                <span class="sr-only">{{ $.Action.Name }}</span>
+            {{ end }}
+            {{ if or (not $.Action.Icon) ($.IconWithName) }}
+                <span class="action-label">{{ $.Action.Name }}</span>
+            {{ end }}
+        </a>
+
+    {{ end }}
+
+{{ else }}
+
+    <div class="button {{ $buttonClass }} fit"
+         title="{{ $.Action.Name }}"
+         data-order="{{ $.Action.Order }}"
+    >
+        {{ if $.Action.Icon }}
+            <i class="{{ $.Action.Icon }}"></i>
+            <span class="sr-only">{{ $.Action.Name }}</span>
+        {{ end }}
+        {{ if or (not $.Action.Icon) ($.IconWithName) }}
+            <span class="action-label">{{ $.Action.Name }}</span>
+        {{ end }}
+    </div>
+
+{{ end }}

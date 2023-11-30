@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/settings--selector.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "%[1]s Settings" .FeatureInfo.Label) "WithBreadcrumbs" true) }}
+
+    <article class="block" id="settings"
+             data-block-tag="settings"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+
+                {{ if not .DeleteRequested }}
+                    {{ if .PanelsOrder }}
+
+                            <ul class="settings-panel-list">
+                                {{ range $idx,$key := .PanelsOrder }}
+                                    {{ with $info := index $.PanelsInfos $key }}
+                                        {{ with $href := index $.PanelsPaths $key }}
+                                            <li class="settings-panel-item">
+                                                <a class="button caution" href="{{ $href }}">
+                                                    {{ if $info.Icon }}
+                                                        <i class="{{ $info.Icon }}"></i>
+                                                    {{ end }}
+                                                    <span>{{ $info.Label }}</span>
+                                                </a>
+                                            </li>
+                                        {{ end }}
+                                    {{ end }}
+                                {{ end }}
+                            </ul>
+
+                    {{ else }}
+                        <p>{{ _ "None of the site's authentication features have user settings panels." }}</p>
+                    {{ end }}
+                {{ end }}
+
+                <form method="post" action="{{ .FormAction }}">
+                    {{ template "partials/common/nonces.tmpl" .Nonces }}
+                    <fieldset class="feature-group">
+                        <legend>{{ _ "Account" }}</legend>
+
+                        {{ if .DeleteRequested }}
+
+                            {{ if .DeleteRequested.Confirmed }}
+
+                                {{ `<style>
+#delete-confirmation:not(:valid) + label,
+#delete-confirmation:not(:valid) ~ #delete-button { display: none; }
+</style>` | asHTML }}
+
+                                <label for="delete-confirmation">{{ _ "Type the following phrase exactly: \"%[1]s\"" .DeleteRequested.Confirmation }}</label>
+                                <input id="delete-confirmation" type="text" name="delete-confirmation" required/>
+
+                                <label for="delete-button">{{ _ "After you press this button, your entire account will be deleted." }}</label>
+                                <button id="delete-button" class="danger" type="submit" name="submit" value="delete-confirmed">
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                    {{ _ "Confirm deletion of your account" }}
+                                </button>
+
+                                <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+
+                            {{ else }}
+
+                                <label for="delete-button">{{ _ "Delete your entire account" }}</label>
+                                <button id="delete-button" class="danger" type="submit" name="submit" value="delete-confirm">
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                    {{ _ "Confirm deletion of your account" }}
+                                </button>
+
+                                <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+
+                            {{ end }}
+
+                        {{ else }}
+
+                            {{ if .UserActive }}
+                                <label for="deactivate-button">{{ _ "Deactivate your primary account sign-in, any backup sign-in methods will continue to function." }}</label>
+                                <button id="deactivate-button" class="caution" type="submit" name="submit" value="deactivate">
+                                    <i class="fa-solid fa-ban"></i>
+                                    {{ _ "Deactivate primary sign-in method" }}
+                                </button>
+                            {{ else }}
+                                <label for="reactivate-button">{{ _ "Reactivate your primary account sign-in" }}</label>
+                                <button id="reactivate-button" class="important" type="submit" name="submit" value="reactivate">
+                                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                                    {{ _ "Reactivate primary sign-in method" }}
+                                </button>
+                            {{ end }}
+
+                            {{ if .CanDeleteOwnUser }}
+                                <label for="delete-button">{{ _ "Delete your entire account" }}</label>
+                                <button id="delete-button" class="danger" type="submit" name="submit" value="delete">
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                    {{ _ "Delete account" }}
+                                </button>
+                            {{ end }}
+
+                        {{ end }}
+                    </fieldset>
+                </form>
+
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<ul class="common--breadcrumbs">
+    {{- if .WithRoot }}
+    <li class="breadcrumb root" title="{{ _ "go to the top page" }}">
+        <a href="/">{{ _ "Top" }}</a>
+    </li>
+    {{- end }}
+    {{- $built := "" -}}
+    {{- $parts := splitString (trimPrefix .Path "/") "/" -}}
+    {{- $last := sub (len $parts) 1 -}}
+    {{- range $idx,$part := $parts }}
+        {{- if and (not $.WithLast) (eq $idx $last) -}}{{ break }}{{ end }}
+        {{- $built = printf "%s/%s" $built $part }}
+        {{- if and (not $.WithFirst) (eq $idx 0) -}}{{ continue }}{{ end }}
+        <li class="breadcrumb" title="{{ _ "go to the %[1]s page" $built }}">
+            <a href="{{ $built | asURL }}">{{ $part }}</a>
+        </li>
+    {{- end }}
+</ul>

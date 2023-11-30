@@ -1,0 +1,95 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+{{ $depth := 0 }}{{ if .Depth }}{{ $depth = .Depth }}{{ end }}
+{{ $key := "" }}{{ if .MatterKey }}
+    {{ $key = printf "%s.%s" .MatterKey .Key }}
+{{ else }}
+    {{ $key = printf ".matter.%s" .Key }}
+{{ end }}
+{{ $tag := "" }}{{ if .MatterTag }}
+    {{ $tag = printf "%s--%s" .MatterTag .Key }}
+{{ else }}
+    {{ $tag = printf "--%s" .Key }}
+{{ end }}
+{{ $value := .Value }}
+<li>
+    {{ $t := typeOf $value }}
+
+    {{ if or (eq $t "map[string]interface {}") (eq $t "context.Context") }}
+
+        <div class="edit-page--matter--key">
+            <div class="edit-page--matter--key--label">
+                <span title="{{ _ "this key is stored as: %[1]s and accessible as the .%[2]s variable" .Key (toCamel .Key) }}">.{{ toCamel .Key }}</span>
+                <button class="danger invert fit" type="submit" name="submit"
+                        value="change.~delete{{ $key }}"
+                        title="{{ _ "delete this dictionary" }}"
+                ><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <span class="edit-page--matter--key--type">{{ _ "(dictionary)" }}</span>
+        </div>
+        <ul class="edit-page--matter--data">
+            <li>
+                {{ template "partials/fs-editor/page-editor/add-new.tmpl" (dict $ "MatterKey" $key "MatterTag" $tag) }}
+            </li>
+            <li>
+                {{ if gt (len $value) 0 }}
+                    {{ template "partials/fs-editor/page-editor/page-variables.tmpl" (dict $ "Matter" $value "MatterKey" $key "MatterTag" $tag) }}
+                {{ end }}
+            </li>
+        </ul>
+
+    {{ else if typeOfSlice $value }}
+
+        <div class="edit-page--matter--key">
+            <div class="edit-page--matter--key--label">
+                <span title="{{ _ "this key is stored as: %[1]s and accessible as the .%[2]s variable" .Key (toCamel .Key) }}">.{{ toCamel .Key }}</span>
+                <button class="danger invert fit" type="submit" name="submit"
+                        value="change.~delete{{ $key }}"
+                        title="{{ _ "delete this list" }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                ><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <span class="edit-page--matter--key--type">{{ _ "(list)" }}</span>
+        </div>
+        <ul class="edit-page--matter--data">
+            <li>
+                <div class="controls">
+                    <button class="primary fit" type="submit" name="submit" value="change.~append{{ $key }}"
+                            {{ if $readOnly }}disabled{{ end }}
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        <span>{{ _ "Append new list item" }}</span>
+                    </button>
+                </div>
+            </li>
+            <li>
+                {{ if gt (len $value) 0 }}
+                    {{ template "partials/fs-editor/page-editor/list.tmpl" (dict $ "List" $value "MatterKey" $key "MatterTag" $tag) }}
+                {{ end }}
+            </li>
+        </ul>
+
+    {{ else }}
+
+        <div class="edit-page--matter--key">
+            <div class="edit-page--matter--key--label">
+                <label for="{{ $tag }}" class="edit-page--matter--key"
+                       title="{{ _ "this key is stored as: %[1]s and accessible as the .%[2]s variable" .Field.Key (toCamel .Key) }}"
+                >.{{ toCamel .Key }}</label>
+                <button class="danger invert fit" type="submit" name="submit" value="change.~delete{{ $key }}"
+                        title="{{ _ "delete this value" }}"
+                        {{ if $readOnly }}disabled{{ end }}
+                ><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+            <span class="edit-page--matter--key--type">{{ _ "(plain text)" }}</span>
+        </div>
+        <ul class="edit-page--matter--data">
+            <li>
+                <input class="edit-page--matter--value" id="{{ $tag }}" name="{{ $key }}" type="text"
+                       value="{{ $value }}"
+                       {{ if $readOnly }}disabled{{ end }}
+                />
+            </li>
+        </ul>
+
+    {{ end }}
+</li>

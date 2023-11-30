@@ -1,0 +1,130 @@
+{{- $readOnly := false }}{{ if .ReadOnly }}{{ $readOnly = .ReadOnly }}{{ else if .FileInfo.ReadOnly }}{{ $readOnly = .FileInfo.ReadOnly }}{{ end }}
+
+<div class="edit-page--matter--details">
+
+    {{ with $thumbnail := (index .Page.Matter "thumbnail-url") }}
+        <a class="page-detail--thumbnail" href="{{ $thumbnail }}"
+           target="_blank">
+            <div class="page-detail--thumbnail--thumbnail"
+                 style="background-image: url({{ fsUrl $thumbnail }});"
+                    {{ with $alt := (index $.Page.Matter "thumbnail-alt") }}
+                        title="{{ $alt }}"
+                    {{ else }}
+                        title="{{ _ "thumbnail image (missing alt text)" }}"
+                    {{ end }}
+            ></div>
+        </a>
+    {{ end }}
+
+    <div class="page-detail--fileinfo">
+        <table>
+            <tbody>
+            <tr class="table-row--centered">
+                <td colspan="2">
+                    <a href="{{ __ .CPage.Language .CPage.Url }}"
+                       title="{{ _ "page URL" }}"
+                       target="_blank">{{ __ .CPage.Language .CPage.Url }}</a>
+                </td>
+            </tr>
+
+            {{ if .SitePermalinkable }}
+                {{ with $permalink := (index $.Page.Matter "permalink") }}
+                    {{ with $uuid := uuidFromString $permalink }}
+                        {{ with $shasum := byteHash10 $uuid.Bytes }}
+                            <tr>
+                                <td>{{ _ "Permalink" }}</td>
+                                <td>
+                                    {{ $madePermalink := printf "%s-%s" (__ $.CPage.Language $.CPage.Url) $shasum }}
+                                    {{ $realPermalink := _permalink $permalink }}
+                                    {{ if eq $madePermalink $realPermalink }}
+                                        <a href="{{ $madePermalink }}"
+                                           title="{{ _ "this page has been indexed with the permalink set and this is the actual permalink" }}"
+                                           target="_blank">{{ _ "actual" }}</a>
+                                    {{ else }}
+                                        <a href="{{ $madePermalink }}"
+                                           title="{{ _ "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page" }}"
+                                           target="_blank">{{ _ "formal" }}</a>
+                                    {{ end }}
+                                    &nbsp;
+                                    <a href="/{{ $permalink }}"
+                                       title="{{ _ "long-form permalink" }}"
+                                       target="_blank">{{ _ "long" }}</a>
+                                    &nbsp;
+                                    <a href="/{{ $shasum }}"
+                                       title="{{ _ "short-form permalink" }}"
+                                       target="_blank">{{ _ "short" }}</a>
+                                </td>
+                            </tr>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            <tr>
+                <td>{{ _ "Type" }}</td>
+                <td>{{ $.CPage.Type }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ _ "Format" }}</td>
+                <td>{{ $.CPage.Format }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ _ "Archetype" }}</td>
+                <td>{{ if eq $.CPage.Archetype "" }}&mdash;{{ else }}{{ $.CPage.Archetype }}{{ end }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ _ "Layout" }}</td>
+                <td>{{ if eq $.CPage.Layout "" }}defaults{{ else }}{{ $.CPage.Layout }}{{ end }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ _ "Created" }}</td>
+                <td title="{{ fmtDateTime .CPage.CreatedAt }}">{{ fmtDate .CPage.CreatedAt }}</td>
+            </tr>
+            <tr>
+                <td>{{ _ "Updated" }}</td>
+                <td title="{{ fmtDateTime .CPage.UpdatedAt }}">{{ fmtDate .CPage.UpdatedAt }}</td>
+            </tr>
+
+            {{ if eq $.CPage.Language $.EnjinInfo.DefaultLang.String }}
+                <tr>
+                    <td>{{ _ "Translations" }}</td>
+                    <td>
+                        {{ if and $.TranslatedLocales (gt (len $.TranslatedLocales) 0) }}
+                            {{ range $k,$v := $.TranslatedLocales }}
+                                <a class="button primary fit"
+                                   href="{{ $.SelfEditorPath }}/{{ $v }}"
+                                   title="{{ _ "go to translation" }}"
+                                >{{ $k }}</a>
+                            {{ end }}
+                        {{ else }}
+                            &mdash;
+                        {{ end }}
+                    </td>
+                </tr>
+            {{ else }}
+                <tr>
+                    <td>{{ _ "Translates" }}</td>
+                    <td>
+                        {{ if and $.TranslatedLocales (gt (len $.TranslatedLocales) 0) }}
+                            {{ range $k,$v := $.TranslatedLocales }}
+                                <a class="button primary fit"
+                                   href="{{ $.SelfEditorPath }}/{{ $v }}"
+                                   title="{{ _ "go to translation" }}"
+                                >{{ $k }}</a>
+                            {{ end }}
+                        {{ else }}
+                            &mdash;
+                        {{ end }}
+                    </td>
+                </tr>
+            {{ end }}
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

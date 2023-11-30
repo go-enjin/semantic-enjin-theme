@@ -1,0 +1,3240 @@
+{
+	"language": "ja",
+	"messages": [
+		{
+			"id": "{EditorFeatureLabel}",
+			"key": "%s",
+			"message": "%[1]s",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EditorFeatureLabel",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EditorFeatureLabel"
+				}
+			],
+			"translation": "%[1]s"
+		},
+		{
+			"id": "Server",
+			"key": "Server",
+			"message": "Server",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Server (ja)"
+		},
+		{
+			"id": "Site Name",
+			"key": "Site Name",
+			"message": "Site Name",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Site Name (ja)"
+		},
+		{
+			"id": "Site Tag",
+			"key": "Site Tag",
+			"message": "Site Tag",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Site Tag (ja)"
+		},
+		{
+			"id": "Default Locale",
+			"key": "Default Locale",
+			"message": "Default Locale",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Default Locale (ja)"
+		},
+		{
+			"id": "Supported Locales",
+			"key": "Supported Locales",
+			"message": "Supported Locales",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Supported Locales (ja)"
+		},
+		{
+			"id": "Language Mode",
+			"key": "Language Mode",
+			"message": "Language Mode",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Language Mode (ja)"
+		},
+		{
+			"id": "{LanguageMode} based",
+			"key": "%[1]s based",
+			"message": "%[1]s based",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "LanguageMode",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".LanguageMode"
+				}
+			],
+			"translation": "%[1]s based (ja)"
+		},
+		{
+			"id": "Context",
+			"key": "Context",
+			"message": "Context",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Context"
+		},
+		{
+			"id": "Features",
+			"key": "Features",
+			"message": "Features",
+			"translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
+			"fuzzy": true,
+			"translation": "Features"
+		},
+		{
+			"id": "Unsupported Editor Feature",
+			"key": "Unsupported Editor Feature",
+			"message": "Unsupported Editor Feature",
+			"translatorComment": "[from: layouts/fs-editor/file-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Unsupported Editor Feature (ja)"
+		},
+		{
+			"id": "The {Theme} theme does not support the {Name} editor feature.",
+			"key": "The %[1]s theme does not support the %[2]s editor feature.",
+			"message": "The %[1]s theme does not support the %[2]s editor feature.",
+			"translatorComment": "[from: layouts/fs-editor/file-browser.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Theme",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".Theme"
+				},
+				{
+					"id": "Name",
+					"string": "%[2]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 2,
+					"expr": ".Name"
+				}
+			],
+			"translation": "The %[1]s theme does not support the %[2]s editor feature. (ja)"
+		},
+		{
+			"id": "Unsupported Editor Feature",
+			"key": "Unsupported Editor Feature",
+			"message": "Unsupported Editor Feature",
+			"translatorComment": "[from: layouts/fs-editor/file-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Unsupported Editor Feature (ja)"
+		},
+		{
+			"id": "The {Theme} theme does not support the {Name} editor feature.",
+			"key": "The %[1]s theme does not support the %[2]s editor feature.",
+			"message": "The %[1]s theme does not support the %[2]s editor feature.",
+			"translatorComment": "[from: layouts/fs-editor/file-editor.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Theme",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".Theme"
+				},
+				{
+					"id": "Name",
+					"string": "%[2]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 2,
+					"expr": ".Name"
+				}
+			],
+			"translation": "The %[1]s theme does not support the %[2]s editor feature. (ja)"
+		},
+		{
+			"id": "Top",
+			"key": "Top",
+			"message": "Top",
+			"translatorComment": "[from: layouts/partials/common/breadcrumbs.tmpl]",
+			"fuzzy": true,
+			"translation": "Top"
+		},
+		{
+			"id": "Create",
+			"key": "Create",
+			"message": "Create",
+			"translatorComment": "[from: layouts/partials/common/dialog/create-user.tmpl]",
+			"fuzzy": true,
+			"translation": "Create (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/common/dialog/create-user.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Delete",
+			"key": "Delete",
+			"message": "Delete",
+			"translatorComment": "[from: layouts/partials/common/dialog/delete-user.tmpl]",
+			"fuzzy": true,
+			"translation": "Delete"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/common/dialog/delete-user.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Enter the user's email address to confirm the resetting of their multi-factor settings.",
+			"key": "Enter the user's email address to confirm the resetting of their multi-factor settings.",
+			"message": "Enter the user's email address to confirm the resetting of their multi-factor settings.",
+			"translatorComment": "[from: layouts/partials/common/dialog/reset-user-otp.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter the user's email address to confirm the resetting of their multi-factor settings."
+		},
+		{
+			"id": "Reset",
+			"key": "Reset",
+			"message": "Reset",
+			"translatorComment": "[from: layouts/partials/common/dialog/reset-user-otp.tmpl]",
+			"fuzzy": true,
+			"translation": "Reset"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/common/dialog/reset-user-otp.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Yes",
+			"key": "Yes",
+			"message": "Yes",
+			"translatorComment": "[from: layouts/partials/common/dialog/yesno.tmpl]",
+			"fuzzy": true,
+			"translation": "Yes (ja)"
+		},
+		{
+			"id": "No",
+			"key": "No",
+			"message": "No",
+			"translatorComment": "[from: layouts/partials/common/dialog/yesno.tmpl]",
+			"fuzzy": true,
+			"translation": "No (ja)"
+		},
+		{
+			"id": "back to top",
+			"key": "back to top",
+			"message": "back to top",
+			"translatorComment": "/* screen reader only */\n[from: layouts/partials/footer.tmpl]",
+			"fuzzy": true,
+			"translation": "back to top (ja)"
+		},
+		{
+			"id": "A case matches based on the condition in relation to the variable number and matches if:",
+			"key": "A case matches based on the condition in relation to the variable number and matches if:",
+			"message": "A case matches based on the condition in relation to the variable number and matches if:",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+			"fuzzy": true,
+			"translation": "A case matches based on the condition in relation to the variable number and matches if: (ja)"
+		},
+		{
+			"id": "Add",
+			"key": "Add",
+			"message": "Add",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+			"fuzzy": true,
+			"translation": "Add (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Copy",
+			"key": "Copy",
+			"message": "Copy",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/copy-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Copy (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/copy-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Copy",
+			"key": "Copy",
+			"message": "Copy",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/copy-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Copy (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/copy-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Create",
+			"key": "Create",
+			"message": "Create",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-menu.tmpl]",
+			"fuzzy": true,
+			"translation": "Create (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-menu.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Create a new {standardOrCustom} page:",
+			"key": "Create a new %[1]s page:",
+			"message": "Create a new %[1]s page:",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "standardOrCustom",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$standardOrCustom"
+				}
+			],
+			"translation": "Create a new %[1]s page: (ja)"
+		},
+		{
+			"id": "standard",
+			"key": "standard",
+			"message": "standard",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
+			"fuzzy": true,
+			"translation": "standard (ja)"
+		},
+		{
+			"id": "custom",
+			"key": "custom",
+			"message": "custom",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
+			"fuzzy": true,
+			"translation": "custom (ja)"
+		},
+		{
+			"id": "Create",
+			"key": "Create",
+			"message": "Create",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
+			"fuzzy": true,
+			"translation": "Create (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Translation Key",
+			"key": "Translation Key",
+			"message": "Translation Key",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Translation Key"
+		},
+		{
+			"id": "Comment for translators",
+			"key": "Comment for translators",
+			"message": "Comment for translators",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Comment for translators"
+		},
+		{
+			"id": "Create",
+			"key": "Create",
+			"message": "Create",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Create (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Move",
+			"key": "Move",
+			"message": "Move",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/move-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Move (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/move-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "(done)",
+			"key": "(done)",
+			"message": "(done)",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
+			"fuzzy": true,
+			"translation": "(done)"
+		},
+		{
+			"id": "(no untranslated locales)",
+			"key": "(no untranslated locales)",
+			"message": "(no untranslated locales)",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
+			"fuzzy": true,
+			"translation": "(no untranslated locales)"
+		},
+		{
+			"id": "Translate",
+			"key": "Translate",
+			"message": "Translate",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Translate (ja)"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Yes",
+			"key": "Yes",
+			"message": "Yes",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/yesno.tmpl]",
+			"fuzzy": true,
+			"translation": "Yes (ja)"
+		},
+		{
+			"id": "No",
+			"key": "No",
+			"message": "No",
+			"translatorComment": "[from: layouts/partials/fs-editor/dialog/yesno.tmpl]",
+			"fuzzy": true,
+			"translation": "No (ja)"
+		},
+		{
+			"id": "show/hide dropdown menu",
+			"key": "show/hide dropdown menu",
+			"message": "show/hide dropdown menu",
+			"translatorComment": "[from: layouts/partials/fs-editor/dropdown.tmpl]",
+			"fuzzy": true,
+			"translation": "show/hide dropdown menu (ja)"
+		},
+		{
+			"id": "Pluralize",
+			"key": "Pluralize",
+			"message": "Pluralize",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+			"fuzzy": true,
+			"translation": "Pluralize (ja)"
+		},
+		{
+			"id": "Add new plural case",
+			"key": "Add new plural case",
+			"message": "Add new plural case",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+			"fuzzy": true,
+			"translation": "Add new plural case (ja)"
+		},
+		{
+			"id": "Delete this plural case",
+			"key": "Delete this plural case",
+			"message": "Delete this plural case",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+			"fuzzy": true,
+			"translation": "Delete this plural case (ja)"
+		},
+		{
+			"id": "(missing translation)",
+			"key": "(missing translation)",
+			"message": "(missing translation)",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell.tmpl]",
+			"fuzzy": true,
+			"translation": "(missing translation)"
+		},
+		{
+			"id": "source text",
+			"key": "source text",
+			"message": "source text",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "source text"
+		},
+		{
+			"id": "actions",
+			"key": "actions",
+			"message": "actions",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "actions (ja)"
+		},
+		{
+			"id": "Convert to singular form",
+			"key": "Convert to singular form",
+			"message": "Convert to singular form",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "Convert to singular form (ja)"
+		},
+		{
+			"id": "Convert to plural form",
+			"key": "Convert to plural form",
+			"message": "Convert to plural form",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "Convert to plural form (ja)"
+		},
+		{
+			"id": "Copy this translation",
+			"key": "Copy this translation",
+			"message": "Copy this translation",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "Copy this translation"
+		},
+		{
+			"id": "Delete this translation",
+			"key": "Delete this translation",
+			"message": "Delete this translation",
+			"translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+			"fuzzy": true,
+			"translation": "Delete this translation (ja)"
+		},
+		{
+			"id": "Expand menu",
+			"key": "Expand menu",
+			"message": "Expand menu",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "Expand menu (ja)"
+		},
+		{
+			"id": "Collapse menu",
+			"key": "Collapse menu",
+			"message": "Collapse menu",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "Collapse menu (ja)"
+		},
+		{
+			"id": "(unset)",
+			"key": "(unset)",
+			"message": "(unset)",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "(unset)"
+		},
+		{
+			"id": "move menu item up",
+			"key": "move menu item up",
+			"message": "move menu item up",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "move menu item up (ja)"
+		},
+		{
+			"id": "move menu item down",
+			"key": "move menu item down",
+			"message": "move menu item down",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "move menu item down (ja)"
+		},
+		{
+			"id": "add sub-menu item",
+			"key": "add sub-menu item",
+			"message": "add sub-menu item",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "add sub-menu item (ja)"
+		},
+		{
+			"id": "delete menu item",
+			"key": "delete menu item",
+			"message": "delete menu item",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
+			"fuzzy": true,
+			"translation": "delete menu item (ja)"
+		},
+		{
+			"id": "Created",
+			"key": "Created",
+			"message": "Created",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Created (ja)"
+		},
+		{
+			"id": "Updated",
+			"key": "Updated",
+			"message": "Updated",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Updated (ja)"
+		},
+		{
+			"id": "Translations",
+			"key": "Translations",
+			"message": "Translations",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Translations (ja)"
+		},
+		{
+			"id": "Translates",
+			"key": "Translates",
+			"message": "Translates",
+			"translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Translates (ja)"
+		},
+		{
+			"id": "Add new key/value pair",
+			"key": "Add new key/value pair",
+			"message": "Add new key/value pair",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/add-new.tmpl]",
+			"fuzzy": true,
+			"translation": "Add new key/value pair (ja)"
+		},
+		{
+			"id": "Add new key/value pair",
+			"key": "Add new key/value pair",
+			"message": "Add new key/value pair",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/field.tmpl]",
+			"fuzzy": true,
+			"translation": "Add new key/value pair (ja)"
+		},
+		{
+			"id": "Enable",
+			"key": "Enable",
+			"message": "Enable",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/field.tmpl]",
+			"fuzzy": true,
+			"translation": "Enable (ja)"
+		},
+		{
+			"id": "(dictionary)",
+			"key": "(dictionary)",
+			"message": "(dictionary)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
+			"fuzzy": true,
+			"translation": "(dictionary) (ja)"
+		},
+		{
+			"id": "(list)",
+			"key": "(list)",
+			"message": "(list)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
+			"fuzzy": true,
+			"translation": "(list) (ja)"
+		},
+		{
+			"id": "Append new list item",
+			"key": "Append new list item",
+			"message": "Append new list item",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
+			"fuzzy": true,
+			"translation": "Append new list item (ja)"
+		},
+		{
+			"id": "(plain text)",
+			"key": "(plain text)",
+			"message": "(plain text)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
+			"fuzzy": true,
+			"translation": "(plain text)"
+		},
+		{
+			"id": "Permalink",
+			"key": "Permalink",
+			"message": "Permalink",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Permalink (ja)"
+		},
+		{
+			"id": "actual",
+			"key": "actual",
+			"message": "actual",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "actual (ja)"
+		},
+		{
+			"id": "formal",
+			"key": "formal",
+			"message": "formal",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "formal (ja)"
+		},
+		{
+			"id": "long",
+			"key": "long",
+			"message": "long",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "long (ja)"
+		},
+		{
+			"id": "short",
+			"key": "short",
+			"message": "short",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "short (ja)"
+		},
+		{
+			"id": "Type",
+			"key": "Type",
+			"message": "Type",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Type (ja)"
+		},
+		{
+			"id": "Format",
+			"key": "Format",
+			"message": "Format",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Format (ja)"
+		},
+		{
+			"id": "Archetype",
+			"key": "Archetype",
+			"message": "Archetype",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Archetype (ja)"
+		},
+		{
+			"id": "Layout",
+			"key": "Layout",
+			"message": "Layout",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Layout (ja)"
+		},
+		{
+			"id": "Created",
+			"key": "Created",
+			"message": "Created",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Created (ja)"
+		},
+		{
+			"id": "Updated",
+			"key": "Updated",
+			"message": "Updated",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Updated (ja)"
+		},
+		{
+			"id": "Translations",
+			"key": "Translations",
+			"message": "Translations",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Translations (ja)"
+		},
+		{
+			"id": "Translates",
+			"key": "Translates",
+			"message": "Translates",
+			"translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
+			"fuzzy": true,
+			"translation": "Translates (ja)"
+		},
+		{
+			"id": "{EditorFeatureLabel} File Browser",
+			"key": "%[1]s File Browser",
+			"message": "%[1]s File Browser",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EditorFeatureLabel",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EditorFeatureLabel"
+				}
+			],
+			"translation": "%[1]s File Browser (ja!)"
+		},
+		{
+			"id": "Name",
+			"key": "Name",
+			"message": "Name",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Name (ja)"
+		},
+		{
+			"id": "Type",
+			"key": "Type",
+			"message": "Type",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Type (ja)"
+		},
+		{
+			"id": "Date",
+			"key": "Date",
+			"message": "Date",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Date (ja)"
+		},
+		{
+			"id": "Actions",
+			"key": "Actions",
+			"message": "Actions",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Actions (ja)"
+		},
+		{
+			"id": "(unknown)",
+			"key": "(unknown)",
+			"message": "(unknown)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "(unknown)"
+		},
+		{
+			"id": "no files found",
+			"key": "no files found",
+			"message": "no files found",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "no files found (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "Locales Editor",
+			"key": "Locales Editor",
+			"message": "Locales Editor",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Locales Editor (ja!)"
+		},
+		{
+			"id": "Add new translation",
+			"key": "Add new translation",
+			"message": "Add new translation",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Add new translation"
+		},
+		{
+			"id": "Search within",
+			"key": "Search within",
+			"message": "Search within",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Search within"
+		},
+		{
+			"id": "Close search",
+			"key": "Close search",
+			"message": "Close search",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Close search"
+		},
+		{
+			"id": "Cancel searching",
+			"key": "Cancel searching",
+			"message": "Cancel searching",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel searching"
+		},
+		{
+			"id": "(empty locales)",
+			"key": "(empty locales)",
+			"message": "(empty locales)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "(empty locales)"
+		},
+		{
+			"id": "Menu Editor",
+			"key": "Menu Editor",
+			"message": "Menu Editor",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Menu Editor (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "add menu item",
+			"key": "add menu item",
+			"message": "add menu item",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "add menu item (ja)"
+		},
+		{
+			"id": "Expand all",
+			"key": "Expand all",
+			"message": "Expand all",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Expand all (ja)"
+		},
+		{
+			"id": "Collapse all",
+			"key": "Collapse all",
+			"message": "Collapse all",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Collapse all (ja)"
+		},
+		{
+			"id": "(empty menu)",
+			"key": "(empty menu)",
+			"message": "(empty menu)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "(empty menu)"
+		},
+		{
+			"id": "Details",
+			"key": "Details",
+			"message": "Details",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Details (ja)"
+		},
+		{
+			"id": "Page Editor",
+			"key": "Page Editor",
+			"message": "Page Editor",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Page Editor (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "Title",
+			"key": "Title",
+			"message": "Title",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Title (ja)"
+		},
+		{
+			"id": "Description",
+			"key": "Description",
+			"message": "Description",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Description (ja)"
+		},
+		{
+			"id": "Contents",
+			"key": "Contents",
+			"message": "Contents",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Contents (ja)"
+		},
+		{
+			"id": "Details",
+			"key": "Details",
+			"message": "Details",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Details (ja)"
+		},
+		{
+			"id": "Settings",
+			"key": "Settings",
+			"message": "Settings",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Settings (ja)"
+		},
+		{
+			"id": "Variables",
+			"key": "Variables",
+			"message": "Variables",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Variables (ja)"
+		},
+		{
+			"id": "{EditorFeatureLabel} File Browser",
+			"key": "%[1]s File Browser",
+			"message": "%[1]s File Browser",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EditorFeatureLabel",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EditorFeatureLabel"
+				}
+			],
+			"translation": "%[1]s File Browser (ja!)"
+		},
+		{
+			"id": "Name",
+			"key": "Name",
+			"message": "Name",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Name (ja)"
+		},
+		{
+			"id": "Type",
+			"key": "Type",
+			"message": "Type",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Type (ja)"
+		},
+		{
+			"id": "Date",
+			"key": "Date",
+			"message": "Date",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Date (ja)"
+		},
+		{
+			"id": "Actions",
+			"key": "Actions",
+			"message": "Actions",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "Actions (ja)"
+		},
+		{
+			"id": "(unknown)",
+			"key": "(unknown)",
+			"message": "(unknown)",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "(unknown)"
+		},
+		{
+			"id": "no files found",
+			"key": "no files found",
+			"message": "no files found",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-browser.tmpl]",
+			"fuzzy": true,
+			"translation": "no files found (ja)"
+		},
+		{
+			"id": "{EditorFeatureLabel} File Editor",
+			"key": "%[1]s File Editor",
+			"message": "%[1]s File Editor",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-editor.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EditorFeatureLabel",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EditorFeatureLabel"
+				}
+			],
+			"translation": "%[1]s File Editor (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "Contents",
+			"key": "Contents",
+			"message": "Contents",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/themes-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Contents (ja)"
+		},
+		{
+			"id": "{EditorFeatureLabel} File Editor",
+			"key": "%[1]s File Editor",
+			"message": "%[1]s File Editor",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/unsafe-editor.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EditorFeatureLabel",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EditorFeatureLabel"
+				}
+			],
+			"translation": "%[1]s File Editor (ja)"
+		},
+		{
+			"id": "File is locked by another user.",
+			"key": "File is locked by another user.",
+			"message": "File is locked by another user.",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/unsafe-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "File is locked by another user. (ja)"
+		},
+		{
+			"id": "Contents",
+			"key": "Contents",
+			"message": "Contents",
+			"translatorComment": "[from: layouts/partials/fs-editor/page/unsafe-editor.tmpl]",
+			"fuzzy": true,
+			"translation": "Contents (ja)"
+		},
+		{
+			"id": "Go to the first page",
+			"key": "Go to the first page",
+			"message": "Go to the first page",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+			"fuzzy": true,
+			"translation": "Go to the first page"
+		},
+		{
+			"id": "Go to the previous page",
+			"key": "Go to the previous page",
+			"message": "Go to the previous page",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+			"fuzzy": true,
+			"translation": "Go to the previous page"
+		},
+		{
+			"id": "Page {Num1} of {PageNumber}",
+			"key": "Page %[1]d of %[2]d",
+			"message": "Page %[1]d of %[2]d",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Num1",
+					"string": "%[1]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 1,
+					"expr": "$."
+				},
+				{
+					"id": "PageNumber",
+					"string": "%[2]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 2,
+					"expr": "PageNumber"
+				}
+			],
+			"translation": "Page %[1]d of %[2]d"
+		},
+		{
+			"id": "Go to the next page",
+			"key": "Go to the next page",
+			"message": "Go to the next page",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+			"fuzzy": true,
+			"translation": "Go to the next page"
+		},
+		{
+			"id": "Go to the last page",
+			"key": "Go to the last page",
+			"message": "Go to the last page",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+			"fuzzy": true,
+			"translation": "Go to the last page"
+		},
+		{
+			"id": "{TotalItems} results found",
+			"key": "%[1]d results found",
+			"message": "%[1]d results found",
+			"translatorComment": "[from: layouts/partials/fs-editor/pagination/summary.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "TotalItems",
+					"string": "%[1]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 1,
+					"expr": ".TotalItems"
+				}
+			],
+			"translation": "%[1]d results found"
+		},
+		{
+			"id": "Add new key/value pair",
+			"key": "Add new key/value pair",
+			"message": "Add new key/value pair",
+			"translatorComment": "[from: layouts/partials/settings/field.tmpl]",
+			"fuzzy": true,
+			"translation": "Add new key/value pair (ja)"
+		},
+		{
+			"id": "(empty)",
+			"key": "(empty)",
+			"message": "(empty)",
+			"translatorComment": "[from: layouts/partials/settings/field.tmpl]",
+			"fuzzy": true,
+			"translation": "(empty) (ja)"
+		},
+		{
+			"id": "Enable",
+			"key": "Enable",
+			"message": "Enable",
+			"translatorComment": "[from: layouts/partials/settings/field.tmpl]",
+			"fuzzy": true,
+			"translation": "Enable (ja)"
+		},
+		{
+			"id": "Manage {FeatureInfo}",
+			"key": "Manage %[1]s",
+			"message": "Manage %[1]s",
+			"translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Manage %[1]s"
+		},
+		{
+			"id": "Setup a new authenticator app",
+			"key": "Setup a new authenticator app",
+			"message": "Setup a new authenticator app",
+			"translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup a new authenticator app"
+		},
+		{
+			"id": "Revoke an existing authenticator app",
+			"key": "Revoke an existing authenticator app",
+			"message": "Revoke an existing authenticator app",
+			"translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke an existing authenticator app"
+		},
+		{
+			"id": "Revoke {FeatureInfo}",
+			"key": "Revoke %[1]s",
+			"message": "Revoke %[1]s",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Revoke %[1]s"
+		},
+		{
+			"id": "Select one of the provisioned authenticator apps to start the revocation process.",
+			"key": "Select one of the provisioned authenticator apps to start the revocation process.",
+			"message": "Select one of the provisioned authenticator apps to start the revocation process.",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Select one of the provisioned authenticator apps to start the revocation process."
+		},
+		{
+			"id": "No authenticator apps provisioned, nothing to revoke!",
+			"key": "No authenticator apps provisioned, nothing to revoke!",
+			"message": "No authenticator apps provisioned, nothing to revoke!",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "No authenticator apps provisioned, nothing to revoke!"
+		},
+		{
+			"id": "Are you sure you want to delete \\\"{Txt1}\\\"?",
+			"key": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"message": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "Are you sure you want to delete \\\"%[1]s\\\"?"
+		},
+		{
+			"id": "After clicking this, \\\"{Txt1}\\\" will really be deleted!",
+			"key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "After clicking this, \\\"%[1]s\\\" will really be deleted!"
+		},
+		{
+			"id": "Revoke selected authenticator app?",
+			"key": "Revoke selected authenticator app?",
+			"message": "Revoke selected authenticator app?",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke selected authenticator app?"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Setup {FeatureInfo}",
+			"key": "Setup %[1]s",
+			"message": "Setup %[1]s",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Setup %[1]s"
+		},
+		{
+			"id": "Setup and confirm authenticator app",
+			"key": "Setup and confirm authenticator app",
+			"message": "Setup and confirm authenticator app",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup and confirm authenticator app"
+		},
+		{
+			"id": "Give this provision a unique name",
+			"key": "Give this provision a unique name",
+			"message": "Give this provision a unique name",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Give this provision a unique name"
+		},
+		{
+			"id": "Add the following to your authenticator app",
+			"key": "Add the following to your authenticator app",
+			"message": "Add the following to your authenticator app",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Add the following to your authenticator app"
+		},
+		{
+			"id": "authenticator qrcode",
+			"key": "authenticator qrcode",
+			"message": "authenticator qrcode",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "authenticator qrcode"
+		},
+		{
+			"id": "App setup link",
+			"key": "App setup link",
+			"message": "App setup link",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "App setup link"
+		},
+		{
+			"id": "Enter the current authenticator code",
+			"key": "Enter the current authenticator code",
+			"message": "Enter the current authenticator code",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter the current authenticator code"
+		},
+		{
+			"id": "Verify app setup",
+			"key": "Verify app setup",
+			"message": "Verify app setup",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Verify app setup"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Manage {FeatureInfo}",
+			"key": "Manage %[1]s",
+			"message": "Manage %[1]s",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--manage.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Manage %[1]s"
+		},
+		{
+			"id": "Setup new backup codes",
+			"key": "Setup new backup codes",
+			"message": "Setup new backup codes",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup new backup codes"
+		},
+		{
+			"id": "Revoke existing backup codes",
+			"key": "Revoke existing backup codes",
+			"message": "Revoke existing backup codes",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke existing backup codes"
+		},
+		{
+			"id": "Revoke {FeatureInfo}",
+			"key": "Revoke %[1]s",
+			"message": "Revoke %[1]s",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Revoke %[1]s"
+		},
+		{
+			"id": "Select one of the provisioned backup codes to start the revocation process.",
+			"key": "Select one of the provisioned backup codes to start the revocation process.",
+			"message": "Select one of the provisioned backup codes to start the revocation process.",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Select one of the provisioned backup codes to start the revocation process."
+		},
+		{
+			"id": "No backup codes present, nothing to revoke!",
+			"key": "No backup codes present, nothing to revoke!",
+			"message": "No backup codes present, nothing to revoke!",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "No backup codes present, nothing to revoke!"
+		},
+		{
+			"id": "Are you sure you want to delete \\\"{Txt1}\\\"?",
+			"key": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"message": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "Are you sure you want to delete \\\"%[1]s\\\"?"
+		},
+		{
+			"id": "After clicking this, \\\"{Txt1}\\\" will really be deleted!",
+			"key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "After clicking this, \\\"%[1]s\\\" will really be deleted!"
+		},
+		{
+			"id": "Revoke selected email passcode?",
+			"key": "Revoke selected email passcode?",
+			"message": "Revoke selected email passcode?",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke selected email passcode?"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Setup {FeatureInfo}",
+			"key": "Setup %[1]s",
+			"message": "Setup %[1]s",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Setup %[1]s"
+		},
+		{
+			"id": "Confirm you have recorded these safely",
+			"key": "Confirm you have recorded these safely",
+			"message": "Confirm you have recorded these safely",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Confirm you have recorded these safely"
+		},
+		{
+			"id": "Request to see new backup codes",
+			"key": "Request to see new backup codes",
+			"message": "Request to see new backup codes",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Request to see new backup codes"
+		},
+		{
+			"id": "Give this provision a unique name",
+			"key": "Give this provision a unique name",
+			"message": "Give this provision a unique name",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Give this provision a unique name"
+		},
+		{
+			"id": "Copy these to a secure location",
+			"key": "Copy these to a secure location",
+			"message": "Copy these to a secure location",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Copy these to a secure location"
+		},
+		{
+			"id": "Generate codes associated with the above label.",
+			"key": "Generate codes associated with the above label.",
+			"message": "Generate codes associated with the above label.",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Generate codes associated with the above label."
+		},
+		{
+			"id": "I confirm that I have copied these codes to a safe location.",
+			"key": "I confirm that I have copied these codes to a safe location.",
+			"message": "I confirm that I have copied these codes to a safe location.",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "I confirm that I have copied these codes to a safe location."
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Manage {FeatureInfo}",
+			"key": "Manage %[1]s",
+			"message": "Manage %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-backup--manage.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Manage %[1]s"
+		},
+		{
+			"id": "Setup a new backup email",
+			"key": "Setup a new backup email",
+			"message": "Setup a new backup email",
+			"translatorComment": "[from: layouts/site-auth/email-backup--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup a new backup email"
+		},
+		{
+			"id": "Revoke an existing backup email",
+			"key": "Revoke an existing backup email",
+			"message": "Revoke an existing backup email",
+			"translatorComment": "[from: layouts/site-auth/email-backup--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke an existing backup email"
+		},
+		{
+			"id": "Revoke {FeatureInfo}",
+			"key": "Revoke %[1]s",
+			"message": "Revoke %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Revoke %[1]s"
+		},
+		{
+			"id": "Select one of the provisioned email backups to start the revocation process.",
+			"key": "Select one of the provisioned email backups to start the revocation process.",
+			"message": "Select one of the provisioned email backups to start the revocation process.",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Select one of the provisioned email backups to start the revocation process."
+		},
+		{
+			"id": "No email passcodes present, nothing to revoke!",
+			"key": "No email passcodes present, nothing to revoke!",
+			"message": "No email passcodes present, nothing to revoke!",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "No email passcodes present, nothing to revoke!"
+		},
+		{
+			"id": "Are you sure you want to delete \\\"{Txt1}\\\"?",
+			"key": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"message": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "Are you sure you want to delete \\\"%[1]s\\\"?"
+		},
+		{
+			"id": "After clicking this, \\\"{Txt1}\\\" will really be deleted!",
+			"key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "After clicking this, \\\"%[1]s\\\" will really be deleted!"
+		},
+		{
+			"id": "Revoke selected email passcodes?",
+			"key": "Revoke selected email passcodes?",
+			"message": "Revoke selected email passcodes?",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke selected email passcodes?"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Setup {FeatureInfo}",
+			"key": "Setup %[1]s",
+			"message": "Setup %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Setup %[1]s"
+		},
+		{
+			"id": "Awaiting confirmation",
+			"key": "Awaiting confirmation",
+			"message": "Awaiting confirmation",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Awaiting confirmation"
+		},
+		{
+			"id": "Enter your backup email address",
+			"key": "Enter your backup email address",
+			"message": "Enter your backup email address",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter your backup email address"
+		},
+		{
+			"id": "Give this provision a unique name",
+			"key": "Give this provision a unique name",
+			"message": "Give this provision a unique name",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Give this provision a unique name"
+		},
+		{
+			"id": "Setting up this backup email",
+			"key": "Setting up this backup email",
+			"message": "Setting up this backup email",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setting up this backup email"
+		},
+		{
+			"id": "Enter backup for: {EmailAddress}",
+			"key": "Enter backup for: %[1]s",
+			"message": "Enter backup for: %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "EmailAddress",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".EmailAddress"
+				}
+			],
+			"translation": "Enter backup for: %[1]s"
+		},
+		{
+			"id": "Confirm",
+			"key": "Confirm",
+			"message": "Confirm",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Confirm"
+		},
+		{
+			"id": "Setup",
+			"key": "Setup",
+			"message": "Setup",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Manage {FeatureInfo}",
+			"key": "Manage %[1]s",
+			"message": "Manage %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--manage.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Manage %[1]s"
+		},
+		{
+			"id": "Setup a new email passcode",
+			"key": "Setup a new email passcode",
+			"message": "Setup a new email passcode",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup a new email passcode"
+		},
+		{
+			"id": "Revoke an existing email passcode",
+			"key": "Revoke an existing email passcode",
+			"message": "Revoke an existing email passcode",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--manage.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke an existing email passcode"
+		},
+		{
+			"id": "Revoke {FeatureInfo}",
+			"key": "Revoke %[1]s",
+			"message": "Revoke %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Revoke %[1]s"
+		},
+		{
+			"id": "Select one of the provisioned email passcodes to start the revocation process.",
+			"key": "Select one of the provisioned email passcodes to start the revocation process.",
+			"message": "Select one of the provisioned email passcodes to start the revocation process.",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Select one of the provisioned email passcodes to start the revocation process."
+		},
+		{
+			"id": "No email passcodes present, nothing to revoke!",
+			"key": "No email passcodes present, nothing to revoke!",
+			"message": "No email passcodes present, nothing to revoke!",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "No email passcodes present, nothing to revoke!"
+		},
+		{
+			"id": "Are you sure you want to delete \\\"{Txt1}\\\"?",
+			"key": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"message": "Are you sure you want to delete \\\"%[1]s\\\"?",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "Are you sure you want to delete \\\"%[1]s\\\"?"
+		},
+		{
+			"id": "After clicking this, \\\"{Txt1}\\\" will really be deleted!",
+			"key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "Txt1",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": "$."
+				}
+			],
+			"translation": "After clicking this, \\\"%[1]s\\\" will really be deleted!"
+		},
+		{
+			"id": "Revoke selected email passcode?",
+			"key": "Revoke selected email passcode?",
+			"message": "Revoke selected email passcode?",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Revoke selected email passcode?"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Setup {FeatureInfo}",
+			"key": "Setup %[1]s",
+			"message": "Setup %[1]s",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "Setup %[1]s"
+		},
+		{
+			"id": "Awaiting confirmation",
+			"key": "Awaiting confirmation",
+			"message": "Awaiting confirmation",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Awaiting confirmation"
+		},
+		{
+			"id": "Enter an email address",
+			"key": "Enter an email address",
+			"message": "Enter an email address",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter an email address"
+		},
+		{
+			"id": "Give this provision a unique name",
+			"key": "Give this provision a unique name",
+			"message": "Give this provision a unique name",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Give this provision a unique name"
+		},
+		{
+			"id": "Setting up this email",
+			"key": "Setting up this email",
+			"message": "Setting up this email",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setting up this email"
+		},
+		{
+			"id": "Enter email address",
+			"key": "Enter email address",
+			"message": "Enter email address",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter email address"
+		},
+		{
+			"id": "Confirm",
+			"key": "Confirm",
+			"message": "Confirm",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Confirm"
+		},
+		{
+			"id": "Setup",
+			"key": "Setup",
+			"message": "Setup",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Verify Account",
+			"key": "Verify Account",
+			"message": "Verify Account",
+			"translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
+			"fuzzy": true,
+			"translation": "Verify Account"
+		},
+		{
+			"id": "{NumFactorsRequired} verified authentication factors are required. You have {NumFactorsReady} authentication factors configured and {NumFactorsVerified} verified.",
+			"key": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
+			"message": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
+			"translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "NumFactorsRequired",
+					"string": "%[1]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 1,
+					"expr": ".NumFactorsRequired"
+				},
+				{
+					"id": "NumFactorsReady",
+					"string": "%[2]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 2,
+					"expr": ".NumFactorsReady"
+				},
+				{
+					"id": "NumFactorsVerified",
+					"string": "%[3]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 3,
+					"expr": ".NumFactorsVerified"
+				}
+			],
+			"translation": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified."
+		},
+		{
+			"id": "Enter one-time passcode",
+			"key": "Enter one-time passcode",
+			"message": "Enter one-time passcode",
+			"translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter one-time passcode"
+		},
+		{
+			"id": "Verify",
+			"key": "Verify",
+			"message": "Verify",
+			"translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
+			"fuzzy": true,
+			"translation": "Verify"
+		},
+		{
+			"id": "There are no multi-factor authentication features available.",
+			"key": "There are no multi-factor authentication features available.",
+			"message": "There are no multi-factor authentication features available.",
+			"translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
+			"fuzzy": true,
+			"translation": "There are no multi-factor authentication features available."
+		},
+		{
+			"id": "Verify Access",
+			"key": "Verify Access",
+			"message": "Verify Access",
+			"translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
+			"fuzzy": true,
+			"translation": "Verify Access"
+		},
+		{
+			"id": "Enter one-time passcode",
+			"key": "Enter one-time passcode",
+			"message": "Enter one-time passcode",
+			"translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter one-time passcode"
+		},
+		{
+			"id": "Verify",
+			"key": "Verify",
+			"message": "Verify",
+			"translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
+			"fuzzy": true,
+			"translation": "Verify"
+		},
+		{
+			"id": "There are no multi-factor authentication features available.",
+			"key": "There are no multi-factor authentication features available.",
+			"message": "There are no multi-factor authentication features available.",
+			"translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
+			"fuzzy": true,
+			"translation": "There are no multi-factor authentication features available."
+		},
+		{
+			"id": "{FeatureInfo} Settings",
+			"key": "%[1]s Settings",
+			"message": "%[1]s Settings",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "%[1]s Settings"
+		},
+		{
+			"id": "None of the site's authentication features have user settings panels.",
+			"key": "None of the site's authentication features have user settings panels.",
+			"message": "None of the site's authentication features have user settings panels.",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "None of the site's authentication features have user settings panels."
+		},
+		{
+			"id": "Account",
+			"key": "Account",
+			"message": "Account",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Account"
+		},
+		{
+			"id": "Type the following phrase exactly: \\\"{DeleteRequested}\\\"",
+			"key": "Type the following phrase exactly: \\\"%[1]s\\\"",
+			"message": "Type the following phrase exactly: \\\"%[1]s\\\"",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "DeleteRequested",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".DeleteRequested"
+				}
+			],
+			"translation": "Type the following phrase exactly: \\\"%[1]s\\\""
+		},
+		{
+			"id": "After you press this button, your entire account will be deleted.",
+			"key": "After you press this button, your entire account will be deleted.",
+			"message": "After you press this button, your entire account will be deleted.",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "After you press this button, your entire account will be deleted."
+		},
+		{
+			"id": "Confirm deletion of your account",
+			"key": "Confirm deletion of your account",
+			"message": "Confirm deletion of your account",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Confirm deletion of your account"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Delete your entire account",
+			"key": "Delete your entire account",
+			"message": "Delete your entire account",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Delete your entire account"
+		},
+		{
+			"id": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+			"key": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+			"message": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function."
+		},
+		{
+			"id": "Deactivate primary sign-in method",
+			"key": "Deactivate primary sign-in method",
+			"message": "Deactivate primary sign-in method",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Deactivate primary sign-in method"
+		},
+		{
+			"id": "Reactivate your primary account sign-in",
+			"key": "Reactivate your primary account sign-in",
+			"message": "Reactivate your primary account sign-in",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Reactivate your primary account sign-in"
+		},
+		{
+			"id": "Reactivate primary sign-in method",
+			"key": "Reactivate primary sign-in method",
+			"message": "Reactivate primary sign-in method",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Reactivate primary sign-in method"
+		},
+		{
+			"id": "Delete account",
+			"key": "Delete account",
+			"message": "Delete account",
+			"translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Delete account"
+		},
+		{
+			"id": "{FeatureInfo} Setup",
+			"key": "%[1]s Setup",
+			"message": "%[1]s Setup",
+			"translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "FeatureInfo",
+					"string": "%[1]s",
+					"type": "string",
+					"underlyingType": "string",
+					"argNum": 1,
+					"expr": ".FeatureInfo"
+				}
+			],
+			"translation": "%[1]s Setup"
+		},
+		{
+			"id": "One (or more) of the available multi-factor authentication features are required.",
+			"key": "One (or more) of the available multi-factor authentication features are required.",
+			"message": "One (or more) of the available multi-factor authentication features are required.",
+			"translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
+			"fuzzy": true,
+			"translation": "One (or more) of the available multi-factor authentication features are required."
+		},
+		{
+			"id": "Please select one to continue the account setup process.",
+			"key": "Please select one to continue the account setup process.",
+			"message": "Please select one to continue the account setup process.",
+			"translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
+			"fuzzy": true,
+			"translation": "Please select one to continue the account setup process."
+		},
+		{
+			"id": "No multi-Factor authentication features are present.",
+			"key": "No multi-Factor authentication features are present.",
+			"message": "No multi-Factor authentication features are present.",
+			"translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
+			"fuzzy": true,
+			"translation": "No multi-Factor authentication features are present."
+		},
+		{
+			"id": "Backup Email Sign-In",
+			"key": "Backup Email Sign-In",
+			"message": "Backup Email Sign-In",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Backup Email Sign-In"
+		},
+		{
+			"id": "Awaiting confirmation",
+			"key": "Awaiting confirmation",
+			"message": "Awaiting confirmation",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Awaiting confirmation"
+		},
+		{
+			"id": "Enter backup email address",
+			"key": "Enter backup email address",
+			"message": "Enter backup email address",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter backup email address"
+		},
+		{
+			"id": "Enter your primary email address",
+			"key": "Enter your primary email address",
+			"message": "Enter your primary email address",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter your primary email address"
+		},
+		{
+			"id": "Sign-in",
+			"key": "Sign-in",
+			"message": "Sign-in",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Sign-in"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Email Sign-In",
+			"key": "Email Sign-In",
+			"message": "Email Sign-In",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Email Sign-In"
+		},
+		{
+			"id": "Awaiting confirmation",
+			"key": "Awaiting confirmation",
+			"message": "Awaiting confirmation",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Awaiting confirmation"
+		},
+		{
+			"id": "Confirm Sign-In",
+			"key": "Confirm Sign-In",
+			"message": "Confirm Sign-In",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Confirm Sign-In"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Enter your email address",
+			"key": "Enter your email address",
+			"message": "Enter your email address",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Enter your email address"
+		},
+		{
+			"id": "Sign-In",
+			"key": "Sign-In",
+			"message": "Sign-In",
+			"translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
+			"fuzzy": true,
+			"translation": "Sign-In"
+		},
+		{
+			"id": "Sign-In",
+			"key": "Sign-In",
+			"message": "Sign-In",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "Sign-In"
+		},
+		{
+			"id": "Select one of the account options to begin the sign-in process.",
+			"key": "Select one of the account options to begin the sign-in process.",
+			"message": "Select one of the account options to begin the sign-in process.",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "Select one of the account options to begin the sign-in process."
+		},
+		{
+			"id": "New accounts will be automatically created.",
+			"key": "New accounts will be automatically created.",
+			"message": "New accounts will be automatically created.",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "New accounts will be automatically created."
+		},
+		{
+			"id": "Only invited accounts may sign-in.",
+			"key": "Only invited accounts may sign-in.",
+			"message": "Only invited accounts may sign-in.",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "Only invited accounts may sign-in."
+		},
+		{
+			"id": "Only existing accounts may sign-in.",
+			"key": "Only existing accounts may sign-in.",
+			"message": "Only existing accounts may sign-in.",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "Only existing accounts may sign-in."
+		},
+		{
+			"id": "account options",
+			"key": "account options",
+			"message": "account options",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "account options"
+		},
+		{
+			"id": "backup options",
+			"key": "backup options",
+			"message": "backup options",
+			"translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
+			"fuzzy": true,
+			"translation": "backup options"
+		},
+		{
+			"id": "Sign-Out",
+			"key": "Sign-Out",
+			"message": "Sign-Out",
+			"translatorComment": "[from: layouts/site-auth/sign-out.tmpl]",
+			"fuzzy": true,
+			"translation": "Sign-Out"
+		},
+		{
+			"id": "Sign-out",
+			"key": "Sign-out",
+			"message": "Sign-out",
+			"translatorComment": "[from: layouts/site-auth/sign-out.tmpl]",
+			"fuzzy": true,
+			"translation": "Sign-out"
+		},
+		{
+			"id": "Dashboard",
+			"key": "Dashboard",
+			"message": "Dashboard",
+			"translatorComment": "[from: layouts/site/dashboard.tmpl]",
+			"fuzzy": true,
+			"translation": "Dashboard"
+		},
+		{
+			"id": "TODO: figure out dashboard gadgets",
+			"key": "TODO: figure out dashboard gadgets",
+			"message": "TODO: figure out dashboard gadgets",
+			"translatorComment": "[from: layouts/site/dashboard.tmpl]",
+			"fuzzy": true,
+			"translation": "TODO: figure out dashboard gadgets"
+		},
+		{
+			"id": "Setup User Profile",
+			"key": "Setup User Profile",
+			"message": "Setup User Profile",
+			"translatorComment": "[from: layouts/site/profile--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Setup User Profile"
+		},
+		{
+			"id": "What name would you like displayed?",
+			"key": "What name would you like displayed?",
+			"message": "What name would you like displayed?",
+			"translatorComment": "[from: layouts/site/profile--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "What name would you like displayed?"
+		},
+		{
+			"id": "Display Name",
+			"key": "Display Name",
+			"message": "Display Name",
+			"translatorComment": "[from: layouts/site/profile--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Display Name"
+		},
+		{
+			"id": "Save",
+			"key": "Save",
+			"message": "Save",
+			"translatorComment": "[from: layouts/site/profile--setup.tmpl]",
+			"fuzzy": true,
+			"translation": "Save"
+		},
+		{
+			"id": "User Profile",
+			"key": "User Profile",
+			"message": "User Profile",
+			"translatorComment": "[from: layouts/site/profile.tmpl]",
+			"fuzzy": true,
+			"translation": "User Profile"
+		},
+		{
+			"id": "current profile image",
+			"key": "current profile image",
+			"message": "current profile image",
+			"translatorComment": "[from: layouts/site/profile.tmpl]",
+			"fuzzy": true,
+			"translation": "current profile image"
+		},
+		{
+			"id": "unnamed",
+			"key": "unnamed",
+			"message": "unnamed",
+			"translatorComment": "[from: layouts/site/profile.tmpl]",
+			"fuzzy": true,
+			"translation": "unnamed"
+		},
+		{
+			"id": "Site Settings",
+			"key": "Site Settings",
+			"message": "Site Settings",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "Site Settings"
+		},
+		{
+			"id": "current profile image",
+			"key": "current profile image",
+			"message": "current profile image",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "current profile image"
+		},
+		{
+			"id": "unnamed",
+			"key": "unnamed",
+			"message": "unnamed",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "unnamed"
+		},
+		{
+			"id": "Others",
+			"key": "Others",
+			"message": "Others",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "Others"
+		},
+		{
+			"id": "Manage",
+			"key": "Manage",
+			"message": "Manage",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "Manage"
+		},
+		{
+			"id": "Cancel",
+			"key": "Cancel",
+			"message": "Cancel",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "Cancel (ja)"
+		},
+		{
+			"id": "Save",
+			"key": "Save",
+			"message": "Save",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "Save"
+		},
+		{
+			"id": "None of the site's features have user-configurable settings.",
+			"key": "None of the site's features have user-configurable settings.",
+			"message": "None of the site's features have user-configurable settings.",
+			"translatorComment": "[from: layouts/site/settings.tmpl]",
+			"fuzzy": true,
+			"translation": "None of the site's features have user-configurable settings."
+		},
+		{
+			"id": "Users",
+			"key": "Users",
+			"message": "Users",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Users"
+		},
+		{
+			"id": "There are {TotalUsers} users in total.",
+			"key": "There are %d users in total.",
+			"message": "There are %[1]d users in total.",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"placeholders": [
+				{
+					"id": "TotalUsers",
+					"string": "%[1]d",
+					"type": "int",
+					"underlyingType": "int",
+					"argNum": 1,
+					"expr": ".TotalUsers"
+				}
+			],
+			"translation": "There are %[1]d users in total."
+		},
+		{
+			"id": "Enjin ID",
+			"key": "Enjin ID",
+			"message": "Enjin ID",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Enjin ID"
+		},
+		{
+			"id": "Email",
+			"key": "Email",
+			"message": "Email",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Email"
+		},
+		{
+			"id": "Name",
+			"key": "Name",
+			"message": "Name",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Name (ja)"
+		},
+		{
+			"id": "Image",
+			"key": "Image",
+			"message": "Image",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Image"
+		},
+		{
+			"id": "Actions",
+			"key": "Actions",
+			"message": "Actions",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "Actions (ja)"
+		},
+		{
+			"id": "profile image",
+			"key": "profile image",
+			"message": "profile image",
+			"translatorComment": "[from: layouts/site/user-manager.tmpl]",
+			"fuzzy": true,
+			"translation": "profile image"
+		},
+		{
+			"id": "%[1]s Dashboard",
+			"key": "%[1]s Dashboard",
+			"message": "%[1]s Dashboard",
+			"translatorComment": "(toTitle) [from: editor-dashboard.tmpl]",
+			"translation": "%[1]s Dashboard (ja)"
+		},
+		{
+			"id": "(link)",
+			"key": "(link)",
+			"message": "(link)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "(link) (ja)"
+		},
+		{
+			"id": "(missing)",
+			"key": "(missing)",
+			"message": "(missing)",
+			"translatorComment": "[from: cell.tmpl]",
+			"translation": "(missing) (ja)"
+		},
+		{
+			"id": "(nil)",
+			"key": "(nil)",
+			"message": "(nil)",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "(nil) (ja)"
+		},
+		{
+			"id": "(none)",
+			"key": "(none)",
+			"message": "(none)",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "(none) (ja)"
+		},
+		{
+			"id": "(optional)",
+			"key": "(optional)",
+			"message": "(optional)",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "(optional) (ja)"
+		},
+		{
+			"id": "(plain)",
+			"key": "(plain)",
+			"message": "(plain)",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "(plain) (ja)"
+		},
+		{
+			"id": "(required)",
+			"key": "(required)",
+			"message": "(required)",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "(required) (ja)"
+		},
+		{
+			"id": "(text)",
+			"key": "(text)",
+			"message": "(text)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "(text) (ja)"
+		},
+		{
+			"id": "=0, =1, other...",
+			"key": "=0, =1, other...",
+			"message": "=0, =1, other...",
+			"translatorComment": "[from: add-tx-case.tmpl]",
+			"translation": "=0, =1, other... (ja)"
+		},
+		{
+			"id": "Close file actions menu",
+			"key": "Close file actions menu",
+			"message": "Close file actions menu",
+			"translatorComment": "[from: actions-menu.tmpl]",
+			"translation": "Close file actions menu (ja)"
+		},
+		{
+			"id": "Collapse setting",
+			"key": "Collapse setting",
+			"message": "Collapse setting",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Collapse setting (ja)"
+		},
+		{
+			"id": "Convert this translation to plural form",
+			"key": "Convert this translation to plural form",
+			"message": "Convert this translation to plural form",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "Convert this translation to plural form (ja)"
+		},
+		{
+			"id": "Convert this translation to singular form",
+			"key": "Convert this translation to singular form",
+			"message": "Convert this translation to singular form",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "Convert this translation to singular form (ja)"
+		},
+		{
+			"id": "Enjin Info",
+			"key": "Enjin Info",
+			"message": "Enjin Info",
+			"translatorComment": "[from: editor-dashboard.tmpl]",
+			"translation": "Enjin Info (ja)"
+		},
+		{
+			"id": "Expand setting",
+			"key": "Expand setting",
+			"message": "Expand setting",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Expand setting (ja)"
+		},
+		{
+			"id": "Hide sidebar",
+			"key": "Hide sidebar",
+			"message": "Hide sidebar",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl], [from: pages-editor.tmpl]",
+			"translation": "Hide sidebar (ja)"
+		},
+		{
+			"id": "Open file actions menu",
+			"key": "Open file actions menu",
+			"message": "Open file actions menu",
+			"translatorComment": "[from: actions-menu.tmpl]",
+			"translation": "Open file actions menu (ja)"
+		},
+		{
+			"id": "Reset to default value of: %[1]s",
+			"key": "Reset to default value of: %[1]s",
+			"message": "Reset to default value of: %[1]s",
+			"translatorComment": "$stringDefault [from: field.tmpl], (.Field.DefaultValue.Format) [from: field.tmpl]",
+			"translation": "Reset to default value of: %[1]s (ja)"
+		},
+		{
+			"id": "Set new UUID value",
+			"key": "Set new UUID value",
+			"message": "Set new UUID value",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "Set new UUID value (ja)"
+		},
+		{
+			"id": "Show sidebar",
+			"key": "Show sidebar",
+			"message": "Show sidebar",
+			"translatorComment": "[from: locales-editor.tmpl], [from: menus-editor.tmpl], [from: pages-editor.tmpl]",
+			"translation": "Show sidebar (ja)"
+		},
+		{
+			"id": "Site theme by: %[1]s",
+			"key": "Site theme by: %[1]s",
+			"message": "Site theme by: %[1]s",
+			"translatorComment": "site theme design credit [from: footer.tmpl]",
+			"translation": "このサイトthemeのクリエーター: %[1]s"
+		},
+		{
+			"id": "add translation message",
+			"key": "add translation message",
+			"message": "add translation message",
+			"translatorComment": "[from: locales-editor.tmpl]",
+			"translation": "add translation message (ja)"
+		},
+		{
+			"id": "cancel adding the new key/value pair",
+			"key": "cancel adding the new key/value pair",
+			"message": "cancel adding the new key/value pair",
+			"translatorComment": "[from: add-new.tmpl], [from: field.tmpl]",
+			"translation": "cancel adding the new key/value pair (ja)"
+		},
+		{
+			"id": "create the new key value",
+			"key": "create the new key value",
+			"message": "create the new key value",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "create the new key value (ja)"
+		},
+		{
+			"id": "create the new key with a dictionary value",
+			"key": "create the new key with a dictionary value",
+			"message": "create the new key with a dictionary value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a dictionary value (ja)"
+		},
+		{
+			"id": "create the new key with a plain text list value",
+			"key": "create the new key with a plain text list value",
+			"message": "create the new key with a plain text list value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a plain text list value (ja)"
+		},
+		{
+			"id": "create the new key with a plain text value",
+			"key": "create the new key with a plain text value",
+			"message": "create the new key with a plain text value",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "create the new key with a plain text value (ja)"
+		},
+		{
+			"id": "delete this dictionary",
+			"key": "delete this dictionary",
+			"message": "delete this dictionary",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this dictionary (ja)"
+		},
+		{
+			"id": "delete this item",
+			"key": "delete this item",
+			"message": "delete this item",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "delete this item (ja)"
+		},
+		{
+			"id": "delete this list",
+			"key": "delete this list",
+			"message": "delete this list",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this list (ja)"
+		},
+		{
+			"id": "delete this list item",
+			"key": "delete this list item",
+			"message": "delete this list item",
+			"translatorComment": "[from: list.tmpl]",
+			"translation": "delete this list item (ja)"
+		},
+		{
+			"id": "delete this value",
+			"key": "delete this value",
+			"message": "delete this value",
+			"translatorComment": "[from: key-pair.tmpl]",
+			"translation": "delete this value (ja)"
+		},
+		{
+			"id": "destination file name",
+			"key": "destination file name",
+			"message": "destination file name",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination file name (ja)"
+		},
+		{
+			"id": "destination file path",
+			"key": "destination file path",
+			"message": "destination file path",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination file path (ja)"
+		},
+		{
+			"id": "destination filesystem",
+			"key": "destination filesystem",
+			"message": "destination filesystem",
+			"translatorComment": "[from: copy-file.tmpl], [from: create-menu.tmpl], [from: create-page.tmpl], [from: move-file.tmpl], [from: translate-file.tmpl]",
+			"translation": "destination filesystem (ja)"
+		},
+		{
+			"id": "destination locale",
+			"key": "destination locale",
+			"message": "destination locale",
+			"translatorComment": "[from: copy-file.tmpl], [from: move-file.tmpl]",
+			"translation": "destination locale (ja)"
+		},
+		{
+			"id": "file name",
+			"key": "file name",
+			"message": "file name",
+			"translatorComment": "[from: path.tmpl]",
+			"translation": "file name (ja)"
+		},
+		{
+			"id": "file path",
+			"key": "file path",
+			"message": "file path",
+			"translatorComment": "[from: path.tmpl]",
+			"translation": "file path (ja)"
+		},
+		{
+			"id": "go to the %[1]s %[2]s %[3]s filesystem",
+			"key": "go to the %[1]s %[2]s %[3]s filesystem",
+			"message": "go to the %[1]s %[2]s %[3]s filesystem",
+			"translatorComment": ".EditorFeatureName .EditFSID $code [from: breadcrumbs.tmpl]",
+			"translation": "go to the %[1]s %[2]s %[3]s filesystem (ja)"
+		},
+		{
+			"id": "go to the %[1]s %[2]s filesystem",
+			"key": "go to the %[1]s %[2]s filesystem",
+			"message": "go to the %[1]s %[2]s filesystem",
+			"translatorComment": ".EditorFeatureName .EditFSID [from: breadcrumbs.tmpl]",
+			"translation": "go to the %[1]s %[2]s filesystem (ja)"
+		},
+		{
+			"id": "go to the top-level of editing %[1]s",
+			"key": "go to the top-level of editing %[1]s",
+			"message": "go to the top-level of editing %[1]s",
+			"translatorComment": ".EditorFeatureName [from: breadcrumbs.tmpl]",
+			"translation": "go to the top-level of editing %[1]s (ja)"
+		},
+		{
+			"id": "go to translation",
+			"key": "go to translation",
+			"message": "go to translation",
+			"translatorComment": "[from: menu-details.tmpl], [from: page-details.tmpl]",
+			"translation": "go to translation (ja)"
+		},
+		{
+			"id": "kebab-cased-name",
+			"key": "kebab-cased-name",
+			"message": "kebab-cased-name",
+			"translatorComment": "[from: add-new.tmpl]",
+			"translation": "kebab-cased-name (ja)"
+		},
+		{
+			"id": "kebab-cases-key-name",
+			"key": "kebab-cases-key-name",
+			"message": "kebab-cases-key-name",
+			"translatorComment": "[from: field.tmpl]",
+			"translation": "kebab-cases-key-name (ja)"
+		},
+		{
+			"id": "list item",
+			"key": "list item",
+			"message": "list item",
+			"translatorComment": "[from: list.tmpl]",
+			"translation": "list item (ja)"
+		},
+		{
+			"id": "long-form permalink",
+			"key": "long-form permalink",
+			"message": "long-form permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "long-form permalink (ja)"
+		},
+		{
+			"id": "menu file extension",
+			"key": "menu file extension",
+			"message": "menu file extension",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "menu file extension (ja)"
+		},
+		{
+			"id": "menu item label",
+			"key": "menu item label",
+			"message": "menu item label",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "menu item label (ja)"
+		},
+		{
+			"id": "menu item link (optional)",
+			"key": "menu item link (optional)",
+			"message": "menu item link (optional)",
+			"translatorComment": "[from: item.tmpl]",
+			"translation": "menu item link (optional) (ja)"
+		},
+		{
+			"id": "menu name",
+			"key": "menu name",
+			"message": "menu name",
+			"translatorComment": "[from: menu-details.tmpl]",
+			"translation": "menu name (ja)"
+		},
+		{
+			"id": "message",
+			"key": "message",
+			"message": "message",
+			"translatorComment": "[from: table.tmpl]",
+			"translation": "message (ja)"
+		},
+		{
+			"id": "new context key name to add",
+			"key": "new context key name to add",
+			"message": "new context key name to add",
+			"translatorComment": "[from: add-new.tmpl], [from: field.tmpl]",
+			"translation": "new context key name to add (ja)"
+		},
+		{
+			"id": "new menu's file path",
+			"key": "new menu's file path",
+			"message": "new menu's file path",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's file path (ja)"
+		},
+		{
+			"id": "new menu's locale",
+			"key": "new menu's locale",
+			"message": "new menu's locale",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's locale (ja)"
+		},
+		{
+			"id": "new menu's name",
+			"key": "new menu's name",
+			"message": "new menu's name",
+			"translatorComment": "[from: create-menu.tmpl]",
+			"translation": "new menu's name (ja)"
+		},
+		{
+			"id": "new page's archetype",
+			"key": "new page's archetype",
+			"message": "new page's archetype",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's archetype (ja)"
+		},
+		{
+			"id": "new page's file path",
+			"key": "new page's file path",
+			"message": "new page's file path",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's file path (ja)"
+		},
+		{
+			"id": "new page's format",
+			"key": "new page's format",
+			"message": "new page's format",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's format (ja)"
+		},
+		{
+			"id": "new page's locale",
+			"key": "new page's locale",
+			"message": "new page's locale",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's locale (ja)"
+		},
+		{
+			"id": "new page's name",
+			"key": "new page's name",
+			"message": "new page's name",
+			"translatorComment": "[from: create-page.tmpl]",
+			"translation": "new page's name (ja)"
+		},
+		{
+			"id": "page URL",
+			"key": "page URL",
+			"message": "page URL",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "page URL (ja)"
+		},
+		{
+			"id": "short-form permalink",
+			"key": "short-form permalink",
+			"message": "short-form permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "short-form permalink (ja)"
+		},
+		{
+			"id": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"key": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"message": "this key is stored as: %[1]s and accessible as the .%[2]s variable",
+			"translatorComment": ".Field.Key (toCamel) [from: field.tmpl], .Key (toCamel) [from: key-pair.tmpl], .Field.Key (toCamel) [from: key-pair.tmpl]",
+			"translation": "this key is stored as: %[1]s and accessible as the .%[2]s variable (ja)"
+		},
+		{
+			"id": "this page has been indexed with the permalink set and this is the actual permalink",
+			"key": "this page has been indexed with the permalink set and this is the actual permalink",
+			"message": "this page has been indexed with the permalink set and this is the actual permalink",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "this page has been indexed with the permalink set and this is the actual permalink (ja)"
+		},
+		{
+			"id": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"key": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"message": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "this page has not been indexed with the permalink set, the formal permalink is what it should be after publishing this page (ja)"
+		},
+		{
+			"id": "thumbnail image (missing)",
+			"key": "thumbnail image (missing)",
+			"message": "thumbnail image (missing)",
+			"translatorComment": "[from: page-details.tmpl]",
+			"translation": "thumbnail image (missing) (ja)"
+		},
+		{
+			"id": "translation file name",
+			"key": "translation file name",
+			"message": "translation file name",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation file name (ja)"
+		},
+		{
+			"id": "translation file path",
+			"key": "translation file path",
+			"message": "translation file path",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation file path (ja)"
+		},
+		{
+			"id": "translation locale",
+			"key": "translation locale",
+			"message": "translation locale",
+			"translatorComment": "[from: translate-file.tmpl]",
+			"translation": "translation locale (ja)"
+		},
+		{
+			"id": "translation...",
+			"key": "translation...",
+			"message": "translation...",
+			"translatorComment": "[from: cell.tmpl]",
+			"translation": "translation... (ja)"
+		}
+	]
+}

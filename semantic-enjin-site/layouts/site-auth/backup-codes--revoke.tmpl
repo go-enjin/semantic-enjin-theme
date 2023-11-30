@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ .Request.Language }}">
+{{ featurePartials "head" "head" }}
+{{ template "partials/head.tmpl" . }}
+{{ featurePartials "head" "tail" }}
+<body
+        {{- if .Type }} data-page-type="{{ .Type }}"{{ end -}}
+        {{- if .Layout }} data-page-layout="{{ .Layout }}"{{ end -}}
+        {{- if .Format }} data-page-format="{{ .Format | replace ".tmpl" }}"{{ end -}}
+        {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
+>
+{{ featurePartials "body" "head" }}
+{{ template "partials/header.tmpl" . }}
+<main data-layout-view="site-auth/backup-codes--revoke.tmpl">
+    <div id="top"></div>
+    {{ template "partials/site/header.tmpl" (dict . "Title" (_ "Revoke %[1]s" .FeatureInfo.Label) "WithBreadcrumbs" true) }}
+
+    {{ if and (gt (len .ProvisionLabels) 0) (not $.SelectedProvision) }}
+        <article class="block" id="introduction"
+                 data-block-tag="introduction"
+                 data-block-type="content"
+                 data-block-profile="outer--inner"
+                 data-block-padding="none"
+                 data-block-margins="both"
+                 data-block-jump-top="false"
+                 data-block-jump-link="true"
+        >
+            <div class="content">
+                <section>
+                    <p>{{ _ "Select one of the provisioned backup codes to start the revocation process." }}</p>
+                </section>
+            </div>
+        </article>
+    {{ end }}
+
+    <article class="block" id="backup-codes"
+             data-block-tag="backup-codes"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="both"
+             data-block-jump-top="false"
+             data-block-jump-link="true"
+    >
+        <div class="content">
+            <section>
+                {{ if eq (len .ProvisionLabels) 0 }}
+                    <p>{{ _ "No backup codes present, nothing to revoke!" }}</p>
+                {{ else }}
+
+                    <form method="post" action="{{ .FormAction }}">
+                        {{ template "partials/common/nonces.tmpl" .Nonces }}
+                        <input type="hidden" name="provider" value="{{ .FeatureInfo.Tag }}"/>
+
+                        <fieldset class="feature-group">
+
+                            {{ if $.SelectedProvision }}
+
+                                {{ printf `<style>
+.feature-item label.selected-provision { background-color: var(--color--highlight); }
+</style>` | asHTML }}
+                                <input id="selected-provision"
+                                       style="display:none;"
+                                       name="provision"
+                                       value="{{ $.SelectedProvision }}"
+                                       readonly
+                                />
+                                <div class="feature-item">
+                                    <label class="selected-provision" for="selected-provision">{{ $.SelectedProvision }}</label>
+                                </div>
+
+                            {{ else }}
+
+                                {{ range $idx,$label := $.ProvisionLabels }}
+                                    {{ printf `<style>
+#provision--%[1]d:checked ~ .feature-item label[for="provision--%[1]d"] { background-color: var(--color--highlight); }
+#provision--%[1]d:checked ~ .form-controls button:not(.cancel)          { display: block !important; }
+</style>` $idx | asHTML }}
+                                    <input id="provision--{{ $idx }}"
+                                           style="display:none;"
+                                           type="radio"
+                                           name="provision"
+                                           value="{{ $label }}"
+                                    />
+                                {{ end }}
+
+                                {{ range $idx,$label := $.ProvisionLabels }}
+                                    <div class="feature-item">
+                                        <label class="select-provision" for="provision--{{ $idx }}">{{ $label }}</label>
+                                    </div>
+                                {{ end }}
+
+                            {{ end }}
+
+                            {{ if not $.SelectedProvision }}
+                                {{ printf `<style>
+.form-controls button:not(.cancel) { display: none !important; }
+</style>` | asHTML }}
+                            {{ end }}
+
+                            <div class="form-controls">
+                                {{ if .RevokeConfirmation }}
+                                    <button class="caution" type="submit" name="submit" value="revoke--confirmation">{{ _ "Are you sure you want to delete \"%[1]s\"?" $.SelectedProvision }}</button>
+                                {{ else if .RevokeConfirmed }}
+                                    <button class="danger" type="submit" name="submit" value="revoke--confirmed">{{ _ "After clicking this, \"%[1]s\" will really be deleted!" $.SelectedProvision }}</button>
+                                {{ else }}
+                                    <button class="primary" type="submit" name="submit" value="revoke">{{ _ "Revoke selected email passcode?" }}</button>
+                                {{ end }}
+                                <button class="cancel" type="submit" name="submit" value="cancel">{{ _ "Cancel" }}</button>
+                            </div>
+
+                        </fieldset>
+
+                    </form>
+                {{ end }}
+            </section>
+        </div>
+    </article>
+
+</main>
+{{ template "partials/footer.tmpl" . }}
+{{ featurePartials "body" "tail" }}
+</body>
+</html>
