@@ -14,7 +14,7 @@
                             {{ range $idx,$view := .Views }}
                                 <li data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
                                     <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ _ $view.Label }}</a>
-                                    <a class="deeplink" href="{{ $view.Url }}"
+                                    <a class="deeplink" href="{{ ___ $view.Url }}"
                                        title="{{ _ "deeplink to %[1]s view" $view.Label }}">
                                         <i class="fa-solid fa-link"></i>
                                         <span class="sr-only">{{ _ "deeplink to %[1]s view" $view.Label }}</span>
@@ -29,7 +29,7 @@
                                 <li class="index-filter">
                                     {{ if eq (len $group) 1 }}
                                         {{ with $filter := (index $group 0) }}
-                                            <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
+                                            <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
                                                 {{ if $filter.Present }}
                                                     <i class="fa-solid fa-check-square"></i>
                                                 {{ else }}
@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="dropdown-menu">
                                                 {{ range $kdx,$filter := $group }}
-                                                    <a href="{{ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
+                                                    <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
                                                         {{ if $filter.Present }}
                                                             <i class="fa-solid fa-check-square"></i>
                                                         {{ else }}
@@ -90,7 +90,7 @@
                                 <li class="search-filter">
                                     <input type="checkbox"
                                            id="{{ $.Tag }}-{{ $view.Key }}-search-menu" {{ if $.SearchQuery }} checked{{ end }}/>
-                                    <form class="search-form" method="get" action="{{ $view.SearchAction }}">
+                                    <form class="search-form" method="get" action="{{ ___ $view.SearchAction }}">
                                         <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="close-search-menu">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             <span class="sr-only">{{ _ "close the search menu" }}</span>
@@ -112,8 +112,8 @@
                             {{ end }}
                             {{ if or ($.Views.HasFilterPresent) (ne $.SearchQuery "") }}
                                 <li class="reset-filters">
-                                    <a href="{{ $view.Url }}">
-                                        <i class="fa-solid fa-square-xmark"></i>
+                                    <a href="{{ ___ $view.Url }}">
+                                        <i class="fa-solid fa-xmark"></i>
                                         <span class="sr-only">{{ _ "reset filters" }}</span>
                                     </a>
                                 </li>
@@ -158,7 +158,7 @@
             {{ if gt (len .Results) 0 }}
                 {{ template "partials/njn/block/index--views.tmpl" . }}
                 {{ range $idx,$view := .Views }}
-                    {{ template "partials/njn/block/index--paginate.tmpl" $view }}
+                    {{ template "partials/njn/block/index--paginate.tmpl" (dict $ "View" $view) }}
                 {{ end }}
             {{ else }}
                 <p>no pages found</p>

@@ -1,33 +1,33 @@
-{{- if and (eq .Paginate "page") (or .FirstPage .PrevPage .NextPage .LastPage) -}}
-    <footer data-view="{{ .Index }}" data-index-view="{{ .Key }}">
+{{- if and (eq .View.Paginate "page") (or .View.FirstPage .View.PrevPage .View.NextPage .View.LastPage) -}}
+    <footer data-view="{{ .View.Index }}" data-index-view="{{ .View.Key }}">
         <div class="index-pagination" data-paginate="page">
-            {{ if ne .FirstPage "" }}
-                <a title="{{ _ "Go to the first page" }}" href="{{ .FirstPage }}">
+            {{ if ne .View.FirstPage "" }}
+                <a title="{{ _ "Go to the first page" }}" href="{{ ___ .View.View.FirstPage }}">
                     <i class="fa-solid fa-angles-left"></i>
                     <span class="sr-only">{{ _ "Go to the first page" }}</span>
                 </a>
             {{ else }}
                 <div><i class="fa-solid fa-angles-left"></i></div>
             {{ end }}
-            {{ if ne .PrevPage "" }}
-                <a title="{{ _ "Go to the previous page" }}" href="{{ .PrevPage }}">
+            {{ if ne .View.PrevPage "" }}
+                <a title="{{ _ "Go to the previous page" }}" href="{{ ___ .View.PrevPage }}">
                     <i class="fa-solid fa-angle-left"></i>
                     <span class="sr-only">{{ _ "Go to the previous page" }}</span>
                 </a>
             {{ else }}
                 <div><i class="fa-solid fa-angle-left"></i></div>
             {{ end }}
-            <span>{{ _ "%[1]d of %[2]d" .PageNumber .TotalPages }}</span>
-            {{ if ne .NextPage "" }}
-                <a title="{{ _ "Go to the next page" }}" href="{{ .NextPage }}">
+            <span>{{ _ "%[1]d of %[2]d" .View.PageNumber .View.TotalPages }}</span>
+            {{ if ne .View.NextPage "" }}
+                <a title="{{ _ "Go to the next page" }}" href="{{ ___ .View.NextPage }}">
                     <i class="fa-solid fa-angle-right"></i>
                     <span class="sr-only">{{ _ "Go to the next page" }}</span>
                 </a>
             {{ else }}
                 <div><i class="fa-solid fa-angle-right"></i></div>
             {{ end }}
-            {{ if ne .LastPage "" }}
-                <a title="{{ _ "Go to the last page" }}" href="{{ .LastPage }}">
+            {{ if ne .View.LastPage "" }}
+                <a title="{{ _ "Go to the last page" }}" href="{{ ___ .View.LastPage }}">
                     <i class="fa-solid fa-angles-right"></i>
                     <span class="sr-only">{{ _ "Go to the last page" }}</span>
                 </a>

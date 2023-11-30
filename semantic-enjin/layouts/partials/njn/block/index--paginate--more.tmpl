@@ -1,7 +1,7 @@
-{{- if .NextMore -}}
-    <footer data-view="{{ .Index }}" data-index-view="{{ .Key }}">
+{{- if .View.NextMore -}}
+    <footer data-view="{{ .View.Index }}" data-index-view="{{ .View.Key }}">
         <div class="index-pagination" data-paginate="more">
-            <a href="{{ .NextMore }}">{{ _ "More" /* index block pagination, asking for another batch of pages */}}</a>
+            <a href="{{ ___ .View.NextMore }}">{{ _ "More" /* index block pagination, asking for another batch of pages */}}</a>
         </div>
     </footer>
 {{- end -}}

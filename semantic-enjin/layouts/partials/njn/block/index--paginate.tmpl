@@ -1,5 +1,5 @@
-{{ if eq .Paginate "more" -}}
+{{ if eq .View.Paginate "more" -}}
     {{ template "partials/njn/block/index--paginate--more.tmpl" . }}
-{{ else if eq .Paginate "page" }}
+{{ else if eq .View.Paginate "page" }}
     {{ template "partials/njn/block/index--paginate--page.tmpl" . }}
 {{ end }}
