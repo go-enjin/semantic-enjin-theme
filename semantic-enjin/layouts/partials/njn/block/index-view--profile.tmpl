@@ -2,10 +2,15 @@
     {{ range $idx,$page := .Results }}
         <li>
             {{ if $page.Context.ThumbnailUrl -}}
-                <img src="{{ fsUrl $page.Context.ThumbnailUrl }}" alt="{{ _ $page.Context.ThumbnailAlt }}"/>
+                {{- template "partials/common/img.tmpl" (dict $
+                "Src" (fsUrl $page.Context.ThumbnailUrl)
+                "Alt" $page.Context.ThumbnailAlt
+                ) -}}
             {{ else }}
-                <img src="{{ fsUrl "/media/transparent--resting.png" }}"
-                     alt="{{ _ "page thumbnail image placeholder" }}"/>
+                {{- template "partials/common/img.tmpl" (dict $
+                "Src" (fsUrl "/media/transparent--resting.png")
+                "Alt" (_ "page thumbnail image placeholder")
+                ) -}}
             {{- end }}
             <div>
                 <a class="decorated"
