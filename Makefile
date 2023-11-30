@@ -14,8 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-THEME_NAME := semantic-enjin
-THEME_PATH := ./${THEME_NAME}
+THEME_NAME      := semantic-enjin
+SITE_THEME_NAME := semantic-enjin-site
+
+THEME_MENUS_SCSS    := ${THEME_NAME}/src/scss/targets-page-menus.scss
+THEME_CAROUSEL_SCSS := ${THEME_NAME}/src/scss/targets-block-carousel.scss
 
 SHELL = /bin/bash
 
@@ -26,24 +29,57 @@ export BE_LOCAL_PATH ?= ../be
 help:
 	@echo "# usage: make <help|build|release|tidy|local|unlocal|be-update>"
 
-build:
-	@pushd ${THEME_PATH} > /dev/null \
-		&& make build \
-		&& popd > /dev/null
-	@echo "# build-testing ${THEME_NAME}-theme package"
+compile:
+	@echo "# build-testing ${THEME_NAME} package"
 	@go build -v -tags fs_theme,locals
 
-release:
-	@pushd ${THEME_PATH} > /dev/null \
+generate:
+	@echo "# generating ${THEME_MENUS_SCSS}"
+	@./_scripts/make-targets-page-menus.pl > ${THEME_MENUS_SCSS}
+	@echo "# generating ${THEME_CAROUSEL_SCSS}"
+	@./_scripts/make-targets-block-carousel.pl > ${THEME_CAROUSEL_SCSS}
+
+build-theme: generate
+	@pushd ${THEME_NAME} > /dev/null \
+		&& make build \
+		&& popd > /dev/null
+
+build-site-theme:
+	@pushd ${SITE_THEME_NAME} > /dev/null \
+		&& make build \
+		&& popd > /dev/null
+	@echo "# build-testing ${SITE_THEME_NAME}-theme package"
+	@go build -v -tags fs_theme,locals
+
+build: build-theme build-site-theme compile
+
+release-theme:
+	@pushd ${THEME_NAME} > /dev/null \
 		&& make release \
 		&& popd > /dev/null
 	@echo "# release-testing ${THEME_NAME}-theme package"
 	@go build -v -tags fs_theme,embeds
 
-locales:
-	@pushd ${THEME_PATH} > /dev/null \
+release-site-theme:
+	@pushd ${SITE_THEME_NAME} > /dev/null \
+		&& make release \
+		&& popd > /dev/null
+	@echo "# release-testing ${SITE_THEME_NAME}-theme package"
+	@go build -v -tags fs_theme,embeds
+
+release: release-theme release-site-theme compile
+
+locales-theme:
+	@pushd ${THEME_NAME} > /dev/null \
 		&& make locales \
 		&& popd > /dev/null
+
+locales-site:
+	@pushd ${SITE_THEME_NAME} > /dev/null \
+		&& make locales \
+		&& popd > /dev/null
+
+locales: locales-theme locales-site
 
 tidy:
 	@go mod tidy
