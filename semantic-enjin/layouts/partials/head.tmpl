@@ -82,7 +82,7 @@
     <link rel="stylesheet" href="{{ fsUrl "/css/semantic-enjin.css" }}"/>
 
     {{ if gt (len .Theme.RootStyles) 0 }}
-        <style>
+        <style{{ if .StyleSrcNonceValue }} nonce="{{ .StyleSrcNonceValue }}"{{ end }}>
             :root {
             {{- range $v := .Theme.RootStyles }}
             {{ $v -}}
@@ -92,7 +92,7 @@
     {{ end }}
 
     {{ if gt (len .Theme.BlockStyles) 0 }}
-        <style>
+        <style{{ if .StyleSrcNonceValue }} nonce="{{ .StyleSrcNonceValue }}"{{ end }}>
             {{- range $idx, $k := (sortedKeys .Theme.BlockStyles) }}
             [data-block-theme="{{ $k }}"] {
                 {{- range $style := index ($.Theme.BlockStyles) $k }}
