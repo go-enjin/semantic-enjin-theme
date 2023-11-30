@@ -45,10 +45,8 @@
                     {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
                     {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
             >
-                <label for="side-menu" id="side-close--label"><span
-                            class="sr-only">{{ _ "close side menu" /* screen reader only */ }}</span></label>
-                <label for="menu-close" id="menu-close--label"><span
-                            class="sr-only">{{ _ "close main menu" /* screen reader only */ }}</span></label>
+                <label for="side-menu" id="side-close--label"><span class="sr-only">{{ _ "close side menu" /* screen reader only */ }}</span></label>
+                <label for="menu-close" id="menu-close--label"><span class="sr-only">{{ _ "close main menu" /* screen reader only */ }}</span></label>
 
                 <nav>
                     <ol>
@@ -66,11 +64,9 @@
                                     {{ range $idx,$tag := .EnjinInfo.Locales }}
                                         {{ if cmpLang $tag $.Request.Language }}
                                             {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
-                                                <a class="selected"
-                                                   href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a class="selected" href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
-                                                <a class="selected"
-                                                   href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a class="selected" href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ end }}
                                         {{ else }}
                                             {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
@@ -91,9 +87,7 @@
                         <div class="search">
                             <form method="get" action="{{ __ .SiteSearchPath }}">
                                 <input type="hidden" name="nonce" value="{{ Nonce "site-search-form" }}"/>
-                                <input type="search" name="query"
-                                       placeholder="{{ _ "Search" /* main menu search field placeholder text */ }}"
-                                       value="{{ .SiteSearchQuery }}"/>
+                                <input type="search" name="query" placeholder="{{ _ "Search" /* main menu search field placeholder text */ }}" value="{{ .SiteSearchQuery }}"/>
                                 <button type="submit" value="submit">
                                     <i class="fas fa-search"></i>
                                     <span class="sr-only">{{ _ "Search" /* screen reader only */ }}</span>
