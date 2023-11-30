@@ -2,8 +2,9 @@
 
 body > footer {
   display: block;
+
+  color: var(--secondary--fg);
   background: var(--secondary--bg);
-  color:      var(--secondary--fg);
 }
 
 body > footer a:focus,
@@ -11,7 +12,7 @@ body > footer a:visited,
 body > footer a:active,
 body > footer a:hover,
 body > footer a {
-  color:      var(--accent--fg);
+  color: var(--accent--fg);
 }
 
 #primary--footer {
