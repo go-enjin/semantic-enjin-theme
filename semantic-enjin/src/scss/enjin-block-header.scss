@@ -1,12 +1,17 @@
 /* main header block */
 
+.block > .content > header > nav,
 [data-block-type='header'] > nav {
-  --style--bg: var(--style--accent--bg);
-  --style--fg: var(--style--accent--fg);
-  background-color: var(--style--bg);
-  color:            var(--style--fg);
+  --nav--style--bg: var(--style--accent--bg);
+  --nav--style--fg: var(--style--accent--fg);
+
+  &, & a {
+    background-color: var(--nav--style--bg);
+    color: var(--nav--style--fg);
+  }
 }
 
+.block > .content > header > nav > :is(ul,ol),
 [data-block-type='header'] > nav > :is(ul,ol) {
   display: flex;
   flex-direction: row;
@@ -20,13 +25,80 @@
   margin-left: auto;
   margin-right: auto;
   padding: var(--page--flex--gap) var(--page--column--padding);
+  list-style: none;
 }
 
+.block > .content > header > nav > :is(ul,ol) {
+  min-height: 50px;
+  padding: 0;
+}
+
+.block > .content > header > nav > :is(ul,ol) > li,
 [data-block-type='header'] > nav > :is(ul,ol) > li {
   list-style: none;
 }
 
-[data-block-type='header'][style*='--style--bg--image'][data-block-background='parallax']
-> .content {
+[data-block-type='header'][style*='--style--bg--image'][data-block-background='parallax'] > .content {
   min-height: fit-content;
+}
+
+[data-block-profile="full--inner"] > .content > header > nav,
+[data-block-profile="outer--inner"] > .content > header > nav,
+[data-block-profile="inner--inner"] > .content > header > nav {
+  border-radius: 5px;
+}
+
+.block:not([data-block-nav-type]) > .content > header > nav {
+  --nav--style--bg: var(--style--accent--bg);
+  --nav--style--fg: var(--style--accent--fg);
+}
+
+.block[data-block-nav-type="primary"] > .content > header > nav {
+  --nav--style--bg: var(--style--primary--bg);
+  --nav--style--fg: var(--style--primary--fg);
+}
+
+.block[data-block-nav-type="secondary"] > .content > header > nav {
+  --nav--style--bg: var(--style--secondary--bg);
+  --nav--style--fg: var(--style--secondary--fg);
+}
+
+.block[data-block-nav-type="accent"] > .content > header > nav {
+  --nav--style--bg: var(--style--accent--bg);
+  --nav--style--fg: var(--style--accent--fg);
+}
+
+.block[data-block-nav-type="alternate"] > .content > header > nav {
+  --nav--style--bg: var(--style--alternate--bg);
+  --nav--style--fg: var(--style--alternate--fg);
+}
+
+.block[data-block-nav-type="highlight"] > .content > header > nav {
+  --nav--style--bg: var(--style--highlight--bg);
+  --nav--style--fg: var(--style--highlight--fg);
+}
+
+.block[data-block-nav-type="error"] > .content > header > nav {
+  --nav--style--bg: var(--style--error--bg);
+  --nav--style--fg: var(--style--error--fg);
+}
+
+.block[data-block-nav-type="caution"] > .content > header > nav {
+  --nav--style--bg: var(--style--caution--bg);
+  --nav--style--fg: var(--style--caution--fg);
+}
+
+.block[data-block-nav-type="cancel"] > .content > header > nav {
+  --nav--style--bg: var(--style--cancel--bg);
+  --nav--style--fg: var(--style--cancel--fg);
+}
+
+.block[data-block-nav-type="danger"] > .content > header > nav {
+  --nav--style--bg: var(--style--danger--bg);
+  --nav--style--fg: var(--style--danger--fg);
+}
+
+.block[data-block-nav-type="important"] > .content > header > nav {
+  --nav--style--bg: var(--style--important--bg);
+  --nav--style--fg: var(--style--important--fg);
 }
