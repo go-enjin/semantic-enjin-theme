@@ -11,4 +11,24 @@
   --fa--solid--circle-question: "\f059";
   --fa--solid--circle-exclamation: "\f06a";
   --fa--solid--triangle-exclamation: "\f071";
+
+  /* fontawesome */
+  --fa--font-family: "Font Awesome 6 Free";
+  --fa-solid--font-family: var(--fa--font-family);
+  --fa-solid--font-weight: 900;
+  --fa-regular--font-family: var(--fa--font-family);
+  --fa-regular--font-weight: 400;
+  --fa-brands--font-family: var(--fa--font-family);
+  --fa-brands--font-weight: 400;
+
+  --icon--back--content: var(--fa--solid--chevron-left);
+  --icon--opened--content: var(--fa--solid--chevron-down);
+  --icon--closed--content: var(--fa--solid--chevron-right);
+  --icon--delete--content: var(--fa--solid--times);
+  --icon--link--content: var(--fa--solid--link);
+  --icon--jumptop--content: var(--fa--solid--chevron-up);
+  --icon--info--content: var(--fa--solid--circle-info);
+  --icon--warn--content: var(--fa--solid--circle-exclamation);
+  --icon--error--content: var(--fa--solid--triangle-exclamation);
+  --icon--important--content: var(--fa--solid--star);
 }
