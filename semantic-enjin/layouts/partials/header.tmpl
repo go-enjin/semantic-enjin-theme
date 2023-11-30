@@ -107,6 +107,8 @@
                                 <span class="sr-only">{{ _ "toggle search" /* screen reader only, show/hide search menu */ }}</span>
                             </label>
                         </div>
+                    {{ else }}
+                        <div class="search"></div>
                     {{- end }}
                     <div class="side-menu--toggle">
                         <label for="side-menu" id="side-menu--label">
