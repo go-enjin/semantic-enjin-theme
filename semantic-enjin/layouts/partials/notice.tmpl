@@ -13,7 +13,7 @@
         <details open>
             <summary>
                 {{ .Summary }}
-                {{ if gt (len .Actions) 0 }}
+                {{ if and (.Actions) (gt (len .Actions) 0) }}
                     <ul class="user-notice--actions">
                         {{ range $idx,$action := .Actions }}
                             <li><a href="{{ $action.Href }}">{{ $action.Text | asHTML }}</a></li>
@@ -21,7 +21,7 @@
                     </ul>
                 {{ end }}
             </summary>
-            {{ if gt (len .Content) 0 }}
+            {{ if and (.Content) (gt (len .Content) 0) }}
                 <ul class="user-notice--content">
                     {{ range $idx,$content := .Content }}
                         <li>{{ $content }}</li>
