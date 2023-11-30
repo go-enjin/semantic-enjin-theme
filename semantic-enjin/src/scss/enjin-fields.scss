@@ -501,40 +501,156 @@ body[data-page-format="md"] .block > .content code {
   --field--button--reset--bg: var(--color--active);
 }
 
-.block > .content button {
+.block > .content :is(.button,button,input[type="button"],input[type="submit"],input[type="reset"]) {
   --style--fg: var(--field--button--default--fg);
   --style--bg: var(--field--button--default--bg);
+
   display: inline-block;
+
   min-width: 110px;
-  border: none;
+
   padding: 10px;
+
   color: var(--style--fg);
   background: var(--style--bg);
-  cursor: pointer;
+
+  font-size: var(--page--content--font-size);
+  font-family: var(--page--content--font-family);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: normal;
+
+  border: none;
+
+  text-align: center;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-.block > .content button:hover {
+.block > .content :is(.button,button,input[type="button"]).fit {
+  min-width: 36px;
+}
+
+.block > .content :is(.button,button,input[type="button"]):not(:disabled):hover {
   opacity: 0.77;
 }
 
-.block > .content button[type='submit'] {
+.block > .content :is(button.submit,.button.submit,button[type='submit']) {
   --style--fg: var(--field--button--submit--fg);
   --style--bg: var(--field--button--submit--bg);
 }
 
-.block > .content button[type='reset'] {
+.block > .content :is(button.reset,.button.reset,button[type='reset']) {
   --style--fg: var(--field--button--reset--fg);
   --style--bg: var(--field--button--reset--bg);
 }
 
 /* form fieldset */
-.block > .content fieldset {
+.block > .content :not(nav, .carousel) fieldset {
+
   padding: 25px;
-  border: 1px solid;
+
+  border: 2px solid var(--style--secondary--bg);
+  border-radius: 5px;
+
+  & > legend {
+
+    padding: 1rem;
+
+    background: var(--style--secondary--bg);
+    color: var(--style--secondary--fg);
+
+    border-radius: 5px;
+  }
+
+  & > ul {
+
+    list-style: none;
+
+    margin: 1rem;
+
+    & > li {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+
+      margin: 0.5rem 0;
+
+      & > :first-child {
+        width: 25%;
+      }
+
+      & > :last-child {
+        width: 100%;
+      }
+
+    }
+
+  }
+
 }
 
-.block > .content fieldset legend {
-  padding: 5px;
-  background: var(--style--fg);
-  color: var(--style--bg);
+input[type="tel"],
+input[type="url"],
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+
+  padding: 0.25rem;
+
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid var(--style--secondary--bg);
+  border-right: none;
+  border-radius: 5px;
+
+  &:focus {
+    background-color: var(--style--highlight--bg);
+  }
+}
+
+textarea {
+
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 400px;
+
+  font-family: var(--page--monospace--font-family);
+
+  padding: 1rem;
+
+  border: 2px solid var(--style--secondary--bg);
+  border-radius: 5px;
+
+  white-space: pre;
+
+  &:focus,
+  &:active {
+    background-color: var(--style--highlight--bg);
+  }
+
+}
+
+select {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid var(--style--secondary--bg);
+  border-right: none;
+  border-radius: 5px;
+
+  background-color: transparent;
+
+  &:focus,
+  &:active {
+    background-color: var(--style--highlight--bg);
+  }
 }
