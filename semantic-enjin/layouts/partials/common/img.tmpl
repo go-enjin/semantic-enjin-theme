@@ -1,0 +1,7 @@
+<img src="{{ .Src | asURL }}" alt="{{ .Alt }}"
+     {{- if .Class }} class="{{ .Class }}"{{ end -}}
+     {{- if .Style }} style="{{ .Style }}"{{ end -}}
+     {{- if .Width }} width="{{ .Width }}"{{ end -}}
+     {{- if .Height }} height="{{ .Height }}"{{ end -}}
+     {{- if .ImgSrcNonceValue }} nonce="{{ .ImgSrcNonceValue }}"{{ end -}}
+/>
