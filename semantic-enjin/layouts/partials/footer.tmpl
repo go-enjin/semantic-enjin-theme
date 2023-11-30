@@ -39,17 +39,16 @@
                     {{- end -}}
                 </ul>
             {{- end -}}
-            {{- if or .Copyright .CopyrightNotice -}}
+
+            {{- if not .OmitCopyright -}}
                 <div id="copyright">
-                    {{- if .CopyrightNotice -}}
-                        {{- if .CopyrightName -}}
-                            <span class="name d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightName /* site copyright name */ -}}</span>
-                            <span class="d--mobile--lg--inline-block">—</span>
-                        {{- end -}}
-                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .CopyrightNotice /* site copyright notice */ -}}</span>
-                    {{- else -}}
-                        <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .Copyright /* site copyright (custom) */ -}}</span>
-                    {{- end -}}
+                    <span class="name d--mobile--sm--block d--mobile--lg--inline-block">{{- _ .EnjinInfo.CopyrightName  -}}</span>
+                    <span class="d--mobile--lg--inline-block">—</span>
+                    <span class="notice d--mobile--sm--block d--mobile--lg--inline-block">&copy;
+                        {{- .EnjinInfo.CopyrightYear -}}
+                        &nbsp;
+                        {{- _ .EnjinInfo.CopyrightNotice -}}
+                    </span>
                 </div>
             {{- end -}}
             {{- if .Theme.Authors }}
