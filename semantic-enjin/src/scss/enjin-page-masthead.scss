@@ -73,6 +73,13 @@ input[type='radio'][name='main-menu'] {
   padding: 0;
 }
 
+.masthead .brand .site-home {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
 .masthead .brand .brand--copy {
   margin-left: 10px;
   display: inline-flex;
@@ -136,4 +143,31 @@ input[type='radio'][name='main-menu'] {
   height: 100%;
   z-index: var(--z--page);
   background: var(--style--overlay--light--bg);
+}
+
+.masthead > ul.inline-notices {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  list-style: none;
+
+  padding: 1rem;
+
+  background-color: var(--accent--bg);
+
+  z-index: var(--z--page--overlay);
+
+  & > li {
+    width: 100%;
+
+    & > a {
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
