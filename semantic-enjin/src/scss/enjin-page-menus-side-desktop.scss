@@ -1,0 +1,300 @@
+// Copyright (c) 2023  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+@media screen and (min-width: 1199.99px) {
+
+  /* side-menu states */
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] #menu-close--label {
+    display: none;
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] #side-close--label {
+    display: block;
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] .controls .search {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: var(--page--side-menu--width);
+    height: var(--page--masthead--real-height);
+    border-bottom: 3px solid var(--secondary--bg);
+    background: var(--primary--bg);
+    color: var(--primary--fg);
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] .controls .search form {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--secondary--fg);
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] .controls .search form input {
+    width: 80%;
+  }
+
+  #side-menu:not(:checked) ~ .masthead .menus[data-desktop-style='side'] #side-menu--label .closed,
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] #side-menu--label .opened {
+    display: inline-block;
+  }
+  #side-menu:not(:checked) ~ .masthead .menus[data-desktop-style='side'] #side-menu--label .opened,
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] #side-menu--label .closed {
+    display: none;
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav li label.close {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 34px;
+
+    background: none;
+    border: none;
+    opacity: 0;
+
+    z-index: var(--z--menus--sub-menus);
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav li label.close {
+    height: 28px;
+
+    &:hover, &:active, &:focus {
+
+      background-color: var(--page--masthead--fg);
+
+      opacity: 0.34;
+
+    }
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav li .label:hover,
+  .masthead .menus[data-desktop-style='side'] nav li label a:hover {
+    text-decoration: underline;
+    opacity: 1.0;
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav > :is(ul,ol) > li :is(ul,ol),
+  .masthead .menus[data-desktop-style='side'] nav > :is(ul,ol) > li :is(ul,ol) li :is(ul,ol) {
+    display: none;
+    flex-direction: column;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls > div * {
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls > div,
+  .masthead .menus[data-desktop-style='side'] > .controls > div.search button {
+    display: inline-flex;
+    height: 34px;
+    width: 44px;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls div.search form {
+    display: inline-flex;
+    align-items: center;
+    background: var(--secondary--fg);
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls #search-menu--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls #search-menu--label i {
+    display: block;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls .search input,
+  .masthead .menus[data-desktop-style='side'] > .controls .search button {
+    display: inline-block;
+    position: relative;
+    background: var(--primary--bg);
+    color: var(--primary--fg);
+    border: none;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls .search input[name='query'] {
+    height: 24px;
+    padding: 5px 10px;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls .search button[type='submit'] {
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls .search button[type='submit']:hover {
+    background: var(--secondary--bg);
+    color: var(--secondary--fg);
+  }
+
+  .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) > .controls .side-menu--toggle,
+  .masthead .menus[data-desktop-style='side'] nav,
+  .masthead .menus[data-desktop-style='side'] > .controls .search,
+  .masthead .menus[data-desktop-style='side'] > .controls .search--toggle {
+    display: none;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > .controls .side-menu--toggle {
+    display: inline-block;
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav {
+    --style--bg: var(--secondary--bg);
+    --style--fg: var(--secondary--fg);
+
+    position: fixed;
+    top: var(--page--masthead--real-height);
+    left: 0;
+
+    width: var(--page--side-menu--width);
+    min-width: 200px;
+    height: 100%;
+    max-height: calc(100vh - var(--page--masthead--full-height));
+
+    padding-bottom: 10px;
+
+    color: var(--secondary--fg);
+    background: var(--secondary--bg);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol),
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li,
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li :is(label,.label) {
+    display: block;
+    width: 100%;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li {
+    padding: 10px 0 0 10px;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li :is(label,.label).close {
+    display: none;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li :is(label,.label) {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: calc(100% - 10px);
+
+    padding: 0.5rem;
+
+    vertical-align: middle;
+    line-height: 16px;
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li :is(label,.label):is(:hover,:active,:focus,:focus-within,.active),
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) li :is(label,.label):is(:hover,:active,:focus,:focus-within,.active) a {
+    color: var(--style--bg);
+    background-color: var(--style--fg);
+
+    border-radius: 5px;
+
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='side'] nav a:focus,
+  .masthead .menus[data-desktop-style='side'] nav a:visited,
+  .masthead .menus[data-desktop-style='side'] nav a:active,
+  .masthead .menus[data-desktop-style='side'] nav a:hover,
+  .masthead .menus[data-desktop-style='side'] nav a {
+    color: var(--style--fg);
+  }
+
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) > li > .parent::after {
+    display: none !important;
+  }
+  .masthead .menus[data-desktop-style='side'] > nav > :is(ul,ol) > li > :is(ul,ol) {
+    display: flex !important;
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] {
+    z-index: var(--z--page--overlay);
+  }
+
+  /* search-menu states */
+
+  #search-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) .controls .search--toggle,
+  #search-menu:not(:checked) ~ .masthead .menus:not([data-desktop-style='side'],[data-desktop-style='slide']) .controls .search--toggle:hover {
+    background: var(--primary--bg);
+    color: var(--primary--fg);
+  }
+
+  #search-menu:not(:checked) ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) .controls .search--toggle,
+  #search-menu:checked ~ .masthead .menus:not([data-desktop-style='side'],[data-desktop-style='slide']) .controls .search--toggle:hover {
+    background: var(--secondary--bg);
+    color: var(--secondary--fg);
+  }
+
+  #search-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) .controls .search,
+  #search-menu:not(:checked) ~ .masthead .menus:not([data-desktop-style='side'],[data-desktop-style='slide']) #search-menu--label .closed,
+  #search-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) #search-menu--label .opened {
+    display: inline-flex;
+    justify-content: start;
+  }
+  #search-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) .menus nav,
+  #search-menu:not(:checked) ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) .controls .search,
+  #search-menu:not(:checked) ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) #search-menu--label .opened,
+  #search-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) #search-menu--label .closed {
+    display: none;
+  }
+
+  #side-menu:checked ~ .masthead .menus[data-desktop-style='side'] nav {
+    display: inline-block;
+  }
+
+  #side-menu:checked ~ .masthead .menus:is([data-desktop-style='menu'],[data-desktop-style='mega']) nav .menu-item label.close,
+  #side-menu:not(:checked) ~ .masthead .menus[data-desktop-style='side'] nav .menu-item label.close {
+    display: none;
+  }
+
+}
+
+/* end media screen min-width 1199.99px */

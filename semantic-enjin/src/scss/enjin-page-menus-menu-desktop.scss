@@ -1,0 +1,209 @@
+// Copyright (c) 2023  The Go-Enjin Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
+@media screen and (min-width: 1199.99px) {
+
+
+  #menu-close:not(:checked) ~ .masthead .menus[data-desktop-style='menu'] #menu-close--label {
+    display: block;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav :is(ul,ol) {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    background: var(--secondary--bg);
+    color: var(--secondary--fg);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) li :is(ul,ol),
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) li :is(ul,ol) li :is(ul,ol) {
+    flex-direction: column;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) li :is(ul,ol) {
+    display: none;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li {
+    display: inline-block;
+    position: relative;
+    height: 34px;
+    border-right: 1px solid var(--secondary--fg);
+    font-size: 14px;
+    line-height: 14px;
+    min-width: 150px;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li :is(ul,ol) li {
+    border-right: none;
+    min-width: 150px;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav li :is(label,.label) {
+    display: inline-block;
+    min-width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    height: 34px;
+    font-size: 14px;
+    line-height: 34px;
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav li :is(ul,ol) :is(label,.label) {
+    text-align: left;
+    padding-left: 10px;
+  }
+  .masthead .menus[data-desktop-style='menu'] nav li :is(ul,ol) li :is(ul,ol) :is(label,.label) {
+    padding-left: 20px;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav li label.close {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 34px;
+
+    background: none;
+    border: none;
+    opacity: 0;
+
+    z-index: var(--z--menus--sub-menus);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav li .label:hover,
+  .masthead .menus[data-desktop-style='menu'] nav li label a:hover {
+    text-decoration: underline;
+    opacity: 1.0;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav li label:hover a,
+  .masthead .menus[data-desktop-style='menu'] nav li :is(label,.label):hover,
+  .masthead .menus[data-desktop-style='menu'] nav li :is(label,.label).active,
+  .masthead .menus[data-desktop-style='menu'] nav li :is(label,.label).active a {
+    color: var(--primary--fg);
+    background: var(--primary--bg);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li > :is(ul,ol) {
+    position: fixed;
+    top: var(--page--masthead--full-height);
+
+    z-index: var(--z--menus--sub-menus);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li .sub-menu {
+    box-sizing: border-box;
+    box-shadow: 0 0 2px var(--style--fg);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li > :is(ul,ol) .sub-menu {
+    position: absolute;
+    top: 0;
+    right: -100%;
+
+    z-index: var(--z--menus--sub-menus);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li > :is(ul,ol).last .sub-menu {
+    right: initial;
+    left: -100%;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li :is(ul,ol) li {
+    height: auto;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] nav > :is(ul,ol) > li :is(ul,ol) li :is(ul,ol) {
+    display: none;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls > div * {
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls > div,
+  .masthead .menus[data-desktop-style='menu'] > .controls > div.search button {
+    display: inline-flex;
+    height: 34px;
+    width: 44px;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls div.search {
+    width: 100%;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls div.search form {
+    display: inline-flex;
+    align-items: center;
+    background: var(--secondary--fg);
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls #search-menu--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls #search-menu--label i {
+    display: block;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls .search input,
+  .masthead .menus[data-desktop-style='menu'] > .controls .search button {
+    display: inline-block;
+    position: relative;
+    background: var(--primary--bg);
+    color: var(--primary--fg);
+    border: none;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls .search input[name='query'] {
+    height: 24px;
+    padding: 5px 10px;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls .search button[type='submit'] {
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .masthead .menus[data-desktop-style='menu'] > .controls .search button[type='submit']:hover {
+    background: var(--secondary--bg);
+    color: var(--secondary--fg);
+  }
+
+}
+
+/* end media screen min-width 1199.99px */
