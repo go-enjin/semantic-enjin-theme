@@ -1,5 +1,5 @@
 {
-    "language": "ja",
+    "language": "en",
     "messages": [
         {
             "id": "top",
@@ -13,7 +13,7 @@
             "id": "Theme by: {author}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
-            "translation": "サイトテーマ制作: %[1]s",
+            "translation": "Theme by: %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
@@ -31,7 +31,7 @@
             "id": "back to top",
             "key": "back to top",
             "message": "back to top",
-            "translation": "Topに戻る",
+            "translation": "back to top",
             "translatorComment": "/* screen reader only */\n[from: layouts/partials/footer.tmpl]",
             "fuzzy": true
         },
@@ -39,7 +39,7 @@
             "id": "site logo",
             "key": "site logo",
             "message": "site logo",
-            "translation": "サイトロゴ",
+            "translation": "site logo",
             "translatorComment": "[from: layouts/partials/header.tmpl]",
             "fuzzy": true
         },
@@ -47,7 +47,7 @@
             "id": "close side menu",
             "key": "close side menu",
             "message": "close side menu",
-            "translation": "サイドメニューを閉じる",
+            "translation": "close side menu",
             "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
             "fuzzy": true
         },
@@ -55,7 +55,7 @@
             "id": "close main menu",
             "key": "close main menu",
             "message": "close main menu",
-            "translation": "メインメニューを閉じる",
+            "translation": "close main menu",
             "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
             "fuzzy": true
         },
@@ -63,7 +63,7 @@
             "id": "Search",
             "key": "Search",
             "message": "Search",
-            "translation": "検索",
+            "translation": "Search",
             "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]/* screen reader only */\n[from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -71,7 +71,7 @@
             "id": "toggle search",
             "key": "toggle search",
             "message": "toggle search",
-            "translation": "検索を切り替え",
+            "translation": "toggle search",
             "translatorComment": "/* screen reader only, show/hide search menu */\n[from: layouts/partials/header.tmpl]",
             "fuzzy": true
         },
@@ -79,7 +79,7 @@
             "id": "toggle side menu",
             "key": "toggle side menu",
             "message": "toggle side menu",
-            "translation": "サイドメニューを切り替え",
+            "translation": "toggle side menu",
             "translatorComment": "/* screen reader only, show/hide side menu */\n[from: layouts/partials/header.tmpl]",
             "fuzzy": true
         },
@@ -87,7 +87,7 @@
             "id": "close menu",
             "key": "close menu",
             "message": "close menu",
-            "translation": "メニューを閉じる",
+            "translation": "close menu",
             "translatorComment": "/* screen reader only */\n[from: layouts/partials/menu/menu-controls.tmpl]",
             "fuzzy": true
         },
@@ -95,7 +95,7 @@
             "id": "page title heading deeplink",
             "key": "page title heading deeplink",
             "message": "page title heading deeplink",
-            "translation": "ページタイトル見出しディープリンク",
+            "translation": "page title heading deeplink",
             "translatorComment": "/* deeplink to the page title header block */\n[from: layouts/partials/njn/block-header.tmpl]",
             "fuzzy": true
         },
@@ -103,7 +103,7 @@
             "id": "thumbnail image",
             "key": "thumbnail image",
             "message": "thumbnail image",
-            "translation": "サムネイル画像",
+            "translation": "thumbnail image",
             "translatorComment": "[from: layouts/partials/njn/block/card-content.tmpl]",
             "fuzzy": true
         },
@@ -111,7 +111,7 @@
             "id": "go to the previous card",
             "key": "go to the previous card",
             "message": "go to the previous card",
-            "translation": "前のカードに移動",
+            "translation": "go to the previous card",
             "translatorComment": "/* move carousel to previous item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
             "fuzzy": true
         },
@@ -119,7 +119,7 @@
             "id": "go to the next card",
             "key": "go to the next card",
             "message": "go to the next card",
-            "translation": "次のカードに移動",
+            "translation": "go to the next card",
             "translatorComment": "/* move carousel to next item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
             "fuzzy": true
         },
@@ -127,7 +127,7 @@
             "id": "go to card number {Num1}",
             "key": "go to card number %[1]d",
             "message": "go to card number %[1]d",
-            "translation": "カード番号%[1]dに移動",
+            "translation": "go to card number %[1]d",
             "translatorComment": "/* move carousel to specific item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
             "placeholders": [
                 {
@@ -145,7 +145,7 @@
             "id": "More",
             "key": "More",
             "message": "More",
-            "translation": "さらに",
+            "translation": "More",
             "translatorComment": "/* index block pagination, asking for another batch of pages */\n[from: layouts/partials/njn/block/index--paginate--more.tmpl]",
             "fuzzy": true
         },
@@ -153,7 +153,7 @@
             "id": "Go to the first page",
             "key": "Go to the first page",
             "message": "Go to the first page",
-            "translation": "最初のページに移動",
+            "translation": "Go to the first page",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -161,7 +161,7 @@
             "id": "Go to the previous page",
             "key": "Go to the previous page",
             "message": "Go to the previous page",
-            "translation": "前のページに戻る",
+            "translation": "Go to the previous page",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -169,7 +169,7 @@
             "id": "{PageNumber} of {TotalPages}",
             "key": "%[1]d of %[2]d",
             "message": "%[1]d of %[2]d",
-            "translation": "%[2]d 中の%[1]d",
+            "translation": "%[1]d of %[2]d",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl]",
             "placeholders": [
                 {
@@ -195,7 +195,7 @@
             "id": "Go to the next page",
             "key": "Go to the next page",
             "message": "Go to the next page",
-            "translation": "次のページへ",
+            "translation": "Go to the next page",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -203,7 +203,7 @@
             "id": "Go to the last page",
             "key": "Go to the last page",
             "message": "Go to the last page",
-            "translation": "最後のページに移動する",
+            "translation": "Go to the last page",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -211,7 +211,7 @@
             "id": "all",
             "key": "all",
             "message": "all",
-            "translation": "全て",
+            "translation": "all",
             "translatorComment": "/* used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' */\n[from: layouts/partials/njn/block/index--summary--more.tmpl]",
             "fuzzy": true
         },
@@ -219,7 +219,7 @@
             "id": "No results found within {TotalFound} total",
             "key": "No results found within %[1]d total",
             "message": "No results found within %[1]d total",
-            "translation": "%[1]d 内に結果が見つかりませんでした",
+            "translation": "No results found within %[1]d total",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl]",
             "placeholders": [
                 {
@@ -237,7 +237,7 @@
             "id": "Showing {showing} of {SearchTotal} results, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d total",
-            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、全 %[3]d 件",
+            "translation": "Showing %[1]s of %[2]d results, %[3]d total",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
             "placeholders": [
                 {
@@ -271,7 +271,7 @@
             "id": "Showing {showing} of {SearchTotal} results, {SearchWithinTotal} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
-            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、%[3]d フィルタ済、合計 %[4]d 件",
+            "translation": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
             "placeholders": [
                 {
@@ -313,7 +313,7 @@
             "id": "Search form error: {SearchError}",
             "key": "Search form error: %[1]s",
             "message": "Search form error: %[1]s",
-            "translation": "検索フォームエラー: %[1]s",
+            "translation": "Search form error: %[1]s",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
             "placeholders": [
                 {
@@ -331,7 +331,7 @@
             "id": "Showing {showing} of {TotalFound} total",
             "key": "Showing %[1]s of %[2]d total",
             "message": "Showing %[1]s of %[2]d total",
-            "translation": "全 %[2]d 件中 %[1]s 件を表示中",
+            "translation": "Showing %[1]s of %[2]d total",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
             "placeholders": [
                 {
@@ -357,7 +357,7 @@
             "id": "Showing {showing} of {TotalFiltered} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "message": "Showing %[1]s of %[2]d filtered, %[3]d total",
-            "translation": "%[2]d 件中 %[1]s 件を表示中、フィルタリング済み、全 %[3]d 件",
+            "translation": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
             "placeholders": [
                 {
@@ -391,7 +391,7 @@
             "id": "page thumbnail image placeholder",
             "key": "page thumbnail image placeholder",
             "message": "page thumbnail image placeholder",
-            "translation": "ページのサムネイル画像のプレースホルダー",
+            "translation": "page thumbnail image placeholder",
             "translatorComment": "[from: layouts/partials/njn/block/index-view--profile.tmpl]",
             "fuzzy": true
         },
@@ -399,7 +399,7 @@
             "id": "deeplink to {view} view",
             "key": "deeplink to %[1]s view",
             "message": "deeplink to %[1]s view",
-            "translation": "%[1]s ビューへのディープリンク",
+            "translation": "deeplink to %[1]s view",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "placeholders": [
                 {
@@ -417,7 +417,7 @@
             "id": "open filter dropdown menu",
             "key": "open filter dropdown menu",
             "message": "open filter dropdown menu",
-            "translation": "フィルタードロップダウンメニューを開く",
+            "translation": "open filter dropdown menu",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -425,7 +425,7 @@
             "id": "Select a filter",
             "key": "Select a filter",
             "message": "Select a filter",
-            "translation": "フィルターを選択してください",
+            "translation": "Select a filter",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -433,7 +433,7 @@
             "id": "close filter dropdown menu",
             "key": "close filter dropdown menu",
             "message": "close filter dropdown menu",
-            "translation": "フィルタードロップダウンメニューを閉じる",
+            "translation": "close filter dropdown menu",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -441,7 +441,7 @@
             "id": "close the search menu",
             "key": "close the search menu",
             "message": "close the search menu",
-            "translation": "検索メニューを閉じる",
+            "translation": "close the search menu",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -449,7 +449,7 @@
             "id": "search",
             "key": "search",
             "message": "search",
-            "translation": "検索",
+            "translation": "search",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -457,7 +457,7 @@
             "id": "open the search menu",
             "key": "open the search menu",
             "message": "open the search menu",
-            "translation": "検索メニューを開く",
+            "translation": "open the search menu",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -465,7 +465,7 @@
             "id": "reset filters",
             "key": "reset filters",
             "message": "reset filters",
-            "translation": "フィルターをリセットする",
+            "translation": "reset filters",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
@@ -473,7 +473,7 @@
             "id": "Site Search",
             "key": "Site Search",
             "message": "Site Search",
-            "translation": "サイト検索",
+            "translation": "Site Search",
             "translatorComment": "/* title heading of search page */\n[from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -481,7 +481,7 @@
             "id": "Results",
             "key": "Results",
             "message": "Results",
-            "translation": "結果",
+            "translation": "Results",
             "translatorComment": "/* search page results heading */\n[from: layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
@@ -489,7 +489,7 @@
             "id": "Search error: {SiteSearchError}",
             "key": "Search error: %[1]s",
             "message": "Search error: %[1]s",
-            "translation": "検索エラー: %[1]s",
+            "translation": "Search error: %[1]s",
             "translatorComment": "/* search error happened */\n[from: layouts/partials/page/search.tmpl]",
             "placeholders": [
                 {
@@ -507,7 +507,7 @@
             "id": "Forbidden",
             "key": "Forbidden",
             "message": "Forbidden",
-            "translation": "閲覧禁止",
+            "translation": "Forbidden",
             "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
             "fuzzy": true
         },
@@ -515,7 +515,7 @@
             "id": "Request Denied",
             "key": "Request Denied",
             "message": "Request Denied",
-            "translation": "要求は拒否されました",
+            "translation": "Request Denied",
             "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
             "fuzzy": true
         },
@@ -523,7 +523,7 @@
             "id": "Your request has been denied.",
             "key": "Your request has been denied.",
             "message": "Your request has been denied.",
-            "translation": "あなたのリクエストは拒否されました。",
+            "translation": "Your request has been denied.",
             "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
             "fuzzy": true
         },
@@ -531,7 +531,7 @@
             "id": "Not Found",
             "key": "Not Found",
             "message": "Not Found",
-            "translation": "見つかりません",
+            "translation": "Not Found",
             "translatorComment": "[from: layouts/partials/page/status--404.tmpl]",
             "fuzzy": true
         },
@@ -539,7 +539,7 @@
             "id": "The page requested was not found.",
             "key": "The page requested was not found.",
             "message": "The page requested was not found.",
-            "translation": "要求されたページは見つかりませんでした。",
+            "translation": "The page requested was not found.",
             "translatorComment": "[from: layouts/partials/page/status--404.tmpl]",
             "fuzzy": true
         },
@@ -547,7 +547,7 @@
             "id": "Internal Server Error",
             "key": "Internal Server Error",
             "message": "Internal Server Error",
-            "translation": "内部サーバーエラー",
+            "translation": "Internal Server Error",
             "translatorComment": "[from: layouts/partials/page/status--500.tmpl]",
             "fuzzy": true
         },
@@ -555,7 +555,7 @@
             "id": "Sorry! The server has encountered an internal error.",
             "key": "Sorry! The server has encountered an internal error.",
             "message": "Sorry! The server has encountered an internal error.",
-            "translation": "申し訳ありません！ サーバーで内部エラーが発生しました。",
+            "translation": "Sorry! The server has encountered an internal error.",
             "translatorComment": "[from: layouts/partials/page/status--500.tmpl]",
             "fuzzy": true
         }

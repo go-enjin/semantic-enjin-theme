@@ -1,285 +1,563 @@
 {
-	"language": "ja",
-	"messages": [
-		{
-			"id": "%d of %d",
-			"key": "%d of %d",
-			"message": "%d of %d",
-			"translation": "%[2]dページ中の%[1]d",
-			"translatorComment": ".PageNumber .TotalPages [from: index--paginate--page.tmpl]"
-		},
-		{
-			"id": "Go to the first page",
-			"key": "Go to the first page",
-			"message": "Go to the first page",
-			"translation": "最初のページに",
-			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
-		},
-		{
-			"id": "Go to the last page",
-			"key": "Go to the last page",
-			"message": "Go to the last page",
-			"translation": "最後のページに",
-			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
-		},
-		{
-			"id": "Go to the next page",
-			"key": "Go to the next page",
-			"message": "Go to the next page",
-			"translation": "次のページに",
-			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
-		},
-		{
-			"id": "Go to the previous page",
-			"key": "Go to the previous page",
-			"message": "Go to the previous page",
-			"translation": "前のページに",
-			"translatorComment": "[from: index--paginate--page.tmpl], [from: page-search.tmpl]"
-		},
-		{
-			"id": "More",
-			"key": "More",
-			"message": "More",
-			"translation": "さらに",
-			"translatorComment": "index block pagination, asking for another batch of pages [from: index--paginate--more.tmpl]"
-		},
-		{
-			"id": "No results found within %d total",
-			"key": "No results found within %d total",
-			"message": "No results found within %d total",
-			"translation": "%d中検索結果はありません",
-			"translatorComment": ".TotalFound [from: index--summary--more.tmpl]"
-		},
-		{
-			"id": "Results",
-			"key": "Results",
-			"message": "Results",
-			"translation": "結果",
-			"translatorComment": "search page results heading [from: page-search.tmpl]"
-		},
-		{
-			"id": "Search",
-			"key": "Search",
-			"message": "Search",
-			"translation": "検索",
-			"translatorComment": "main menu search field placeholder text [from: header.tmpl], screen reader only [from: header.tmpl], screen reader only [from: page-search.tmpl]"
-		},
-		{
-			"id": "Search error: %s",
-			"key": "Search error: %s",
-			"message": "Search error: %s",
-			"translation": "検索エラー: %s ",
-			"translatorComment": "search error happened [from: page-search.tmpl]"
-		},
-		{
-			"id": "Search form error: %s",
-			"key": "Search form error: %s",
-			"message": "Search form error: %s",
-			"translation": "エラー修正を検索: %s",
-			"translatorComment": ".SearchError [from: index--summary--more.tmpl], .SearchError [from: index--summary--page.tmpl]"
-		},
-		{
-			"id": "Select a filter",
-			"key": "Select a filter",
-			"message": "Select a filter",
-			"translation": "フィルタを選択",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "Showing %s of %d filtered, %d total",
-			"key": "Showing %s of %d filtered, %d total",
-			"message": "Showing %s of %d filtered, %d total",
-			"translation": "全 %[3]d 件中%[2]d 件はフィルターされ%[1]sを表示",
-			"translatorComment": "$showing .TotalFiltered .TotalFound [from: index--summary--more.tmpl], $showing .TotalFiltered .TotalFound [from: index--summary--page.tmpl]"
-		},
-		{
-			"id": "Showing %s of %d results, %d filtered, %d total",
-			"key": "Showing %s of %d results, %d filtered, %d total",
-			"message": "Showing %s of %d results, %d filtered, %d total",
-			"translation": "全 %[4]d 件中 %[3]d 件はフィルターされ、検索結果%[2]d件中%[1]sを表示",
-			"translatorComment": "$showing .SearchTotal .SearchWithinTotal .TotalFound [from: index--summary--more.tmpl], $showing .SearchTotal .SearchWithinTotal .TotalFound [from: index--summary--page.tmpl]"
-		},
-		{
-			"id": "Showing %s of %d results, %d total",
-			"key": "Showing %s of %d results, %d total",
-			"message": "Showing %s of %d results, %d total",
-			"translation": "全 %[3]d件、%[2]d件の中の検索結果%[1]s件を表示",
-			"translatorComment": "$showing .SearchTotal .TotalFound [from: index--summary--more.tmpl], $showing .SearchTotal .TotalFound [from: index--summary--page.tmpl]"
-		},
-		{
-			"id": "Showing %s of %d total",
-			"key": "Showing %s of %d total",
-			"message": "Showing %s of %d total",
-			"translation": "%[2]d 件の中　%[1]s 件を表示",
-			"translatorComment": "$showing .TotalFound [from: index--summary--more.tmpl], $showing .TotalFound [from: index--summary--page.tmpl]"
-		},
-		{
-			"id": "Site Search",
-			"key": "Site Search",
-			"message": "Site Search",
-			"translation": "サイト内検索",
-			"translatorComment": "title heading of search page [from: page-search.tmpl]"
-		},
-		{
-			"id": "Site theme by: %s",
-			"key": "Site theme by: %s",
-			"message": "Site theme by: %s",
-			"translation": "このサイトthemeのクリエーター: %s",
-			"translatorComment": "site theme design credit [from: footer.tmpl]"
-		},
-		{
-			"id": "all",
-			"key": "all",
-			"message": "all",
-			"translation": "すべて",
-			"translatorComment": "used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' [from: index--summary--more.tmpl]"
-		},
-		{
-			"id": "back to top",
-			"key": "back to top",
-			"message": "back to top",
-			"translation": "トップに戻る",
-			"translatorComment": "screen reader only [from: footer.tmpl]"
-		},
-		{
-			"id": "close filter dropdown menu",
-			"key": "close filter dropdown menu",
-			"message": "close filter dropdown menu",
-			"translation": "フィルタ　ドロップダウン　メニューを閉じる",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "close main menu",
-			"key": "close main menu",
-			"message": "close main menu",
-			"translation": "メインメニューを閉じる",
-			"translatorComment": "screen reader only [from: header.tmpl]"
-		},
-		{
-			"id": "close menu",
-			"key": "close menu",
-			"message": "close menu",
-			"translation": "メニューを閉じる",
-			"translatorComment": "screen reader only [from: header.tmpl]"
-		},
-		{
-			"id": "close side menu",
-			"key": "close side menu",
-			"message": "close side menu",
-			"translation": "サイドメニューを閉じる",
-			"translatorComment": "screen reader only [from: header.tmpl]"
-		},
-		{
-			"id": "close the search menu",
-			"key": "close the search menu",
-			"message": "close the search menu",
-			"translation": "検索メニューを閉じる",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "deeplink to %s view",
-			"key": "deeplink to %s view",
-			"message": "deeplink to %s view",
-			"translation": "%s ビューをディープリンクで",
-			"translatorComment": "$view.Label [from: index.tmpl]"
-		},
-		{
-			"id": "go to card number %d",
-			"key": "go to card number %d",
-			"message": "go to card number %d",
-			"translation": "%dのカードに",
-			"translatorComment": "move carousel to specific item [from: carousel.tmpl]"
-		},
-		{
-			"id": "go to the next card",
-			"key": "go to the next card",
-			"message": "go to the next card",
-			"translation": "次のカードにd",
-			"translatorComment": "move carousel to next item [from: carousel.tmpl]"
-		},
-		{
-			"id": "go to the previous card",
-			"key": "go to the previous card",
-			"message": "go to the previous card",
-			"translation": "前のカードに",
-			"translatorComment": "move carousel to previous item [from: carousel.tmpl]"
-		},
-		{
-			"id": "open filter dropdown menu",
-			"key": "open filter dropdown menu",
-			"message": "open filter dropdown menu",
-			"translation": "フィルタ　ドロップダウン　メニューの表示",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "open the search menu",
-			"key": "open the search menu",
-			"message": "open the search menu",
-			"translation": "検索メニューを表示",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "page thumbnail image placeholder",
-			"key": "page thumbnail image placeholder",
-			"message": "page thumbnail image placeholder",
-			"translation": "プレースホルダー　イメージ",
-			"translatorComment": "[from: index-view--profile.tmpl]"
-		},
-		{
-			"id": "page title heading deeplink",
-			"key": "page title heading deeplink",
-			"message": "page title heading deeplink",
-			"translation": "ページタイトルのヘディング・ディープリンク",
-			"translatorComment": "deeplink to the page title header block [from: block-header.tmpl]"
-		},
-		{
-			"id": "reset filters",
-			"key": "reset filters",
-			"message": "reset filters",
-			"translation": "フィルタをリセットする",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "search",
-			"key": "search",
-			"message": "search",
-			"translation": "検索",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "search terms +must should -not ...",
-			"key": "search terms +must should -not ...",
-			"message": "search terms +must should -not ...",
-			"translation": "search terms +must should -not ... (ja)",
-			"translatorComment": "search field placeholder text [from: page-search.tmpl]"
-		},
-		{
-			"id": "search...",
-			"key": "search...",
-			"message": "search...",
-			"translation": "検索",
-			"translatorComment": "[from: index.tmpl]"
-		},
-		{
-			"id": "toggle search",
-			"key": "toggle search",
-			"message": "toggle search",
-			"translation": "検索の表示・非表示",
-			"translatorComment": "screen reader only, show/hide search menu [from: header.tmpl]"
-		},
-		{
-			"id": "toggle side menu",
-			"key": "toggle side menu",
-			"message": "toggle side menu",
-			"translation": "サイドメニューの表示・非表示",
-			"translatorComment": "screen reader only, show/hide side menu [from: header.tmpl]"
-		},
-		{
-			"id": "top",
-			"key": "top",
-			"message": "top",
-			"translation": "トップ",
-			"translatorComment": "[from: single.html.tmpl], [from: single.md.tmpl], [from: single.org.tmpl], [from: baseof.tmpl], [from: carousel.tmpl], [from: content.tmpl], [from: header.tmpl], [from: icon.tmpl], [from: image.tmpl], [from: index.tmpl], [from: link-list.tmpl], [from: notice.tmpl], [from: pair.tmpl], [from: sidebar.tmpl], [from: page-search.tmpl]"
-		}
-	]
+    "language": "ja",
+    "messages": [
+        {
+            "id": "top",
+            "key": "top",
+            "message": "top",
+            "translation": "top",
+            "translatorComment": "[from: layouts/defaults/single.html.tmpl, layouts/defaults/single.md.tmpl=2, layouts/defaults/single.org.tmpl=2, layouts/full-page/baseof.tmpl=2, layouts/full-screen/baseof.tmpl=2, layouts/partials/njn/block/carousel.tmpl=2, layouts/partials/njn/block/content.tmpl=2, layouts/partials/njn/block/header.tmpl=2, layouts/partials/njn/block/icon.tmpl=2, layouts/partials/njn/block/image.tmpl=2, layouts/partials/njn/block/index.tmpl=2, layouts/partials/njn/block/link-list.tmpl=2, layouts/partials/njn/block/notice.tmpl=2, layouts/partials/njn/block/pair.tmpl=2, layouts/partials/njn/block/sidebar.tmpl=2, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "Theme by: {author}",
+            "key": "Theme by: %[1]s",
+            "message": "Theme by: %[1]s",
+            "translation": "サイトテーマ制作: %[1]s",
+            "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
+            "placeholders": [
+                {
+                    "id": "author",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$author"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "back to top",
+            "key": "back to top",
+            "message": "back to top",
+            "translation": "Topに戻る",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/footer.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "site logo",
+            "key": "site logo",
+            "message": "site logo",
+            "translation": "サイトロゴ",
+            "translatorComment": "[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close side menu",
+            "key": "close side menu",
+            "message": "close side menu",
+            "translation": "サイドメニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close main menu",
+            "key": "close main menu",
+            "message": "close main menu",
+            "translation": "メインメニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Search",
+            "key": "Search",
+            "message": "Search",
+            "translation": "検索",
+            "translatorComment": "/* screen reader only *//* screen reader only *//* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "toggle search",
+            "key": "toggle search",
+            "message": "toggle search",
+            "translation": "検索を切り替え",
+            "translatorComment": "/* screen reader only, show/hide search menu */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "toggle side menu",
+            "key": "toggle side menu",
+            "message": "toggle side menu",
+            "translation": "サイドメニューを切り替え",
+            "translatorComment": "/* screen reader only, show/hide side menu */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close menu",
+            "key": "close menu",
+            "message": "close menu",
+            "translation": "メニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/menu/menu-controls.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "page title heading deeplink",
+            "key": "page title heading deeplink",
+            "message": "page title heading deeplink",
+            "translation": "ページタイトル見出しディープリンク",
+            "translatorComment": "/* deeplink to the page title header block */\n[from: layouts/partials/njn/block-header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "thumbnail image",
+            "key": "thumbnail image",
+            "message": "thumbnail image",
+            "translation": "サムネイル画像",
+            "translatorComment": "[from: layouts/partials/njn/block/card-content.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "go to the previous card",
+            "key": "go to the previous card",
+            "message": "go to the previous card",
+            "translation": "前のカードに移動",
+            "translatorComment": "/* move carousel to previous item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "go to the next card",
+            "key": "go to the next card",
+            "message": "go to the next card",
+            "translation": "次のカードに移動",
+            "translatorComment": "/* move carousel to next item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "go to card number {Num1}",
+            "key": "go to card number %[1]d",
+            "message": "go to card number %[1]d",
+            "translation": "カード番号%[1]dに移動",
+            "translatorComment": "/* move carousel to specific item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "placeholders": [
+                {
+                    "id": "Num1",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "("
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "More",
+            "key": "More",
+            "message": "More",
+            "translation": "さらに",
+            "translatorComment": "/* index block pagination, asking for another batch of pages */\n[from: layouts/partials/njn/block/index--paginate--more.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Go to the first page",
+            "key": "Go to the first page",
+            "message": "Go to the first page",
+            "translation": "最初のページに移動",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "Go to the previous page",
+            "key": "Go to the previous page",
+            "message": "Go to the previous page",
+            "translation": "前のページに戻る",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "{View} of {PageNumber}",
+            "key": "%[1]d of %[2]d",
+            "message": "%[1]d of %[2]d",
+            "translation": "%[2]d 中の%[1]d",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl]",
+            "placeholders": [
+                {
+                    "id": "View",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": ".View"
+                },
+                {
+                    "id": "PageNumber",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": ".PageNumber"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Go to the next page",
+            "key": "Go to the next page",
+            "message": "Go to the next page",
+            "translation": "次のページへ",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "Go to the last page",
+            "key": "Go to the last page",
+            "message": "Go to the last page",
+            "translation": "最後のページに移動する",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "all",
+            "key": "all",
+            "message": "all",
+            "translation": "全て",
+            "translatorComment": "/* used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' */\n[from: layouts/partials/njn/block/index--summary--more.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "No results found within {TotalFound} total",
+            "key": "No results found within %[1]d total",
+            "message": "No results found within %[1]d total",
+            "translation": "%[1]d 内に結果が見つかりませんでした",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl]",
+            "placeholders": [
+                {
+                    "id": "TotalFound",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": ".TotalFound"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Showing {showing} of {SearchTotal} results, {TotalFound} total",
+            "key": "Showing %[1]s of %[2]d results, %[3]d total",
+            "message": "Showing %[1]s of %[2]d results, %[3]d total",
+            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、全 %[3]d 件",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
+            "placeholders": [
+                {
+                    "id": "showing",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$showing"
+                },
+                {
+                    "id": "SearchTotal",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": ".SearchTotal"
+                },
+                {
+                    "id": "TotalFound",
+                    "string": "%[3]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 3,
+                    "expr": ".TotalFound"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Showing {showing} of {SearchTotal} results, {SearchWithinTotal} filtered, {TotalFound} total",
+            "key": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
+            "message": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
+            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、%[3]d フィルタ済、合計 %[4]d 件",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
+            "placeholders": [
+                {
+                    "id": "showing",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$showing"
+                },
+                {
+                    "id": "SearchTotal",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": ".SearchTotal"
+                },
+                {
+                    "id": "SearchWithinTotal",
+                    "string": "%[3]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 3,
+                    "expr": ".SearchWithinTotal"
+                },
+                {
+                    "id": "TotalFound",
+                    "string": "%[4]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 4,
+                    "expr": ".TotalFound"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Search form error: {SearchError}",
+            "key": "Search form error: %[1]s",
+            "message": "Search form error: %[1]s",
+            "translation": "検索フォームエラー: %[1]s",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
+            "placeholders": [
+                {
+                    "id": "SearchError",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": ".SearchError"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Showing {showing} of {TotalFound} total",
+            "key": "Showing %[1]s of %[2]d total",
+            "message": "Showing %[1]s of %[2]d total",
+            "translation": "全 %[2]d 件中 %[1]s 件を表示中",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
+            "placeholders": [
+                {
+                    "id": "showing",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$showing"
+                },
+                {
+                    "id": "TotalFound",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": ".TotalFound"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Showing {showing} of {TotalFiltered} filtered, {TotalFound} total",
+            "key": "Showing %[1]s of %[2]d filtered, %[3]d total",
+            "message": "Showing %[1]s of %[2]d filtered, %[3]d total",
+            "translation": "%[2]d 件中 %[1]s 件を表示中、フィルタリング済み、全 %[3]d 件",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
+            "placeholders": [
+                {
+                    "id": "showing",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$showing"
+                },
+                {
+                    "id": "TotalFiltered",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": ".TotalFiltered"
+                },
+                {
+                    "id": "TotalFound",
+                    "string": "%[3]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 3,
+                    "expr": ".TotalFound"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "page thumbnail image placeholder",
+            "key": "page thumbnail image placeholder",
+            "message": "page thumbnail image placeholder",
+            "translation": "ページのサムネイル画像のプレースホルダー",
+            "translatorComment": "[from: layouts/partials/njn/block/index-view--profile.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "deeplink to {view} view",
+            "key": "deeplink to %[1]s view",
+            "message": "deeplink to %[1]s view",
+            "translation": "%[1]s ビューへのディープリンク",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "placeholders": [
+                {
+                    "id": "view",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$view"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "open filter dropdown menu",
+            "key": "open filter dropdown menu",
+            "message": "open filter dropdown menu",
+            "translation": "フィルタードロップダウンメニューを開く",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Select a filter",
+            "key": "Select a filter",
+            "message": "Select a filter",
+            "translation": "フィルターを選択してください",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close filter dropdown menu",
+            "key": "close filter dropdown menu",
+            "message": "close filter dropdown menu",
+            "translation": "フィルタードロップダウンメニューを閉じる",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close the search menu",
+            "key": "close the search menu",
+            "message": "close the search menu",
+            "translation": "検索メニューを閉じる",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "search",
+            "key": "search",
+            "message": "search",
+            "translation": "検索",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "open the search menu",
+            "key": "open the search menu",
+            "message": "open the search menu",
+            "translation": "検索メニューを開く",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "reset filters",
+            "key": "reset filters",
+            "message": "reset filters",
+            "translation": "フィルターをリセットする",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Site Search",
+            "key": "Site Search",
+            "message": "Site Search",
+            "translation": "サイト検索",
+            "translatorComment": "/* title heading of search page */\n[from: layouts/partials/page/search.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Results",
+            "key": "Results",
+            "message": "Results",
+            "translation": "結果",
+            "translatorComment": "/* search page results heading */\n[from: layouts/partials/page/search.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Search error: {SiteSearchError}",
+            "key": "Search error: %[1]s",
+            "message": "Search error: %[1]s",
+            "translation": "検索エラー: %[1]s",
+            "translatorComment": "/* search error happened */\n[from: layouts/partials/page/search.tmpl]",
+            "placeholders": [
+                {
+                    "id": "SiteSearchError",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": ".SiteSearchError"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Forbidden",
+            "key": "Forbidden",
+            "message": "Forbidden",
+            "translation": "閲覧禁止",
+            "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Request Denied",
+            "key": "Request Denied",
+            "message": "Request Denied",
+            "translation": "要求は拒否されました",
+            "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Your request has been denied.",
+            "key": "Your request has been denied.",
+            "message": "Your request has been denied.",
+            "translation": "あなたのリクエストは拒否されました。",
+            "translatorComment": "[from: layouts/partials/page/status--403.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Not Found",
+            "key": "Not Found",
+            "message": "Not Found",
+            "translation": "見つかりません",
+            "translatorComment": "[from: layouts/partials/page/status--404.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "The page requested was not found.",
+            "key": "The page requested was not found.",
+            "message": "The page requested was not found.",
+            "translation": "要求されたページは見つかりませんでした。",
+            "translatorComment": "[from: layouts/partials/page/status--404.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Internal Server Error",
+            "key": "Internal Server Error",
+            "message": "Internal Server Error",
+            "translation": "内部サーバーエラー",
+            "translatorComment": "[from: layouts/partials/page/status--500.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Sorry! The server has encountered an internal error.",
+            "key": "Sorry! The server has encountered an internal error.",
+            "message": "Sorry! The server has encountered an internal error.",
+            "translation": "申し訳ありません！ サーバーで内部エラーが発生しました。",
+            "translatorComment": "[from: layouts/partials/page/status--500.tmpl]",
+            "fuzzy": true
+        }
+    ]
 }
