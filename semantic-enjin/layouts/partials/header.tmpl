@@ -19,8 +19,15 @@
             <a class="site-home" href="{{ __ .HomePath }}">
                 {{- if or .SiteLogoUrl .EnjinInfo.Name .EnjinInfo.TagLine }}
                     {{- if .SiteLogoUrl }}
-                        <span class="site-logo"><img src="{{- fsUrl .SiteLogoUrl -}}"
-                                                     alt="{{- if .SiteLogoAlt -}}{{- .SiteLogoAlt -}}{{- else -}}site logo{{- end -}}"/></span>
+                        <span class="site-logo">
+                            {{- with $alt := "site logo" -}}
+                                {{- if $.SiteLogoAlt -}}{{- $alt = $.SiteLogoAlt -}}{{- else -}}{{- $alt = (_ "site logo") -}}{{- end -}}
+                                {{- template "partials/common/img.tmpl" (dict $
+                                "Src" (fsUrl $.SiteLogoUrl)
+                                "Alt" $alt
+                                ) -}}
+                            {{- end -}}
+                        </span>
                     {{- end }}
                     <div class="brand--copy">
                         {{- if .EnjinInfo.Name }}
