@@ -1,0 +1,34 @@
+<section
+        class="block"
+        id="main-header"
+        data-block-tag="main-header"
+        data-block-type="header"
+        data-block-profile="outer--inner"
+        data-block-padding="top"
+        data-block-margins="bottom"
+        data-header-reset=""
+        data-header-level="1"
+        data-header-count="1">
+    <div class="content">
+        <h1>{{ _ "Redirecting" }}</h1>
+    </div>
+</section>
+{{ with $redir := .HtmlRedirect }}
+<article
+        class="block"
+        id="html-redirect"
+        data-block-tag="html-redirect"
+        data-block-type="content"
+        data-block-profile="outer--inner"
+        data-block-padding="both"
+        data-block-margins="both"
+        data-block-jump-top="true"
+        data-block-jump-link="true">
+    <div class="content">
+        <section>
+            <p>{{ _ "Redirecting in %[1]d seconds" $redir.Delay }}</p>
+            <p><a href="{{ $redir.URL | asURL }}">{{ _ "to this destination page" }}</a></p>
+        </section>
+    </div>
+</article>
+{{ end }}
