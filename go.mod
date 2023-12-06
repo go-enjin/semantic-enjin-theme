@@ -4,7 +4,7 @@ go 1.21
 
 toolchain go1.21.0
 
-require github.com/go-enjin/be v0.5.4
+require github.com/go-enjin/be v0.5.5
 
 require (
 	github.com/BurntSushi/toml v1.3.2 // indirect
