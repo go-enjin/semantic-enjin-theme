@@ -50,9 +50,9 @@
     {{ end -}}
     <!-- Google Locales - see: https://developers.google.com/search/blog/2011/12/new-markup-for-multilingual-content -->
     {{- range $idx,$tag := .EnjinInfo.Locales }}
-        {{- with $link := ( __ $tag.String "/err" $.Url ) }}
+        {{- with $link := ( __ $tag "/err" $.Url ) }}
             {{- if ne $link "/err" }}
-                <link rel="alternate" hreflang="{{ $tag.String }}" href="{{ $link }}" />
+                <link rel="alternate" hreflang="{{ $tag }}" href="{{ $link }}" />
             {{- end }}
         {{- end }}
     {{- end }}

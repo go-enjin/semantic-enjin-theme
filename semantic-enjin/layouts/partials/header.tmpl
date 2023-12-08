@@ -64,15 +64,15 @@
                                     {{ range $idx,$tag := .EnjinInfo.Locales }}
                                         {{ if cmpLang $tag $.Request.Language }}
                                             {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
-                                                <a class="selected" href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a class="selected" href="{{ __ $tag "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
-                                                <a class="selected" href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a class="selected" href="{{ __ $tag (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ end }}
                                         {{ else }}
                                             {{ if cmpLang $tag $.EnjinInfo.DefaultLang }}
-                                                <a href="{{ __ $tag.String "/" $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a href="{{ __ $tag "/" $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ else }}
-                                                <a href="{{ __ $tag.String (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
+                                                <a href="{{ __ $tag (printf "/%v/" $tag) $.Request.Path }}">{{ _tag $tag }}</a>
                                             {{ end }}
                                         {{ end }}
                                     {{ end }}
