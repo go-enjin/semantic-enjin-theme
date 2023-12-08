@@ -41,8 +41,23 @@ body {
 
           width: 100%;
 
+          & > .file-name,
+          & > .file-actions {
+            border-radius: 5px;
+            background-color: rgba(0.68,0.68,0.68,0.25);
+          }
+
           & > .file-name {
-            font-size: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 36px;
+
+            padding: 0 10px;
+
+            font-size: 25px;
+            line-height: initial;
           }
 
           & > .file-actions {
