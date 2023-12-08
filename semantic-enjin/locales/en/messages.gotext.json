@@ -6,23 +6,23 @@
             "key": "top",
             "message": "top",
             "translation": "top",
-            "translatorComment": "[from: layouts/defaults/single.html.tmpl][from: layouts/defaults/single.md.tmpl][from: layouts/defaults/single.org.tmpl][from: layouts/full-page/baseof.tmpl][from: layouts/full-screen/baseof.tmpl][from: layouts/partials/njn/block/carousel.tmpl][from: layouts/partials/njn/block/content.tmpl][from: layouts/partials/njn/block/header.tmpl][from: layouts/partials/njn/block/icon.tmpl][from: layouts/partials/njn/block/image.tmpl][from: layouts/partials/njn/block/index.tmpl][from: layouts/partials/njn/block/link-list.tmpl][from: layouts/partials/njn/block/notice.tmpl][from: layouts/partials/njn/block/pair.tmpl][from: layouts/partials/njn/block/sidebar.tmpl][from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "[from: layouts/defaults/single.html.tmpl, layouts/defaults/single.md.tmpl=2, layouts/defaults/single.org.tmpl=2, layouts/full-page/baseof.tmpl=2, layouts/full-screen/baseof.tmpl=2, layouts/partials/njn/block/carousel.tmpl=2, layouts/partials/njn/block/content.tmpl=2, layouts/partials/njn/block/header.tmpl=2, layouts/partials/njn/block/icon.tmpl=2, layouts/partials/njn/block/image.tmpl=2, layouts/partials/njn/block/index.tmpl=2, layouts/partials/njn/block/link-list.tmpl=2, layouts/partials/njn/block/notice.tmpl=2, layouts/partials/njn/block/pair.tmpl=2, layouts/partials/njn/block/sidebar.tmpl=2, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
-            "id": "Theme by: {author}",
+            "id": "Theme by: {authorName}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
             "translation": "Theme by: %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "author",
+                    "id": "authorName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$author"
+                    "expr": "$author.Name"
                 }
             ],
             "fuzzy": true
@@ -64,7 +64,7 @@
             "key": "Search",
             "message": "Search",
             "translation": "Search",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]/* screen reader only */\n[from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "/* screen reader only *//* screen reader only *//* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -154,7 +154,7 @@
             "key": "Go to the first page",
             "message": "Go to the first page",
             "translation": "Go to the first page",
-            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -162,31 +162,31 @@
             "key": "Go to the previous page",
             "message": "Go to the previous page",
             "translation": "Go to the previous page",
-            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
-            "id": "{PageNumber} of {TotalPages}",
+            "id": "{ViewPageNumber} of {ViewTotalPages}",
             "key": "%[1]d of %[2]d",
             "message": "%[1]d of %[2]d",
             "translation": "%[1]d of %[2]d",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl]",
             "placeholders": [
                 {
-                    "id": "PageNumber",
+                    "id": "ViewPageNumber",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 1,
-                    "expr": ".PageNumber"
+                    "expr": ".View.PageNumber"
                 },
                 {
-                    "id": "TotalPages",
+                    "id": "ViewTotalPages",
                     "string": "%[2]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 2,
-                    "expr": ".TotalPages"
+                    "expr": ".View.TotalPages"
                 }
             ],
             "fuzzy": true
@@ -196,7 +196,7 @@
             "key": "Go to the next page",
             "message": "Go to the next page",
             "translation": "Go to the next page",
-            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -204,7 +204,7 @@
             "key": "Go to the last page",
             "message": "Go to the last page",
             "translation": "Go to the last page",
-            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl][from: layouts/partials/page/search.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -238,7 +238,7 @@
             "key": "Showing %[1]s of %[2]d results, %[3]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d total",
             "translation": "Showing %[1]s of %[2]d results, %[3]d total",
-            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
                     "id": "showing",
@@ -272,7 +272,7 @@
             "key": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "translation": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
-            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
                     "id": "showing",
@@ -314,7 +314,7 @@
             "key": "Search form error: %[1]s",
             "message": "Search form error: %[1]s",
             "translation": "Search form error: %[1]s",
-            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
                     "id": "SearchError",
@@ -332,7 +332,7 @@
             "key": "Showing %[1]s of %[2]d total",
             "message": "Showing %[1]s of %[2]d total",
             "translation": "Showing %[1]s of %[2]d total",
-            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
                     "id": "showing",
@@ -358,7 +358,7 @@
             "key": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "message": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "translation": "Showing %[1]s of %[2]d filtered, %[3]d total",
-            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl][from: layouts/partials/njn/block/index--summary--page.tmpl]",
+            "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
                     "id": "showing",
@@ -396,19 +396,19 @@
             "fuzzy": true
         },
         {
-            "id": "deeplink to {view} view",
+            "id": "deeplink to {viewLabel} view",
             "key": "deeplink to %[1]s view",
             "message": "deeplink to %[1]s view",
             "translation": "deeplink to %[1]s view",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "placeholders": [
                 {
-                    "id": "view",
+                    "id": "viewLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$view"
+                    "expr": "$view.Label"
                 }
             ],
             "fuzzy": true
@@ -467,6 +467,40 @@
             "message": "reset filters",
             "translation": "reset filters",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Redirecting",
+            "key": "Redirecting",
+            "message": "Redirecting",
+            "translation": "Redirecting",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Redirecting in {redirDelay} seconds",
+            "key": "Redirecting in %[1]d seconds",
+            "message": "Redirecting in %[1]d seconds",
+            "translation": "Redirecting in %[1]d seconds",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
+            "placeholders": [
+                {
+                    "id": "redirDelay",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "$redir.Delay"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "to this destination page",
+            "key": "to this destination page",
+            "message": "to this destination page",
+            "translation": "to this destination page",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "fuzzy": true
         },
         {

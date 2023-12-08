@@ -10,19 +10,19 @@
             "fuzzy": true
         },
         {
-            "id": "Theme by: {author}",
+            "id": "Theme by: {authorName}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
             "translation": "Theme by: %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "author",
+                    "id": "authorName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$author"
+                    "expr": "$author.Name"
                 }
             ],
             "fuzzy": true
@@ -166,27 +166,27 @@
             "fuzzy": true
         },
         {
-            "id": "{View} of {PageNumber}",
+            "id": "{ViewPageNumber} of {ViewTotalPages}",
             "key": "%[1]d of %[2]d",
             "message": "%[1]d of %[2]d",
             "translation": "%[1]d of %[2]d",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl]",
             "placeholders": [
                 {
-                    "id": "View",
+                    "id": "ViewPageNumber",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 1,
-                    "expr": ".View"
+                    "expr": ".View.PageNumber"
                 },
                 {
-                    "id": "PageNumber",
+                    "id": "ViewTotalPages",
                     "string": "%[2]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 2,
-                    "expr": ".PageNumber"
+                    "expr": ".View.TotalPages"
                 }
             ],
             "fuzzy": true
@@ -396,19 +396,19 @@
             "fuzzy": true
         },
         {
-            "id": "deeplink to {view} view",
+            "id": "deeplink to {viewLabel} view",
             "key": "deeplink to %[1]s view",
             "message": "deeplink to %[1]s view",
             "translation": "deeplink to %[1]s view",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "placeholders": [
                 {
-                    "id": "view",
+                    "id": "viewLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$view"
+                    "expr": "$view.Label"
                 }
             ],
             "fuzzy": true
@@ -467,6 +467,40 @@
             "message": "reset filters",
             "translation": "reset filters",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Redirecting",
+            "key": "Redirecting",
+            "message": "Redirecting",
+            "translation": "Redirecting",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Redirecting in {redirDelay} seconds",
+            "key": "Redirecting in %[1]d seconds",
+            "message": "Redirecting in %[1]d seconds",
+            "translation": "Redirecting in %[1]d seconds",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
+            "placeholders": [
+                {
+                    "id": "redirDelay",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "$redir.Delay"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "to this destination page",
+            "key": "to this destination page",
+            "message": "to this destination page",
+            "translation": "to this destination page",
+            "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "fuzzy": true
         },
         {
