@@ -50,19 +50,19 @@
             "fuzzy": true
         },
         {
-            "id": "{LanguageMode} based",
+            "id": "{LanguageModeName} based",
             "key": "%[1]s based",
             "message": "%[1]s based",
             "translation": "ベースの%[1]s",
             "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "placeholders": [
                 {
-                    "id": "LanguageMode",
+                    "id": "LanguageModeName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".LanguageMode"
+                    "expr": ".LanguageMode.Name"
                 }
             ],
             "fuzzy": true
@@ -92,27 +92,27 @@
             "fuzzy": true
         },
         {
-            "id": "The {Theme} theme does not support the {Name} editor feature.",
+            "id": "The {ThemeName} theme does not support the {EditorFeatureLabel} editor feature.",
             "key": "The %[1]s theme does not support the %[2]s editor feature.",
             "message": "The %[1]s theme does not support the %[2]s editor feature.",
             "translation": "%[1]s テーマは、%[2]s エディター機能をサポートしていません。",
             "translatorComment": "[from: layouts/fs-editor/file-browser.tmpl, layouts/fs-editor/file-editor.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "Theme",
+                    "id": "ThemeName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".Theme"
+                    "expr": ".Theme.Name"
                 },
                 {
-                    "id": "Name",
+                    "id": "EditorFeatureLabel",
                     "string": "%[2]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 2,
-                    "expr": ".Name"
+                    "expr": ".EditorFeatureLabel"
                 }
             ],
             "fuzzy": true
@@ -182,19 +182,19 @@
             "fuzzy": true
         },
         {
-            "id": "Theme by: {author}",
+            "id": "Theme by: {authorName}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
             "translation": "サイトテーマの制作 : %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "author",
+                    "id": "authorName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$author"
+                    "expr": "$author.Name"
                 }
             ],
             "fuzzy": true
@@ -854,79 +854,79 @@
             "fuzzy": true
         },
         {
-            "id": "Page {Num1} of {PageNumber}",
+            "id": "Page {PageNumber} of {TotalPages}",
             "key": "Page %[1]d of %[2]d",
             "message": "Page %[1]d of %[2]d",
             "translation": "%[2]d 中の %[1]d ページ",
             "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "Num1",
+                    "id": "PageNumber",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 1,
-                    "expr": "$."
+                    "expr": "$.PageNumber"
                 },
                 {
-                    "id": "PageNumber",
+                    "id": "TotalPages",
                     "string": "%[2]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 2,
-                    "expr": "PageNumber"
+                    "expr": "$.TotalPages"
                 }
             ],
             "fuzzy": true
         },
         {
-            "id": "Showing #{Num1}-{StartItem} of {Num3}",
+            "id": "Showing #{StartItem}-{EndItem} of {TotalItems}",
             "key": "Showing #%[1]d-%[2]d of %[3]d",
             "message": "Showing #%[1]d-%[2]d of %[3]d",
             "translation": "%[3]d の %[1]d-%[2]d を表示",
             "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "Num1",
+                    "id": "StartItem",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 1,
-                    "expr": "$."
+                    "expr": "$.StartItem"
                 },
                 {
-                    "id": "StartItem",
+                    "id": "EndItem",
                     "string": "%[2]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 2,
-                    "expr": "StartItem"
+                    "expr": "$.EndItem"
                 },
                 {
-                    "id": "Num3",
+                    "id": "TotalItems",
                     "string": "%[3]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 3,
-                    "expr": "$."
+                    "expr": "$.TotalItems"
                 }
             ],
             "fuzzy": true
         },
         {
-            "id": "Showing #{Num1} of {Num3}",
+            "id": "Showing #{StartItem} of {Num3}",
             "key": "Showing #%[1]d of %[3]d",
             "message": "Showing #%[1]d of %[3]d",
             "translation": "%[3]d の %[1]d を表示",
             "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "Num1",
+                    "id": "StartItem",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 1,
-                    "expr": "$."
+                    "expr": "$.StartItem"
                 },
                 {
                     "id": "Num3",
@@ -934,7 +934,7 @@
                     "type": "int",
                     "underlyingType": "int",
                     "argNum": 3,
-                    "expr": "$."
+                    "expr": "-"
                 }
             ],
             "fuzzy": true
@@ -982,19 +982,19 @@
             "fuzzy": true
         },
         {
-            "id": "Manage {FeatureInfo}",
+            "id": "Manage {FeatureInfoLabel}",
             "key": "Manage %[1]s",
             "message": "Manage %[1]s",
             "translation": "管理する%[1]s",
             "translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl, layouts/site-auth/backup-codes--manage.tmpl=2, layouts/site-auth/email-backup--manage.tmpl=2, layouts/site-auth/email-hotp--manage.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "FeatureInfo",
+                    "id": "FeatureInfoLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".FeatureInfo"
+                    "expr": ".FeatureInfo.Label"
                 }
             ],
             "fuzzy": true
@@ -1016,19 +1016,19 @@
             "fuzzy": true
         },
         {
-            "id": "Revoke {FeatureInfo}",
+            "id": "Revoke {FeatureInfoLabel}",
             "key": "Revoke %[1]s",
             "message": "Revoke %[1]s",
             "translation": "取り消す %[1]s",
             "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "FeatureInfo",
+                    "id": "FeatureInfoLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".FeatureInfo"
+                    "expr": ".FeatureInfo.Label"
                 }
             ],
             "fuzzy": true
@@ -1050,37 +1050,37 @@
             "fuzzy": true
         },
         {
-            "id": "Are you sure you want to delete \\\"{Txt1}\\\"?",
+            "id": "Are you sure you want to delete \\\"{SelectedProvision}\\\"?",
             "key": "Are you sure you want to delete \\\"%[1]s\\\"?",
             "message": "Are you sure you want to delete \\\"%[1]s\\\"?",
             "translation": "\\\"%[1]s\\\"を消去してもよろしいですか?",
             "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "Txt1",
+                    "id": "SelectedProvision",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$."
+                    "expr": "$.SelectedProvision"
                 }
             ],
             "fuzzy": true
         },
         {
-            "id": "After clicking this, \\\"{Txt1}\\\" will really be deleted!",
+            "id": "After clicking this, \\\"{SelectedProvision}\\\" will really be deleted!",
             "key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
             "message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
             "translation": "これをクリックした後, \\\"%[1]s\\\" は本当に削除されます。",
             "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "Txt1",
+                    "id": "SelectedProvision",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "$."
+                    "expr": "$.SelectedProvision"
                 }
             ],
             "fuzzy": true
@@ -1094,19 +1094,19 @@
             "fuzzy": true
         },
         {
-            "id": "Setup {FeatureInfo}",
+            "id": "Setup {FeatureInfoLabel}",
             "key": "Setup %[1]s",
             "message": "Setup %[1]s",
             "translation": "%[1]s 設定",
             "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl, layouts/site-auth/backup-codes--setup.tmpl=2, layouts/site-auth/email-backup--setup.tmpl=2, layouts/site-auth/email-hotp--setup.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "FeatureInfo",
+                    "id": "FeatureInfoLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".FeatureInfo"
+                    "expr": ".FeatureInfo.Label"
                 }
             ],
             "fuzzy": true
@@ -1468,19 +1468,19 @@
             "fuzzy": true
         },
         {
-            "id": "{FeatureInfo} Settings",
+            "id": "{FeatureInfoLabel} Settings",
             "key": "%[1]s Settings",
             "message": "%[1]s Settings",
             "translation": "%[1]s 設定",
             "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
             "placeholders": [
                 {
-                    "id": "FeatureInfo",
+                    "id": "FeatureInfoLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".FeatureInfo"
+                    "expr": ".FeatureInfo.Label"
                 }
             ],
             "fuzzy": true
@@ -1502,19 +1502,19 @@
             "fuzzy": true
         },
         {
-            "id": "Type the following phrase exactly: \\\"{DeleteRequested}\\\"",
+            "id": "Type the following phrase exactly: \\\"{DeleteRequestedConfirmation}\\\"",
             "key": "Type the following phrase exactly: \\\"%[1]s\\\"",
             "message": "Type the following phrase exactly: \\\"%[1]s\\\"",
             "translation": "次の文字を正確に入力してください: \\\"%[1]s\\\"",
             "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
             "placeholders": [
                 {
-                    "id": "DeleteRequested",
+                    "id": "DeleteRequestedConfirmation",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".DeleteRequested"
+                    "expr": ".DeleteRequested.Confirmation"
                 }
             ],
             "fuzzy": true
@@ -1584,19 +1584,19 @@
             "fuzzy": true
         },
         {
-            "id": "{FeatureInfo} Setup",
+            "id": "{FeatureInfoLabel} Setup",
             "key": "%[1]s Setup",
             "message": "%[1]s Setup",
             "translation": "%[1]s 設定",
             "translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
             "placeholders": [
                 {
-                    "id": "FeatureInfo",
+                    "id": "FeatureInfoLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": ".FeatureInfo"
+                    "expr": ".FeatureInfo.Label"
                 }
             ],
             "fuzzy": true
