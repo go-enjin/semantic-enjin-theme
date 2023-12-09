@@ -10,14 +10,14 @@
             "fuzzy": true
         },
         {
-            "id": "Theme by: {authorName}",
+            "id": "Theme by: {AuthorName}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
             "translation": "サイトテーマ制作: %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "authorName",
+                    "id": "AuthorName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -64,7 +64,7 @@
             "key": "Search",
             "message": "Search",
             "translation": "検索",
-            "translatorComment": "/* screen reader only *//* screen reader only *//* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl=2]",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -234,14 +234,14 @@
             "fuzzy": true
         },
         {
-            "id": "Showing {showing} of {SearchTotal} results, {TotalFound} total",
+            "id": "Showing {Showing} of {SearchTotal} results, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d total",
             "translation": "%[2]d 件中 %[1]s 件の結果を表示中、全 %[3]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "showing",
+                    "id": "Showing",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -268,14 +268,14 @@
             "fuzzy": true
         },
         {
-            "id": "Showing {showing} of {SearchTotal} results, {SearchWithinTotal} filtered, {TotalFound} total",
+            "id": "Showing {Showing} of {SearchTotal} results, {SearchWithinTotal} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "translation": "%[2]d 件中 %[1]s 件の結果を表示中、%[3]d フィルタ済、合計 %[4]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "showing",
+                    "id": "Showing",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -328,14 +328,14 @@
             "fuzzy": true
         },
         {
-            "id": "Showing {showing} of {TotalFound} total",
+            "id": "Showing {Showing} of {TotalFound} total",
             "key": "Showing %[1]s of %[2]d total",
             "message": "Showing %[1]s of %[2]d total",
             "translation": "全 %[2]d 件中 %[1]s 件を表示中",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "showing",
+                    "id": "Showing",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -354,14 +354,14 @@
             "fuzzy": true
         },
         {
-            "id": "Showing {showing} of {TotalFiltered} filtered, {TotalFound} total",
+            "id": "Showing {Showing} of {TotalFiltered} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "message": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "translation": "%[2]d 件中 %[1]s 件を表示中、フィルタリング済み、全 %[3]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
-                    "id": "showing",
+                    "id": "Showing",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -396,14 +396,14 @@
             "fuzzy": true
         },
         {
-            "id": "deeplink to {viewLabel} view",
+            "id": "deeplink to {ViewLabel} view",
             "key": "deeplink to %[1]s view",
             "message": "deeplink to %[1]s view",
             "translation": "%[1]s ビューへのディープリンク",
             "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "placeholders": [
                 {
-                    "id": "viewLabel",
+                    "id": "ViewLabel",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -478,14 +478,14 @@
             "fuzzy": true
         },
         {
-            "id": "Redirecting in {redirDelay} seconds",
+            "id": "Redirecting in {RedirDelay} seconds",
             "key": "Redirecting in %[1]d seconds",
             "message": "Redirecting in %[1]d seconds",
             "translation": "Redirecting in %[1]d seconds",
             "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "placeholders": [
                 {
-                    "id": "redirDelay",
+                    "id": "RedirDelay",
                     "string": "%[1]d",
                     "type": "int",
                     "underlyingType": "int",

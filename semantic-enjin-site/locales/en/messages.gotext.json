@@ -182,14 +182,14 @@
             "fuzzy": true
         },
         {
-            "id": "Theme by: {authorName}",
+            "id": "Theme by: {AuthorName}",
             "key": "Theme by: %[1]s",
             "message": "Theme by: %[1]s",
             "translation": "Theme by: %[1]s",
             "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
             "placeholders": [
                 {
-                    "id": "authorName",
+                    "id": "AuthorName",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -216,6 +216,30 @@
             "fuzzy": true
         },
         {
+            "id": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
+            "key": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
+            "message": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
+            "translation": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
+            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
+            "key": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
+            "message": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
+            "translation": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
+            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "it is the word \"other\" which matches any other case.",
+            "key": "it is the word \"other\" which matches any other case.",
+            "message": "it is the word \"other\" which matches any other case.",
+            "translation": "it is the word \"other\" which matches any other case.",
+            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "Add",
             "key": "Add",
             "message": "Add",
@@ -232,14 +256,14 @@
             "fuzzy": true
         },
         {
-            "id": "Create a new {standardOrCustom} page:",
+            "id": "Create a new {StandardOrCustom} page:",
             "key": "Create a new %[1]s page:",
             "message": "Create a new %[1]s page:",
             "translation": "Create a new %[1]s page:",
             "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
             "placeholders": [
                 {
-                    "id": "standardOrCustom",
+                    "id": "StandardOrCustom",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
@@ -338,11 +362,37 @@
             "fuzzy": true
         },
         {
+            "id": "Add new plural translation case.",
+            "key": "Add new plural translation case.",
+            "message": "Add new plural translation case.",
+            "translation": "Add new plural translation case.",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "Delete this plural case",
             "key": "Delete this plural case",
             "message": "Delete this plural case",
             "translation": "Delete this plural case",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Really delete the \"{Key}\" translation case?",
+            "key": "Really delete the \"%[1]s\" translation case?",
+            "message": "Really delete the \"%[1]s\" translation case?",
+            "translation": "Really delete the \"%[1]s\" translation case?",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
+            "placeholders": [
+                {
+                    "id": "Key",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$key"
+                }
+            ],
             "fuzzy": true
         },
         {
@@ -378,11 +428,47 @@
             "fuzzy": true
         },
         {
+            "id": "Convert the \"{FirstCellSrcId}\" translation to singular form from plural?",
+            "key": "Convert the \"%[1]s\" translation to singular form from plural?",
+            "message": "Convert the \"%[1]s\" translation to singular form from plural?",
+            "translation": "Convert the \"%[1]s\" translation to singular form from plural?",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "placeholders": [
+                {
+                    "id": "FirstCellSrcId",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$firstCell.Src.ID"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Convert to plural form",
             "key": "Convert to plural form",
             "message": "Convert to plural form",
             "translation": "Convert to plural form",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Convert the \"{FirstCellSrcId}\" translation to plural form from singular?",
+            "key": "Convert the \"%[1]s\" translation to plural form from singular?",
+            "message": "Convert the \"%[1]s\" translation to plural form from singular?",
+            "translation": "Convert the \"%[1]s\" translation to plural form from singular?",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "placeholders": [
+                {
+                    "id": "FirstCellSrcId",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$firstCell.Src.ID"
+                }
+            ],
             "fuzzy": true
         },
         {
@@ -394,11 +480,47 @@
             "fuzzy": true
         },
         {
+            "id": "Copy the \"{FirstCellSrcId}\" translation?",
+            "key": "Copy the \"%[1]s\" translation?",
+            "message": "Copy the \"%[1]s\" translation?",
+            "translation": "Copy the \"%[1]s\" translation?",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "placeholders": [
+                {
+                    "id": "FirstCellSrcId",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$firstCell.Src.ID"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Delete this translation",
             "key": "Delete this translation",
             "message": "Delete this translation",
             "translation": "Delete this translation",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Delete the \"{FirstCellSrcId}\" translation?",
+            "key": "Delete the \"%[1]s\" translation?",
+            "message": "Delete the \"%[1]s\" translation?",
+            "translation": "Delete the \"%[1]s\" translation?",
+            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
+            "placeholders": [
+                {
+                    "id": "FirstCellSrcId",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$firstCell.Src.ID"
+                }
+            ],
             "fuzzy": true
         },
         {
@@ -692,6 +814,14 @@
             "fuzzy": true
         },
         {
+            "id": "Create a new translation?",
+            "key": "Create a new translation?",
+            "message": "Create a new translation?",
+            "translation": "Create a new translation?",
+            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "Search within",
             "key": "Search within",
             "message": "Search within",
@@ -884,7 +1014,7 @@
             "key": "Showing #%[1]d-%[2]d of %[3]d",
             "message": "Showing #%[1]d-%[2]d of %[3]d",
             "translation": "Showing #%[1]d-%[2]d of %[3]d",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
                     "id": "StartItem",
@@ -918,7 +1048,7 @@
             "key": "Showing #%[1]d of %[3]d",
             "message": "Showing #%[1]d of %[3]d",
             "translation": "Showing #%[1]d of %[3]d",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
+            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
                     "id": "StartItem",
@@ -1112,6 +1242,14 @@
             "fuzzy": true
         },
         {
+            "id": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "key": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "message": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "translation": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "Setup and confirm authenticator app",
             "key": "Setup and confirm authenticator app",
             "message": "Setup and confirm authenticator app",
@@ -1205,6 +1343,14 @@
             "message": "Revoke selected email passcode?",
             "translation": "Revoke selected email passcode?",
             "translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl, layouts/site-auth/email-hotp--revoke.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "key": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "message": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "translation": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
             "fuzzy": true
         },
         {
@@ -1464,6 +1610,14 @@
             "key": "Verify Access",
             "message": "Verify Access",
             "translation": "Verify Access",
+            "translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Your request requires additional authentication.",
+            "key": "Your request requires additional authentication.",
+            "message": "Your request requires additional authentication.",
+            "translation": "Your request requires additional authentication.",
             "translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
             "fuzzy": true
         },
