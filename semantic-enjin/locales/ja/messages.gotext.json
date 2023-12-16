@@ -169,7 +169,7 @@
             "id": "{ViewPageNumber} of {ViewTotalPages}",
             "key": "%[1]d of %[2]d",
             "message": "%[1]d of %[2]d",
-            "translation": "%[2]d 中の%[1]d",
+            "translation": "全%[2]d ページ中の%[1]d",
             "translatorComment": "[from: layouts/partials/njn/block/index--paginate--page.tmpl]",
             "placeholders": [
                 {
@@ -237,7 +237,7 @@
             "id": "Showing {Showing} of {SearchTotal} results, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d total",
-            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、全 %[3]d 件",
+            "translation": "検索結果%[2]d 件中 %[1]s 件を表示中、全 %[3]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
@@ -271,7 +271,7 @@
             "id": "Showing {Showing} of {SearchTotal} results, {SearchWithinTotal} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
             "message": "Showing %[1]s of %[2]d results, %[3]d filtered, %[4]d total",
-            "translation": "%[2]d 件中 %[1]s 件の結果を表示中、%[3]d フィルタ済、合計 %[4]d 件",
+            "translation": "検索結果%[2]d 件中 %[1]s 件を表示中、%[3]d フィルタ済、合計 %[4]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
@@ -331,7 +331,7 @@
             "id": "Showing {Showing} of {TotalFound} total",
             "key": "Showing %[1]s of %[2]d total",
             "message": "Showing %[1]s of %[2]d total",
-            "translation": "全 %[2]d 件中 %[1]s 件を表示中",
+            "translation": "検索結果 %[2]d 件中 %[1]s 件を表示中",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
@@ -357,7 +357,7 @@
             "id": "Showing {Showing} of {TotalFiltered} filtered, {TotalFound} total",
             "key": "Showing %[1]s of %[2]d filtered, %[3]d total",
             "message": "Showing %[1]s of %[2]d filtered, %[3]d total",
-            "translation": "%[2]d 件中 %[1]s 件を表示中、フィルタリング済み、全 %[3]d 件",
+            "translation": "検索結果%[2]d 件中 %[1]s 件を表示中、フィルタリング済み、全 %[3]d 件",
             "translatorComment": "[from: layouts/partials/njn/block/index--summary--more.tmpl, layouts/partials/njn/block/index--summary--page.tmpl=2]",
             "placeholders": [
                 {
@@ -473,7 +473,7 @@
             "id": "Redirecting",
             "key": "Redirecting",
             "message": "Redirecting",
-            "translation": "Redirecting",
+            "translation": "リダイレクト",
             "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "fuzzy": true
         },
@@ -481,7 +481,7 @@
             "id": "Redirecting in {RedirDelay} seconds",
             "key": "Redirecting in %[1]d seconds",
             "message": "Redirecting in %[1]d seconds",
-            "translation": "Redirecting in %[1]d seconds",
+            "translation": "%[1]d 秒でリダイレクトします",
             "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "placeholders": [
                 {
@@ -499,7 +499,7 @@
             "id": "to this destination page",
             "key": "to this destination page",
             "message": "to this destination page",
-            "translation": "to this destination page",
+            "translation": "このリンク先のページへ",
             "translatorComment": "[from: layouts/partials/page/redirect.tmpl]",
             "fuzzy": true
         },
@@ -523,7 +523,7 @@
             "id": "Search error: {SiteSearchError}",
             "key": "Search error: %[1]s",
             "message": "Search error: %[1]s",
-            "translation": "検索エラー: %[1]s",
+            "translation": "%[1]s：検索エラー",
             "translatorComment": "/* search error happened */\n[from: layouts/partials/page/search.tmpl]",
             "placeholders": [
                 {

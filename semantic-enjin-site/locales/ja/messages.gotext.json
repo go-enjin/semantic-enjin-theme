@@ -219,7 +219,7 @@
             "id": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
             "key": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
             "message": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
-            "translation": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
+            "translation": "\"=x\"は、x が引数の値と一致する整数である形式です。",
             "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
@@ -227,7 +227,7 @@
             "id": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
             "key": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
             "message": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
-            "translation": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
+            "translation": "\"=x\"は、x が引数よりも大きい整数である形式です。",
             "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
@@ -235,7 +235,7 @@
             "id": "it is the word \"other\" which matches any other case.",
             "key": "it is the word \"other\" which matches any other case.",
             "message": "it is the word \"other\" which matches any other case.",
-            "translation": "it is the word \"other\" which matches any other case.",
+            "translation": "\"other\" という単語は、他のケースと一致します。",
             "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
@@ -365,7 +365,7 @@
             "id": "Add new plural translation case.",
             "key": "Add new plural translation case.",
             "message": "Add new plural translation case.",
-            "translation": "Add new plural translation case.",
+            "translation": "新しい複数形の翻訳ケースを追加します。",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "fuzzy": true
         },
@@ -381,7 +381,7 @@
             "id": "Really delete the \"{Key}\" translation case?",
             "key": "Really delete the \"%[1]s\" translation case?",
             "message": "Really delete the \"%[1]s\" translation case?",
-            "translation": "Really delete the \"%[1]s\" translation case?",
+            "translation": "本当に \"%[1]s\" 翻訳ケースを削除しますか?",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "placeholders": [
                 {
@@ -431,7 +431,7 @@
             "id": "Convert the \"{FirstCellSrcId}\" translation to singular form from plural?",
             "key": "Convert the \"%[1]s\" translation to singular form from plural?",
             "message": "Convert the \"%[1]s\" translation to singular form from plural?",
-            "translation": "Convert the \"%[1]s\" translation to singular form from plural?",
+            "translation": "\"%[1]s\"の翻訳を複数形から単数形に変換しますか?",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
@@ -457,7 +457,7 @@
             "id": "Convert the \"{FirstCellSrcId}\" translation to plural form from singular?",
             "key": "Convert the \"%[1]s\" translation to plural form from singular?",
             "message": "Convert the \"%[1]s\" translation to plural form from singular?",
-            "translation": "Convert the \"%[1]s\" translation to plural form from singular?",
+            "translation": "\"%[1]s\" の翻訳を単数形から複数形に変換しますか?",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
@@ -483,7 +483,7 @@
             "id": "Copy the \"{FirstCellSrcId}\" translation?",
             "key": "Copy the \"%[1]s\" translation?",
             "message": "Copy the \"%[1]s\" translation?",
-            "translation": "Copy the \"%[1]s\" translation?",
+            "translation": "\"%[1]s\" の翻訳をコピーしますか？",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
@@ -509,7 +509,7 @@
             "id": "Delete the \"{FirstCellSrcId}\" translation?",
             "key": "Delete the \"%[1]s\" translation?",
             "message": "Delete the \"%[1]s\" translation?",
-            "translation": "Delete the \"%[1]s\" translation?",
+            "translation": "\"%[1]s\" の翻訳を削除しますか？",
             "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
@@ -615,7 +615,7 @@
             "id": "Add new key/value pair",
             "key": "Add new key/value pair",
             "message": "Add new key/value pair",
-            "translation": "新しいキー/ヴァリューのペアを追加する",
+            "translation": "新しいキー/値のペアを追加する",
             "translatorComment": "[from: layouts/partials/fs-editor/page-editor/add-new.tmpl, layouts/partials/fs-editor/page-editor/field.tmpl=2, layouts/partials/settings/field.tmpl=2]",
             "fuzzy": true
         },
@@ -817,7 +817,7 @@
             "id": "Create a new translation?",
             "key": "Create a new translation?",
             "message": "Create a new translation?",
-            "translation": "Create a new translation?",
+            "translation": "新しい翻訳を作成しますか？",
             "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
@@ -849,7 +849,7 @@
             "id": "(no translations present)",
             "key": "(no translations present)",
             "message": "(no translations present)",
-            "translation": "(no translations present)",
+            "translation": "(現在翻訳はありません)",
             "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
@@ -987,7 +987,7 @@
             "id": "Page {PageNumber} of {TotalPages}",
             "key": "Page %[1]d of %[2]d",
             "message": "Page %[1]d of %[2]d",
-            "translation": "%[2]d 中の %[1]d ページ",
+            "translation": "全%[2]d 中の %[1]d ページ",
             "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
@@ -1013,7 +1013,7 @@
             "id": "Showing #{StartItem}-{EndItem} of {TotalItems}",
             "key": "Showing #%[1]d-%[2]d of %[3]d",
             "message": "Showing #%[1]d-%[2]d of %[3]d",
-            "translation": "%[3]d の %[1]d-%[2]d を表示",
+            "translation": "全%[3]d の %[1]d-%[2]d を表示",
             "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
@@ -1115,7 +1115,7 @@
             "id": "Manage {FeatureInfoLabel}",
             "key": "Manage %[1]s",
             "message": "Manage %[1]s",
-            "translation": "管理する%[1]s",
+            "translation": "%[1]sを管理する",
             "translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl, layouts/site-auth/backup-codes--manage.tmpl=2, layouts/site-auth/email-backup--manage.tmpl=2, layouts/site-auth/email-hotp--manage.tmpl=2]",
             "placeholders": [
                 {
@@ -1149,7 +1149,7 @@
             "id": "Revoke {FeatureInfoLabel}",
             "key": "Revoke %[1]s",
             "message": "Revoke %[1]s",
-            "translation": "取り消す %[1]s",
+            "translation": "%[1]sを取り消す",
             "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
             "placeholders": [
                 {
@@ -1227,7 +1227,7 @@
             "id": "Setup {FeatureInfoLabel}",
             "key": "Setup %[1]s",
             "message": "Setup %[1]s",
-            "translation": "%[1]s 設定",
+            "translation": "%[1]s の設定",
             "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl, layouts/site-auth/backup-codes--setup.tmpl=2, layouts/site-auth/email-backup--setup.tmpl=2, layouts/site-auth/email-hotp--setup.tmpl=2]",
             "placeholders": [
                 {
@@ -1245,7 +1245,7 @@
             "id": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
             "key": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
             "message": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
-            "translation": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "translation": "新しい認証アプリをプロビジョニングするには、プロビジョニングにユニークな名前を付け、認証アプリに設定を追加してから、現在の認証コードを入力して確認し、設定過程を完了します。",
             "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
             "fuzzy": true
         },
@@ -1349,7 +1349,7 @@
             "id": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
             "key": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
             "message": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
-            "translation": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "translation": "バックアップコードは一度だけ表示されますので、コピーしてパスワードマネージャーに安全に保存してから、確認ボタンを押してください。",
             "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
             "fuzzy": true
         },
@@ -1617,7 +1617,7 @@
             "id": "Your request requires additional authentication.",
             "key": "Your request requires additional authentication.",
             "message": "Your request requires additional authentication.",
-            "translation": "Your request requires additional authentication.",
+            "translation": "このリクエストには追加の認証が必要です。",
             "translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
             "fuzzy": true
         },
@@ -1815,7 +1815,7 @@
             "id": "Email Sign-In",
             "key": "Email Sign-In",
             "message": "Email Sign-In",
-            "translation": "メールサインイン(JA)",
+            "translation": "Eメールサインイン",
             "translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
             "fuzzy": true
         },
