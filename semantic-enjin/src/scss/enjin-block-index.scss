@@ -180,6 +180,11 @@
                 opacity: 1.0;
                 color: var(--style--accent--bg);
                 background-color: var(--style--accent--fg);
+
+                & i {
+                  color: var(--style--accent--bg);
+                  background-color: transparent;
+                }
               }
 
               .search-form {
@@ -244,8 +249,8 @@
           cursor: pointer;
 
           &:hover, &:active, &:focus, &:focus-within {
-            --style--accent--bg: var(--accent--fg);
-            --style--accent--fg: var(--accent--bg);
+            color: var(--style--accent--bg);
+            background-color: var(--style--accent--fg);
 
             opacity: 1.0;
 
