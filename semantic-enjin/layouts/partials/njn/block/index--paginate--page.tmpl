@@ -2,7 +2,7 @@
     <footer data-view="{{ .View.Index }}" data-index-view="{{ .View.Key }}">
         <div class="index-pagination" data-paginate="page">
             {{ if ne .View.FirstPage "" }}
-                <a title="{{ _ "Go to the first page" }}" href="{{ ___ .View.View.FirstPage }}">
+                <a title="{{ _ "Go to the first page" }}" href="{{ ___ .View.FirstPage }}">
                     <i class="fa-solid fa-angles-left"></i>
                     <span class="sr-only">{{ _ "Go to the first page" }}</span>
                 </a>
