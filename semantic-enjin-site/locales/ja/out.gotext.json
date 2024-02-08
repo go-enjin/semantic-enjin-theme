@@ -6,7 +6,6 @@
             "key": "Server",
             "message": "Server",
             "translation": "サーバー",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -14,7 +13,6 @@
             "key": "Site Name",
             "message": "Site Name",
             "translation": "サイトネーム",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -22,7 +20,6 @@
             "key": "Site Tag",
             "message": "Site Tag",
             "translation": "サイトタグ",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -30,7 +27,6 @@
             "key": "Default Locale",
             "message": "Default Locale",
             "translation": "デフォルトロケール",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -38,7 +34,6 @@
             "key": "Supported Locales",
             "message": "Supported Locales",
             "translation": "サポートされているロケール",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -46,7 +41,6 @@
             "key": "Language Mode",
             "message": "Language Mode",
             "translation": "言語モード",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -54,13 +48,12 @@
             "key": "%[1]s based",
             "message": "%[1]s based",
             "translation": "ベースの%[1]s",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "placeholders": [
                 {
                     "id": "LanguageModeName",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": ".LanguageMode.Name"
                 }
@@ -72,7 +65,6 @@
             "key": "Context",
             "message": "Context",
             "translation": "コンテクスト",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -80,7 +72,6 @@
             "key": "Features",
             "message": "Features",
             "translation": "フィーチャー",
-            "translatorComment": "[from: layouts/fs-editor/enjin-info.tmpl]",
             "fuzzy": true
         },
         {
@@ -88,7 +79,6 @@
             "key": "Unsupported Editor Feature",
             "message": "Unsupported Editor Feature",
             "translation": "サポートされていないエディター機能",
-            "translatorComment": "[from: layouts/fs-editor/file-browser.tmpl, layouts/fs-editor/file-editor.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -96,21 +86,20 @@
             "key": "The %[1]s theme does not support the %[2]s editor feature.",
             "message": "The %[1]s theme does not support the %[2]s editor feature.",
             "translation": "%[1]s テーマは、%[2]s エディター機能をサポートしていません。",
-            "translatorComment": "[from: layouts/fs-editor/file-browser.tmpl, layouts/fs-editor/file-editor.tmpl=2]",
             "placeholders": [
                 {
                     "id": "ThemeName",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": ".Theme.Name"
                 },
                 {
                     "id": "EditorFeatureLabel",
                     "string": "%[2]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 2,
                     "expr": ".EditorFeatureLabel"
                 }
@@ -118,19 +107,10 @@
             "fuzzy": true
         },
         {
-            "id": "Top",
-            "key": "Top",
-            "message": "Top",
-            "translation": "Top",
-            "translatorComment": "[from: layouts/partials/common/breadcrumbs.tmpl]",
-            "fuzzy": true
-        },
-        {
             "id": "Create",
             "key": "Create",
             "message": "Create",
             "translation": "作成する",
-            "translatorComment": "[from: layouts/partials/common/dialog/create-user.tmpl, layouts/partials/fs-editor/dialog/create-menu.tmpl=2, layouts/partials/fs-editor/dialog/create-page.tmpl=2, layouts/partials/fs-editor/dialog/create-translation.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -138,7 +118,6 @@
             "key": "Cancel",
             "message": "Cancel",
             "translation": "キャンセル",
-            "translatorComment": "[from: layouts/partials/common/dialog/create-user.tmpl, layouts/partials/common/dialog/delete-user.tmpl=2, layouts/partials/common/dialog/reset-user-otp.tmpl=2, layouts/partials/fs-editor/dialog/add-tx-case.tmpl=2, layouts/partials/fs-editor/dialog/copy-file.tmpl=2, layouts/partials/fs-editor/dialog/copy-translation.tmpl=2, layouts/partials/fs-editor/dialog/create-menu.tmpl=2, layouts/partials/fs-editor/dialog/create-page.tmpl=2, layouts/partials/fs-editor/dialog/create-translation.tmpl=2, layouts/partials/fs-editor/dialog/move-file.tmpl=2, layouts/partials/fs-editor/dialog/translate-file.tmpl=2, layouts/site-auth/app-totp--revoke.tmpl=2, layouts/site-auth/app-totp--setup.tmpl=2, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/backup-codes--setup.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-backup--setup.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2, layouts/site-auth/email-hotp--setup.tmpl=2, layouts/site-auth/settings--selector.tmpl=2, layouts/site-auth/sign-in--email-backup.tmpl=2, layouts/site-auth/sign-in--email-token.tmpl=2, layouts/site/settings.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -146,7 +125,6 @@
             "key": "Delete",
             "message": "Delete",
             "translation": "削除",
-            "translatorComment": "[from: layouts/partials/common/dialog/delete-user.tmpl]",
             "fuzzy": true
         },
         {
@@ -154,7 +132,6 @@
             "key": "Enter the user's email address to confirm the resetting of their multi-factor settings.",
             "message": "Enter the user's email address to confirm the resetting of their multi-factor settings.",
             "translation": "ユーザーのEメール アドレスを入力して、多要素設定のリセットを確認します。",
-            "translatorComment": "[from: layouts/partials/common/dialog/reset-user-otp.tmpl]",
             "fuzzy": true
         },
         {
@@ -162,7 +139,6 @@
             "key": "Reset",
             "message": "Reset",
             "translation": "リセット",
-            "translatorComment": "[from: layouts/partials/common/dialog/reset-user-otp.tmpl]",
             "fuzzy": true
         },
         {
@@ -170,7 +146,6 @@
             "key": "Yes",
             "message": "Yes",
             "translation": "はい",
-            "translatorComment": "[from: layouts/partials/common/dialog/yesno.tmpl, layouts/partials/fs-editor/dialog/yesno.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -178,33 +153,13 @@
             "key": "No",
             "message": "No",
             "translation": "いいえ",
-            "translatorComment": "[from: layouts/partials/common/dialog/yesno.tmpl, layouts/partials/fs-editor/dialog/yesno.tmpl=2]",
             "fuzzy": true
         },
         {
-            "id": "Theme by: {AuthorName}",
-            "key": "Theme by: %[1]s",
-            "message": "Theme by: %[1]s",
-            "translation": "サイトテーマの制作 : %[1]s",
-            "translatorComment": "/* site theme design credit */\n[from: layouts/partials/footer.tmpl]",
-            "placeholders": [
-                {
-                    "id": "AuthorName",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "$author.Name"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "back to top",
-            "key": "back to top",
-            "message": "back to top",
-            "translation": "Topに戻る",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/footer.tmpl]",
+            "id": "Top",
+            "key": "Top",
+            "message": "Top",
+            "translation": "Top",
             "fuzzy": true
         },
         {
@@ -212,7 +167,6 @@
             "key": "A case matches based on the condition in relation to the variable number and matches if:",
             "message": "A case matches based on the condition in relation to the variable number and matches if:",
             "translation": "ケースは変数番号に関する条件に基づいて一致し、次の場合に一致します。",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
         {
@@ -220,7 +174,6 @@
             "key": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
             "message": "it is of the form \"=x\" where x is an integer that matches the value of the argument.",
             "translation": "\"=x\"は、x が引数の値と一致する整数である形式です。",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
         {
@@ -228,7 +181,6 @@
             "key": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
             "message": "it is of the form \"\u003cx\" where x is an integer that is larger than the argument.",
             "translation": "\"=x\"は、x が引数よりも大きい整数である形式です。",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
         {
@@ -236,7 +188,6 @@
             "key": "it is the word \"other\" which matches any other case.",
             "message": "it is the word \"other\" which matches any other case.",
             "translation": "\"other\" という単語は、他のケースと一致します。",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
         {
@@ -244,7 +195,6 @@
             "key": "Add",
             "message": "Add",
             "translation": "追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/add-tx-case.tmpl]",
             "fuzzy": true
         },
         {
@@ -252,7 +202,6 @@
             "key": "Copy",
             "message": "Copy",
             "translation": "コピー",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/copy-file.tmpl, layouts/partials/fs-editor/dialog/copy-translation.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -260,13 +209,12 @@
             "key": "Create a new %[1]s page:",
             "message": "Create a new %[1]s page:",
             "translation": "新しいページ %[1]s を作成する:",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
             "placeholders": [
                 {
                     "id": "StandardOrCustom",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$standardOrCustom"
                 }
@@ -278,7 +226,6 @@
             "key": "standard",
             "message": "standard",
             "translation": "標準",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
             "fuzzy": true
         },
         {
@@ -286,7 +233,6 @@
             "key": "custom",
             "message": "custom",
             "translation": "カスタム",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-page.tmpl]",
             "fuzzy": true
         },
         {
@@ -294,7 +240,6 @@
             "key": "Translation Key",
             "message": "Translation Key",
             "translation": "翻訳キー",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
             "fuzzy": true
         },
         {
@@ -302,7 +247,6 @@
             "key": "Comment for translators",
             "message": "Comment for translators",
             "translation": "翻訳者へのコメント",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/create-translation.tmpl]",
             "fuzzy": true
         },
         {
@@ -310,7 +254,6 @@
             "key": "Move",
             "message": "Move",
             "translation": "移動",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/move-file.tmpl]",
             "fuzzy": true
         },
         {
@@ -318,7 +261,6 @@
             "key": "(done)",
             "message": "(done)",
             "translation": "(完了)",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
             "fuzzy": true
         },
         {
@@ -326,7 +268,6 @@
             "key": "(no untranslated locales)",
             "message": "(no untranslated locales)",
             "translation": "(未翻訳のロケールはありません)",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
             "fuzzy": true
         },
         {
@@ -334,15 +275,6 @@
             "key": "Translate",
             "message": "Translate",
             "translation": "翻訳",
-            "translatorComment": "[from: layouts/partials/fs-editor/dialog/translate-file.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "show/hide dropdown menu",
-            "key": "show/hide dropdown menu",
-            "message": "show/hide dropdown menu",
-            "translation": "表示/非表示 　ドロップダウンメニュー",
-            "translatorComment": "[from: layouts/partials/fs-editor/dropdown.tmpl]",
             "fuzzy": true
         },
         {
@@ -350,7 +282,6 @@
             "key": "Pluralize",
             "message": "Pluralize",
             "translation": "複数化する",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "fuzzy": true
         },
         {
@@ -358,7 +289,6 @@
             "key": "Add new plural case",
             "message": "Add new plural case",
             "translation": "新しい複数形のケースを追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "fuzzy": true
         },
         {
@@ -366,7 +296,6 @@
             "key": "Add new plural translation case.",
             "message": "Add new plural translation case.",
             "translation": "新しい複数形の翻訳ケースを追加します。",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "fuzzy": true
         },
         {
@@ -374,7 +303,6 @@
             "key": "Delete this plural case",
             "message": "Delete this plural case",
             "translation": "この複数のケースを削除します",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "fuzzy": true
         },
         {
@@ -382,13 +310,12 @@
             "key": "Really delete the \"%[1]s\" translation case?",
             "message": "Really delete the \"%[1]s\" translation case?",
             "translation": "本当に \"%[1]s\" 翻訳ケースを削除しますか?",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell-plural.tmpl]",
             "placeholders": [
                 {
                     "id": "Key",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$key"
                 }
@@ -400,7 +327,6 @@
             "key": "(missing translation)",
             "message": "(missing translation)",
             "translation": "(翻訳がありません)",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/cell.tmpl]",
             "fuzzy": true
         },
         {
@@ -408,7 +334,6 @@
             "key": "source text",
             "message": "source text",
             "translation": "ソーステキスト",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -416,7 +341,6 @@
             "key": "actions",
             "message": "actions",
             "translation": "アクション",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -424,7 +348,6 @@
             "key": "Convert to singular form",
             "message": "Convert to singular form",
             "translation": "単数形に変換する",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -432,13 +355,12 @@
             "key": "Convert the \"%[1]s\" translation to singular form from plural?",
             "message": "Convert the \"%[1]s\" translation to singular form from plural?",
             "translation": "\"%[1]s\"の翻訳を複数形から単数形に変換しますか?",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
                     "id": "FirstCellSrcId",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$firstCell.Src.ID"
                 }
@@ -450,7 +372,6 @@
             "key": "Convert to plural form",
             "message": "Convert to plural form",
             "translation": "複数形に変換する",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -458,13 +379,12 @@
             "key": "Convert the \"%[1]s\" translation to plural form from singular?",
             "message": "Convert the \"%[1]s\" translation to plural form from singular?",
             "translation": "\"%[1]s\" の翻訳を単数形から複数形に変換しますか?",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
                     "id": "FirstCellSrcId",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$firstCell.Src.ID"
                 }
@@ -476,7 +396,6 @@
             "key": "Copy this translation",
             "message": "Copy this translation",
             "translation": "この翻訳をコピーする",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -484,13 +403,12 @@
             "key": "Copy the \"%[1]s\" translation?",
             "message": "Copy the \"%[1]s\" translation?",
             "translation": "\"%[1]s\" の翻訳をコピーしますか？",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
                     "id": "FirstCellSrcId",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$firstCell.Src.ID"
                 }
@@ -502,7 +420,6 @@
             "key": "Delete this translation",
             "message": "Delete this translation",
             "translation": "この翻訳を削除する",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "fuzzy": true
         },
         {
@@ -510,13 +427,12 @@
             "key": "Delete the \"%[1]s\" translation?",
             "message": "Delete the \"%[1]s\" translation?",
             "translation": "\"%[1]s\" の翻訳を削除しますか？",
-            "translatorComment": "[from: layouts/partials/fs-editor/locale-editor/table.tmpl]",
             "placeholders": [
                 {
                     "id": "FirstCellSrcId",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": "$firstCell.Src.ID"
                 }
@@ -528,7 +444,6 @@
             "key": "Expand menu",
             "message": "Expand menu",
             "translation": "メニューを拡張する",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -536,7 +451,6 @@
             "key": "Collapse menu",
             "message": "Collapse menu",
             "translation": "メニューを折りたたむ",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -544,7 +458,6 @@
             "key": "(unset)",
             "message": "(unset)",
             "translation": "(設定解除)",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -552,7 +465,6 @@
             "key": "move menu item up",
             "message": "move menu item up",
             "translation": "メニュー項目を上に移動",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -560,7 +472,6 @@
             "key": "move menu item down",
             "message": "move menu item down",
             "translation": "メニュー項目を下に移動",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -568,7 +479,6 @@
             "key": "add sub-menu item",
             "message": "add sub-menu item",
             "translation": "サブメニュー項目を追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -576,7 +486,6 @@
             "key": "delete menu item",
             "message": "delete menu item",
             "translation": "メニュー項目を削除",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/item.tmpl]",
             "fuzzy": true
         },
         {
@@ -584,7 +493,6 @@
             "key": "Created",
             "message": "Created",
             "translation": "作成日",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl, layouts/partials/fs-editor/page-editor/page-details.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -592,7 +500,6 @@
             "key": "Updated",
             "message": "Updated",
             "translation": "更新日",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl, layouts/partials/fs-editor/page-editor/page-details.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -600,7 +507,6 @@
             "key": "Translations",
             "message": "Translations",
             "translation": "翻訳",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl, layouts/partials/fs-editor/page-editor/page-details.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -608,127 +514,6 @@
             "key": "Translates",
             "message": "Translates",
             "translation": "翻訳",
-            "translatorComment": "[from: layouts/partials/fs-editor/menu-editor/menu-details.tmpl, layouts/partials/fs-editor/page-editor/page-details.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Add new key/value pair",
-            "key": "Add new key/value pair",
-            "message": "Add new key/value pair",
-            "translation": "新しいキー/値のペアを追加する",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/add-new.tmpl, layouts/partials/fs-editor/page-editor/field.tmpl=2, layouts/partials/settings/field.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enable",
-            "key": "Enable",
-            "message": "Enable",
-            "translation": "作動させる",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/field.tmpl, layouts/partials/settings/field.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "(dictionary)",
-            "key": "(dictionary)",
-            "message": "(dictionary)",
-            "translation": "(辞書)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "(list)",
-            "key": "(list)",
-            "message": "(list)",
-            "translation": "(リスト)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Append new list item",
-            "key": "Append new list item",
-            "message": "Append new list item",
-            "translation": "新しいリスト項目を追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "(plain text)",
-            "key": "(plain text)",
-            "message": "(plain text)",
-            "translation": "(プレーンテキスト)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/key-pair.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Permalink",
-            "key": "Permalink",
-            "message": "Permalink",
-            "translation": "パーマリンク",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "actual",
-            "key": "actual",
-            "message": "actual",
-            "translation": "現行の",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "formal",
-            "key": "formal",
-            "message": "formal",
-            "translation": "フォーマル",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "long",
-            "key": "long",
-            "message": "long",
-            "translation": "ロング",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "short",
-            "key": "short",
-            "message": "short",
-            "translation": "ショート",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Type",
-            "key": "Type",
-            "message": "Type",
-            "translation": "タイプ",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl, layouts/partials/fs-editor/page/default-browser.tmpl=2, layouts/partials/fs-editor/page/themes-browser.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Format",
-            "key": "Format",
-            "message": "Format",
-            "translation": "形式",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Archetype",
-            "key": "Archetype",
-            "message": "Archetype",
-            "translation": "アーキタイプ",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Layout",
-            "key": "Layout",
-            "message": "Layout",
-            "translation": "レイアウト",
-            "translatorComment": "[from: layouts/partials/fs-editor/page-editor/page-details.tmpl]",
             "fuzzy": true
         },
         {
@@ -736,13 +521,12 @@
             "key": "%[1]s File Browser",
             "message": "%[1]s File Browser",
             "translation": "%[1]s ファイルブラウザ",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2]",
             "placeholders": [
                 {
                     "id": "EditorFeatureLabel",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": ".EditorFeatureLabel"
                 }
@@ -754,7 +538,13 @@
             "key": "Name",
             "message": "Name",
             "translation": "名前",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2, layouts/site/user-manager.tmpl=2]",
+            "fuzzy": true
+        },
+        {
+            "id": "Type",
+            "key": "Type",
+            "message": "Type",
+            "translation": "タイプ",
             "fuzzy": true
         },
         {
@@ -762,7 +552,6 @@
             "key": "Date",
             "message": "Date",
             "translation": "日付",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -770,7 +559,6 @@
             "key": "Actions",
             "message": "Actions",
             "translation": "アクション",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2, layouts/site/user-manager.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -778,7 +566,6 @@
             "key": "(unknown)",
             "message": "(unknown)",
             "translation": "(不明)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -786,7 +573,6 @@
             "key": "no files found",
             "message": "no files found",
             "translation": "ファイルが見つかりません",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/default-browser.tmpl, layouts/partials/fs-editor/page/themes-browser.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -794,7 +580,6 @@
             "key": "File is locked by another user.",
             "message": "File is locked by another user.",
             "translation": "ファイルは別のユーザーによってロックされています",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl, layouts/partials/fs-editor/page/menus-editor.tmpl=2, layouts/partials/fs-editor/page/pages-editor.tmpl=2, layouts/partials/fs-editor/page/themes-editor.tmpl=2, layouts/partials/fs-editor/page/unsafe-editor.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -802,7 +587,6 @@
             "key": "Locales Editor",
             "message": "Locales Editor",
             "translation": "ロケールエディター",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -810,7 +594,6 @@
             "key": "Add new translation",
             "message": "Add new translation",
             "translation": "新しい翻訳を追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -818,7 +601,6 @@
             "key": "Create a new translation?",
             "message": "Create a new translation?",
             "translation": "新しい翻訳を作成しますか？",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -826,7 +608,6 @@
             "key": "Search within",
             "message": "Search within",
             "translation": "内を検索",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -834,7 +615,6 @@
             "key": "Close search",
             "message": "Close search",
             "translation": "検索を閉じる",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -842,7 +622,6 @@
             "key": "Cancel searching",
             "message": "Cancel searching",
             "translation": "検索をキャンセル",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -850,7 +629,6 @@
             "key": "(no translations present)",
             "message": "(no translations present)",
             "translation": "(現在翻訳はありません)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/locales-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -858,7 +636,6 @@
             "key": "Menu Editor",
             "message": "Menu Editor",
             "translation": "メニューエディター",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -866,7 +643,6 @@
             "key": "add menu item",
             "message": "add menu item",
             "translation": "メニュー項目を追加",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -874,7 +650,6 @@
             "key": "Expand all",
             "message": "Expand all",
             "translation": "すべて広げる",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -882,7 +657,6 @@
             "key": "Collapse all",
             "message": "Collapse all",
             "translation": "すべて折りたたむ",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -890,7 +664,6 @@
             "key": "(empty menu)",
             "message": "(empty menu)",
             "translation": "(空のメニュー)",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -898,7 +671,6 @@
             "key": "Details",
             "message": "Details",
             "translation": "詳細",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/menus-editor.tmpl, layouts/partials/fs-editor/page/pages-editor.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -906,7 +678,6 @@
             "key": "Page Editor",
             "message": "Page Editor",
             "translation": "ページエディター",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -914,7 +685,6 @@
             "key": "Title",
             "message": "Title",
             "translation": "タイトル",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -922,7 +692,6 @@
             "key": "Description",
             "message": "Description",
             "translation": "説明",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -930,7 +699,6 @@
             "key": "Contents",
             "message": "Contents",
             "translation": "コンテンツ",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl, layouts/partials/fs-editor/page/themes-editor.tmpl=2, layouts/partials/fs-editor/page/unsafe-editor.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -938,7 +706,6 @@
             "key": "Settings",
             "message": "Settings",
             "translation": "設定",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -946,7 +713,6 @@
             "key": "Variables",
             "message": "Variables",
             "translation": "変数",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/pages-editor.tmpl]",
             "fuzzy": true
         },
         {
@@ -954,13 +720,12 @@
             "key": "%[1]s File Editor",
             "message": "%[1]s File Editor",
             "translation": "%[1]s ファイルエディター",
-            "translatorComment": "[from: layouts/partials/fs-editor/page/themes-editor.tmpl, layouts/partials/fs-editor/page/unsafe-editor.tmpl=2]",
             "placeholders": [
                 {
                     "id": "EditorFeatureLabel",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
                     "expr": ".EditorFeatureLabel"
                 }
@@ -968,11 +733,108 @@
             "fuzzy": true
         },
         {
+            "id": "Add new key/value pair",
+            "key": "Add new key/value pair",
+            "message": "Add new key/value pair",
+            "translation": "新しいキー/値のペアを追加する",
+            "fuzzy": true
+        },
+        {
+            "id": "Enable",
+            "key": "Enable",
+            "message": "Enable",
+            "translation": "作動させる",
+            "fuzzy": true
+        },
+        {
+            "id": "(dictionary)",
+            "key": "(dictionary)",
+            "message": "(dictionary)",
+            "translation": "(辞書)",
+            "fuzzy": true
+        },
+        {
+            "id": "(list)",
+            "key": "(list)",
+            "message": "(list)",
+            "translation": "(リスト)",
+            "fuzzy": true
+        },
+        {
+            "id": "Append new list item",
+            "key": "Append new list item",
+            "message": "Append new list item",
+            "translation": "新しいリスト項目を追加",
+            "fuzzy": true
+        },
+        {
+            "id": "(plain text)",
+            "key": "(plain text)",
+            "message": "(plain text)",
+            "translation": "(プレーンテキスト)",
+            "fuzzy": true
+        },
+        {
+            "id": "Permalink",
+            "key": "Permalink",
+            "message": "Permalink",
+            "translation": "パーマリンク",
+            "fuzzy": true
+        },
+        {
+            "id": "actual",
+            "key": "actual",
+            "message": "actual",
+            "translation": "現行の",
+            "fuzzy": true
+        },
+        {
+            "id": "formal",
+            "key": "formal",
+            "message": "formal",
+            "translation": "フォーマル",
+            "fuzzy": true
+        },
+        {
+            "id": "long",
+            "key": "long",
+            "message": "long",
+            "translation": "ロング",
+            "fuzzy": true
+        },
+        {
+            "id": "short",
+            "key": "short",
+            "message": "short",
+            "translation": "ショート",
+            "fuzzy": true
+        },
+        {
+            "id": "Format",
+            "key": "Format",
+            "message": "Format",
+            "translation": "形式",
+            "fuzzy": true
+        },
+        {
+            "id": "Archetype",
+            "key": "Archetype",
+            "message": "Archetype",
+            "translation": "アーキタイプ",
+            "fuzzy": true
+        },
+        {
+            "id": "Layout",
+            "key": "Layout",
+            "message": "Layout",
+            "translation": "レイアウト",
+            "fuzzy": true
+        },
+        {
             "id": "Go to the first page",
             "key": "Go to the first page",
             "message": "Go to the first page",
             "translation": "最初のページに",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "fuzzy": true
         },
         {
@@ -980,7 +842,6 @@
             "key": "Go to the previous page",
             "message": "Go to the previous page",
             "translation": "前のページに戻る",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "fuzzy": true
         },
         {
@@ -988,21 +849,20 @@
             "key": "Page %[1]d of %[2]d",
             "message": "Page %[1]d of %[2]d",
             "translation": "全%[2]d 中の %[1]d ページ",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
                     "id": "PageNumber",
                     "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 1,
                     "expr": "$.PageNumber"
                 },
                 {
                     "id": "TotalPages",
                     "string": "%[2]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 2,
                     "expr": "$.TotalPages"
                 }
@@ -1014,29 +874,28 @@
             "key": "Showing #%[1]d-%[2]d of %[3]d",
             "message": "Showing #%[1]d-%[2]d of %[3]d",
             "translation": "全%[3]d の %[1]d-%[2]d を表示",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
                     "id": "StartItem",
                     "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 1,
                     "expr": "$.StartItem"
                 },
                 {
                     "id": "EndItem",
                     "string": "%[2]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 2,
                     "expr": "$.EndItem"
                 },
                 {
                     "id": "TotalItems",
                     "string": "%[3]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 3,
                     "expr": "$.TotalItems"
                 }
@@ -1044,25 +903,24 @@
             "fuzzy": true
         },
         {
-            "id": "Showing #{StartItem} of {Num3}",
+            "id": "Showing #{StartItem} of {Num}",
             "key": "Showing #%[1]d of %[3]d",
             "message": "Showing #%[1]d of %[3]d",
             "translation": "%[3]d の %[1]d を表示",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl, layouts/partials/fs-editor/pagination/summary.tmpl=2]",
             "placeholders": [
                 {
                     "id": "StartItem",
                     "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 1,
                     "expr": "$.StartItem"
                 },
                 {
-                    "id": "Num3",
+                    "id": "Num",
                     "string": "%[3]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 3,
                     "expr": "-"
                 }
@@ -1074,7 +932,6 @@
             "key": "Go to the next page",
             "message": "Go to the next page",
             "translation": "次のページに",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "fuzzy": true
         },
         {
@@ -1082,7 +939,6 @@
             "key": "Go to the last page",
             "message": "Go to the last page",
             "translation": "最後のページに",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/footer.tmpl]",
             "fuzzy": true
         },
         {
@@ -1090,13 +946,12 @@
             "key": "%[1]d results found",
             "message": "%[1]d results found",
             "translation": "%[1]d 結果が見つかりました",
-            "translatorComment": "[from: layouts/partials/fs-editor/pagination/summary.tmpl]",
             "placeholders": [
                 {
                     "id": "TotalItems",
                     "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 1,
                     "expr": ".TotalItems"
                 }
@@ -1104,807 +959,41 @@
             "fuzzy": true
         },
         {
+            "id": "show/hide dropdown menu",
+            "key": "show/hide dropdown menu",
+            "message": "show/hide dropdown menu",
+            "translation": "表示/非表示 　ドロップダウンメニュー",
+            "fuzzy": true
+        },
+        {
             "id": "(empty)",
             "key": "(empty)",
             "message": "(empty)",
             "translation": "(空)",
-            "translatorComment": "[from: layouts/partials/settings/field.tmpl]",
             "fuzzy": true
         },
         {
-            "id": "Manage {FeatureInfoLabel}",
-            "key": "Manage %[1]s",
-            "message": "Manage %[1]s",
-            "translation": "%[1]sを管理する",
-            "translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl, layouts/site-auth/backup-codes--manage.tmpl=2, layouts/site-auth/email-backup--manage.tmpl=2, layouts/site-auth/email-hotp--manage.tmpl=2]",
+            "id": "Theme by: {AuthorName}",
+            "key": "Theme by: %[1]s",
+            "message": "Theme by: %[1]s",
+            "translation": "サイトテーマの制作 : %[1]s",
             "placeholders": [
                 {
-                    "id": "FeatureInfoLabel",
+                    "id": "AuthorName",
                     "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
+                    "type": "text",
+                    "underlyingType": "text",
                     "argNum": 1,
-                    "expr": ".FeatureInfo.Label"
+                    "expr": "$author.Name"
                 }
             ],
             "fuzzy": true
         },
         {
-            "id": "Setup a new authenticator app",
-            "key": "Setup a new authenticator app",
-            "message": "Setup a new authenticator app",
-            "translation": "新しい認証アプリをセットアップする",
-            "translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke an existing authenticator app",
-            "key": "Revoke an existing authenticator app",
-            "message": "Revoke an existing authenticator app",
-            "translation": "既存の認証アプリを取り消す",
-            "translatorComment": "[from: layouts/site-auth/app-totp--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke {FeatureInfoLabel}",
-            "key": "Revoke %[1]s",
-            "message": "Revoke %[1]s",
-            "translation": "%[1]sを取り消す",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
-            "placeholders": [
-                {
-                    "id": "FeatureInfoLabel",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".FeatureInfo.Label"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Select one of the provisioned authenticator apps to start the revocation process.",
-            "key": "Select one of the provisioned authenticator apps to start the revocation process.",
-            "message": "Select one of the provisioned authenticator apps to start the revocation process.",
-            "translation": "プロビジョニングされた認証アプリのいずれかを選択して、失効プロセスを開始します。",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "No authenticator apps provisioned, nothing to revoke!",
-            "key": "No authenticator apps provisioned, nothing to revoke!",
-            "message": "No authenticator apps provisioned, nothing to revoke!",
-            "translation": "プロビジョニングされた認証アプリはなく、取り消すものは何もありません。",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Are you sure you want to delete \\\"{SelectedProvision}\\\"?",
-            "key": "Are you sure you want to delete \\\"%[1]s\\\"?",
-            "message": "Are you sure you want to delete \\\"%[1]s\\\"?",
-            "translation": "\\\"%[1]s\\\"を消去してもよろしいですか?",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
-            "placeholders": [
-                {
-                    "id": "SelectedProvision",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "$.SelectedProvision"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "After clicking this, \\\"{SelectedProvision}\\\" will really be deleted!",
-            "key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
-            "message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
-            "translation": "これをクリックした後, \\\"%[1]s\\\" は本当に削除されます。",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl, layouts/site-auth/backup-codes--revoke.tmpl=2, layouts/site-auth/email-backup--revoke.tmpl=2, layouts/site-auth/email-hotp--revoke.tmpl=2]",
-            "placeholders": [
-                {
-                    "id": "SelectedProvision",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "$.SelectedProvision"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke selected authenticator app?",
-            "key": "Revoke selected authenticator app?",
-            "message": "Revoke selected authenticator app?",
-            "translation": "選択した認証アプリを取り消しますか?",
-            "translatorComment": "[from: layouts/site-auth/app-totp--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup {FeatureInfoLabel}",
-            "key": "Setup %[1]s",
-            "message": "Setup %[1]s",
-            "translation": "%[1]s の設定",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl, layouts/site-auth/backup-codes--setup.tmpl=2, layouts/site-auth/email-backup--setup.tmpl=2, layouts/site-auth/email-hotp--setup.tmpl=2]",
-            "placeholders": [
-                {
-                    "id": "FeatureInfoLabel",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".FeatureInfo.Label"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
-            "key": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
-            "message": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
-            "translation": "新しい認証アプリをプロビジョニングするには、プロビジョニングにユニークな名前を付け、認証アプリに設定を追加してから、現在の認証コードを入力して確認し、設定過程を完了します。",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup and confirm authenticator app",
-            "key": "Setup and confirm authenticator app",
-            "message": "Setup and confirm authenticator app",
-            "translation": "認証アプリの設定と確定",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Give this provision a unique name",
-            "key": "Give this provision a unique name",
-            "message": "Give this provision a unique name",
-            "translation": "この規定に特有な名前を付ける",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl, layouts/site-auth/backup-codes--setup.tmpl=2, layouts/site-auth/email-backup--setup.tmpl=2, layouts/site-auth/email-hotp--setup.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Add the following to your authenticator app",
-            "key": "Add the following to your authenticator app",
-            "message": "Add the following to your authenticator app",
-            "translation": "認証アプリに以下を追加します",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "authenticator qrcode",
-            "key": "authenticator qrcode",
-            "message": "authenticator qrcode",
-            "translation": "認証 QRコード",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "App setup link",
-            "key": "App setup link",
-            "message": "App setup link",
-            "translation": "アプリの設定リンク",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter the current authenticator code",
-            "key": "Enter the current authenticator code",
-            "message": "Enter the current authenticator code",
-            "translation": "現在の認証コードを入力します",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Verify app setup",
-            "key": "Verify app setup",
-            "message": "Verify app setup",
-            "translation": "アプリの設定を認証する",
-            "translatorComment": "[from: layouts/site-auth/app-totp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup new backup codes",
-            "key": "Setup new backup codes",
-            "message": "Setup new backup codes",
-            "translation": "新しいバックアップ コードを設定します",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke existing backup codes",
-            "key": "Revoke existing backup codes",
-            "message": "Revoke existing backup codes",
-            "translation": "既存のバックアップ コードを取り消す",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Select one of the provisioned backup codes to start the revocation process.",
-            "key": "Select one of the provisioned backup codes to start the revocation process.",
-            "message": "Select one of the provisioned backup codes to start the revocation process.",
-            "translation": "プロビジョニングされたバックアップ コードのいずれかを選択して、失効プロセスを開始します。",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "No backup codes present, nothing to revoke!",
-            "key": "No backup codes present, nothing to revoke!",
-            "message": "No backup codes present, nothing to revoke!",
-            "translation": "バックアップ コードは存在せず、取り消すものはありません。",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke selected email passcode?",
-            "key": "Revoke selected email passcode?",
-            "message": "Revoke selected email passcode?",
-            "translation": "選択したEメールのパスコードを取り消しますか?",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--revoke.tmpl, layouts/site-auth/email-hotp--revoke.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
-            "key": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
-            "message": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
-            "translation": "バックアップコードは一度だけ表示されますので、コピーしてパスワードマネージャーに安全に保存してから、確認ボタンを押してください。",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Confirm you have recorded these safely",
-            "key": "Confirm you have recorded these safely",
-            "message": "Confirm you have recorded these safely",
-            "translation": "これらを間違えなく記録したことを確認してください",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Request to see new backup codes",
-            "key": "Request to see new backup codes",
-            "message": "Request to see new backup codes",
-            "translation": "新しいバックアップ コードの表示をリクエストする",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Copy these to a secure location",
-            "key": "Copy these to a secure location",
-            "message": "Copy these to a secure location",
-            "translation": "これらを安全な場所にコピーします",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Generate codes associated with the above label.",
-            "key": "Generate codes associated with the above label.",
-            "message": "Generate codes associated with the above label.",
-            "translation": "上記のラベルに関連付けられたコードを生成します。",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "I confirm that I have copied these codes to a safe location.",
-            "key": "I confirm that I have copied these codes to a safe location.",
-            "message": "I confirm that I have copied these codes to a safe location.",
-            "translation": "これらのコードを安全な場所にコピーしたことを確認します。",
-            "translatorComment": "[from: layouts/site-auth/backup-codes--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup a new backup email",
-            "key": "Setup a new backup email",
-            "message": "Setup a new backup email",
-            "translation": "新しいバックアップEメールを設定します",
-            "translatorComment": "[from: layouts/site-auth/email-backup--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke an existing backup email",
-            "key": "Revoke an existing backup email",
-            "message": "Revoke an existing backup email",
-            "translation": "既存のバックアップメールを取り消す",
-            "translatorComment": "[from: layouts/site-auth/email-backup--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Select one of the provisioned email backups to start the revocation process.",
-            "key": "Select one of the provisioned email backups to start the revocation process.",
-            "message": "Select one of the provisioned email backups to start the revocation process.",
-            "translation": "プロビジョニングされたEメール バックアップの 1 つを選択して、失効プロセスを開始します。",
-            "translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "No email passcodes present, nothing to revoke!",
-            "key": "No email passcodes present, nothing to revoke!",
-            "message": "No email passcodes present, nothing to revoke!",
-            "translation": "Eメールのパスコードは存在せず、取り消すものは何もありません。",
-            "translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl, layouts/site-auth/email-hotp--revoke.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke selected email passcodes?",
-            "key": "Revoke selected email passcodes?",
-            "message": "Revoke selected email passcodes?",
-            "translation": "選択したEメールのパスコードを取り消しますか?",
-            "translatorComment": "[from: layouts/site-auth/email-backup--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Awaiting confirmation",
-            "key": "Awaiting confirmation",
-            "message": "Awaiting confirmation",
-            "translation": "確定待ち",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl, layouts/site-auth/email-hotp--setup.tmpl=2, layouts/site-auth/sign-in--email-backup.tmpl=2, layouts/site-auth/sign-in--email-token.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter your backup email address",
-            "key": "Enter your backup email address",
-            "message": "Enter your backup email address",
-            "translation": "バックアップEメールアドレスを入力してください",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setting up this backup email",
-            "key": "Setting up this backup email",
-            "message": "Setting up this backup email",
-            "translation": "このバックアップEメールを設定する",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter backup for: {EmailAddress}",
-            "key": "Enter backup for: %[1]s",
-            "message": "Enter backup for: %[1]s",
-            "translation": "バックアップEメールを入力する: %[1]s",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl]",
-            "placeholders": [
-                {
-                    "id": "EmailAddress",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".EmailAddress"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Confirm",
-            "key": "Confirm",
-            "message": "Confirm",
-            "translation": "確認",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl, layouts/site-auth/email-hotp--setup.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup",
-            "key": "Setup",
-            "message": "Setup",
-            "translation": "設定",
-            "translatorComment": "[from: layouts/site-auth/email-backup--setup.tmpl, layouts/site-auth/email-hotp--setup.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setup a new email passcode",
-            "key": "Setup a new email passcode",
-            "message": "Setup a new email passcode",
-            "translation": "新しいEメールの設定",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Revoke an existing email passcode",
-            "key": "Revoke an existing email passcode",
-            "message": "Revoke an existing email passcode",
-            "translation": "既存のメールパスコードを取り消す",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--manage.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Select one of the provisioned email passcodes to start the revocation process.",
-            "key": "Select one of the provisioned email passcodes to start the revocation process.",
-            "message": "Select one of the provisioned email passcodes to start the revocation process.",
-            "translation": "プロビジョニングされたEメールのパスコード 1 つを選択して、失効プロセスを開始します。",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--revoke.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter an email address",
-            "key": "Enter an email address",
-            "message": "Enter an email address",
-            "translation": "メールアドレスを入力",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Setting up this email",
-            "key": "Setting up this email",
-            "message": "Setting up this email",
-            "translation": "このメールを設定する",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter email address",
-            "key": "Enter email address",
-            "message": "Enter email address",
-            "translation": "メールアドレスを入力",
-            "translatorComment": "[from: layouts/site-auth/email-hotp--setup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Verify Account",
-            "key": "Verify Account",
-            "message": "Verify Account",
-            "translation": "アカウントを認証",
-            "translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "{NumFactorsRequired} verified authentication factors are required. You have {NumFactorsReady} authentication factors configured and {NumFactorsVerified} verified.",
-            "key": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
-            "message": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
-            "translation": "%[1]d検証された認証要素が必要です。 %[2]d認証要素が構成され、%[3]d が検証されました。",
-            "translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl]",
-            "placeholders": [
-                {
-                    "id": "NumFactorsRequired",
-                    "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
-                    "argNum": 1,
-                    "expr": ".NumFactorsRequired"
-                },
-                {
-                    "id": "NumFactorsReady",
-                    "string": "%[2]d",
-                    "type": "int",
-                    "underlyingType": "int",
-                    "argNum": 2,
-                    "expr": ".NumFactorsReady"
-                },
-                {
-                    "id": "NumFactorsVerified",
-                    "string": "%[3]d",
-                    "type": "int",
-                    "underlyingType": "int",
-                    "argNum": 3,
-                    "expr": ".NumFactorsVerified"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Enter one-time passcode",
-            "key": "Enter one-time passcode",
-            "message": "Enter one-time passcode",
-            "translation": "ワンタイムパスコードを入力してください",
-            "translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl, layouts/site-auth/otp--verification.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Verify",
-            "key": "Verify",
-            "message": "Verify",
-            "translation": "認証する",
-            "translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl, layouts/site-auth/otp--verification.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "There are no multi-factor authentication features available.",
-            "key": "There are no multi-factor authentication features available.",
-            "message": "There are no multi-factor authentication features available.",
-            "translation": "利用可能な多要素認証機能はありません。",
-            "translatorComment": "[from: layouts/site-auth/otp--challenge.tmpl, layouts/site-auth/otp--verification.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Verify Access",
-            "key": "Verify Access",
-            "message": "Verify Access",
-            "translation": "アクセスの認証",
-            "translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Your request requires additional authentication.",
-            "key": "Your request requires additional authentication.",
-            "message": "Your request requires additional authentication.",
-            "translation": "このリクエストには追加の認証が必要です。",
-            "translatorComment": "[from: layouts/site-auth/otp--verification.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "{FeatureInfoLabel} Settings",
-            "key": "%[1]s Settings",
-            "message": "%[1]s Settings",
-            "translation": "%[1]s 設定",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "placeholders": [
-                {
-                    "id": "FeatureInfoLabel",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".FeatureInfo.Label"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "None of the site's authentication features have user settings panels.",
-            "key": "None of the site's authentication features have user settings panels.",
-            "message": "None of the site's authentication features have user settings panels.",
-            "translation": "サイトの認証機能にはユーザー設定パネルはありません。",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Account",
-            "key": "Account",
-            "message": "Account",
-            "translation": "アカウント",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Type the following phrase exactly: \\\"{DeleteRequestedConfirmation}\\\"",
-            "key": "Type the following phrase exactly: \\\"%[1]s\\\"",
-            "message": "Type the following phrase exactly: \\\"%[1]s\\\"",
-            "translation": "次の文字を正確に入力してください: \\\"%[1]s\\\"",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "placeholders": [
-                {
-                    "id": "DeleteRequestedConfirmation",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".DeleteRequested.Confirmation"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "After you press this button, your entire account will be deleted.",
-            "key": "After you press this button, your entire account will be deleted.",
-            "message": "After you press this button, your entire account will be deleted.",
-            "translation": "このボタンを押すと、アカウント全体が削除されます。",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Confirm deletion of your account",
-            "key": "Confirm deletion of your account",
-            "message": "Confirm deletion of your account",
-            "translation": "アカウントの削除を確認する",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Delete your entire account",
-            "key": "Delete your entire account",
-            "message": "Delete your entire account",
-            "translation": "アカウント全体を削除する",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
-            "key": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
-            "message": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
-            "translation": "プライマリ アカウントのサインインを非アクティブ化しても、バックアップ サインイン方法は引き続き機能します。",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Deactivate primary sign-in method",
-            "key": "Deactivate primary sign-in method",
-            "message": "Deactivate primary sign-in method",
-            "translation": "プライマリサインイン方法を無効にする",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Reactivate your primary account sign-in",
-            "key": "Reactivate your primary account sign-in",
-            "message": "Reactivate your primary account sign-in",
-            "translation": "プライマリ アカウントのサインインを再度アクティブ化する",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Reactivate primary sign-in method",
-            "key": "Reactivate primary sign-in method",
-            "message": "Reactivate primary sign-in method",
-            "translation": "プライマリサインイン方法を再アクティブ化する",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Delete account",
-            "key": "Delete account",
-            "message": "Delete account",
-            "translation": "アカウントの削除",
-            "translatorComment": "[from: layouts/site-auth/settings--selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "{FeatureInfoLabel} Setup",
-            "key": "%[1]s Setup",
-            "message": "%[1]s Setup",
-            "translation": "%[1]s 設定",
-            "translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
-            "placeholders": [
-                {
-                    "id": "FeatureInfoLabel",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".FeatureInfo.Label"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "One (or more) of the available multi-factor authentication features are required.",
-            "key": "One (or more) of the available multi-factor authentication features are required.",
-            "message": "One (or more) of the available multi-factor authentication features are required.",
-            "translation": "使用可能な多要素認証機能が 1 つ (または複数) 必要です。",
-            "translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Please select one to continue the account setup process.",
-            "key": "Please select one to continue the account setup process.",
-            "message": "Please select one to continue the account setup process.",
-            "translation": "アカウント設定プロセスを続行するには、いずれかを選択してください。",
-            "translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "No multi-Factor authentication features are present.",
-            "key": "No multi-Factor authentication features are present.",
-            "message": "No multi-Factor authentication features are present.",
-            "translation": "多要素認証機能は存在しません。",
-            "translatorComment": "[from: layouts/site-auth/settings--setup-selector.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Backup Email Sign-In",
-            "key": "Backup Email Sign-In",
-            "message": "Backup Email Sign-In",
-            "translation": "バックアップメールのサインイン",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter backup email address",
-            "key": "Enter backup email address",
-            "message": "Enter backup email address",
-            "translation": "バックアップメールアドレスを入力してください",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter your primary email address",
-            "key": "Enter your primary email address",
-            "message": "Enter your primary email address",
-            "translation": "メインのメールアドレスを入力してください",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Sign-in",
-            "key": "Sign-in",
-            "message": "Sign-in",
-            "translation": "サインイン",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-backup.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Email Sign-In",
-            "key": "Email Sign-In",
-            "message": "Email Sign-In",
-            "translation": "Eメールサインイン",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Confirm Sign-In",
-            "key": "Confirm Sign-In",
-            "message": "Confirm Sign-In",
-            "translation": "サインインの確認",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Enter your email address",
-            "key": "Enter your email address",
-            "message": "Enter your email address",
-            "translation": "Eメールアドレスを入力してください",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Sign-In",
-            "key": "Sign-In",
-            "message": "Sign-In",
-            "translation": "サインイン",
-            "translatorComment": "[from: layouts/site-auth/sign-in--email-token.tmpl, layouts/site-auth/sign-in.tmpl=2]",
-            "fuzzy": true
-        },
-        {
-            "id": "Select one of the account options to begin the sign-in process.",
-            "key": "Select one of the account options to begin the sign-in process.",
-            "message": "Select one of the account options to begin the sign-in process.",
-            "translation": "いずれかのアカウント オプションを選択して、サインインを開始します。",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "New accounts will be automatically created.",
-            "key": "New accounts will be automatically created.",
-            "message": "New accounts will be automatically created.",
-            "translation": "新しいアカウントは自動的に作成されます。",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Only invited accounts may sign-in.",
-            "key": "Only invited accounts may sign-in.",
-            "message": "Only invited accounts may sign-in.",
-            "translation": "招待されたアカウントのみがサインインできます。",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Only existing accounts may sign-in.",
-            "key": "Only existing accounts may sign-in.",
-            "message": "Only existing accounts may sign-in.",
-            "translation": "既存のアカウントのみがサインインできます。",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "account options",
-            "key": "account options",
-            "message": "account options",
-            "translation": "アカウントのオプション",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "backup options",
-            "key": "backup options",
-            "message": "backup options",
-            "translation": "バックアップオプション",
-            "translatorComment": "[from: layouts/site-auth/sign-in.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Sign-Out",
-            "key": "Sign-Out",
-            "message": "Sign-Out",
-            "translation": "サインアウト",
-            "translatorComment": "[from: layouts/site-auth/sign-out.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Sign-out",
-            "key": "Sign-out",
-            "message": "Sign-out",
-            "translation": "サインアウト",
-            "translatorComment": "[from: layouts/site-auth/sign-out.tmpl]",
+            "id": "back to top",
+            "key": "back to top",
+            "message": "back to top",
+            "translation": "Topに戻る",
             "fuzzy": true
         },
         {
@@ -1912,7 +1001,6 @@
             "key": "Dashboard",
             "message": "Dashboard",
             "translation": "ダッシュボード",
-            "translatorComment": "[from: layouts/site/dashboard.tmpl]",
             "fuzzy": true
         },
         {
@@ -1920,7 +1008,6 @@
             "key": "TODO: figure out dashboard gadgets",
             "message": "TODO: figure out dashboard gadgets",
             "translation": "TODO: ダッシュボード ガジェットを理解する",
-            "translatorComment": "[from: layouts/site/dashboard.tmpl]",
             "fuzzy": true
         },
         {
@@ -1928,7 +1015,6 @@
             "key": "Setup User Profile",
             "message": "Setup User Profile",
             "translation": "ユーザープロファイルの設定",
-            "translatorComment": "[from: layouts/site/profile--setup.tmpl]",
             "fuzzy": true
         },
         {
@@ -1936,7 +1022,6 @@
             "key": "What name would you like displayed?",
             "message": "What name would you like displayed?",
             "translation": "表示名を何にしますか?",
-            "translatorComment": "[from: layouts/site/profile--setup.tmpl]",
             "fuzzy": true
         },
         {
@@ -1944,7 +1029,6 @@
             "key": "Display Name",
             "message": "Display Name",
             "translation": "表示名",
-            "translatorComment": "[from: layouts/site/profile--setup.tmpl]",
             "fuzzy": true
         },
         {
@@ -1952,7 +1036,6 @@
             "key": "Save",
             "message": "Save",
             "translation": "保存",
-            "translatorComment": "[from: layouts/site/profile--setup.tmpl, layouts/site/settings.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -1960,7 +1043,6 @@
             "key": "User Profile",
             "message": "User Profile",
             "translation": "ユーザープロファイル",
-            "translatorComment": "[from: layouts/site/profile.tmpl]",
             "fuzzy": true
         },
         {
@@ -1968,7 +1050,6 @@
             "key": "current profile image",
             "message": "current profile image",
             "translation": "現在のプロファイル画像",
-            "translatorComment": "[from: layouts/site/profile.tmpl, layouts/site/settings.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -1976,7 +1057,6 @@
             "key": "unnamed",
             "message": "unnamed",
             "translation": "無名",
-            "translatorComment": "[from: layouts/site/profile.tmpl, layouts/site/settings.tmpl=2]",
             "fuzzy": true
         },
         {
@@ -1984,7 +1064,6 @@
             "key": "Site Settings",
             "message": "Site Settings",
             "translation": "サイト設定",
-            "translatorComment": "[from: layouts/site/settings.tmpl]",
             "fuzzy": true
         },
         {
@@ -1992,7 +1071,6 @@
             "key": "Others",
             "message": "Others",
             "translation": "その他",
-            "translatorComment": "[from: layouts/site/settings.tmpl]",
             "fuzzy": true
         },
         {
@@ -2000,7 +1078,6 @@
             "key": "Manage",
             "message": "Manage",
             "translation": "管理",
-            "translatorComment": "[from: layouts/site/settings.tmpl]",
             "fuzzy": true
         },
         {
@@ -2008,7 +1085,6 @@
             "key": "None of the site's features have user-configurable settings.",
             "message": "None of the site's features have user-configurable settings.",
             "translation": "このサイトのフィーチャーには、ユーザーが構成できる設定はありません。",
-            "translatorComment": "[from: layouts/site/settings.tmpl]",
             "fuzzy": true
         },
         {
@@ -2016,7 +1092,6 @@
             "key": "Users",
             "message": "Users",
             "translation": "ユーザー",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
             "fuzzy": true
         },
         {
@@ -2024,13 +1099,12 @@
             "key": "There are %d users in total.",
             "message": "There are %[1]d users in total.",
             "translation": "全%[1]d人のユーザーがいます。",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
             "placeholders": [
                 {
                     "id": "TotalUsers",
                     "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
+                    "type": "num",
+                    "underlyingType": "num",
                     "argNum": 1,
                     "expr": ".TotalUsers"
                 }
@@ -2042,7 +1116,6 @@
             "key": "Enjin ID",
             "message": "Enjin ID",
             "translation": "Enjin ID",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
             "fuzzy": true
         },
         {
@@ -2050,7 +1123,6 @@
             "key": "Email",
             "message": "Email",
             "translation": "Eメール",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
             "fuzzy": true
         },
         {
@@ -2058,7 +1130,6 @@
             "key": "Image",
             "message": "Image",
             "translation": "画像",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
             "fuzzy": true
         },
         {
@@ -2066,7 +1137,717 @@
             "key": "profile image",
             "message": "profile image",
             "translation": "プロファイル画像",
-            "translatorComment": "[from: layouts/site/user-manager.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Manage {FeatureInfoLabel}",
+            "key": "Manage %[1]s",
+            "message": "Manage %[1]s",
+            "translation": "%[1]sを管理する",
+            "placeholders": [
+                {
+                    "id": "FeatureInfoLabel",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".FeatureInfo.Label"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Setup a new authenticator app",
+            "key": "Setup a new authenticator app",
+            "message": "Setup a new authenticator app",
+            "translation": "新しい認証アプリをセットアップする",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke an existing authenticator app",
+            "key": "Revoke an existing authenticator app",
+            "message": "Revoke an existing authenticator app",
+            "translation": "既存の認証アプリを取り消す",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke {FeatureInfoLabel}",
+            "key": "Revoke %[1]s",
+            "message": "Revoke %[1]s",
+            "translation": "%[1]sを取り消す",
+            "placeholders": [
+                {
+                    "id": "FeatureInfoLabel",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".FeatureInfo.Label"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Select one of the provisioned authenticator apps to start the revocation process.",
+            "key": "Select one of the provisioned authenticator apps to start the revocation process.",
+            "message": "Select one of the provisioned authenticator apps to start the revocation process.",
+            "translation": "プロビジョニングされた認証アプリのいずれかを選択して、失効プロセスを開始します。",
+            "fuzzy": true
+        },
+        {
+            "id": "No authenticator apps provisioned, nothing to revoke!",
+            "key": "No authenticator apps provisioned, nothing to revoke!",
+            "message": "No authenticator apps provisioned, nothing to revoke!",
+            "translation": "プロビジョニングされた認証アプリはなく、取り消すものは何もありません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Are you sure you want to delete \\\"{SelectedProvision}\\\"?",
+            "key": "Are you sure you want to delete \\\"%[1]s\\\"?",
+            "message": "Are you sure you want to delete \\\"%[1]s\\\"?",
+            "translation": "\\\"%[1]s\\\"を消去してもよろしいですか?",
+            "placeholders": [
+                {
+                    "id": "SelectedProvision",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": "$.SelectedProvision"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "After clicking this, \\\"{SelectedProvision}\\\" will really be deleted!",
+            "key": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+            "message": "After clicking this, \\\"%[1]s\\\" will really be deleted!",
+            "translation": "これをクリックした後, \\\"%[1]s\\\" は本当に削除されます。",
+            "placeholders": [
+                {
+                    "id": "SelectedProvision",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": "$.SelectedProvision"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke selected authenticator app?",
+            "key": "Revoke selected authenticator app?",
+            "message": "Revoke selected authenticator app?",
+            "translation": "選択した認証アプリを取り消しますか?",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup {FeatureInfoLabel}",
+            "key": "Setup %[1]s",
+            "message": "Setup %[1]s",
+            "translation": "%[1]s の設定",
+            "placeholders": [
+                {
+                    "id": "FeatureInfoLabel",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".FeatureInfo.Label"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "key": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "message": "To provision a new authenticator app, give the provision a unique name, add the settings to your authenticator app, then enter the current athenticator code to verify and complete the setup process.",
+            "translation": "新しい認証アプリをプロビジョニングするには、プロビジョニングにユニークな名前を付け、認証アプリに設定を追加してから、現在の認証コードを入力して確認し、設定過程を完了します。",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup and confirm authenticator app",
+            "key": "Setup and confirm authenticator app",
+            "message": "Setup and confirm authenticator app",
+            "translation": "認証アプリの設定と確定",
+            "fuzzy": true
+        },
+        {
+            "id": "Give this provision a unique name",
+            "key": "Give this provision a unique name",
+            "message": "Give this provision a unique name",
+            "translation": "この規定に特有な名前を付ける",
+            "fuzzy": true
+        },
+        {
+            "id": "Add the following to your authenticator app",
+            "key": "Add the following to your authenticator app",
+            "message": "Add the following to your authenticator app",
+            "translation": "認証アプリに以下を追加します",
+            "fuzzy": true
+        },
+        {
+            "id": "authenticator qrcode",
+            "key": "authenticator qrcode",
+            "message": "authenticator qrcode",
+            "translation": "認証 QRコード",
+            "fuzzy": true
+        },
+        {
+            "id": "App setup link",
+            "key": "App setup link",
+            "message": "App setup link",
+            "translation": "アプリの設定リンク",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter the current authenticator code",
+            "key": "Enter the current authenticator code",
+            "message": "Enter the current authenticator code",
+            "translation": "現在の認証コードを入力します",
+            "fuzzy": true
+        },
+        {
+            "id": "Verify app setup",
+            "key": "Verify app setup",
+            "message": "Verify app setup",
+            "translation": "アプリの設定を認証する",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup new backup codes",
+            "key": "Setup new backup codes",
+            "message": "Setup new backup codes",
+            "translation": "新しいバックアップ コードを設定します",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke existing backup codes",
+            "key": "Revoke existing backup codes",
+            "message": "Revoke existing backup codes",
+            "translation": "既存のバックアップ コードを取り消す",
+            "fuzzy": true
+        },
+        {
+            "id": "Select one of the provisioned backup codes to start the revocation process.",
+            "key": "Select one of the provisioned backup codes to start the revocation process.",
+            "message": "Select one of the provisioned backup codes to start the revocation process.",
+            "translation": "プロビジョニングされたバックアップ コードのいずれかを選択して、失効プロセスを開始します。",
+            "fuzzy": true
+        },
+        {
+            "id": "No backup codes present, nothing to revoke!",
+            "key": "No backup codes present, nothing to revoke!",
+            "message": "No backup codes present, nothing to revoke!",
+            "translation": "バックアップ コードは存在せず、取り消すものはありません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke selected email passcode?",
+            "key": "Revoke selected email passcode?",
+            "message": "Revoke selected email passcode?",
+            "translation": "選択したEメールのパスコードを取り消しますか?",
+            "fuzzy": true
+        },
+        {
+            "id": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "key": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "message": "You will get to see the backup codes only once, make sure you copy and store them safely in your password manager and press the confirmation button.",
+            "translation": "バックアップコードは一度だけ表示されますので、コピーしてパスワードマネージャーに安全に保存してから、確認ボタンを押してください。",
+            "fuzzy": true
+        },
+        {
+            "id": "Confirm you have recorded these safely",
+            "key": "Confirm you have recorded these safely",
+            "message": "Confirm you have recorded these safely",
+            "translation": "これらを間違えなく記録したことを確認してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Request to see new backup codes",
+            "key": "Request to see new backup codes",
+            "message": "Request to see new backup codes",
+            "translation": "新しいバックアップ コードの表示をリクエストする",
+            "fuzzy": true
+        },
+        {
+            "id": "Copy these to a secure location",
+            "key": "Copy these to a secure location",
+            "message": "Copy these to a secure location",
+            "translation": "これらを安全な場所にコピーします",
+            "fuzzy": true
+        },
+        {
+            "id": "Generate codes associated with the above label.",
+            "key": "Generate codes associated with the above label.",
+            "message": "Generate codes associated with the above label.",
+            "translation": "上記のラベルに関連付けられたコードを生成します。",
+            "fuzzy": true
+        },
+        {
+            "id": "I confirm that I have copied these codes to a safe location.",
+            "key": "I confirm that I have copied these codes to a safe location.",
+            "message": "I confirm that I have copied these codes to a safe location.",
+            "translation": "これらのコードを安全な場所にコピーしたことを確認します。",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup a new backup email",
+            "key": "Setup a new backup email",
+            "message": "Setup a new backup email",
+            "translation": "新しいバックアップEメールを設定します",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke an existing backup email",
+            "key": "Revoke an existing backup email",
+            "message": "Revoke an existing backup email",
+            "translation": "既存のバックアップメールを取り消す",
+            "fuzzy": true
+        },
+        {
+            "id": "Select one of the provisioned email backups to start the revocation process.",
+            "key": "Select one of the provisioned email backups to start the revocation process.",
+            "message": "Select one of the provisioned email backups to start the revocation process.",
+            "translation": "プロビジョニングされたEメール バックアップの 1 つを選択して、失効プロセスを開始します。",
+            "fuzzy": true
+        },
+        {
+            "id": "No email passcodes present, nothing to revoke!",
+            "key": "No email passcodes present, nothing to revoke!",
+            "message": "No email passcodes present, nothing to revoke!",
+            "translation": "Eメールのパスコードは存在せず、取り消すものは何もありません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke selected email passcodes?",
+            "key": "Revoke selected email passcodes?",
+            "message": "Revoke selected email passcodes?",
+            "translation": "選択したEメールのパスコードを取り消しますか?",
+            "fuzzy": true
+        },
+        {
+            "id": "Awaiting confirmation",
+            "key": "Awaiting confirmation",
+            "message": "Awaiting confirmation",
+            "translation": "確定待ち",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter your backup email address",
+            "key": "Enter your backup email address",
+            "message": "Enter your backup email address",
+            "translation": "バックアップEメールアドレスを入力してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Setting up this backup email",
+            "key": "Setting up this backup email",
+            "message": "Setting up this backup email",
+            "translation": "このバックアップEメールを設定する",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter backup for: {EmailAddress}",
+            "key": "Enter backup for: %[1]s",
+            "message": "Enter backup for: %[1]s",
+            "translation": "バックアップEメールを入力する: %[1]s",
+            "placeholders": [
+                {
+                    "id": "EmailAddress",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".EmailAddress"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Confirm",
+            "key": "Confirm",
+            "message": "Confirm",
+            "translation": "確認",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup",
+            "key": "Setup",
+            "message": "Setup",
+            "translation": "設定",
+            "fuzzy": true
+        },
+        {
+            "id": "Setup a new email passcode",
+            "key": "Setup a new email passcode",
+            "message": "Setup a new email passcode",
+            "translation": "新しいEメールの設定",
+            "fuzzy": true
+        },
+        {
+            "id": "Revoke an existing email passcode",
+            "key": "Revoke an existing email passcode",
+            "message": "Revoke an existing email passcode",
+            "translation": "既存のメールパスコードを取り消す",
+            "fuzzy": true
+        },
+        {
+            "id": "Select one of the provisioned email passcodes to start the revocation process.",
+            "key": "Select one of the provisioned email passcodes to start the revocation process.",
+            "message": "Select one of the provisioned email passcodes to start the revocation process.",
+            "translation": "プロビジョニングされたEメールのパスコード 1 つを選択して、失効プロセスを開始します。",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter an email address",
+            "key": "Enter an email address",
+            "message": "Enter an email address",
+            "translation": "メールアドレスを入力",
+            "fuzzy": true
+        },
+        {
+            "id": "Setting up this email",
+            "key": "Setting up this email",
+            "message": "Setting up this email",
+            "translation": "このメールを設定する",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter email address",
+            "key": "Enter email address",
+            "message": "Enter email address",
+            "translation": "メールアドレスを入力",
+            "fuzzy": true
+        },
+        {
+            "id": "Verify Account",
+            "key": "Verify Account",
+            "message": "Verify Account",
+            "translation": "アカウントを認証",
+            "fuzzy": true
+        },
+        {
+            "id": "{NumFactorsRequired} verified authentication factors are required. You have {NumFactorsReady} authentication factors configured and {NumFactorsVerified} verified.",
+            "key": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
+            "message": "%[1]d verified authentication factors are required. You have %[2]d authentication factors configured and %[3]d verified.",
+            "translation": "%[1]d検証された認証要素が必要です。 %[2]d認証要素が構成され、%[3]d が検証されました。",
+            "placeholders": [
+                {
+                    "id": "NumFactorsRequired",
+                    "string": "%[1]d",
+                    "type": "num",
+                    "underlyingType": "num",
+                    "argNum": 1,
+                    "expr": ".NumFactorsRequired"
+                },
+                {
+                    "id": "NumFactorsReady",
+                    "string": "%[2]d",
+                    "type": "num",
+                    "underlyingType": "num",
+                    "argNum": 2,
+                    "expr": ".NumFactorsReady"
+                },
+                {
+                    "id": "NumFactorsVerified",
+                    "string": "%[3]d",
+                    "type": "num",
+                    "underlyingType": "num",
+                    "argNum": 3,
+                    "expr": ".NumFactorsVerified"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Enter one-time passcode",
+            "key": "Enter one-time passcode",
+            "message": "Enter one-time passcode",
+            "translation": "ワンタイムパスコードを入力してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Verify",
+            "key": "Verify",
+            "message": "Verify",
+            "translation": "認証する",
+            "fuzzy": true
+        },
+        {
+            "id": "There are no multi-factor authentication features available.",
+            "key": "There are no multi-factor authentication features available.",
+            "message": "There are no multi-factor authentication features available.",
+            "translation": "利用可能な多要素認証機能はありません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Verify Access",
+            "key": "Verify Access",
+            "message": "Verify Access",
+            "translation": "アクセスの認証",
+            "fuzzy": true
+        },
+        {
+            "id": "Your request requires additional authentication.",
+            "key": "Your request requires additional authentication.",
+            "message": "Your request requires additional authentication.",
+            "translation": "このリクエストには追加の認証が必要です。",
+            "fuzzy": true
+        },
+        {
+            "id": "{FeatureInfoLabel} Settings",
+            "key": "%[1]s Settings",
+            "message": "%[1]s Settings",
+            "translation": "%[1]s 設定",
+            "placeholders": [
+                {
+                    "id": "FeatureInfoLabel",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".FeatureInfo.Label"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "None of the site's authentication features have user settings panels.",
+            "key": "None of the site's authentication features have user settings panels.",
+            "message": "None of the site's authentication features have user settings panels.",
+            "translation": "サイトの認証機能にはユーザー設定パネルはありません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Account",
+            "key": "Account",
+            "message": "Account",
+            "translation": "アカウント",
+            "fuzzy": true
+        },
+        {
+            "id": "Type the following phrase exactly: \\\"{DeleteRequestedConfirmation}\\\"",
+            "key": "Type the following phrase exactly: \\\"%[1]s\\\"",
+            "message": "Type the following phrase exactly: \\\"%[1]s\\\"",
+            "translation": "次の文字を正確に入力してください: \\\"%[1]s\\\"",
+            "placeholders": [
+                {
+                    "id": "DeleteRequestedConfirmation",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".DeleteRequested.Confirmation"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "After you press this button, your entire account will be deleted.",
+            "key": "After you press this button, your entire account will be deleted.",
+            "message": "After you press this button, your entire account will be deleted.",
+            "translation": "このボタンを押すと、アカウント全体が削除されます。",
+            "fuzzy": true
+        },
+        {
+            "id": "Confirm deletion of your account",
+            "key": "Confirm deletion of your account",
+            "message": "Confirm deletion of your account",
+            "translation": "アカウントの削除を確認する",
+            "fuzzy": true
+        },
+        {
+            "id": "Delete your entire account",
+            "key": "Delete your entire account",
+            "message": "Delete your entire account",
+            "translation": "アカウント全体を削除する",
+            "fuzzy": true
+        },
+        {
+            "id": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+            "key": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+            "message": "Deactivate your primary account sign-in, any backup sign-in methods will continue to function.",
+            "translation": "プライマリ アカウントのサインインを非アクティブ化しても、バックアップ サインイン方法は引き続き機能します。",
+            "fuzzy": true
+        },
+        {
+            "id": "Deactivate primary sign-in method",
+            "key": "Deactivate primary sign-in method",
+            "message": "Deactivate primary sign-in method",
+            "translation": "プライマリサインイン方法を無効にする",
+            "fuzzy": true
+        },
+        {
+            "id": "Reactivate your primary account sign-in",
+            "key": "Reactivate your primary account sign-in",
+            "message": "Reactivate your primary account sign-in",
+            "translation": "プライマリ アカウントのサインインを再度アクティブ化する",
+            "fuzzy": true
+        },
+        {
+            "id": "Reactivate primary sign-in method",
+            "key": "Reactivate primary sign-in method",
+            "message": "Reactivate primary sign-in method",
+            "translation": "プライマリサインイン方法を再アクティブ化する",
+            "fuzzy": true
+        },
+        {
+            "id": "Delete account",
+            "key": "Delete account",
+            "message": "Delete account",
+            "translation": "アカウントの削除",
+            "fuzzy": true
+        },
+        {
+            "id": "{FeatureInfoLabel} Setup",
+            "key": "%[1]s Setup",
+            "message": "%[1]s Setup",
+            "translation": "%[1]s 設定",
+            "placeholders": [
+                {
+                    "id": "FeatureInfoLabel",
+                    "string": "%[1]s",
+                    "type": "text",
+                    "underlyingType": "text",
+                    "argNum": 1,
+                    "expr": ".FeatureInfo.Label"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "One (or more) of the available multi-factor authentication features are required.",
+            "key": "One (or more) of the available multi-factor authentication features are required.",
+            "message": "One (or more) of the available multi-factor authentication features are required.",
+            "translation": "使用可能な多要素認証機能が 1 つ (または複数) 必要です。",
+            "fuzzy": true
+        },
+        {
+            "id": "Please select one to continue the account setup process.",
+            "key": "Please select one to continue the account setup process.",
+            "message": "Please select one to continue the account setup process.",
+            "translation": "アカウント設定プロセスを続行するには、いずれかを選択してください。",
+            "fuzzy": true
+        },
+        {
+            "id": "No multi-Factor authentication features are present.",
+            "key": "No multi-Factor authentication features are present.",
+            "message": "No multi-Factor authentication features are present.",
+            "translation": "多要素認証機能は存在しません。",
+            "fuzzy": true
+        },
+        {
+            "id": "Backup Email Sign-In",
+            "key": "Backup Email Sign-In",
+            "message": "Backup Email Sign-In",
+            "translation": "バックアップメールのサインイン",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter backup email address",
+            "key": "Enter backup email address",
+            "message": "Enter backup email address",
+            "translation": "バックアップメールアドレスを入力してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter your primary email address",
+            "key": "Enter your primary email address",
+            "message": "Enter your primary email address",
+            "translation": "メインのメールアドレスを入力してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Sign-in",
+            "key": "Sign-in",
+            "message": "Sign-in",
+            "translation": "サインイン",
+            "fuzzy": true
+        },
+        {
+            "id": "Email Sign-In",
+            "key": "Email Sign-In",
+            "message": "Email Sign-In",
+            "translation": "Eメールサインイン",
+            "fuzzy": true
+        },
+        {
+            "id": "Confirm Sign-In",
+            "key": "Confirm Sign-In",
+            "message": "Confirm Sign-In",
+            "translation": "サインインの確認",
+            "fuzzy": true
+        },
+        {
+            "id": "Enter your email address",
+            "key": "Enter your email address",
+            "message": "Enter your email address",
+            "translation": "Eメールアドレスを入力してください",
+            "fuzzy": true
+        },
+        {
+            "id": "Sign-In",
+            "key": "Sign-In",
+            "message": "Sign-In",
+            "translation": "サインイン",
+            "fuzzy": true
+        },
+        {
+            "id": "Select one of the account options to begin the sign-in process.",
+            "key": "Select one of the account options to begin the sign-in process.",
+            "message": "Select one of the account options to begin the sign-in process.",
+            "translation": "いずれかのアカウント オプションを選択して、サインインを開始します。",
+            "fuzzy": true
+        },
+        {
+            "id": "New accounts will be automatically created.",
+            "key": "New accounts will be automatically created.",
+            "message": "New accounts will be automatically created.",
+            "translation": "新しいアカウントは自動的に作成されます。",
+            "fuzzy": true
+        },
+        {
+            "id": "Only invited accounts may sign-in.",
+            "key": "Only invited accounts may sign-in.",
+            "message": "Only invited accounts may sign-in.",
+            "translation": "招待されたアカウントのみがサインインできます。",
+            "fuzzy": true
+        },
+        {
+            "id": "Only existing accounts may sign-in.",
+            "key": "Only existing accounts may sign-in.",
+            "message": "Only existing accounts may sign-in.",
+            "translation": "既存のアカウントのみがサインインできます。",
+            "fuzzy": true
+        },
+        {
+            "id": "account options",
+            "key": "account options",
+            "message": "account options",
+            "translation": "アカウントのオプション",
+            "fuzzy": true
+        },
+        {
+            "id": "backup options",
+            "key": "backup options",
+            "message": "backup options",
+            "translation": "バックアップオプション",
+            "fuzzy": true
+        },
+        {
+            "id": "Sign-Out",
+            "key": "Sign-Out",
+            "message": "Sign-Out",
+            "translation": "サインアウト",
+            "fuzzy": true
+        },
+        {
+            "id": "Sign-out",
+            "key": "Sign-out",
+            "message": "Sign-out",
+            "translation": "サインアウト",
             "fuzzy": true
         }
     ]
