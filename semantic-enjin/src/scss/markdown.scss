@@ -14,21 +14,26 @@
 
 body[data-page-format="md"] > main {
 
-  h1, h2, h3, h4, h5, h6 {
+  & h1, h2, h3, h4, h5, h6 {
     margin-top: calc(var(--main--block--content--margin-top) * 2);
     margin-bottom: var(--main--block--content--margin-bottom);
   }
-  h1 {
+
+  & h1 {
     margin-top: 0;
   }
 
-  p {
+  & p {
     margin-top: var(--main--block--margins);
     margin-bottom: var(--main--block--margins);
   }
 
-  .content > section > div > hr:first-child {
-      margin-top: calc(var(--main--block--margins) * 2);
+  & img {
+    max-width: 100%;
+  }
+
+  & .content > section > div > hr:first-child {
+    margin-top: calc(var(--main--block--margins) * 2);
   }
 
 }
