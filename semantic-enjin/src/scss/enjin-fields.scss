@@ -608,7 +608,7 @@ input[type="password"] {
   border-right: none;
   border-radius: 5px;
 
-  &:focus {
+  &:focus, &:active, &:hover {
     background-color: var(--style--highlight--bg);
   }
 }
