@@ -687,10 +687,6 @@ body {
         background-color: transparent;
       }
 
-      & i {
-        //text-shadow: 0 0 1px var(--color--dark);
-      }
-
       &.light,
       &.light i {
         color: var(--color--light);
@@ -699,7 +695,6 @@ body {
       &:hover,
       &:focus,
       &:active {
-        //text-shadow: none;
         opacity: 1.0;
 
         color: var(--style--fg);
