@@ -181,14 +181,20 @@
   .masthead .menus[data-desktop-style='menu'] > .controls .search button {
     display: inline-block;
     position: relative;
-    background: var(--primary--bg);
+
     color: var(--primary--fg);
+
     border: none;
+
+    &:not(input[type="search"]) {
+      background: var(--primary--bg);
+    }
   }
 
   .masthead .menus[data-desktop-style='menu'] > .controls .search input[name='query'] {
     height: 24px;
     padding: 5px 10px;
+    margin-left: 5px;
   }
 
   .masthead .menus[data-desktop-style='menu'] > .controls .search button[type='submit'] {

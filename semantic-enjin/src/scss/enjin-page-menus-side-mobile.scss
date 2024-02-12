@@ -46,11 +46,29 @@
     align-items: center;
     justify-content: space-around;
     background: var(--secondary--fg);
+
+    & input {
+      width: 77%;
+      margin-left: 3%;
+
+      &:focus, &:focus-within, &:active {
+        background-color: var(--color--highlight);
+      }
+    }
+
+    & :is(.indicator,.button,button,input[type="button"],input[type="submit"],input[type="reset"]) {
+      color: var(--style--fg);
+      background-color: transparent;
+
+      &:hover, &:focus, &:focus-within, &:active {
+        & i {
+          color: var(--page--masthead--bg);
+          background-color: transparent;
+        }
+      }
+    }
   }
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] .controls .search form input {
-    width: 80%;
-  }
 
   #side-menu:not(:checked) ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .closed,
   #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .opened {

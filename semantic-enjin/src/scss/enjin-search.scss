@@ -50,14 +50,24 @@ body[data-page-type="search"] {
         font-size: 18px;
 
         border: none;
-        background: none;
-        color: var(--primary--bg);
+        background-color: transparent;
+        color: var(--secondary--fg);
         margin-left: var(--page--flex--gap--sm);
 
-        &:hover {
-          opacity: 1;
-          color: var(--primary--fg);
-          background-color: var(--primary--bg);
+        & i {
+          animation: none;
+          color: var(--secondary--fg);
+          background-color: transparent;
+        }
+
+        &:hover, &:focus, &:focus-within, &:active {
+          background-color: var(--secondary--fg);
+
+          &, & i {
+            opacity: 1;
+            animation: none;
+            color: var(--secondary--bg);
+          }
         }
       }
     }
