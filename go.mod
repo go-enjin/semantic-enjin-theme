@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.21.6
 
-require github.com/go-enjin/be v0.5.9
+require github.com/go-enjin/be v0.5.10
 
 require (
 	github.com/BurntSushi/toml v1.3.2 // indirect
@@ -37,6 +37,7 @@ require (
 	github.com/gdamore/encoding v1.0.0 // indirect
 	github.com/go-chi/chi/v5 v5.0.11 // indirect
 	github.com/go-corelibs/fmtstr v1.2.0 // indirect
+	github.com/go-corelibs/htmlcss v1.0.0 // indirect
 	github.com/go-corelibs/lang v0.1.0 // indirect
 	github.com/go-corelibs/maps v1.1.0 // indirect
 	github.com/go-corelibs/maths v1.0.1 // indirect
@@ -44,7 +45,7 @@ require (
 	github.com/go-corelibs/path v1.2.0 // indirect
 	github.com/go-corelibs/shasum v1.0.0 // indirect
 	github.com/go-corelibs/slices v1.3.0 // indirect
-	github.com/go-corelibs/strings v1.1.1 // indirect
+	github.com/go-corelibs/strings v1.1.2 // indirect
 	github.com/go-corelibs/values v1.0.0 // indirect
 	github.com/go-corelibs/x-text v0.14.1 // indirect
 	github.com/go-curses/cdk v0.5.22 // indirect

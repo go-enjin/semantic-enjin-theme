@@ -77,6 +77,8 @@ github.com/go-corelibs/chdirs v1.1.1 h1:N9rzIR+czy21jgp2qrSrXePbJfMrnrgMf3fnzXBW
 github.com/go-corelibs/chdirs v1.1.1/go.mod h1:LTJzxNUeHLUvJ2KSU+D+cNGTX0ZnIUytg1Ui/H3kRo0=
 github.com/go-corelibs/fmtstr v1.2.0 h1:4OI9aT8zz4nBiQL3Xhi8LFmNeAeT8IUZroVVrg8Ew/I=
 github.com/go-corelibs/fmtstr v1.2.0/go.mod h1:bxaIqxRRkTQ/R4IdcpTX+yKaQYVP1DtU7xj7/17VPeE=
+github.com/go-corelibs/htmlcss v1.0.0 h1:u5x1eCqidDy2hhulKTgHmQBrLW60UxT7pxgytOGPAEI=
+github.com/go-corelibs/htmlcss v1.0.0/go.mod h1:BFrTSh0LpjFT8msF66aeE+PEMBDlGkdQD/gobi334Dc=
 github.com/go-corelibs/lang v0.1.0 h1:1wQz9qYf1LBlrDErWeEN2SzZEe44Mo79ReoAiVX57AU=
 github.com/go-corelibs/lang v0.1.0/go.mod h1:0mATqIpm+I3jtxk3WZsrYYZiXvGVBESZMEAoRDjJrZk=
 github.com/go-corelibs/maps v1.1.0 h1:LM07Xl18PLSwTyDsFjRVgQlANdhMcIBEP7l4772Mbkc=
@@ -91,8 +93,8 @@ github.com/go-corelibs/shasum v1.0.0 h1:MpG7FIEhGG5bjxT4bFr8cs/yWUL7o9zi06NYL+J7
 github.com/go-corelibs/shasum v1.0.0/go.mod h1:MglWtN/M2oxPVDS6G4ZS81EZru6SqxM0I/szSqkRcEY=
 github.com/go-corelibs/slices v1.3.0 h1:1czJgGhW/F2hRiCRat1O9R/OOaDWixFJwxXfb5rDOfw=
 github.com/go-corelibs/slices v1.3.0/go.mod h1:vdScCtnJXNqPRvERHAzV/6BvUb9G+1YVYioUkWe801c=
-github.com/go-corelibs/strings v1.1.1 h1:noBgP761v4O8UIGLRrWylbgYEYNEOLd0t22e1FxIctQ=
-github.com/go-corelibs/strings v1.1.1/go.mod h1:9mNooTBL4JeqZXMVyKTNnNrpowW/qOpQ+XHUW55uyb4=
+github.com/go-corelibs/strings v1.1.2 h1:5jPWF990ha/aCnCP3nbrgt+NAeL6Zb9GoNeOdhfIPzU=
+github.com/go-corelibs/strings v1.1.2/go.mod h1:HtIMm+88qr0PGZfS2tz8S+3qHtqElGa7xzuFpHZIy5A=
 github.com/go-corelibs/values v1.0.0 h1:abitnWKkhbYyVFZB0CSCiE75u+QFzSsmcaggzI2FaPs=
 github.com/go-corelibs/values v1.0.0/go.mod h1:iaLymMXupxaCMT8IuZC/gog9z6LwwAYvXT7EPO4xZjo=
 github.com/go-corelibs/x-text v0.14.1 h1:ii+NBlwjLJnBM5+Po0MHtuovycuIy0PehiN/gkqG9nI=
@@ -105,8 +107,8 @@ github.com/go-curses/term v1.2.2-gocurses.1 h1:wUi7qtaZQO9q7+YpX8nGBDoFJd7aWZeo2
 github.com/go-curses/term v1.2.2-gocurses.1/go.mod h1:ZuwRe9U+iLY2qTuhzg/kg0Pc9bZdfcJCtfHrjGvZtVA=
 github.com/go-curses/terminfo v1.1.0 h1:rZlQdmG63pueovR0Y9/aIv4X3pkuM5OAjoltuODC3x8=
 github.com/go-curses/terminfo v1.1.0/go.mod h1:3cAGarEfP6wdhHYmUI2xAx14cu+cfIIQYXehy2q/zUg=
-github.com/go-enjin/be v0.5.9 h1:+vwBqH9yJPouIgtAG5/H8dceY2C2fiQWU99NgqtTjHk=
-github.com/go-enjin/be v0.5.9/go.mod h1:LqbUi32erYan2Gl47bJwO7w3QVF+80ttIbl4sT6kAbk=
+github.com/go-enjin/be v0.5.10 h1:N02pJxJv+Vmsa7sxRdKDQ6o1hUEaruL9SBy9IPPVmzI=
+github.com/go-enjin/be v0.5.10/go.mod h1:HXaOyxk3mZWNWk4erSIAGyoETv5G1w7wSnRQzggfGSA=
 github.com/go-enjin/github-com-djherbis-times v0.0.0-20221101184323-aeef8854ee8a h1:Qr7FpRTxEBnNJtyYj6TyVPs12bn45xSLFkygcSby1g4=
 github.com/go-enjin/github-com-djherbis-times v0.0.0-20221101184323-aeef8854ee8a/go.mod h1:hId0+St26leJQkTRaFYATZHMGja4wrv0hzf5SwKs3hA=
 github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ7YPc=
