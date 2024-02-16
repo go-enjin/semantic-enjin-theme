@@ -4,7 +4,7 @@
     (eval "(%d * %d) + %d" .PageIndex .NumPerPage .ResultCount)
     }}
     {{ if eq .ResultCount .TotalFound }}
-        {{ $showing = (_ "all" /* used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' */ ) }}
+        {{ $showing = (_ "all" /* used for $showing, instead of 'Showing 1-10 of 10', displays as 'Showing all of 10' */) }}
     {{ end }}
 
     {{ if eq .ResultCount 0 }}

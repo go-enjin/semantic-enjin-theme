@@ -1,15 +1,15 @@
 {{ $isParent := (gt (len .MenuItem.SubMenu) 0) }}
-{{ $idThis := (printf "menu--%s" .MenuTag ) }}
+{{ $idThis := (printf "menu--%s" .MenuTag) }}
 {{ $idText := (printf ".menu%s.text" .MenuKey) }}
 {{ $idHref := (printf ".menu%s.href" .MenuKey) }}
 {{ $idIcon := (printf ".menu%s.icon" .MenuKey) }}
 {{ $idImage := (printf ".menu%s.image" .MenuKey) }}
 {{ $idImgAlt := (printf ".menu%s.img-alt" .MenuKey) }}
 {{ $idTarget := (printf ".menu%s.target" .MenuKey) }}
-{{ $idExpand := (printf "menu--%s--expand" .MenuTag ) }}
-{{ $nameExpand := (printf ".menu%s.expand" .MenuKey ) }}
-{{ $idExpandExtras := (printf "menu--%s--expand-extras" .MenuTag ) }}
-{{ $nameExpandExtras := (printf ".menu%s.expand-extras" .MenuKey ) }}
+{{ $idExpand := (printf "menu--%s--expand" .MenuTag) }}
+{{ $nameExpand := (printf ".menu%s.expand" .MenuKey) }}
+{{ $idExpandExtras := (printf "menu--%s--expand-extras" .MenuTag) }}
+{{ $nameExpandExtras := (printf ".menu%s.expand-extras" .MenuKey) }}
 <li class="edit-menu--list--item" id="{{ $idThis }}" data-menu-parent="{{ $isParent }}">
     <input type="checkbox" id="{{ $idExpand }}" name="{{ $nameExpand }}"
            style="display:none!important;"

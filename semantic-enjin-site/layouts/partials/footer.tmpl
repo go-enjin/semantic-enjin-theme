@@ -86,7 +86,7 @@
                           action="{{ $.EditorFeaturePath }}/{{ $.EditFSID }}/{{ $.EditLang }}/{{ $.EditPath }}">
                         <input type="hidden" name="nonce" value="{{ $nonce }}"/>
                         <input type="hidden" name="return" value="directory"/>
-                        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.BrowseInfo "InfoIdx" $idx "Idx" 0 "Action" $action )}}
+                        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.BrowseInfo "InfoIdx" $idx "Idx" 0 "Action" $action) }}
                     </form>
                 </li>
             {{ end }}

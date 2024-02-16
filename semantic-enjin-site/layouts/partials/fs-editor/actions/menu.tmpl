@@ -13,7 +13,7 @@
     {{ range $idx,$action := $.FileInfo.Actions }}
 
         {{ if lt $action.Order 10 }}
-            {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 0 "IconWithName" false "Idx" $idx "Action" $action )}}
+            {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 0 "IconWithName" false "Idx" $idx "Action" $action) }}
         {{ end }}
 
     {{ end }}
@@ -34,7 +34,7 @@
     </label>
     {{ range $idx,$action := $.FileInfo.Actions }}
 
-        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 1 "IconWithName" true "Idx" $idx "Action" $action )}}
+        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Info" $.FileInfo "InfoIdx" 1 "IconWithName" true "Idx" $idx "Action" $action) }}
 
     {{ end }}
 </div>

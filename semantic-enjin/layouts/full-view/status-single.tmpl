@@ -11,7 +11,7 @@
     {{ template "partials/header.tmpl" . }}
     <main>
         <div id="top"></div>
-      {{ template "partials/notices.tmpl" . }}
+        {{ template "partials/notices.tmpl" . }}
         {{ if isEmptyString .Content }}
             {{ template "partials/page/status.tmpl" . }}
         {{ else }}

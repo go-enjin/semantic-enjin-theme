@@ -11,7 +11,7 @@
                 {{ continue }}
             {{ end }}
             {{ $v := index $matter $key }}
-            {{ template "partials/fs-editor/page-editor/key-pair.tmpl" (dict $ "Depth" (add $depth 1) "ReadOnly" $readOnly "Language" $language "Key" $key "Value" $v )}}
+            {{ template "partials/fs-editor/page-editor/key-pair.tmpl" (dict $ "Depth" (add $depth 1) "ReadOnly" $readOnly "Language" $language "Key" $key "Value" $v) }}
         {{ end }}
     </ul>
 {{ end }}

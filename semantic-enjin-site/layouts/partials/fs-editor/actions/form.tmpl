@@ -5,7 +5,7 @@
     <input type="hidden" name="return" value="directory"/>
 
     {{ range $idx,$action := $.Info.Actions }}
-        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Inverted" true "Idx" $idx "Action" $action )}}
+        {{ template "partials/fs-editor/actions/field.tmpl" (dict $ "Inverted" true "Idx" $idx "Action" $action) }}
     {{ end }}
 
 </form>
