@@ -81,6 +81,7 @@
 @media screen and (max-width: 1199.98px) {
   [data-block-type] > .content {
     overflow-x: auto;
+    overflow-y: clip;
   }
 }
 

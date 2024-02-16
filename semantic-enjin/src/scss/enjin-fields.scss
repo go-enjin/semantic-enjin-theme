@@ -205,6 +205,7 @@ a.decorated[target='_blank']:after {
 .block > .content :not(nav,.carousel) > :is(ul,ol) {
   margin-top: 10px;
   margin-left: 34px;
+  margin-right: 0 !important;
 }
 
 :is(nav,.carousel) > :is(ul,ol) li {
@@ -307,8 +308,12 @@ a.decorated[target='_blank']:after {
 .block > .content code {
   display: block;
   overflow-x: auto;
+
+  max-width: 100%;
+
   padding: calc(var(--page--flex--gap) / 2) var(--page--flex--gap);
   padding-right: 0;
+
   color: var(--style--accent--fg);
   background: var(--style--accent--bg);
   font-size: var(--field--code--font-size);
@@ -430,8 +435,6 @@ body[data-page-format="md"] .block > .content code {
   border: 1px solid;
   display: flex;
   flex-direction: column;
-  max-height: 200px;
-  max-width: 200px;
 }
 
 .block > .content figure[data-field-figure-float='left'] {
@@ -457,14 +460,18 @@ body[data-page-format="md"] .block > .content code {
   margin-bottom: var(--page--flex--gap);
 }
 
-.block > .content figure > img {
+.block > .content figure > a {
+  text-align: center;
+}
+
+.block > .content figure img {
   width: 100%;
   height: auto;
   min-height: 100%;
   object-fit: contain;
 }
 
-.block > .content figure > figcaption {
+.block > .content figure figcaption {
   background: var(--style--fg);
   color: var(--style--bg);
   text-align: center;
