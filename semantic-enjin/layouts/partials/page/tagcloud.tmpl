@@ -1,0 +1,54 @@
+{{ $title := .Title }}
+{{ $desc := _ "Pages on this site can be tagged with one or more keywords. The following is a tag cloud of those words." }}
+{{ if .TagCloudWord }}
+    {{ $title = printf "Tag: %s" .TagCloudWord }}
+    {{ $desc = _ "Pages on this site can be tagged with one or more keywords. The following is a list of pages tagged with the word: %s." .TagCloudWord }}
+{{ end }}
+{{ renderContent "njn" (printf `[{
+  "type": "header",
+  "profile": "outer--inner",
+  "padding": "none",
+  "margins": "none",
+  "content": {
+    "footer": [{ "type": "p", "text": [%q] }]
+  }
+}]` $desc) }}
+
+{{ if .TagCloud }}
+
+    {{ renderContent "njn" `[{
+  "type": "tagcloud",
+  "profile": "outer--inner",
+  "padding": "top",
+  "margins": "none",
+  "content": {}
+}]` }}
+
+{{ else }}
+
+<article
+        class="block"
+        id="tag-cloud-pages"
+        data-block-tag="tag-cloud-pages"
+        data-block-type="content"
+        data-block-profile="outer--inner"
+        data-block-padding="both"
+        data-block-margins="none"
+>
+    <div class="content">
+        <section>
+            {{ if .TagCloudPages }}
+                <ul class="tagcloud-pages">
+                    {{ range $idx,$tag := .TagCloudPages }}
+                        <li><a href="{{ $tag.Url }}">{{ $tag.Title }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+                <p>{{ _ "no page tags found"}}</p>
+            {{ end }}
+
+        </section>
+    </div>
+</article>
+
+{{ end }}

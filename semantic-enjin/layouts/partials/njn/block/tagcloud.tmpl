@@ -1,0 +1,23 @@
+<!-- tagcloud block -->
+{{- template "partials/njn/block-open.tmpl" . -}}
+    <div class="content">
+        {{ template "partials/njn/block-header.tmpl" . }}
+        <section>
+            {{ if .TagCloud }}
+                <ul class="tagcloud">
+                    {{ range $idx,$tag := .TagCloud }}
+                        <li data-tagcloud-weight="{{ $tag.Weight }}"
+                            data-tagcloud-count="{{ $tag.Count }}"
+                        ><a href="{{ $tag.Link }}">{{ $tag.Word }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+                <p>{{ _ "no page tags found" }}</p>
+            {{ end }}
+        </section>
+        {{ template "partials/njn/block-footer.tmpl" . }}
+        {{ if .JumpTop }}
+            <a class="jump-top" href="#top">{{ _ "top" }}</a>
+        {{ end }}
+    </div>
+{{- template "partials/njn/block-close.tmpl" . -}}
