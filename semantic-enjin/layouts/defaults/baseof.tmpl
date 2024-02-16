@@ -12,6 +12,7 @@
     <main data-layout-view="defaults/baseof.tmpl">
       <div id="top"></div>
       {{ template "partials/notices.tmpl" . }}
+      {{ template "partials/breadcrumbs.tmpl" . }}
       {{ .Content }}
     </main>
     {{ template "partials/footer.tmpl" . }}

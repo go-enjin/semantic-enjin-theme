@@ -12,6 +12,7 @@
     <main data-layout-view="full-view/search-single.tmpl">
       <div id="top"></div>
       {{ template "partials/notices.tmpl" . }}
+      {{ template "partials/breadcrumbs.tmpl" . }}
       {{ if isEmptyString .Content }}
         {{ template "partials/page/search.tmpl" . }}
       {{ else }}

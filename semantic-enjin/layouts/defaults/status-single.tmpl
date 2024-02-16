@@ -12,6 +12,7 @@
     <main data-layout-view="defaults/status-single.tmpl">
         <div id="top"></div>
         {{ template "partials/notices.tmpl" . }}
+        {{ template "partials/breadcrumbs.tmpl" . }}
         {{ if isEmptyString .Content }}
             {{ template "partials/page/status.tmpl" . }}
         {{ else }}
