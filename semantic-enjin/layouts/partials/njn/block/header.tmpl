@@ -13,6 +13,9 @@
                 </a>
             {{ end }}
         </header>
+        {{ if not .Nav }}
+            {{ template "partials/njn/block-footer.tmpl" . }}
+        {{ end }}
     </div>
     {{ if .Nav }}
         <nav>
@@ -26,8 +29,8 @@
                 {{ end }}
             </ul>
         </nav>
+        {{ template "partials/njn/block-footer.tmpl" . }}
     {{ end }}
-    {{ template "partials/njn/block-footer.tmpl" . }}
     {{ if .JumpTop }}
         <a class="jump-top" href="#top">{{ _ "top" }}</a>
     {{ end }}
