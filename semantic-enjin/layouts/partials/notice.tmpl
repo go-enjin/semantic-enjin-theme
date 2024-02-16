@@ -10,7 +10,7 @@
         {{ if .Dismiss }}
             <input type="checkbox" name="dismiss-notice" title="{{ _ "dismiss notice" }}"/>
         {{ end }}
-        <details open>
+        <details{{ if not (boolVal "Closed" .) }} open{{ end }}>
             <summary>
                 {{ .Summary }}
                 {{ if and (.Actions) (gt (len .Actions) 0) }}
