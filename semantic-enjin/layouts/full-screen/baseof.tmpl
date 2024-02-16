@@ -8,7 +8,7 @@
           {{- if .Archetype }} data-page-archetype="{{ .Archetype }}"{{ end -}}
   >
     {{ featurePartials "body" "head" }}
-    <main>
+    <main data-layout-view="full-screen/baseof.tmpl">
       <div id="top"></div>
       {{ template "partials/notices.tmpl" . }}
       <article

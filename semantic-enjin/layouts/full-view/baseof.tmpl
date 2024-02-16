@@ -9,7 +9,7 @@
   >
     {{ featurePartials "body" "head" }}
     {{ template "partials/header.tmpl" . }}
-    <main>
+    <main data-layout-view="full-view/baseof.tmpl">
       <div id="top"></div>
       {{ template "partials/notices.tmpl" . }}
       {{ .Content }}
