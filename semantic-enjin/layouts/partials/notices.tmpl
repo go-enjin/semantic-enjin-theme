@@ -1,5 +1,34 @@
 {{ if gt (len .UserNotices) 0 }}
     <div id="user-notices">
+        {{ if boolVal "ShowErrors" . }}
+            {{ if .Theme.Err }}
+                {{ $notice := (dict
+                "Type" "error"
+                "Closed" true
+                "Summary" (printf "%q theme encountered an error!" .Theme.Name)
+                "Content" (makeSlice (printf "%v" .Theme.Err))
+                ) }}
+                {{ template "partials/notice.tmpl" $notice }}
+            {{ end }}
+            {{ if isValid "Errors" . }}
+                {{ range $idx,$err := .Errors }}
+                    {{ $notice := (dict
+                    "Type" "error"
+                    "Closed" true
+                    "Summary" (printf "%v" $err)
+                    ) }}
+                    {{ template "partials/notice.tmpl" $notice }}
+                {{ end }}
+            {{ end }}
+            {{ if isValid "Err" . }}
+                {{ $notice := (dict
+                "Type" "error"
+                "Closed" true
+                "Summary" (printf "%v" .Err)
+                ) }}
+                {{ template "partials/notice.tmpl" $notice }}
+            {{ end }}
+        {{ end }}
         {{ range $idx,$notice := .UserNotices }}
             {{ template "partials/notice.tmpl" $notice }}
         {{ end }}
