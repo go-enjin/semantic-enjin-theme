@@ -360,6 +360,13 @@
             "fuzzy": true
         },
         {
+            "id": "no page tags found",
+            "key": "no page tags found",
+            "message": "no page tags found",
+            "translation": "no page tags found",
+            "fuzzy": true
+        },
+        {
             "id": "page title heading deeplink",
             "key": "page title heading deeplink",
             "message": "page title heading deeplink",
@@ -482,6 +489,13 @@
             "key": "Sorry! The server has encountered an internal error.",
             "message": "Sorry! The server has encountered an internal error.",
             "translation": "Sorry! The server has encountered an internal error.",
+            "fuzzy": true
+        },
+        {
+            "id": "Home",
+            "key": "Home",
+            "message": "Home",
+            "translation": "Home",
             "fuzzy": true
         },
         {
