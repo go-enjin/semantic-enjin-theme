@@ -1,0 +1,29 @@
+{{- if .Theme.Context.Settings.Page.Breadcrumbs }}
+    <section class="block" id="breadcrumbs"
+             data-block-tag="breadcrumbs"
+             data-block-type="content"
+             data-block-profile="outer--inner"
+             data-block-padding="none"
+             data-block-margins="none"
+    >
+        <div class="content">
+            <section>
+                <ul class="breadcrumbs">
+                    {{ $url := "" }}
+                    {{ $list := splitString .Url "/" }}
+                    {{ $last := sub (len $list) 1 }}
+                    {{ range $idx,$segment := $list }}
+                        {{- if eq $idx 0 }}
+                            <li><a href="/" title="{{ _ "homepage" }}">{{ _ "Home"}}</a></li>
+                        {{- else if lt $idx $last -}}
+                            {{ $url = printf "%s/%s" $url $segment }}
+                            <li><a href="{{ $url }}" title="{{ _ "section" }}">{{ toSpacedCamel $segment }}</a></li>
+                        {{- else if ne $segment "" -}}
+                            <li><a href="{{ _permalink $.Permalink }}" title="{{ _ "this page" }}">{{ $.Title }}</a></li>
+                        {{- end }}
+                    {{- end }}
+                </ul>
+            </section>
+        </div>
+    </section>
+{{ end -}}
