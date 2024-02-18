@@ -8,7 +8,9 @@
                     {{ range $idx,$tag := .TagCloud }}
                         <li data-tagcloud-weight="{{ $tag.Weight }}"
                             data-tagcloud-count="{{ $tag.Count }}"
-                        ><a href="{{ $tag.Link }}">{{ $tag.Word }}</a></li>
+                        ><a href="{{ $tag.Link }}" title="{{ _ "click to view a list of pages tagged with %q" $tag.Word }}">
+                                {{- $tag.Word -}}
+                            </a></li>
                     {{ end }}
                 </ul>
             {{ else }}
