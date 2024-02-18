@@ -1,28 +1,21 @@
 {{ $title := .Title }}
-{{ $desc := _ "Pages on this site can be tagged with one or more keywords. The following is a tag cloud of those words." }}
+{{ $desc := _ "Tag Cloud" }}
 {{ if .TagCloudWord }}
     {{ $title = printf "Tag: %s" .TagCloudWord }}
-    {{ $desc = _ "Pages on this site can be tagged with one or more keywords. The following is a list of pages tagged with the word: %s." .TagCloudWord }}
+    {{ $desc = _ "Pages tagged with: %q" .TagCloudWord }}
 {{ end }}
-{{ renderContent "njn" (printf `[{
-  "type": "header",
+
+{{ if .TagCloud }}
+
+    {{ renderContent "njn" (printf `[{
+  "type": "tagcloud",
   "profile": "outer--inner",
   "padding": "none",
   "margins": "none",
   "content": {
-    "footer": [{ "type": "p", "text": [%q] }]
+    "header": [%q]
   }
-}]` $desc) }}
-
-{{ if .TagCloud }}
-
-    {{ renderContent "njn" `[{
-  "type": "tagcloud",
-  "profile": "outer--inner",
-  "padding": "top",
-  "margins": "none",
-  "content": {}
-}]` }}
+}]` $title) }}
 
 {{ else }}
 
@@ -36,6 +29,9 @@
         data-block-margins="none"
 >
     <div class="content">
+        <header>
+            <h2>{{ $desc }}</h2>
+        </header>
         <section>
             {{ if .TagCloudPages }}
                 <ul class="tagcloud-pages">
