@@ -8,12 +8,16 @@
 
   list-style-type: none;
 
+  margin: 0;
+  padding: 1rem 4rem;
+
+
   & > li {
 
 
     & a {
       min-width: 100px;
-      padding: 1rem;
+      padding: 10px 1rem;
 
       border-radius: 34px;
       border-bottom: 1px solid var(--color--highlight);
@@ -28,52 +32,53 @@
     }
 
 
+    &:is(:not([data-tagcloud-weight]),[data-tagcloud-weight="1"]),
     &:is(:not([data-tagcloud-weight]),[data-tagcloud-weight="1"]) a {
       font-size: 12px;
     }
 
+    &[data-tagcloud-weight="2"],
     &[data-tagcloud-weight="2"] a {
-      padding: 1.1rem;
       font-size: 14px;
     }
 
+    &[data-tagcloud-weight="3"],
     &[data-tagcloud-weight="3"] a {
-      padding: 1.2rem;
       font-size: 16px;
     }
 
+    &[data-tagcloud-weight="4"],
     &[data-tagcloud-weight="4"] a {
-      padding: 1.3rem;
       font-size: 18px;
     }
 
+    &[data-tagcloud-weight="5"],
     &[data-tagcloud-weight="5"] a {
-      padding: 1.5rem;
       font-size: 20px;
     }
 
+    &[data-tagcloud-weight="6"],
     &[data-tagcloud-weight="6"] a {
-      padding: 1.5rem;
       font-size: 22px;
     }
 
+    &[data-tagcloud-weight="7"],
     &[data-tagcloud-weight="7"] a {
-      padding: 1.75rem;
       font-size: 26px;
     }
 
+    &[data-tagcloud-weight="8"],
     &[data-tagcloud-weight="8"] a {
-      padding: 2rem;
       font-size: 30px;
     }
 
+    &[data-tagcloud-weight="9"],
     &[data-tagcloud-weight="9"] a {
-      padding: 2.25rem;
       font-size: 34px;
     }
 
+    &[data-tagcloud-weight="10"],
     &[data-tagcloud-weight="10"] a {
-      padding: 2.5rem;
       font-size: 42px;
     }
   }
