@@ -10,7 +10,7 @@
             <section>
                 <ul class="breadcrumbs">
                     {{ $url := "" }}
-                    {{ $list := splitString .Url "/" }}
+                    {{ $list := splitString .RequestArgv.Path "/" }}
                     {{ $last := sub (len $list) 1 }}
                     {{ range $idx,$segment := $list }}
                         {{- if eq $idx 0 }}
@@ -19,9 +19,18 @@
                             {{ $url = printf "%s/%s" $url $segment }}
                             <li><a href="{{ $url }}" title="{{ _ "section" }}">{{ toSpacedCamel $segment }}</a></li>
                         {{- else if ne $segment "" -}}
-                            <li><a href="{{ _permalink $.Permalink }}" title="{{ _ "this page" }}">{{ $.Title }}</a></li>
+                            {{ $url = printf "%s/%s" $url $segment }}
+                            <li><a href="{{ $url }}" title="{{ _ "page" }}">{{ $.Title }}</a></li>
                         {{- end }}
                     {{- end }}
+                    {{ if gt (len .RequestArgv.Argv) 0 }}
+                        {{ $argv := index .RequestArgv.Argv 0 }}
+                        {{ if gt (len $argv) 0 }}
+                            {{ $arg := index $argv 0 }}
+                            {{ $url = printf "%s/:%s" $.RequestArgv.Path $arg }}
+                            <li><a href="{{ $url }}" title="{{ _ "context" }}">:{{ $arg }}</a></li>
+                        {{ end }}
+                    {{ end }}
                 </ul>
             </section>
         </div>
