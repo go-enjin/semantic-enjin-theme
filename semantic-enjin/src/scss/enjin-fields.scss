@@ -202,18 +202,20 @@ a.decorated[target='_blank']:after {
 
 /* list fields */
 
-.block > .content :not(nav,.carousel) > :is(ul,ol) {
-  margin-top: 10px;
-  margin-left: 34px;
-  margin-right: 0 !important;
-}
+.block > .content {
+  & :not(nav,.carousel) > :is(ul,ol) {
+    margin-top: 10px;
+    margin-left: 34px;
+    margin-right: 0 !important;
 
-:is(nav,.carousel) > :is(ul,ol) li {
-  list-style: none;
-}
+    & :is(ul, ol) {
+      margin-top: 0;
+    }
+  }
 
-.block > .content :not(nav,.carousel) > :is(ul,ol) > li > :is(ul,ol) {
-  margin-top: 0;
+  & :is(nav,.carousel) > :is(ul,ol) li {
+    list-style: none;
+  }
 }
 
 .block > .content :not(nav,.carousel) > :is(ul,ol) > li::marker {
