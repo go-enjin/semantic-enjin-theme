@@ -136,6 +136,40 @@
             "fuzzy": true
         },
         {
+            "id": "Results",
+            "key": "Results",
+            "message": "Results",
+            "translation": "結果",
+            "translatorComment": "/* search page results heading */\n[from: layouts/partials/page/search.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Search",
+            "key": "Search",
+            "message": "Search",
+            "translation": "検索",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "Search error: {SiteSearchError}",
+            "key": "Search error: %[1]s",
+            "message": "Search error: %[1]s",
+            "translation": "検索エラー: %[1]s",
+            "translatorComment": "/* search error happened */\n[from: layouts/partials/page/search.tmpl]",
+            "placeholders": [
+                {
+                    "id": "SiteSearchError",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": ".SiteSearchError"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Search form error: {SearchError}",
             "key": "Search form error: %[1]s",
             "message": "Search form error: %[1]s",
@@ -151,6 +185,14 @@
                     "expr": ".SearchError"
                 }
             ],
+            "fuzzy": true
+        },
+        {
+            "id": "Select a filter",
+            "key": "Select a filter",
+            "message": "Select a filter",
+            "translation": "フィルターを選択してください",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
             "fuzzy": true
         },
         {
@@ -290,6 +332,14 @@
             "fuzzy": true
         },
         {
+            "id": "Site Search",
+            "key": "Site Search",
+            "message": "Site Search",
+            "translation": "サイト検索",
+            "translatorComment": "/* title heading of search page */\n[from: layouts/partials/page/search.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "Sorry! The server has encountered an internal error.",
             "key": "Sorry! The server has encountered an internal error.",
             "message": "Sorry! The server has encountered an internal error.",
@@ -356,10 +406,166 @@
             "fuzzy": true
         },
         {
+            "id": "close filter dropdown menu",
+            "key": "close filter dropdown menu",
+            "message": "close filter dropdown menu",
+            "translation": "フィルタードロップダウンメニューを閉じる",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close main menu",
+            "key": "close main menu",
+            "message": "close main menu",
+            "translation": "メインメニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close menu",
+            "key": "close menu",
+            "message": "close menu",
+            "translation": "メニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/menu/menu-controls.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close side menu",
+            "key": "close side menu",
+            "message": "close side menu",
+            "translation": "サイドメニューを閉じる",
+            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "close the search menu",
+            "key": "close the search menu",
+            "message": "close the search menu",
+            "translation": "検索メニューを閉じる",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "deeplink to {view} view",
+            "key": "deeplink to %[1]s view",
+            "message": "deeplink to %[1]s view",
+            "translation": "%[1]s ビューへのディープリンク",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "placeholders": [
+                {
+                    "id": "view",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "$view"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "go to card number {Num1}",
+            "key": "go to card number %[1]d",
+            "message": "go to card number %[1]d",
+            "translation": "カード番号%[1]dに移動",
+            "translatorComment": "/* move carousel to specific item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "placeholders": [
+                {
+                    "id": "Num1",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "("
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "go to the next card",
+            "key": "go to the next card",
+            "message": "go to the next card",
+            "translation": "次のカードに移動",
+            "translatorComment": "/* move carousel to next item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "go to the previous card",
+            "key": "go to the previous card",
+            "message": "go to the previous card",
+            "translation": "前のカードに移動",
+            "translatorComment": "/* move carousel to previous item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
+            "fuzzy": true
+        },
+        {
             "id": "no page tags found",
             "key": "no page tags found",
             "message": "no page tags found",
             "translation": "no page tags found",
+            "fuzzy": true
+        },
+        {
+            "id": "open filter dropdown menu",
+            "key": "open filter dropdown menu",
+            "message": "open filter dropdown menu",
+            "translation": "フィルタードロップダウンメニューを開く",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "open the search menu",
+            "key": "open the search menu",
+            "message": "open the search menu",
+            "translation": "検索メニューを開く",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "page thumbnail image placeholder",
+            "key": "page thumbnail image placeholder",
+            "message": "page thumbnail image placeholder",
+            "translation": "ページのサムネイル画像のプレースホルダー",
+            "translatorComment": "[from: layouts/partials/njn/block/index-view--profile.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "page title heading deeplink",
+            "key": "page title heading deeplink",
+            "message": "page title heading deeplink",
+            "translation": "ページタイトル見出しディープリンク",
+            "translatorComment": "/* deeplink to the page title header block */\n[from: layouts/partials/njn/block-header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "reset filters",
+            "key": "reset filters",
+            "message": "reset filters",
+            "translation": "フィルターをリセットする",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "search",
+            "key": "search",
+            "message": "search",
+            "translation": "検索",
+            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "site logo",
+            "key": "site logo",
+            "message": "site logo",
+            "translation": "サイトロゴ",
+            "translatorComment": "[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "thumbnail image",
+            "key": "thumbnail image",
+            "message": "thumbnail image",
+            "translation": "サムネイル画像",
+            "translatorComment": "[from: layouts/partials/njn/block/card-content.tmpl]",
             "fuzzy": true
         },
         {
@@ -368,6 +574,30 @@
             "message": "to this destination page",
             "translation": "to this destination page",
             "translatorComment": "[from: partials/page/redirect.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "toggle search",
+            "key": "toggle search",
+            "message": "toggle search",
+            "translation": "検索を切り替え",
+            "translatorComment": "/* screen reader only, show/hide search menu */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "toggle side menu",
+            "key": "toggle side menu",
+            "message": "toggle side menu",
+            "translation": "サイドメニューを切り替え",
+            "translatorComment": "/* screen reader only, show/hide side menu */\n[from: layouts/partials/header.tmpl]",
+            "fuzzy": true
+        },
+        {
+            "id": "top",
+            "key": "top",
+            "message": "top",
+            "translation": "top",
+            "translatorComment": "[from: layouts/defaults/single.html.tmpl, layouts/defaults/single.md.tmpl, layouts/defaults/single.org.tmpl, layouts/full-page/baseof.tmpl, layouts/full-screen/baseof.tmpl, layouts/partials/njn/block/carousel.tmpl, layouts/partials/njn/block/content.tmpl, layouts/partials/njn/block/header.tmpl, layouts/partials/njn/block/icon.tmpl, layouts/partials/njn/block/image.tmpl, layouts/partials/njn/block/index.tmpl, layouts/partials/njn/block/link-list.tmpl, layouts/partials/njn/block/notice.tmpl, layouts/partials/njn/block/pair.tmpl, layouts/partials/njn/block/sidebar.tmpl, layouts/partials/page/search.tmpl]",
             "fuzzy": true
         },
         {
@@ -392,236 +622,6 @@
                     "underlyingType": "num",
                     "argNum": 2,
                     "expr": ".View.TotalPages"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "top",
-            "key": "top",
-            "message": "top",
-            "translation": "top",
-            "translatorComment": "[from: layouts/defaults/single.html.tmpl, layouts/defaults/single.md.tmpl, layouts/defaults/single.org.tmpl, layouts/full-page/baseof.tmpl, layouts/full-screen/baseof.tmpl, layouts/partials/njn/block/carousel.tmpl, layouts/partials/njn/block/content.tmpl, layouts/partials/njn/block/header.tmpl, layouts/partials/njn/block/icon.tmpl, layouts/partials/njn/block/image.tmpl, layouts/partials/njn/block/index.tmpl, layouts/partials/njn/block/link-list.tmpl, layouts/partials/njn/block/notice.tmpl, layouts/partials/njn/block/pair.tmpl, layouts/partials/njn/block/sidebar.tmpl, layouts/partials/page/search.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "site logo",
-            "key": "site logo",
-            "message": "site logo",
-            "translation": "サイトロゴ",
-            "translatorComment": "[from: layouts/partials/header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "close side menu",
-            "key": "close side menu",
-            "message": "close side menu",
-            "translation": "サイドメニューを閉じる",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "close main menu",
-            "key": "close main menu",
-            "message": "close main menu",
-            "translation": "メインメニューを閉じる",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Search",
-            "key": "Search",
-            "message": "Search",
-            "translation": "検索",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/header.tmpl, layouts/partials/page/search.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "toggle search",
-            "key": "toggle search",
-            "message": "toggle search",
-            "translation": "検索を切り替え",
-            "translatorComment": "/* screen reader only, show/hide search menu */\n[from: layouts/partials/header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "toggle side menu",
-            "key": "toggle side menu",
-            "message": "toggle side menu",
-            "translation": "サイドメニューを切り替え",
-            "translatorComment": "/* screen reader only, show/hide side menu */\n[from: layouts/partials/header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "close menu",
-            "key": "close menu",
-            "message": "close menu",
-            "translation": "メニューを閉じる",
-            "translatorComment": "/* screen reader only */\n[from: layouts/partials/menu/menu-controls.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "page title heading deeplink",
-            "key": "page title heading deeplink",
-            "message": "page title heading deeplink",
-            "translation": "ページタイトル見出しディープリンク",
-            "translatorComment": "/* deeplink to the page title header block */\n[from: layouts/partials/njn/block-header.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "thumbnail image",
-            "key": "thumbnail image",
-            "message": "thumbnail image",
-            "translation": "サムネイル画像",
-            "translatorComment": "[from: layouts/partials/njn/block/card-content.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "go to the previous card",
-            "key": "go to the previous card",
-            "message": "go to the previous card",
-            "translation": "前のカードに移動",
-            "translatorComment": "/* move carousel to previous item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "go to the next card",
-            "key": "go to the next card",
-            "message": "go to the next card",
-            "translation": "次のカードに移動",
-            "translatorComment": "/* move carousel to next item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "go to card number {Num1}",
-            "key": "go to card number %[1]d",
-            "message": "go to card number %[1]d",
-            "translation": "カード番号%[1]dに移動",
-            "translatorComment": "/* move carousel to specific item */\n[from: layouts/partials/njn/block/carousel.tmpl]",
-            "placeholders": [
-                {
-                    "id": "Num1",
-                    "string": "%[1]d",
-                    "type": "int",
-                    "underlyingType": "int",
-                    "argNum": 1,
-                    "expr": "("
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "page thumbnail image placeholder",
-            "key": "page thumbnail image placeholder",
-            "message": "page thumbnail image placeholder",
-            "translation": "ページのサムネイル画像のプレースホルダー",
-            "translatorComment": "[from: layouts/partials/njn/block/index-view--profile.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "deeplink to {view} view",
-            "key": "deeplink to %[1]s view",
-            "message": "deeplink to %[1]s view",
-            "translation": "%[1]s ビューへのディープリンク",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "placeholders": [
-                {
-                    "id": "view",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "$view"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "open filter dropdown menu",
-            "key": "open filter dropdown menu",
-            "message": "open filter dropdown menu",
-            "translation": "フィルタードロップダウンメニューを開く",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Select a filter",
-            "key": "Select a filter",
-            "message": "Select a filter",
-            "translation": "フィルターを選択してください",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "close filter dropdown menu",
-            "key": "close filter dropdown menu",
-            "message": "close filter dropdown menu",
-            "translation": "フィルタードロップダウンメニューを閉じる",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "close the search menu",
-            "key": "close the search menu",
-            "message": "close the search menu",
-            "translation": "検索メニューを閉じる",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "search",
-            "key": "search",
-            "message": "search",
-            "translation": "検索",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "open the search menu",
-            "key": "open the search menu",
-            "message": "open the search menu",
-            "translation": "検索メニューを開く",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "reset filters",
-            "key": "reset filters",
-            "message": "reset filters",
-            "translation": "フィルターをリセットする",
-            "translatorComment": "[from: layouts/partials/njn/block/index.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Site Search",
-            "key": "Site Search",
-            "message": "Site Search",
-            "translation": "サイト検索",
-            "translatorComment": "/* title heading of search page */\n[from: layouts/partials/page/search.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Results",
-            "key": "Results",
-            "message": "Results",
-            "translation": "結果",
-            "translatorComment": "/* search page results heading */\n[from: layouts/partials/page/search.tmpl]",
-            "fuzzy": true
-        },
-        {
-            "id": "Search error: {SiteSearchError}",
-            "key": "Search error: %[1]s",
-            "message": "Search error: %[1]s",
-            "translation": "検索エラー: %[1]s",
-            "translatorComment": "/* search error happened */\n[from: layouts/partials/page/search.tmpl]",
-            "placeholders": [
-                {
-                    "id": "SiteSearchError",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": ".SiteSearchError"
                 }
             ],
             "fuzzy": true
