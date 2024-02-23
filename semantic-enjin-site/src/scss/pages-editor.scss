@@ -521,6 +521,26 @@ main[data-layout-view^="fs-editor/"] {
                 background-color: var(--color--highlight);
               }
 
+              & .field--controls--string-slice,
+              & .field--controls--url-path-slice {
+                & > button[name="submit"] {
+                  width: 100%;
+                }
+
+                & > ul {
+                  list-style-type: none;
+
+                  margin: 10px 0 0 0;
+
+                  & > li {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                    justify-content: start;
+                  }
+                }
+              }
+
 
               & .field--controls--string-map {
 
