@@ -46,7 +46,7 @@ main[data-layout-view^="fs-editor/"] {
     & > li {
 
       &.fs-separator {
-        font-weight: bold;
+        font-weight: normal;
         font-family: var(--page--monospace--font-family);
         font-size: 2rem;
         opacity: 0.34;
