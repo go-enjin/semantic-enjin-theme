@@ -1,4 +1,4 @@
-<li id="menu-item-{{- add $.Idx 1 -}}" class="menu-item{{ if $.Item.SubMenu }} parent{{ end }}{{ if $.Item.Href }} linked{{ end }}{{- if and (ne $.Item.Image "") (ne $.Item.ImgAlt "") }} with-image{{ end }}">
+<li id="menu-item-{{- add $.Idx 1 -}}"{{ if $.Item.Hidden }} data-menu-hidden="{{ $.Item.Hidden }}"{{ end }} class="menu-item{{ if $.Item.SubMenu }} parent{{ end }}{{ if $.Item.Href }} linked{{ end }}{{- if and (ne $.Item.Image "") (ne $.Item.ImgAlt "") }} with-image{{ end }}">
     {{- if not $.Item.SubMenu }}
         {{- template "partials/menu/menu-label-link.tmpl" $.Item -}}
     {{- else }}
@@ -13,7 +13,7 @@
                 <li class="top-item--image" style="--menu-item--image: url({{ $.Item.Image }});" title="{{ $.Item.ImgAlt }}"></li>
             {{- end -}}
             {{- range $j, $sub_item := $.Item.SubMenu }}
-                <li id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}" class="menu-item{{ if gt (len $sub_item.SubMenu) 0 }} parent{{ end }}{{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") }} with-image{{ end }}">
+                <li id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}"{{ if $sub_item.Hidden }} data-menu-hidden="{{ $sub_item.Hidden }}"{{ end }} class="menu-item{{ if gt (len $sub_item.SubMenu) 0 }} parent{{ end }}{{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") }} with-image{{ end }}">
                     {{- if and (ne $sub_item.Image "") (ne $sub_item.ImgAlt "") -}}
                         <div class="menu-item--image" style="--menu-item--image: url({{ $sub_item.Image }});" title="{{ $sub_item.ImgAlt }}"></div>
                     {{- end -}}
@@ -28,7 +28,7 @@
                         </label>
                         <ol class="sub-menu">
                             {{- range $k, $sub_sub_item := $sub_item.SubMenu }}
-                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}">
+                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}" {{ if $sub_sub_item.Hidden }} data-menu-hidden="{{ $sub_sub_item.Hidden }}"{{ end }}>
                                     {{- if not $sub_sub_item.SubMenu }}
                                         {{- template "partials/menu/menu-label-link.tmpl" $sub_sub_item -}}
                                     {{- else }}
@@ -40,7 +40,7 @@
                                         </label>
                                         <ol class="sub-menu">
                                             {{- range $l, $sub_sub_sub_item := $sub_sub_item.SubMenu }}
-                                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}">
+                                                <li class="menu-item" id="menu-item-{{- add $.Idx 1 -}}-{{- add $j 1 -}}-{{- add $k 1 -}}-{{- add $l 1 -}}"{{ if $sub_sub_sub_item.Hidden }} data-menu-hidden="{{ $sub_sub_sub_item.Hidden }}"{{ end }}>
                                                     {{- template "partials/menu/menu-label-link.tmpl" $sub_sub_sub_item -}}
                                                 </li>
                                             {{- end }}
