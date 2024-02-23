@@ -59,6 +59,7 @@
                        value="{{ .MenuItem.Text }}"
                        placeholder="{{ _ "(text)" }}"
                        title="{{ _ "menu item label" }}"
+                       spellcheck="true"
                        {{ if .ReadOnly }}disabled{{ end }}
                 />
                 <input type="text" class="edit-menu--list--item--href" id="{{ $idHref }}" name="{{ $idHref }}"
