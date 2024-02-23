@@ -81,7 +81,7 @@
             <input type="text" name="{{ $key }}~dst-name" class="dialog--fields--dst-name"
                    placeholder="{{ _ "(required file name)" }}"
                    title="{{ _ "destination file name" }}"
-                   value="{{ $.FileInfo.FileName }}"
+                   value="{{ $.FileInfo.Base }}"
             />
             <span class="dialog--fields--page-fmt">{{ printf ".%s" (parsePageFmt $.FileInfo.File) }}</span>
         </div>
