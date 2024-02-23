@@ -37,6 +37,28 @@ main[data-layout-view^="fs-editor/"] {
         top: 0;
       }
 
+      & th {
+
+        &.file-browser--header--indicators {
+          width: 34px;
+
+          &::before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: "!";
+          }
+        }
+
+        &.file-browser--header--name {
+          text-align: left;
+          padding-left: 1rem;
+        }
+
+      }
+
     }
 
     & tbody {
@@ -96,6 +118,11 @@ main[data-layout-view^="fs-editor/"] {
             }
           }
 
+          &.file-browser--entry--indicators {
+            width: 34px;
+            text-align: center;
+          }
+
           &.file-editor--entry--name {
             display: inline-flex;
             flex-wrap: nowrap;
@@ -104,20 +131,15 @@ main[data-layout-view^="fs-editor/"] {
 
             width: 100%;
 
-            & > .file-browser--indicators {
-              &, &:hover, &:focus, &:active, &:visited {
-                width: auto;
-              }
-            }
-
             & > .file-browser--directory,
             & > .file-browser--file {
               &, &:hover, &:focus, &:active, &:visited {
                 width: 100%;
 
                 text-align: left;
-                padding-left: 2em;
-                padding-right: 2em;
+                white-space: nowrap;
+                padding-left: 1rem;
+                padding-right: 0;
               }
             }
           }
