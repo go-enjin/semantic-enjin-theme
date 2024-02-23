@@ -6,6 +6,7 @@
         {{ $error = printf "%v" $err }}
     {{ end }}
 {{ end }}
+{{ $matterKey := printf ".matter.%s" .Field.Key }}
 
 
 {{ printf `
@@ -206,6 +207,36 @@
                 </button>
             </div>
         {{ end }}
+
+    {{ else if or (eq .Field.Format "string-slice") (eq .Field.Format "url-path-slice") }}
+
+        <div class="field--controls--{{ .Field.Format }}">
+            <button class="primary fit" type="submit" name="submit"
+                    value="change.~append{{ $matterKey }}"
+                    {{- if $readOnly }} disabled{{ end -}}>
+                <i class="fa-solid fa-plus"></i>
+                <span>{{ _ "Add" }}</span>
+            </button>
+            <ul>
+                {{ range $idx,$item := $value }}
+                    <li>
+                        {{ $t := typeOf $item }}
+                        {{ $itemKey := printf "%s[%d]" $matterKey $idx }}
+                        <input class="{{ $.Field.Format }} list item" type="text"
+                               name="{{ $itemKey }}"
+                               value="{{ printf "%v" $item }}"
+                               title="{{ _ "redirect path" }}"
+                               {{ if $readOnly }}disabled{{ end }}
+                        />
+                        <button class="danger invert fit" type="submit" name="submit"
+                                value="change.~delete{{ $itemKey }}"
+                                title="{{ _ "delete" }}"
+                                {{ if $readOnly }}disabled{{ end }}
+                        ><i class="fa-solid fa-delete-left"></i></button>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
 
     {{ else }}
 
