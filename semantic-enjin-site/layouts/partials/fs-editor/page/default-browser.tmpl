@@ -39,6 +39,9 @@
 
 {{- $nonce := Nonce "file-editor-form" -}}
 
+{{- $hasIndicators := false -}}
+{{- range $idx,$info := .EditFiles }}{{ if gt (len $info.Indicators) 0 }}{{ $hasIndicators = true }}{{ break }}{{ end }}{{ end }}
+
 <article class="block"
          id="browser"
          data-block-tag="browser"
@@ -54,10 +57,11 @@
             <table class="file-browser">
                 <thead>
                 <tr>
-                    <th>{{ _ "Name" }}</th>
-                    <th>{{ _ "Type" }}</th>
-                    <th>{{ _ "Date" }}</th>
-                    <th>{{ _ "Actions" }}</th>
+                    {{ if $hasIndicators }}<th class="file-browser--header--indicators"></th>{{ end }}
+                    <th class="file-browser--header--name">{{ _ "Name" }}</th>
+                    <th class="file-browser--header--type">{{ _ "Type" }}</th>
+                    <th class="file-browser--header--date">{{ _ "Date" }}</th>
+                    <th class="file-browser--header--actions">{{ _ "Actions" }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,6 +73,19 @@
                         {{ if not $mimeType }}{{ $mimeType = (_ "(unknown)") }}{{ end }}
 
                         <tr>
+                            {{ if $hasIndicators }}
+                                <td class="file-browser--entry--indicators">
+                                    {{ if gt (len $info.Indicators) 0 }}
+                                        <a class="file-browser--indicators"
+                                           href="{{ $.EditorFeaturePath }}/{{ $info.EditFilePath }}">
+                                            {{ range $idx,$note := $info.Indicators }}
+                                                <i class="indicator {{ $note.Icon }}" title="{{ $note.Message }}"></i>
+                                            {{ end }}
+                                        </a>
+                                    {{ end }}
+                                </td>
+                            {{ end }}
+
                             <td class="file-editor--entry--name">
                                 {{ if eq $mimeType "inode/directory" }}
                                     <a class="file-browser--directory"
@@ -76,15 +93,6 @@
                                 {{ else }}
                                     <a class="file-browser--file"
                                        href="{{ $.EditorFeaturePath }}/{{ $info.EditFilePath }}">{{ $info.Name }}</a>
-                                {{ end }}
-
-                                {{ if gt (len $info.Indicators) 0 }}
-                                    <a class="file-browser--indicators"
-                                       href="{{ $.EditorFeaturePath }}/{{ $info.EditFilePath }}">
-                                        {{ range $idx,$note := $info.Indicators }}
-                                            <i class="indicator {{ $note.Icon }}" title="{{ $note.Message }}"></i>
-                                        {{ end }}
-                                    </a>
                                 {{ end }}
                             </td>
 
@@ -147,7 +155,7 @@
                 {{ else }}
 
                     <tr>
-                        <td class="no-files-found" colspan="5">
+                        <td class="no-files-found" colspan="{{ if $hasIndicators }}5{{ else }}4{{ end }}">
                             {{ _ "no files found" }}
                         </td>
                     </tr>
