@@ -1,19 +1,24 @@
 {{- if .Href -}}
     {{- if eq .Lang "" }}
-        <a class="label child{{ if .Active }} active{{ end }}" href="{{- .Href -}}" title="{{ .Text }}">
+        <a class="label child{{ if .Active }} active{{ end }}" href="{{- .Href -}}"
+                {{- if .Title   }} title="{{ .Title }}"{{- else if .Text }} title="{{ .Text }}"{{ end }}
+                {{- if .Target }} target="{{ .Target }}"{{ end }}>
             {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
                 <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
             {{- end -}}
         </a>
     {{- else }}
-        <a class="label child{{ if .Active }} active{{ end }}" href="{{- __ .Lang .Href -}}" title="{{ .Text }}">
+        <a class="label child{{ if .Active }} active{{ end }}" href="{{- __ .Lang .Href -}}"
+                {{- if .Title   }} title="{{ .Title }}"{{- else if .Text }} title="{{ .Text }}"{{ end }}
+                {{ if .Target }} target="{{ .Target }}"{{ end }}>
             {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
                 <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
             {{- end -}}
         </a>
     {{- end }}
 {{- else -}}
-    <span class="label child{{ if .Active }} active{{ end }}" title="{{ .Text }}">
+    <span class="label child{{ if .Active }} active{{ end }}"
+        {{- if .Title   }} title="{{ .Title }}"{{- else if .Text }} title="{{ .Text }}"{{ end }}>
         {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
             <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
         {{- end -}}
