@@ -1,10 +1,10 @@
-<input type="checkbox" name="side-menu" id="side-menu"/>
-{{- if .SiteSearchPath }}
-    <input type="checkbox" name="search-menu" id="search-menu"/>
-{{- end }}
-{{ $noActiveItems := true }}
+<input type="checkbox" name="side-menu" id="side-menu" style="display:none;"/>
+{{ if .SiteSearchPath -}}
+    <input type="checkbox" name="search-menu" id="search-menu" style="display:none;"/>
+{{ end -}}
+{{- $noActiveItems := true -}}
 
-<input type="radio" name="main-menu" id="menu-close" checked/>
+<input type="radio" name="main-menu" id="menu-close" style="display:none;" checked/>
 
 {{- if .SiteMenu.MainMenu -}}
     {{- template "partials/menu/menu-inputs.tmpl" (dict $ "MenuKey" "main-menu" "Menu" .SiteMenu.MainMenu ) -}}
