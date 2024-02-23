@@ -3,8 +3,10 @@
 {{ $idText := (printf ".menu%s.text" .MenuKey) }}
 {{ $idHref := (printf ".menu%s.href" .MenuKey) }}
 {{ $idIcon := (printf ".menu%s.icon" .MenuKey) }}
+{{ $idTitle := (printf ".menu%s.title" .MenuKey) }}
 {{ $idImage := (printf ".menu%s.image" .MenuKey) }}
 {{ $idImgAlt := (printf ".menu%s.img-alt" .MenuKey) }}
+{{ $idHidden := (printf ".menu%s.hidden" .MenuKey) }}
 {{ $idTarget := (printf ".menu%s.target" .MenuKey) }}
 {{ $idExpand := (printf "menu--%s--expand" .MenuTag) }}
 {{ $nameExpand := (printf ".menu%s.expand" .MenuKey) }}
@@ -79,26 +81,49 @@
             </div>
 
             <div class="edit-menu--list--item--extras">
-                <input type="text" class="edit-menu--list--item--icon" id="{{ $idIcon }}" name="{{ $idIcon }}"
-                       value="{{ .MenuItem.Icon }}"
-                       placeholder="{{ _ "(icon class)" }}"
-                       title="{{ _ "menu item icon class (optional)" }}"
-                       spellcheck="false"
-                       {{ if .ReadOnly }}disabled{{ end }}
-                />
-                <input type="text" class="edit-menu--list--item--image" id="{{ $idImage }}" name="{{ $idImage }}"
-                       value="{{ .MenuItem.Image }}"
-                       placeholder="{{ _ "(image url)" }}"
-                       title="{{ _ "menu item image url (optional)" }}"
-                       spellcheck="false"
-                       {{ if .ReadOnly }}disabled{{ end }}
-                />
-                <input type="text" class="edit-menu--list--item--img-alt" id="{{ $idImgAlt }}" name="{{ $idImgAlt }}"
-                       value="{{ .MenuItem.ImgAlt }}"
-                       placeholder="{{ _ "(image alt text)" }}"
-                       title="{{ _ "menu item image alt text (optional)" }}"
-                       {{ if .ReadOnly }}disabled{{ end }}
-                />
+                <div class="edit-menu--list--item--title">
+                    <input type="text" id="{{ $idTitle }}" name="{{ $idTitle }}"
+                           value="{{ .MenuItem.Title }}"
+                           placeholder="{{ _ "(tooltip)" }}"
+                           title="{{ _ "menu item title (optional, by default uses the link text)" }}"
+                           spellcheck="true"
+                           {{ if .ReadOnly }}disabled{{ end }}
+                    />
+                </div>
+                <div class="edit-menu--list--item--icon">
+                    <input type="text" id="{{ $idIcon }}" name="{{ $idIcon }}"
+                           value="{{ .MenuItem.Icon }}"
+                           placeholder="{{ _ "(icon class)" }}"
+                           title="{{ _ "menu item icon class (optional)" }}"
+                           spellcheck="false"
+                           {{ if .ReadOnly }}disabled{{ end }}
+                    />
+                </div>
+                <div class="edit-menu--list--item--image">
+                    <input type="text" id="{{ $idImage }}" name="{{ $idImage }}"
+                           value="{{ .MenuItem.Image }}"
+                           placeholder="{{ _ "(image url)" }}"
+                           title="{{ _ "menu item image url (optional)" }}"
+                           spellcheck="false"
+                           {{ if .ReadOnly }}disabled{{ end }}
+                    />
+                </div>
+                <div class="edit-menu--list--item--img-alt">
+                    <input type="text" id="{{ $idImgAlt }}" name="{{ $idImgAlt }}"
+                           value="{{ .MenuItem.ImgAlt }}"
+                           placeholder="{{ _ "(image alt text)" }}"
+                           title="{{ _ "menu item image alt text (optional)" }}"
+                           {{ if .ReadOnly }}disabled{{ end }}
+                    />
+                </div>
+                <div class="edit-menu--list--item--hidden">
+                    <input type="text" id="{{ $idHidden }}" name="{{ $idHidden }}"
+                           value="{{ .MenuItem.Hidden }}"
+                           placeholder="{{ _ "(menu mega side slide)" }}"
+                           title="{{ _ "hide this menu item from specific menu types (optional)" }}"
+                           {{ if .ReadOnly }}disabled{{ end }}
+                    />
+                </div>
                 <select class="edit-menu--list--item--target" id="{{ $idTarget }}" name="{{ $idTarget }}"
                        title="{{ _ "menu item image target (optional)" }}"
                        {{ if .ReadOnly }}disabled{{ end }}
