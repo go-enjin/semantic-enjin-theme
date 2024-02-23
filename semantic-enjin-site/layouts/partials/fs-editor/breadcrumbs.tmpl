@@ -3,13 +3,13 @@
         <a href="{{ .EditorFeaturePath }}">{{ .EditorFeatureKey }}</a>
     </li>
     {{ if .EditFSID }}
-        <li class="breadcrumb fs-separator"><span>&gt;</span></li>
+        <li class="breadcrumb fs-separator"><span>/</span></li>
         <li class="breadcrumb fsid"
             title="{{ _ "go to the %[1]s %[2]s filesystem" .EditorFeatureKey .EditFSID }}">
             <a href="{{ .EditorFeaturePath }}/{{ .EditFSID }}">{{ .EditFSID }}</a>
         </li>
         {{ if or .EditCode .EditLang }}
-            <li class="breadcrumb fs-separator"><span>://</span></li>
+            <li class="breadcrumb fs-separator"><span>/</span></li>
             {{ $code := .EditLang }}
             {{ if .EditCode }}
                 {{ $code = .EditCode }}
