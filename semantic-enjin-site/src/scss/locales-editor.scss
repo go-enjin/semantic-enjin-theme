@@ -111,6 +111,11 @@ main[data-layout-view^="fs-editor/"] {
             align-items: center;
             justify-content: stretch;
 
+            & > p {
+              inline-size: 100%;
+              overflow-wrap: anywhere;
+            }
+
           }
 
         }
