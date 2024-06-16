@@ -159,7 +159,7 @@
                                     {{ range $idx,$jumpToIndex := iterate -1 $numSplit $.SiteSearchPages }}
                                         {{ if or (le $jumpToIndex 0) (ge $jumpToIndex (sub $.SiteSearchPages 1)) }}{{ continue }}{{ end }}
                                         {{ $jumpToPage := add $jumpToIndex 1 }}
-                                        <li><a href="{{ $.SiteSearchPath }}/{{ $.SiteSearchSize }}/{{ $jumpToIndex }}" title="{{ _ "go to page %[1]d" $jumpToPage }}">{{ $jumpToPage }}</a></li>
+                                        <li><a href="{{ $.SiteSearchPath }}/:{{ $.SiteSearchQuery | escapeUrlPath }}/{{ $.SiteSearchSize }}/{{ $jumpToIndex }}" title="{{ _ "go to page %[1]d" $jumpToPage }}">{{ $jumpToPage }}</a></li>
                                     {{ end }}
                                 </ul>
                             {{ end }}
