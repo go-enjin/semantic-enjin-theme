@@ -12,8 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 @media screen and (min-width: 1199.99px) {
+
+  #side-menu:checked ~ .masthead[data-desktop-style="side"] {
+    & [data-menu-hidden~="side-opened"] {
+      display: none !important;
+    }
+  }
+
+  #side-menu:not(:checked) ~ .masthead[data-desktop-style="side"] {
+    & [data-menu-hidden~="side-closed"] {
+      display: none !important;
+    }
+  }
+
+  .masthead .menus[data-desktop-style='side'] [data-menu-hidden~="side"] {
+    display: none !important;
+  }
 
   /* side-menu states */
 

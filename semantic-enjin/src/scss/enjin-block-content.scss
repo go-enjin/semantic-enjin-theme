@@ -1,7 +1,7 @@
 :root {
   --block--content--monospace--font-family: var(--page--monospace--font-family);
   --block--content--footnote--font-family: var(--page--content--font-family);
-  --block--content--footnote--font-size:   11px;
+  --block--content--footnote--font-size: 11px;
 }
 
 
@@ -23,18 +23,18 @@
 [data-block-type='content'] > .content > :is(section,footer) a.footnote:active,
 [data-block-type='content'] > .content > :is(section,footer) a.footnote:hover,
 [data-block-type='content'] > .content > :is(section,footer) a.footnote {
-  color:            var(--style--accent--fg);
+  color: var(--style--accent--fg);
   background-color: var(--style--accent--bg);
-  font-family:      var(--block--content--monospace--font-family);
+  font-family: var(--block--content--monospace--font-family);
 }
 
 [data-block-type='content'] > .content > footer .footnotes {
-  padding:     var(--page--flex--gap);
-  font-size:   var(--block--content--footnote--font-size);
+  padding: var(--page--flex--gap);
+  font-size: var(--block--content--footnote--font-size);
   font-family: var(--block--content--footnote--font-family);
 }
 
 [data-block-type='content'] > .content > footer .footnotes > q:first-of-type {
-  font-weight: bold;
+  font-weight: normal;
   font-family: var(--block--content--monospace--font-family);
 }

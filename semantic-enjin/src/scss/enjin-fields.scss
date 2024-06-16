@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: var(--page--heading--font-family);
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 h1, .h1 {
@@ -179,7 +179,7 @@ a.decorated[target='_blank']:after {
 
 .block > .content dl > dt {
   display: inline-block;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .block > .content dl > dd {
@@ -210,6 +210,10 @@ a.decorated[target='_blank']:after {
 
     & :is(ul, ol) {
       margin-top: 0;
+    }
+
+    & > li {
+      margin-top: var(--page--flex--gap--sm);
     }
   }
 
@@ -304,7 +308,7 @@ a.decorated[target='_blank']:after {
   --field--code--font-family: var(--page--monospace--font-family);
   --field--code--font-size: 12px;
   --field--code--line-height: 16px;
-  --field--code--font-weight: bold;
+  --field--code--font-weight: normal;
 }
 
 .block > .content code {
@@ -353,11 +357,12 @@ body[data-page-format="md"] .block > .content code {
   line-height: var(--field--code--line-height);
   padding: 0 0 0 var(--page--flex--gap--sm);
   border-left: 1px solid var(--style--accent--fg);
+  font-family: var(--field--code--font-family);
 }
 
 .block > .content :not(p) > code.decorated ol > li::marker {
   color: var(--style--accent--fg);
-  font-weight: bold;
+  font-weight: normal;
   content: counter(list-item) " ";
   margin-right: 10px;
 }
@@ -371,7 +376,7 @@ body[data-page-format="md"] .block > .content code {
 
 .block > .content :not(p) > code.decorated ol > li:hover::marker {
   color: var(--style--accent--fg);
-  font-weight: bold;
+  font-weight: normal;
   content: counter(list-item) " ";
   margin-right: 10px;
 }
@@ -490,7 +495,7 @@ body[data-page-format="md"] .block > .content code {
 /* kbd */
 
 .block > .content kbd {
-  font-weight: bold;
+  font-weight: normal;
   font-family: var(--page--monospace--font-family);
   text-transform: uppercase;
   border: 1px solid;

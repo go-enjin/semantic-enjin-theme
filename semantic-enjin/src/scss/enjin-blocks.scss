@@ -54,9 +54,11 @@
   width: 100%;
   scroll-snap-align: start;
   scroll-margin: calc(
-          (var(--page--masthead--full-height)
-          +
-          (var(--main--block--margins) * 2))
+          (
+            var(--page--masthead--full-height)
+            +
+            (var(--main--block--margins) * 2)
+          )
           * -1
   ) 0 0 0;
 }

@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 @media screen and (min-width: 1199.99px) {
 
+  .masthead .menus[data-desktop-style='menu'] [data-menu-hidden~="menu"] {
+    display: none !important;
+  }
 
   #menu-close:not(:checked) ~ .masthead .menus[data-desktop-style='menu'] #menu-close--label {
     display: block;

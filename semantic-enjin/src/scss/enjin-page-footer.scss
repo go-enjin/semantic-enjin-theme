@@ -26,6 +26,7 @@ body > footer a {
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
+  list-style-type: none;
   padding-left: var(--page--column--padding);
   padding-right: var(--page--column--padding);
 }
@@ -35,8 +36,8 @@ body > footer a {
 }
 
 #primary--footer > ul > li > :is(a,span) {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 #primary--footer > ul ul {
@@ -44,6 +45,7 @@ body > footer a {
   flex-direction: column;
   flex-basis: 30%;
   margin-top: 10px;
+  list-style-type: none;
 }
 
 #primary--footer > ul ul li {
@@ -66,6 +68,8 @@ body > footer a {
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: var(--page--flex--gap--sm);
+
+  list-style-type: none;
 }
 
 #secondary--footer #copyright {

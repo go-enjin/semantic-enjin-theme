@@ -18,11 +18,11 @@
 
 [data-block-type='sidebar'] > .content {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
-  gap:            var(--page--flex--gap);
-  width:          var(--block--sidebar--content--width);
+  gap: var(--page--flex--gap);
+  width: var(--block--sidebar--content--width);
   flex-direction: var(--block--sidebar--content--flex-direction);
 }
 
@@ -39,14 +39,14 @@
 
 [data-block-type='sidebar'] > .content > .aside > aside {
   display: flex;
-  width:          var(--block--sidebar--content--aside--width);
+  width: var(--block--sidebar--content--aside--width);
   flex-direction: var(--block--sidebar--content--aside--flex-direction);
 }
 
 [data-block-type='sidebar'][data-sidebar-sticky='true'] > .content > .aside > aside {
   position: sticky;
-  top:            var(--page--masthead--full-height);
-  gap:            var(--block--sidebar--content--aside--gap);
+  top: var(--page--masthead--full-height);
+  gap: var(--block--sidebar--content--aside--gap);
 }
 
 [data-block-type='sidebar'] > .content > .aside > aside > section {

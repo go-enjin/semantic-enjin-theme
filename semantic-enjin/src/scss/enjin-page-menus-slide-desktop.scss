@@ -12,27 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-/*
-
-header.masthead[data-desktop-style="slide"] {
-    display: inline-flex;
-    position: relative;
-}
-
-header[data-desktop-style="slide"] + main[data-layout-view] {
-    display: inline-block;
-    width: calc(100% - 81px);
-}
-
-header.masthead[data-desktop-style="slide"] > .banner > .menus {
-    align-items: center;
-    height: 100%;
-}
-
-*/
-
 @media screen and (min-width: 1199.99px) {
+
+  #side-menu:checked ~ .masthead[data-desktop-style="slide"] {
+    & [data-menu-hidden~="slide-opened"] {
+      display: none !important;
+    }
+  }
+
+  #side-menu:not(:checked) ~ .masthead[data-desktop-style="slide"] {
+    & [data-menu-hidden~="slide-closed"] {
+      display: none !important;
+    }
+  }
+
+  .masthead .menus[data-desktop-style="slide"] [data-menu-hidden~="slide"] {
+    display: none !important;
+  }
+
 
   /* main footer adjustments */
 
@@ -92,7 +89,8 @@ header.masthead[data-desktop-style="slide"] > .banner > .menus {
       background: var(--secondary--fg);
 
       & input {
-        width: 80%;
+        width: 64%;
+        margin-left: 5%;
       }
 
     }
@@ -563,7 +561,7 @@ header.masthead[data-desktop-style="slide"] > .banner > .menus {
                 }
 
                 & > span,
-                & > a > span, {
+                & > a > span {
                   & > i + span {
                     display: none;
                   }
@@ -595,7 +593,7 @@ header.masthead[data-desktop-style="slide"] > .banner > .menus {
                     overflow: hidden;
 
                     & > span,
-                    & > a > span, {
+                    & > a > span {
                       & > i + span {
                         display: none;
                       }
