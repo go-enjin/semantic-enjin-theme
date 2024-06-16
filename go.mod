@@ -1,6 +1,6 @@
 module github.com/go-enjin/semantic-enjin-theme
 
-go 1.21.6
+go 1.22.4
 
 require github.com/go-enjin/be v0.5.12
 
