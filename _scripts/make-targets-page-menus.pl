@@ -46,7 +46,7 @@ for (my $i=1; $i<=TOP_LEVEL; $i++) {
   }
 
   print join(",\n", @display);
-  print "{display:flex;}\n";
+  print "{display: flex;}\n";
 }
 
 #:
@@ -69,7 +69,7 @@ for (my $i=1; $i<=TOP_LEVEL; $i++) {
   }
 
   print join(",\n", @content);
-  print "{content:var(--icon--opened--content);};\n";
+  print "{content: var(--icon--opened--content);};\n";
 }
 
 #:
@@ -99,7 +99,7 @@ for (my $i=1; $i<=TOP_LEVEL; $i++) {
   }
 
   print join(",\n", @colours);
-  print "{color:var(--page--masthead--bg);background:var(--page--masthead--fg);}\n";
+  print "{color: var(--page--masthead--bg);background: var(--page--masthead--fg);}\n";
 }
 
 exit(0);
