@@ -31,10 +31,6 @@ homepage = "https://go-enjin.org/"
     page.stylesheets = ["/css/semantic-enjin-site.css"]
 
 [semantic.style]
-    page.heading.font-family = "'Source Sans Pro', sans-serif"
-    page.content.font-family = "'Source Serif Pro', serif"
-    page.monospace.font-family = "monospace"
-    page.dropcap.font-family = "'Source Sans Pro', sans-serif"
     color.working = "#708090"
     color.recover = "#1e90ff"
     page.scrollbar.fg = "#d0d1d2"
