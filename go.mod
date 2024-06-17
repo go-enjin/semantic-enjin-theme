@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.22.4
 
-require github.com/go-enjin/be v0.7.0
+require github.com/go-enjin/be v0.7.1
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
