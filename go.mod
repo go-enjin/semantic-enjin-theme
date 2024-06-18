@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.22.4
 
-require github.com/go-enjin/be v0.7.1
+require github.com/go-enjin/be v0.7.2
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
@@ -45,7 +45,7 @@ require (
 	github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.4 // indirect
 	github.com/gdamore/encoding v1.0.1 // indirect
-	github.com/go-chi/chi/v5 v5.0.12 // indirect
+	github.com/go-chi/chi/v5 v5.0.13 // indirect
 	github.com/go-corelibs/context v0.1.0 // indirect
 	github.com/go-corelibs/enjinql v0.1.0 // indirect
 	github.com/go-corelibs/fmtstr v1.2.0 // indirect
@@ -57,13 +57,13 @@ require (
 	github.com/go-corelibs/path v1.4.2 // indirect
 	github.com/go-corelibs/regexps v1.2.0 // indirect
 	github.com/go-corelibs/runes v1.1.0 // indirect
-	github.com/go-corelibs/rxp v0.10.0 // indirect
+	github.com/go-corelibs/rxp v0.10.1 // indirect
 	github.com/go-corelibs/shasum v1.1.1 // indirect
 	github.com/go-corelibs/slices v1.6.2 // indirect
 	github.com/go-corelibs/strings v1.9.1 // indirect
 	github.com/go-corelibs/tmplstr v1.0.1 // indirect
 	github.com/go-corelibs/values v1.2.1 // indirect
-	github.com/go-corelibs/x-sync v0.1.0 // indirect
+	github.com/go-corelibs/x-sync v0.1.1 // indirect
 	github.com/go-corelibs/x-text v0.14.2 // indirect
 	github.com/go-curses/cdk v0.5.23 // indirect
 	github.com/go-curses/ctk v0.5.14 // indirect
