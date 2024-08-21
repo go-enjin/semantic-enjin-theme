@@ -2,7 +2,7 @@ module github.com/go-enjin/semantic-enjin-theme
 
 go 1.22.6
 
-require github.com/go-enjin/be v0.7.4
+require github.com/go-enjin/be v0.7.5
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
@@ -110,7 +110,7 @@ require (
 	github.com/spkg/zipfs v0.7.1 // indirect
 	github.com/tdewolff/parse/v2 v2.7.15 // indirect
 	github.com/tg123/go-htpasswd v1.2.2 // indirect
-	github.com/urfave/cli/v2 v2.27.3 // indirect
+	github.com/urfave/cli/v2 v2.27.4 // indirect
 	github.com/weppos/publicsuffix-go v0.30.2 // indirect
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
