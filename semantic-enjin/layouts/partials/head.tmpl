@@ -68,12 +68,12 @@
         {{- range $idx,$class := .Theme.FontawesomeClasses -}}
             {{- with $link := (index $.Theme.FontawesomeLinks $class) -}}
                 {{- if eq $link "" -}}
-                    <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.2.0-web/css/%s.css" $class) }}"/>
+                    <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.7.2-web/css/%s.css" $class) }}"/>
                 {{ else -}}
                     <link rel="stylesheet" href="{{ fsUrl $link }}"/>
                 {{ end -}}
             {{ else }}
-                <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.2.0-web/css/%s.css" $class) }}"/>
+                <link rel="stylesheet" href="{{ fsUrl (printf "/fontawesome-free-6.7.2-web/css/%s.css" $class) }}"/>
             {{- end -}}
         {{- end -}}
     {{- end }}
