@@ -1,6 +1,7 @@
 <option
-{{- if .Value }} value="{{ .Value }}"{{- end -}}
-{{- elementAttributes . -}}
->
-{{- template "partials/njn/field-list.tmpl" .Text -}}
+            {{ if .Value }} value="{{ .Value }}"{{ end
+}}{{
+ elementAttributes . }}
+          >{{
+ template "partials/njn/field-list.tmpl" .Text }}
 </option>

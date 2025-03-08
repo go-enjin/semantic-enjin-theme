@@ -1,6 +1,14 @@
-{{ elementOpen . }}
-{{- if .Summary }}
-    <summary>{{ template "partials/njn/field-list.tmpl" .Summary }}</summary>
-{{- end -}}
-{{- if .Text }}{{ template "partials/njn/field-list.tmpl" .Text }}{{ end -}}
-{{ elementClose . }}
+{{ elementOpen .
+}}{{
+ if .Summary }}
+  <summary>{{
+ template "partials/njn/field-list.tmpl" .Summary }}</summary>{{
+ end
+}}{{
+ if .Text
+}}{{
+ template "partials/njn/field-list.tmpl" .Text
+}}{{
+ end
+}}{{
+ elementClose . }}

@@ -1,8 +1,13 @@
-{{ elementOpen . }}
-{{ if .Sources -}}
-    {{- range $source := .Sources }}
-        <source srcset="{{ fsUrl $source.Srcset }}" media="{{ $source.Media }}"/>
-    {{- end -}}
-{{- end }}
-{{ template "partials/njn/field-switch.tmpl" .Default }}
-{{ elementClose . }}
+{{ elementOpen .
+}}{{
+ if .Sources
+}}{{
+ range $source := .Sources }}
+    <source srcset="{{ fsUrl $source.Srcset }}" media="{{ $source.Media }}"/>{{
+ end
+}}{{
+ end
+}}{{
+ template "partials/njn/field-switch.tmpl" .Default
+}}{{
+ elementClose . }}

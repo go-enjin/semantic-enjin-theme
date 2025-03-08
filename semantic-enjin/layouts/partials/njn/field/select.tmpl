@@ -1,6 +1,10 @@
-{{ elementOpen . }}
-{{ if .Placeholder }}
-    <option>{{ template "partials/njn/field-list.tmpl" .Placeholder }}</option>
-{{ end }}
-{{ template "partials/njn/field-list.tmpl" .Options }}
-{{ elementClose . }}
+{{ elementOpen .
+}}{{
+ if .Placeholder }}
+  <option>{{
+ template "partials/njn/field-list.tmpl" .Placeholder }}</option>{{
+ end
+}}{{
+ template "partials/njn/field-list.tmpl" .Options
+}}{{
+ elementClose . }}
