@@ -73,15 +73,12 @@
     min-width: var(--page--menus--mega--min-width);
   }
 
-  .masthead .menus[data-desktop-style="mega"] nav li :is(label, .label) {
-    display: inline-block;
-    min-width: var(--page--menus--mega--min-width);
-    text-align: center;
-    vertical-align: middle;
-    height: 34px;
-    font-size: 14px;
-    line-height: 34px;
-    cursor: pointer;
+  .masthead {
+    & > .banner > .menus[data-desktop-style="mega"] > nav {
+      & :is(ol, ul, .sub-menu) > li.menu-item > :is(label, .label):not(.close) {
+        min-width: var(--page--menus--mega--min-width);
+      }
+    }
   }
 
   .masthead .menus[data-desktop-style="mega"] nav li label.close {
