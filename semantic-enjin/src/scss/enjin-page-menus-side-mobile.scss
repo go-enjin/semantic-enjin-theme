@@ -13,7 +13,6 @@
 // limitations under the License.
 
 @media screen and (max-width: 1199.99px) {
-
   #side-menu:checked ~ .masthead[data-mobile-style="side"] {
     & [data-menu-hidden~="side-opened"] {
       display: none !important;
@@ -26,21 +25,31 @@
     }
   }
 
-  .masthead .menus[data-mobile-style='side'] [data-menu-hidden~="side"] {
+  .masthead .menus[data-mobile-style="side"] [data-menu-hidden~="side"] {
     display: none !important;
   }
 
   /* side-menu states */
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] #menu-close--label {
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #menu-close--label {
     display: none;
   }
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] #side-close--label {
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #side-close--label {
     display: block;
   }
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] .controls .search {
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    .controls
+    .search {
     display: block;
     position: fixed;
     top: 0;
@@ -55,7 +64,12 @@
     color: var(--primary--fg);
   }
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] .controls .search form {
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    .controls
+    .search
+    form {
     width: 100%;
     height: 100%;
     display: inline-flex;
@@ -67,16 +81,29 @@
       width: 77%;
       margin-left: 3%;
 
-      &:focus, &:focus-within, &:active {
+      &:focus,
+      &:focus-within,
+      &:active {
         background-color: var(--color--highlight);
       }
     }
 
-    & :is(.indicator,.button,button,input[type="button"],input[type="submit"],input[type="reset"]) {
+    &
+      :is(
+        .indicator,
+        .button,
+        button,
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"]
+      ) {
       color: var(--style--fg);
       background-color: transparent;
 
-      &:hover, &:focus, &:focus-within, &:active {
+      &:hover,
+      &:focus,
+      &:focus-within,
+      &:active {
         & i {
           color: var(--page--masthead--bg);
           background-color: transparent;
@@ -85,18 +112,33 @@
     }
   }
 
-
-  #side-menu:not(:checked) ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .closed,
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .opened {
+  #side-menu:not(:checked)
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #side-menu--label
+    .closed,
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #side-menu--label
+    .opened {
     display: inline-block;
   }
 
-  #side-menu:not(:checked) ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .opened,
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] #side-menu--label .closed {
+  #side-menu:not(:checked)
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #side-menu--label
+    .opened,
+  #side-menu:checked
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    #side-menu--label
+    .closed {
     display: none;
   }
 
-  .masthead .menus[data-mobile-style='side'] nav .menu-item label.close {
+  .masthead .menus[data-mobile-style="side"] nav .menu-item label.close {
     display: none;
     position: absolute;
     top: 0;
@@ -112,35 +154,40 @@
     z-index: var(--z--menus--sub-menus);
   }
 
-  .masthead .menus[data-mobile-style='side'] nav li label.close {
+  .masthead .menus[data-mobile-style="side"] nav li label.close {
     height: 28px;
 
-    &:hover, &:active, &:focus {
-
+    &:hover,
+    &:active,
+    &:focus {
       background-color: var(--page--masthead--fg);
 
       opacity: 0.34;
-
     }
   }
 
-  .masthead .menus[data-mobile-style='side'] nav .menu-item .label:hover,
-  .masthead .menus[data-mobile-style='side'] nav .menu-item label a:hover {
+  .masthead .menus[data-mobile-style="side"] nav .menu-item .label:hover,
+  .masthead .menus[data-mobile-style="side"] nav .menu-item label a:hover {
     text-decoration: underline;
-    opacity: 1.0;
+    opacity: 1;
   }
 
-  .masthead .menus[data-mobile-style='side'] nav > :is(ul,ol) > .menu-item .sub-menu {
+  .masthead
+    .menus[data-mobile-style="side"]
+    nav
+    > :is(ul, ol)
+    > .menu-item
+    .sub-menu {
     display: none;
     flex-direction: column;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls > div * {
+  .masthead .menus[data-mobile-style="side"] > .controls > div * {
     cursor: pointer;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls > div,
-  .masthead .menus[data-mobile-style='side'] > .controls > div.search button {
+  .masthead .menus[data-mobile-style="side"] > .controls > div,
+  .masthead .menus[data-mobile-style="side"] > .controls > div.search button {
     display: inline-flex;
     height: 34px;
     width: 44px;
@@ -153,13 +200,13 @@
     justify-content: space-around;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls div.search form {
+  .masthead .menus[data-mobile-style="side"] > .controls div.search form {
     display: inline-flex;
     align-items: center;
     background: var(--secondary--fg);
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls #search-menu--label {
+  .masthead .menus[data-mobile-style="side"] > .controls #search-menu--label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -168,12 +215,12 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls #search-menu--label i {
+  .masthead .menus[data-mobile-style="side"] > .controls #search-menu--label i {
     display: block;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls .search input,
-  .masthead .menus[data-mobile-style='side'] > .controls .search button {
+  .masthead .menus[data-mobile-style="side"] > .controls .search input,
+  .masthead .menus[data-mobile-style="side"] > .controls .search button {
     display: inline-block;
     position: relative;
     background: var(--primary--bg);
@@ -181,12 +228,20 @@
     border: none;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls .search input[name='query'] {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > .controls
+    .search
+    input[name="query"] {
     height: 24px;
     padding: 5px 10px;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls .search button[type='submit'] {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > .controls
+    .search
+    button[type="submit"] {
     font-size: 18px;
     display: inline-flex;
     align-items: center;
@@ -194,23 +249,38 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls .search button[type='submit']:hover {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > .controls
+    .search
+    button[type="submit"]:hover {
     background: var(--secondary--bg);
     color: var(--secondary--fg);
   }
 
-  .masthead .menus:is([data-mobile-style='menu'],[data-mobile-style='mega']) > .controls .side-menu--toggle,
-  .masthead .menus[data-mobile-style='side'] nav,
-  .masthead .menus[data-mobile-style='side'] > .controls .search,
-  .masthead .menus[data-mobile-style='side'] > .controls .search--toggle {
+  .masthead
+    .menus:is([data-mobile-style="menu"], [data-mobile-style="mega"])
+    > .controls
+    .side-menu--toggle,
+  .masthead .menus[data-mobile-style="side"] nav,
+  .masthead .menus[data-mobile-style="side"] > .controls .search,
+  .masthead .menus[data-mobile-style="side"] > .controls .search--toggle {
     display: none;
   }
 
-  .masthead .menus[data-mobile-style='side'] > .controls .side-menu--toggle {
-    display: inline-block;
+  .masthead .menus[data-mobile-style="side"] > .controls .side-menu--toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    & label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
   }
 
-  .masthead .menus[data-mobile-style='side'] nav {
+  .masthead .menus[data-mobile-style="side"] nav {
     --style--bg: var(--secondary--bg);
     --style--fg: var(--secondary--fg);
     background: var(--secondary--bg);
@@ -233,24 +303,34 @@
     overflow-y: auto;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol),
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li,
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li label {
+  .masthead .menus[data-mobile-style="side"] > nav > :is(ul, ol),
+  .masthead .menus[data-mobile-style="side"] > nav > :is(ul, ol) li,
+  .masthead .menus[data-mobile-style="side"] > nav > :is(ul, ol) li label {
     display: block;
     width: 100%;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li {
+  .masthead .menus[data-mobile-style="side"] > nav > :is(ul, ol) li {
     padding: 10px 0 0 10px;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li :is(label,.label).close {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    li
+    :is(label, .label).close {
     display: none;
     margin-top: 10px;
     margin-left: 10px;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li :is(label,.label) {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    li
+    :is(label, .label) {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -265,8 +345,19 @@
     line-height: 16px;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li :is(label,.label):is(:hover,:active,:focus,:focus-within,.active),
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) li :is(label,.label):is(:hover,:active,:focus,:focus-within,.active) a {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    li
+    :is(label, .label):is(:hover, :active, :focus, :focus-within, .active),
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    li
+    :is(label, .label):is(:hover, :active, :focus, :focus-within, .active)
+    a {
     color: var(--style--bg);
     background-color: var(--style--fg);
 
@@ -275,37 +366,56 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-mobile-style='side'] nav a:focus,
-  .masthead .menus[data-mobile-style='side'] nav a:visited,
-  .masthead .menus[data-mobile-style='side'] nav a:active,
-  .masthead .menus[data-mobile-style='side'] nav a:hover,
-  .masthead .menus[data-mobile-style='side'] nav a {
+  .masthead .menus[data-mobile-style="side"] nav a:focus,
+  .masthead .menus[data-mobile-style="side"] nav a:visited,
+  .masthead .menus[data-mobile-style="side"] nav a:active,
+  .masthead .menus[data-mobile-style="side"] nav a:hover,
+  .masthead .menus[data-mobile-style="side"] nav a {
     color: var(--style--fg);
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) > li > .parent::after {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    > li
+    > .parent::after {
     display: none !important;
   }
 
-  .masthead .menus[data-mobile-style='side'] > nav > :is(ul,ol) > li > :is(ul,ol) {
+  .masthead
+    .menus[data-mobile-style="side"]
+    > nav
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol).active {
     display: flex !important;
   }
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] {
+  #side-menu:checked ~ .masthead .menus[data-mobile-style="side"] {
     z-index: var(--z--page--overlay);
   }
 
   /* search-menu states */
 
-  #side-menu:checked ~ .masthead .menus[data-mobile-style='side'] nav {
+  #side-menu:checked ~ .masthead .menus[data-mobile-style="side"] nav {
     display: inline-block;
   }
 
-  #side-menu:checked ~ .masthead .menus:is([data-mobile-style='menu'],[data-mobile-style='mega']) nav li label.close,
-  #side-menu:not(:checked) ~ .masthead .menus[data-mobile-style='side'] nav li label.close {
+  #side-menu:checked
+    ~ .masthead
+    .menus:is([data-mobile-style="menu"], [data-mobile-style="mega"])
+    nav
+    li
+    label.close,
+  #side-menu:not(:checked)
+    ~ .masthead
+    .menus[data-mobile-style="side"]
+    nav
+    li
+    label.close {
     display: none;
   }
-
 }
 
 /* end media screen max-width 1199.99px */

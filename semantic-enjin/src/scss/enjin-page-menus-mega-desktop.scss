@@ -13,16 +13,18 @@
 // limitations under the License.
 
 @media screen and (min-width: 1199.99px) {
-
-  .masthead .menus[data-desktop-style='mega'] [data-menu-hidden~="mega"] {
+  .masthead .menus[data-desktop-style="mega"] [data-menu-hidden~="mega"] {
     display: none !important;
   }
 
-  #menu-close:not(:checked) ~ .masthead .menus[data-desktop-style='mega'] #menu-close--label {
+  #menu-close:not(:checked)
+    ~ .masthead
+    .menus[data-desktop-style="mega"]
+    #menu-close--label {
     display: block;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav :is(ul,ol) {
+  .masthead .menus[data-desktop-style="mega"] nav :is(ul, ol) {
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -32,33 +34,46 @@
     color: var(--secondary--fg);
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) li :is(ul,ol),
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) li :is(ul,ol) li :is(ul,ol) {
+  .masthead .menus[data-desktop-style="mega"] nav > :is(ul, ol) li :is(ul, ol),
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    li
+    :is(ul, ol)
+    li
+    :is(ul, ol) {
     flex-direction: column;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) li :is(ul,ol) {
+  .masthead .menus[data-desktop-style="mega"] nav > :is(ul, ol) li :is(ul, ol) {
     display: none;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li {
+  .masthead .menus[data-desktop-style="mega"] nav > :is(ul, ol) > li {
     display: inline-block;
     position: relative;
     height: 34px;
     border-right: 1px solid var(--secondary--fg);
     font-size: 14px;
     line-height: 14px;
-    min-width: 150px;
+    min-width: var(--page--menus--mega--min-width);
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li :is(ul,ol) li {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    :is(ul, ol)
+    li {
     border-right: none;
-    min-width: 150px;
+    min-width: var(--page--menus--mega--min-width);
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav li :is(label,.label) {
+  .masthead .menus[data-desktop-style="mega"] nav li :is(label, .label) {
     display: inline-block;
-    min-width: 150px;
+    min-width: var(--page--menus--mega--min-width);
     text-align: center;
     vertical-align: middle;
     height: 34px;
@@ -67,7 +82,7 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav li label.close {
+  .masthead .menus[data-desktop-style="mega"] nav li label.close {
     display: none;
     position: absolute;
     top: 0;
@@ -83,21 +98,31 @@
     z-index: var(--z--menus--sub-menus);
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav li .label:hover,
-  .masthead .menus[data-desktop-style='mega'] nav li label a:hover {
+  .masthead .menus[data-desktop-style="mega"] nav li .label:hover,
+  .masthead .menus[data-desktop-style="mega"] nav li label a:hover {
     text-decoration: underline;
-    opacity: 1.0;
+    opacity: 1;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav li label:hover a,
-  .masthead .menus[data-desktop-style='mega'] nav li :is(label,.label):hover,
-  .masthead .menus[data-desktop-style='mega'] nav li :is(label,.label).active,
-  .masthead .menus[data-desktop-style='mega'] nav li :is(label,.label).active a {
+  .masthead .menus[data-desktop-style="mega"] nav li label:hover a,
+  .masthead .menus[data-desktop-style="mega"] nav li :is(label, .label):hover,
+  .masthead .menus[data-desktop-style="mega"] nav li :is(label, .label).active,
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    li
+    :is(label, .label).active
+    a {
     color: var(--primary--fg);
     background: var(--primary--bg);
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li :is(ul,ol) {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    :is(ul, ol) {
     position: fixed;
     top: var(--page--masthead--full-height);
     left: 0;
@@ -111,12 +136,26 @@
     min-height: 180px;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li > :is(ul,ol) > li > :is(ul,ol) {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol) {
     display: flex;
     flex-direction: column;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li > :is(ul,ol) li :is(ul,ol) {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol)
+    li
+    :is(ul, ol) {
     //  display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -137,9 +176,14 @@
     border-bottom: none;
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li > :is(ul,ol) > li {
-
-    & > :is(label,.label) {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol)
+    > li {
+    & > :is(label, .label) {
       border-bottom: 2px solid var(--style--bg);
     }
 
@@ -147,7 +191,7 @@
       content: none !important;
     }
 
-    & > :is(ul,ol) li {
+    & > :is(ul, ol) li {
       border-left: 2px solid var(--style--bg);
 
       &:last-of-type {
@@ -156,20 +200,31 @@
     }
   }
 
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li :is(ul,ol) li {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    :is(ul, ol)
+    li {
     position: relative;
     height: auto;
   }
-  .masthead .menus[data-desktop-style='mega'] nav > :is(ul,ol) > li > :is(ul,ol) {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    nav
+    > :is(ul, ol)
+    > li
+    > :is(ul, ol) {
     justify-content: space-evenly;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls > div * {
+  .masthead .menus[data-desktop-style="mega"] > .controls > div * {
     cursor: pointer;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls > div,
-  .masthead .menus[data-desktop-style='mega'] > .controls > div.search button {
+  .masthead .menus[data-desktop-style="mega"] > .controls > div,
+  .masthead .menus[data-desktop-style="mega"] > .controls > div.search button {
     display: inline-flex;
     height: 34px;
     width: 44px;
@@ -182,17 +237,17 @@
     justify-content: space-around;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls div.search {
+  .masthead .menus[data-desktop-style="mega"] > .controls div.search {
     width: 100%;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls div.search form {
+  .masthead .menus[data-desktop-style="mega"] > .controls div.search form {
     display: inline-flex;
     align-items: center;
     background: var(--secondary--fg);
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls #search-menu--label {
+  .masthead .menus[data-desktop-style="mega"] > .controls #search-menu--label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -201,12 +256,16 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls #search-menu--label i {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    > .controls
+    #search-menu--label
+    i {
     display: block;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls .search input,
-  .masthead .menus[data-desktop-style='mega'] > .controls .search button {
+  .masthead .menus[data-desktop-style="mega"] > .controls .search input,
+  .masthead .menus[data-desktop-style="mega"] > .controls .search button {
     display: inline-block;
     position: relative;
     background: var(--primary--bg);
@@ -214,12 +273,20 @@
     border: none;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls .search input[name='query'] {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    > .controls
+    .search
+    input[name="query"] {
     height: 24px;
     padding: 5px 10px;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls .search button[type='submit'] {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    > .controls
+    .search
+    button[type="submit"] {
     font-size: 18px;
     display: inline-flex;
     align-items: center;
@@ -227,7 +294,11 @@
     cursor: pointer;
   }
 
-  .masthead .menus[data-desktop-style='mega'] > .controls .search button[type='submit']:hover {
+  .masthead
+    .menus[data-desktop-style="mega"]
+    > .controls
+    .search
+    button[type="submit"]:hover {
     background: var(--secondary--bg);
     color: var(--secondary--fg);
   }
@@ -236,20 +307,15 @@
 
   .masthead {
     & > .banner {
-
-      & > .menus[data-desktop-style='mega'] {
+      & > .menus[data-desktop-style="mega"] {
         & > nav {
-          & > :is(ul,ol) {
-
+          & > :is(ul, ol) {
             & > li {
-
               & > .sub-menu {
-
                 & > li {
-
                   &,
-                  & > :is(label,.label),
-                  & > :is(label,.label) a {
+                  & > :is(label, .label),
+                  & > :is(label, .label) a {
                     color: var(--page--masthead--bg);
                     background-color: var(--page--masthead--fg);
                   }
@@ -275,7 +341,6 @@
                     //opacity: 0.77;
                   }
 
-
                   &.with-image {
                     margin-left: 77px;
                     overflow: visible;
@@ -296,7 +361,6 @@
                       background-position: center;
                       border-radius: 5px 0 0 5px;
                     }
-
                   }
                 }
               }
@@ -304,10 +368,8 @@
           }
         }
       }
-
     }
   }
-
 }
 
 /* end media screen min-width 1199.99px */
