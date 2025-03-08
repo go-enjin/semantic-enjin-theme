@@ -1,24 +1,28 @@
-<ul>
-    {{ range $idx,$page := .Results }}
-        <li>
-            {{ if $page.Context.ThumbnailUrl -}}
-                {{- template "partials/common/img.tmpl" (dict $
-                "Src" (fsUrl $page.Context.ThumbnailUrl)
-                "Alt" $page.Context.ThumbnailAlt
-                ) -}}
-            {{ else }}
-                {{- template "partials/common/img.tmpl" (dict $
-                "Src" (fsUrl "/media/transparent--resting.png")
-                "Alt" (_ "page thumbnail image placeholder")
-                ) -}}
-            {{- end }}
-            <div>
-                <a class="decorated" href="{{ __ $page.Language $page.Url }}">
-                    <span>{{ $page.Title }}</span>{{ if $page.Context.ReadingMinutes }}
-                    <span>{{ $page.Context.ReadingMinutes }}</span>{{ end }}
-                </a>
-                {{ if $page.Description }}<p>{{ $page.Description }}</p>{{ end }}
-            </div>
-        </li>
-    {{ end }}
+<ul class="index-view--profile">
+  {{ range $idx,$page := .Results }}
+    <li>
+      <a href="{{ __ $page.Language $page.Url }}">
+        {{ if not $.ThisView.NoThumbnails }}
+          {{ if $page.Context.ThumbnailUrl -}}
+            {{- template "partials/common/img.tmpl" (dict $
+              "Src" (fsUrl $page.Context.ThumbnailUrl)
+              "Alt" $page.Context.ThumbnailAlt
+            ) -}}
+          {{ else }}
+            {{- template "partials/common/img.tmpl" (dict $
+              "Src" (fsUrl "/media/transparent--resting.png")
+              "Alt" (_ "page thumbnail image placeholder")
+            ) -}}
+          {{- end }}
+        {{- end }}
+        <div>
+          <div class="decorated" href="{{ __ $page.Language $page.Url }}">
+            <span>{{ $page.Title }}</span>{{ if $page.Context.ReadingMinutes }}
+              <span>{{ $page.Context.ReadingMinutes }}</span>{{ end }}
+          </div>
+          {{ if $page.Description }}<p>{{ $page.Description }}</p>{{ end }}
+        </div>
+      </a>
+    </li>
+  {{ end }}
 </ul>

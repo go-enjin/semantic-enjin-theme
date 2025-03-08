@@ -1,172 +1,202 @@
 <!-- index block -->
 <section {{- template "partials/njn/block-attributes.tmpl" . -}}>
-    <div class="content">
-        {{ template "partials/njn/block-header.tmpl" . }}
-        <section>
-            {{ if or (gt (len .Views) 1) (.Views.HasFilters) }}
-                {{ range $idx,$view := .Views }}
-                    <div class="anchor" id="{{ $.Tag }}-{{ $view.Key }}" data-view="{{ $idx }}"
-                         data-view-present="{{ $view.Present }}" data-view-count="{{ len $.Views }}"></div>
-                {{ end }}
-                <nav>
-                    {{ if gt (len .Views) 1 }}
-                        <ul class="index-views">
-                            {{ range $idx,$view := .Views }}
-                                <li data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
-                                    <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ _ $view.Label }}</a>
-                                    <a class="deeplink" href="{{ ___ $view.Url }}"
-                                       title="{{ _ "deeplink to %[1]s view" $view.Label }}">
-                                        <i class="fa-solid fa-link"></i>
-                                        <span class="sr-only">{{ _ "deeplink to %[1]s view" $view.Label }}</span>
-                                    </a>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                    {{ range $idx,$view := .Views }}
-                        <ul class="index-filters" data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
-                            {{ range $jdx,$group := $view.Filters }}
-                                <li class="index-filter">
-                                    {{ if eq (len $group) 1 }}
-                                        {{ with $filter := (index $group 0) }}
-                                            <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
-                                                {{ if $filter.Present }}
-                                                    <i class="fa-solid fa-check-square"></i>
-                                                {{ else }}
-                                                    <i class="fa-regular fa-square"></i>
-                                                {{ end }}
-                                                {{ $filter.Label }}
-                                            </a>
-                                        {{ end }}
-                                    {{ else }}
-                                        <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}"/>
-                                        <div class="dropdown">
-                                            <div class="dropdown-selected">
-                                                <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="open">
-                                                    {{ if ($view.GroupHasFilterPresent $jdx) }}
-                                                        <i class="fa-solid fa-square-caret-right"></i>
-                                                    {{ else }}
-                                                        <i class="fa-regular fa-square-caret-right"></i>
-                                                    {{ end }}
-                                                    <span class="sr-only">{{ _ "open filter dropdown menu" }}</span>
-                                                    {{ if ($view.GroupHasFilterPresent $jdx) }}
-                                                        {{ range $kdx,$filter := $group }}
-                                                            {{ if $filter.Present }}
-                                                                {{ $filter.Label }}
-                                                                {{ break }}
-                                                            {{ end }}
-                                                        {{ end }}
-                                                    {{ else }}
-                                                        <span>{{ _ "Select a filter" }}</span>
-                                                    {{ end }}
-                                                </label>
-                                                <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="close">
-                                                    {{ if ($view.GroupHasFilterPresent $jdx) }}
-                                                        <i class="fa-solid fa-square-caret-down"></i>
-                                                    {{ else }}
-                                                        <i class="fa-regular fa-square-caret-down"></i>
-                                                    {{ end }}
-                                                    <span class="sr-only">{{ _ "close filter dropdown menu" }}</span>
-                                                    <span>{{ _ "Select a filter" }}</span>
-                                                </label>
-                                            </div>
-                                            <div class="dropdown-menu">
-                                                {{ range $kdx,$filter := $group }}
-                                                    <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
-                                                        {{ if $filter.Present }}
-                                                            <i class="fa-solid fa-check-square"></i>
-                                                        {{ else }}
-                                                            <i class="fa-regular fa-square"></i>
-                                                        {{ end }}
-                                                        {{ $filter.Label }}
-                                                    </a>
-                                                {{ end }}
-                                            </div>
-                                        </div>
-                                    {{ end }}
-                                </li>
-                            {{ end }}
-                            {{ if $.SearchEnabled }}
-                                <li class="search-filter">
-                                    <input type="checkbox"
-                                           id="{{ $.Tag }}-{{ $view.Key }}-search-menu" {{ if $.SearchQuery }} checked{{ end }}/>
-                                    <form class="search-form" method="get" action="{{ ___ $view.SearchAction }}">
-                                        <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="close-search-menu">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            <span class="sr-only">{{ _ "close the search menu" }}</span>
-                                        </label>
-                                        <input type="hidden" name="nonce" value="{{ $.SearchNonce }}"/>
-                                        <input type="search" name="query" class="search-query"
-                                               placeholder="{{ _ "search..." }}"
-                                               value="{{ $.SearchQuery | asHTMLAttr }}"/>
-                                        <button class="search-button">
-                                            <i class="fa-solid fa-search"></i>
-                                            <span class="sr-only">{{ _ "search" }}</span>
-                                        </button>
-                                    </form>
-                                    <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="open-search-menu">
-                                        <i class="fa-solid fa-search"></i>
-                                        <span class="sr-only">{{ _ "open the search menu" }}</span>
-                                    </label>
-                                </li>
-                            {{ end }}
-                            {{ if or ($.Views.HasFilterPresent) (ne $.SearchQuery "") }}
-                                <li class="reset-filters">
-                                    <a href="{{ ___ $view.Url }}">
-                                        <i class="fa-solid fa-xmark"></i>
-                                        <span class="sr-only">{{ _ "reset filters" }}</span>
-                                    </a>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </nav>
-            {{ end }}
-
-            {{ $data := dict
-            "ResultCount" (len .Results)
-            "TotalFound" .TotalFound
-            "TotalFiltered" .TotalFiltered
-            }}
-
-            {{ if and .SearchEnabled (or .SearchResults .SearchError) }}
-                {{ $data.SET
-                "SearchEnabled" true
-                "SearchResults" .SearchResults
-                "SearchError" .SearchError
-                "SearchTotal" .SearchTotal
-                "SearchWithinTotal" .SearchWithinTotal
-                }}
-            {{ end }}
-
-            {{ if ne .View "" }}
-                {{ range $idx,$view := .Views }}
-                    {{ if eq $view.Key $.View }}
-                        {{ $data.SET
-                        "Paginate" $view.Paginate
-                        "PageIndex" $view.PageIndex
-                        "PageNumber" $view.PageNumber
-                        "TotalPages" $view.TotalPages
-                        "NumPerPage" $view.NumPerPage
-                        }}
-                        {{ template "partials/njn/block/index--summary.tmpl" $data }}
-                        {{ break }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-
-            {{ if gt (len .Results) 0 }}
-                {{ template "partials/njn/block/index--views.tmpl" . }}
-                {{ range $idx,$view := .Views }}
-                    {{ template "partials/njn/block/index--paginate.tmpl" (dict $ "View" $view) }}
-                {{ end }}
-            {{ else }}
-                <p>no pages found</p>
-            {{ end }}
-        </section>
-        {{ template "partials/njn/block-footer.tmpl" . }}
-        {{ if .JumpTop }}
-            <a class="jump-top" href="#top">{{ _ "top" }}</a>
+  <div class="content">
+    {{ template "partials/njn/block-header.tmpl" . }}
+    <section>
+      {{ if or (gt (len .Views) 1) (.Views.HasFilters) }}
+        {{ range $idx,$view := .Views }}
+          <div class="anchor" id="{{ $.Tag }}-{{ $view.Key }}" data-view="{{ $idx }}"
+               data-view-present="{{ $view.Present }}" data-view-count="{{ len $.Views }}"></div>
         {{ end }}
-    </div>
+        <nav>
+          {{ if gt (len .Views) 1 }}
+            <ul class="index-views">
+              {{ range $idx,$view := .Views }}
+                <li data-view="{{ $idx }}" data-view-present="{{ $view.Present }}">
+                  <a href="#{{ $.Tag }}-{{ $view.Key }}">{{ _ $view.Label }}</a>
+                  <a class="deeplink" href="{{ ___ $view.Url }}"
+                     title="{{ _ "deeplink to %[1]s view" $view.Label }}">
+                    <i class="fa-solid fa-link"></i>
+                    <span class="sr-only">{{ _ "deeplink to %[1]s view" $view.Label }}</span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+
+          {{ $filterPresent := false }}
+          {{ range $idx,$view := .Views }}
+            {{ range $jdx,$group := $view.Filters }}
+              {{ if gt (len $group) 0 }}
+                {{ range $jdx,$filter := $group }}
+                  {{ if $filter.Present }}
+                    {{ $filterPresent = true }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+
+            <ul class="index-filters" data-view="{{ $idx }}" data-view-present="{{ $view.Present }}" data-filter-present="{{ $filterPresent }}">
+              {{ range $jdx,$group := $view.Filters }}
+                <li class="index-filter">
+                  {{ if eq (len $group) 1 }}
+                    {{ with $filter := (index $group 0) }}
+                      <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
+                        {{ if $filter.Present }}
+                          <i class="fa-solid fa-check-square"></i>
+                        {{ else }}
+                          <i class="fa-regular fa-square"></i>
+                        {{ end }}
+                        {{ $filter.Label }}
+                      </a>
+                    {{ end }}
+                  {{ else }}
+                    <input type="checkbox" id="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}"/>
+                    <div class="dropdown">
+                      <div class="dropdown-selected">
+                        <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="open">
+                          {{ if ($view.GroupHasFilterPresent $jdx) }}
+                            <i class="fa-solid fa-square-caret-right"></i>
+                          {{ else }}
+                            <i class="fa-regular fa-square-caret-right"></i>
+                          {{ end }}
+                          <span class="sr-only">{{ _ "open filter dropdown menu" }}</span>
+                          {{ if ($view.GroupHasFilterPresent $jdx) }}
+                            {{ range $kdx,$filter := $group }}
+                              {{ if $filter.Present }}
+                                {{ $filter.Label }}
+                                {{ break }}
+                              {{ end }}
+                            {{ end }}
+                          {{ else }}
+                            <span>
+                              {{ with $label := _ "Select a Filter" }}
+                                {{ if $.FilterLabels }}
+                                  {{ if eq (len $.FilterLabels) (len $view.Filters) }}
+                                    {{ $label = index $.FilterLabels $jdx }}
+                                  {{ end }}
+                                {{ end }}
+                                {{ $label }}
+                              {{ end }}
+                            </span>
+                          {{ end }}
+                        </label>
+                        <label for="{{ $.Tag }}-{{ $view.Key }}-{{ $jdx }}" class="close">
+                          {{ if ($view.GroupHasFilterPresent $jdx) }}
+                            <i class="fa-solid fa-square-caret-down"></i>
+                          {{ else }}
+                            <i class="fa-regular fa-square-caret-down"></i>
+                          {{ end }}
+                          <span class="sr-only">{{ _ "close filter dropdown menu" }}</span>
+                          <span>
+                            {{ with $label := _ "Select a Filter" }}
+                              {{ if $.FilterLabels }}
+                                {{ if eq (len $.FilterLabels) (len $view.Filters) }}
+                                  {{ $label = index $.FilterLabels $jdx }}
+                                {{ end }}
+                              {{ end }}
+                              {{ $label }}
+                            {{ end }}
+                          </span>
+                        </label>
+                      </div>
+                      <div class="dropdown-menu">
+                        {{ range $kdx,$filter := $group }}
+                          <a href="{{ ___ $filter.Url }}#{{ $.Tag }}-{{ $view.Key }}">
+                            {{ if $filter.Present }}
+                              <i class="fa-solid fa-check-square"></i>
+                            {{ else }}
+                              <i class="fa-regular fa-square"></i>
+                            {{ end }}
+                            {{ $filter.Label }}
+                          </a>
+                        {{ end }}
+                      </div>
+                    </div>
+                  {{ end }}
+                </li>
+              {{ end }}
+              {{ if $.SearchEnabled }}
+                <li class="search-filter">
+                  <input type="checkbox"
+                         id="{{ $.Tag }}-{{ $view.Key }}-search-menu" {{ if $.SearchQuery }} checked{{ end }}/>
+                  <form class="search-form" method="get" action="{{ ___ $view.SearchAction }}">
+                    <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="close-search-menu">
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <span class="sr-only">{{ _ "close the search menu" }}</span>
+                    </label>
+                    <input type="hidden" name="nonce" value="{{ $.SearchNonce }}"/>
+                    <input type="search" name="query" class="search-query"
+                           placeholder="{{ _ "search..." }}"
+                           value="{{ $.SearchQuery | asHTMLAttr }}"/>
+                    <button class="search-button">
+                      <i class="fa-solid fa-search"></i>
+                      <span class="sr-only">{{ _ "search" }}</span>
+                    </button>
+                  </form>
+                  <label for="{{ $.Tag }}-{{ $view.Key }}-search-menu" class="open-search-menu">
+                    <i class="fa-solid fa-search"></i>
+                    <span class="sr-only">{{ _ "open the search menu" }}</span>
+                  </label>
+                </li>
+              {{ end }}
+              {{ if or ($.Views.HasFilterPresent) (ne $.SearchQuery "") }}
+                <li class="reset-filters">
+                  <a href="{{ ___ $view.Url }}">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span class="sr-only">{{ _ "reset filters" }}</span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </nav>
+      {{ end }}
+
+      {{ $data := dict
+      "ResultCount" (len .Results)
+      "TotalFound" .TotalFound
+      "TotalFiltered" .TotalFiltered
+      }}
+
+      {{ if and .SearchEnabled (or .SearchResults .SearchError) }}
+        {{ $data.SET
+        "SearchEnabled" true
+        "SearchResults" .SearchResults
+        "SearchError" .SearchError
+        "SearchTotal" .SearchTotal
+        "SearchWithinTotal" .SearchWithinTotal
+        }}
+      {{ end }}
+
+      {{ if ne .View "" }}
+        {{ range $idx,$view := .Views }}
+          {{ if eq $view.Key $.View }}
+            {{ $data.SET
+            "Paginate" $view.Paginate
+            "PageIndex" $view.PageIndex
+            "PageNumber" $view.PageNumber
+            "TotalPages" $view.TotalPages
+            "NumPerPage" $view.NumPerPage
+            }}
+            {{ template "partials/njn/block/index--summary.tmpl" $data }}
+            {{ break }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if gt (len .Results) 0 }}
+        {{ template "partials/njn/block/index--views.tmpl" . }}
+        {{ range $idx,$view := .Views }}
+          {{ template "partials/njn/block/index--paginate.tmpl" (dict $ "View" $view) }}
+        {{ end }}
+      {{ else }}
+        <p>{{ _ "no pages found" }}</p>
+      {{ end }}
+    </section>
+    {{ template "partials/njn/block-footer.tmpl" . }}
+    {{ if .JumpTop }}
+      <a class="jump-top" href="#top">{{ _ "top" }}</a>
+    {{ end }}
+  </div>
 </section>

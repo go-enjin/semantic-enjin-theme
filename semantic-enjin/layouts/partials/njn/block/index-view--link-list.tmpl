@@ -1,7 +1,17 @@
-<ol>
-    {{ range $idx,$page := .Results }}
-        <li>
-            <a class="decorated" href="{{ __ $page.Language $page.Url }}">{{ $page.Title }}</a>
-        </li>
-    {{ end }}
+<ol class="index-view--link-list">
+  {{ range $idx,$page := .Results }}
+    <li>
+      <a class="decorated" href="{{ __ $page.Language $page.Url }}">
+        {{ if not $.ThisView.NoThumbnails }}
+          {{ if and $page.Context.ThumbnailUrl -}}
+            {{- template "partials/common/img.tmpl" (dict $
+              "Src" (fsUrl $page.Context.ThumbnailUrl)
+              "Alt" $page.Context.ThumbnailAlt
+            ) -}}
+          {{- end }}
+        {{- end }}
+        <span>{{- $page.Title -}}</span>
+      </a>
+    </li>
+  {{ end }}
 </ol>
