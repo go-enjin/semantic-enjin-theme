@@ -11,6 +11,7 @@
 {{- end -}}
 
 <header class="masthead"
+        {{- if .Theme.Context.SiteMenuImageIcons }} data-image-icons="true"{{ end -}}
         {{- if .Theme.Context.SiteMenuMobileStyle }} data-mobile-style="{{ .Theme.Context.SiteMenuMobileStyle }}"{{- else }} data-mobile-style="side"{{ end -}}
         {{- if .Theme.Context.SiteMenuDesktopStyle }} data-desktop-style="{{ .Theme.Context.SiteMenuDesktopStyle }}"{{- else }} data-desktop-style="menu"{{ end -}}
 >
@@ -51,10 +52,16 @@
                 <nav>
                     <ol>
                         {{ if .SiteMenu.MainMenu }}
+                            {{ $deepActive := .SiteMenu.MainMenu.DeepActive }}
                             {{ $lastItemIdx := (sub (len .SiteMenu.MainMenu) 1) }}
                             {{- range $i,$item := .SiteMenu.MainMenu }}
                                 {{ if $item.Text }}
-                                    {{- template "partials/menu/menu-controls.tmpl" (dict $ "Idx" $i "Item" $item "LastIdx" $lastItemIdx) -}}
+                                  {{- template "partials/menu/menu-controls.tmpl" (dict $
+                                    "Idx" $i
+                                    "Item" $item
+                                    "LastIdx" $lastItemIdx
+                                    "DeepActive" $deepActive
+                                  ) -}}
                                 {{ end }}
                             {{- end }}
                         {{ end }}
