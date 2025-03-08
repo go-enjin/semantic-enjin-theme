@@ -63,12 +63,55 @@ header nav .menu-item > .parent::after {
   }
 }
 
-.masthead .menus .menu-item > .label i,
-.masthead .menus .menu-item > label > a i {
-  display: inline-block;
-  width: 20px;
-  text-align: left;
-  font-size: 20px;
+.masthead {
+  & > .banner > .menus > nav {
+    & :is(ol, ul, .sub-menu) > li.menu-item > :is(label, .label):not(.close) {
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+
+      min-width: var(--page--menus--min-width);
+      height: 34px;
+
+      padding: 0 10px;
+
+      text-align: center;
+      vertical-align: middle;
+
+      font-size: 14px;
+      line-height: 34px;
+
+      cursor: pointer;
+
+      &.parent::after {
+        margin: 0;
+      }
+
+      & > a {
+        display: inline-flex;
+        max-height: 32px;
+      }
+
+      & > div,
+      & > a > div {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        text-align: center;
+        & :is(i, img) {
+          width: 25px;
+          max-height: 34px;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 /* nav menu states */
