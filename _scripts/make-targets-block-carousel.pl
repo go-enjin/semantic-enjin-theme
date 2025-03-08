@@ -7,7 +7,7 @@ $|=1;
 use constant { MAX_CARDS => 50 };
 
 sub prepare_is_selectors {
-  my ($offset,$start, $end, $prefix, $suffix) = @_;
+  my ($offset, $start, $end, $prefix, $suffix) = @_;
   my $limit = MAX_CARDS - 1;
   my @selectors = ();
   foreach my $l ($offset..$limit) {
@@ -66,9 +66,10 @@ print join("\n",prepare_tmpl_selectors(0, "[data-block-type='carousel'][data-car
 print "/* middle and ending targets need first nav dot normal, regardless of bookends */\n";
 print join(",\n",prepare_is_selectors(0, 1,0,"",".dots>ol>[data-card='0']"));
 print " {
-  font-size: var(--block--carousel--nav-dot-size);
+  opacity: 1;
 }
 ";
+# font-size: var(--block--carousel--nav-dot-size);
 
 # /* middle and ending targets need first-card nav tags hidden */
 
@@ -91,9 +92,10 @@ print " {
 print "/* focus current target nav dot */\n";
 print join(",\n",prepare_tmpl_selectors(0, "[data-block-type='carousel'] [data-card='{i}']:target ~ nav>ol>li[data-card='{i}']"));
 print " {
-  font-size: var(--block--carousel--nav-dot-size-active);
+  opacity: 0.5;
 }
 ";
+# font-size: var(--block--carousel--nav-dot-size-active);
 
 #:
 #: one bookend setup
