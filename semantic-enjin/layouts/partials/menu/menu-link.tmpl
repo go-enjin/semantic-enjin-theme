@@ -1,21 +1,15 @@
+{{- $title := .Text -}}
+{{- if .Title -}}{{- $title = .Title -}}{{- end -}}
 {{- if .Href -}}
     {{- if eq .Lang "" }}
-        <a href="{{- .Href -}}" title="{{ .Text }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
-            {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
-                <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
-            {{- end -}}
+        <a href="{{- .Href -}}" title="{{ $title }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
+          {{- partials "menu/menu-base-link" . -}}
         </a>
     {{- else }}
-        <a href="{{- __ .Lang .Href -}}" title="{{ .Text }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
-            {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
-                <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
-            {{- end -}}
+        <a href="{{- __ .Lang .Href -}}" title="{{ $title }}"{{ if .Target }} target="{{ .Target }}"{{ end }}>
+          {{- partials "menu/menu-base-link" . -}}
         </a>
     {{- end }}
 {{- else -}}
-    <span title="{{ .Text }}">
-        {{- if eq .Icon "" -}}{{- .Text -}}{{- else -}}
-            <span><i class="{{ .Icon }}"></i><span>{{ .Text -}}</span></span>
-        {{- end -}}
-    </span>
+    {{- partials "menu/menu-base-link" . -}}
 {{- end -}}

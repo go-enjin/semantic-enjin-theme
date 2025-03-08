@@ -1,0 +1,10 @@
+<div>
+  {{- if eq .Icon "" -}}
+    {{- if ne .Image "" }}
+      <img src="{{ fsPreloadUrl .Image }}" alt="{{ .ImgAlt }}" />
+    {{- end -}}
+  {{- else -}}
+    <i class="{{ .Icon }}"></i>
+  {{- end -}}
+  <span>{{ .Text -}}</span>
+</div>
