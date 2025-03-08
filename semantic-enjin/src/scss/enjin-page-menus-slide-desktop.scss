@@ -1,4 +1,4 @@
-// Copyright (c) 2023  The Go-Enjin Authors
+// Copyright (c) 2025  The Go-Enjin Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@
     width: 10px;
     height: 100%;
     box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0.68, 0.68, 0.68, 0.77);
+    box-shadow: 0 0 10px var(--underlay--bg);
     clip-path: inset(0 0 0 -10px);
   }
 
@@ -363,10 +363,6 @@
     color: var(--style--fg);
   }
 
-  //.masthead[data-desktop-style='slide'] .menus > nav > :is(ul,ol) > li > .parent::after {
-  //  display: none !important;
-  //}
-
   #side-menu:checked ~ .masthead[data-desktop-style="slide"] .menus {
     z-index: var(--z--page--overlay);
   }
@@ -484,12 +480,6 @@
   /* slide menu customizations of side menu base */
 
   .masthead[data-desktop-style="slide"] {
-    //position: relative;
-    //top: initial;
-    //left: initial;
-
-    //display: inline-block;
-
     vertical-align: top;
   }
 
@@ -653,7 +643,7 @@
 
                 justify-content: center;
 
-                & > :is(span, a) {
+                & :is(span, a) {
                   display: inline-block;
 
                   white-space: nowrap;
@@ -711,8 +701,6 @@
                 flex-direction: column;
                 gap: 1rem;
 
-                //margin-top: 36px;
-
                 &:is(:hover, :active, :focus) {
                   color: var(--page--masthead--fg);
                   background-color: var(--page--masthead--bg);
@@ -763,6 +751,20 @@
     }
   }
 
+  #side-menu:not(:checked) ~ .masthead[data-desktop-style="slide"] {
+    & > .banner > .menus > nav {
+      & > :is(ol, ul) > li.menu-item > :is(label, .label):not(.close) {
+        & > div {
+          text-align: center;
+          & :is(i, img) + span {
+            // hide text when icons/images are present
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   #side-menu:checked {
     & ~ .masthead[data-desktop-style="slide"] {
       border-bottom: none;
@@ -771,7 +773,7 @@
       box-shadow: 0 0 34px var(--color--dark);
 
       & #side-close--label {
-        background-color: rgba(0.68, 0.68, 0.68, 0.02);
+        background-color: var(--underlay--bg);
         cursor: pointer;
       }
 
