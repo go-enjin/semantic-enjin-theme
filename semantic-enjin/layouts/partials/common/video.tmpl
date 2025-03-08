@@ -1,0 +1,30 @@
+{{- "" -}}<video
+            {{- if .Class }} class="{{ .Class }}"{{ end -}}
+            {{- if .Style }} style="{{ .Style | asCSS }}"{{ end -}}
+            {{- if .Src }} src="{{ .Src | asURL }}"{{ end -}}
+            {{- if .Poster }} poster="{{ .Poster | asURL }}"{{ end -}}
+            {{- if .Width }} width="{{ .Width }}"{{ end -}}
+            {{- if .Height }} height="{{ .Height }}"{{ end -}}
+            {{- if .Loop }} loop{{ end -}}
+            {{- if .Muted }} muted{{ end -}}
+            {{- if .Autoplay }} autoplay{{ end -}}
+            {{- if .Playsinline }} playsinline{{ end -}}
+            {{- if .Disableremoteplayback }} disableremoteplayback{{ end -}}
+            {{- if .Disablepictureinpicture }} disablepictureinpicture{{ end -}}
+            {{- if .Controls }} controls{{ end -}}
+            {{- if .Preload }} preload="{{ .Preload }}"{{ end -}}
+            {{- if .Crossorigin }} crossorigin="{{ .Crossorigin }}"{{ end -}}
+            {{- if .Controlslist }} controlslist="{{ .Controlslist }}"{{ end -}}
+            {{- elementAttributes . -}}
+          >
+  {{- if and .Sources (gt (len .Sources) 0) }}
+    {{- range $item := .Sources }}
+      <source src="{{ $item.src }}"{{ if ne $item.type "" }} type="{{ $item.type }}"{{ end }} />
+    {{-  end  }}
+  {{- end }}
+  {{- if and .Text (gt (len .Text) 0) }}
+    {{-  range $item := .Text }}
+      {{ template "partials/njn/field-list.tmpl" $item }}
+    {{-  end }}
+  {{-  end }}
+</video>{{- "" -}}
