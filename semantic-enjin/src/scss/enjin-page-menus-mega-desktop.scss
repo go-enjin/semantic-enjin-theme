@@ -330,14 +330,11 @@
                     bottom: 0;
                     right: 0;
 
-                    //width: 77px;
-
                     background-image: var(--menu-item--image);
+                    background-attachment: fixed;
+                    background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-position: center;
-
-                    //opacity: 0.77;
                   }
 
                   &.with-image {
