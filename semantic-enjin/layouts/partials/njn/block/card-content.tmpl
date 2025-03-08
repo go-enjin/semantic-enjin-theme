@@ -1,8 +1,9 @@
         {{ template "partials/njn/field-switch.tmpl" .Background }}
+        {{-  if gt (length .Section) 0 }}
         <div class="copytext">
-            {{ if .ProfileImgSrc }}
+            {{ if ne .ProfileImgSrc nil }}
             {{- template "partials/common/img.tmpl" (dict $
-            "Src" (fsUrl .ProfileImageSrc)
+            "Src" (fsUrl .ProfileImgSrc)
             "Alt" (_ "thumbnail image")
             ) -}}
             {{ end }}
@@ -11,3 +12,4 @@
             {{ template "partials/njn/field-list.tmpl" .Section }}
             {{ end }}
         </div>
+        {{- end  }}
