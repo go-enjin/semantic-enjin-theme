@@ -22,6 +22,8 @@
     .menus[data-desktop-style="mega"]
     #menu-close--label {
     display: block;
+
+    background-color: var(--underlay--bg);
   }
 
   .masthead .menus[data-desktop-style="mega"] nav :is(ul, ol) {
