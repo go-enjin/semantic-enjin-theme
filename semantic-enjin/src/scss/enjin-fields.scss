@@ -104,6 +104,11 @@ p:not(:first-child) {
   text-align: center;
 }
 
+.no-bold {
+  // not sure why important, keep for now
+  font-weight: normal !important;
+}
+
 .indented {
   padding-left: 10px;
 
