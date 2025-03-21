@@ -62,6 +62,10 @@
               opacity: 0.77;
             }
           }
+
+          & [data-view]:is(:hover, :active, :focus) a {
+            color: var(--style--accent--bg);
+          }
         }
 
         &.index-filters {
