@@ -94,6 +94,12 @@ main {
   display: none;
 }
 
+/* text selection */
+*::selection {
+  color: var(--style--bg);
+  background-color: var(--style--fg);
+}
+
 /* Works on Firefox */
 * {
   scrollbar-width: auto;
