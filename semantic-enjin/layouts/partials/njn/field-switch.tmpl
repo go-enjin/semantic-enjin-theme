@@ -205,5 +205,15 @@
   }}{{
   template "partials/njn/field/var.tmpl" .
   }}{{
+  else if (or
+  (eq .Type "h1") (eq .Type "h-1")
+  (eq .Type "h2") (eq .Type "h-2")
+  (eq .Type "h3") (eq .Type "h-3")
+  (eq .Type "h4") (eq .Type "h-4")
+  (eq .Type "h5") (eq .Type "h-5")
+  (eq .Type "h6") (eq .Type "h-6")
+  ) }}{{
+  template "partials/njn/field/h.tmpl" .
+  }}{{
   end
   }}
