@@ -396,54 +396,76 @@ body[data-page-format="md"] .block > .content code {
 
 /* blockquote fields */
 
-.block > .content blockquote {
-  margin: 0;
-  padding: 25px;
-  border-radius: 5px;
-  color: var(--style--accent--fg);
-  background: var(--style--accent--bg);
-}
+.block > .content {
+  & blockquote {
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 5px;
+    color: var(--style--accent--fg);
+    background: var(--style--accent--bg);
 
-.block > .content blockquote::before,
-.block > .content blockquote::after {
-  font-size: 40px;
-  font-weight: bold;
-  font-style: italic;
-  position: absolute;
-}
+    &::before,
+    &::after {
+      font-size: 40px;
+      font-weight: bold;
+      font-style: italic;
+      position: absolute;
+    }
 
-.block > .content blockquote::before {
-  content: "\201C";
-  top: 0;
-  left: 0;
-}
+    &::before {
+      content: "\201C";
+      top: 0;
+      left: 0;
+    }
 
-.block > .content blockquote::after {
-  content: "\201D";
-  bottom: -20px;
-  right: 20px;
-}
+    &::after {
+      content: "\201D";
+      bottom: -20px;
+      right: 20px;
+    }
 
-.block > .content blockquote p::before {
-  content: "\201C";
-}
+    & p {
+      &::before {
+        content: "\201C";
+      }
 
-.block > .content blockquote p::after {
-  content: "\201D";
-}
+      &::after {
+        content: "\201D";
+      }
+    }
 
-.block > .content blockquote + figcaption {
-  width: 100%;
-  text-align: right;
-}
+    &.cited,
+    &.captioned {
+      margin-bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
 
-.block > .content blockquote + figcaption > cite {
-  font-style: italic;
-}
+    & + figcaption {
+      width: 100%;
 
-.block > .content blockquote + figcaption::before {
-  content: "\2013";
-  margin-right: 5px;
+      margin-bottom: 15px;
+
+      color: var(--style--accent--fg);
+      background: var(--style--accent--bg);
+
+      padding-right: 25px;
+
+      text-align: right;
+
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      & > cite {
+        font-style: italic;
+      }
+
+      &::before {
+        content: "\2013";
+        margin-right: 5px;
+      }
+    }
+  }
 }
 
 /* figure field */
