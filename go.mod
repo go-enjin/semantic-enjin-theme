@@ -1,8 +1,8 @@
 module github.com/go-enjin/semantic-enjin-theme
 
-go 1.24.5
+go 1.25.1
 
-require github.com/go-enjin/be v0.7.14
+require github.com/go-enjin/be v0.7.15
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
@@ -17,9 +17,9 @@ require (
 	github.com/atotto/clipboard v0.1.4 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bits-and-blooms/bitset v1.22.0 // indirect
-	github.com/blevesearch/bleve/v2 v2.5.2 // indirect
+	github.com/blevesearch/bleve/v2 v2.5.3 // indirect
 	github.com/blevesearch/bleve_index_api v1.2.8 // indirect
-	github.com/blevesearch/geo v0.2.3 // indirect
+	github.com/blevesearch/geo v0.2.4 // indirect
 	github.com/blevesearch/go-faiss v1.0.25 // indirect
 	github.com/blevesearch/go-porterstemmer v1.0.3 // indirect
 	github.com/blevesearch/gtreap v0.1.1 // indirect
@@ -39,14 +39,14 @@ require (
 	github.com/creack/pty v1.1.21 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/djherbis/times v1.6.0 // indirect
-	github.com/dmachard/go-clientsyslog v1.0.1 // indirect
+	github.com/dmachard/go-clientsyslog v1.0.2 // indirect
 	github.com/dominikbraun/graph v0.23.0 // indirect
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/felixge/fgprof v0.9.3 // indirect
 	github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568 // indirect
-	github.com/gabriel-vasile/mimetype v1.4.9 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.10 // indirect
 	github.com/gdamore/encoding v1.0.1 // indirect
-	github.com/go-chi/chi/v5 v5.2.2 // indirect
+	github.com/go-chi/chi/v5 v5.2.3 // indirect
 	github.com/go-corelibs/context v0.1.1 // indirect
 	github.com/go-corelibs/enjinql v0.1.0 // indirect
 	github.com/go-corelibs/fmtstr v1.2.1 // indirect
@@ -54,7 +54,7 @@ require (
 	github.com/go-corelibs/lang v0.3.2 // indirect
 	github.com/go-corelibs/maps v1.3.0 // indirect
 	github.com/go-corelibs/maths v1.2.1 // indirect
-	github.com/go-corelibs/mime v1.0.1 // indirect
+	github.com/go-corelibs/mime v1.1.0 // indirect
 	github.com/go-corelibs/path v1.4.3 // indirect
 	github.com/go-corelibs/regexps v1.2.0 // indirect
 	github.com/go-corelibs/runes v1.1.0 // indirect
@@ -100,7 +100,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.27 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/mrz1836/go-sanitize v1.5.2 // indirect
+	github.com/mrz1836/go-sanitize v1.5.3 // indirect
 	github.com/mschoch/smat v0.2.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.2 // indirect
 	github.com/pkg/profile v1.7.0 // indirect
@@ -108,7 +108,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spkg/zipfs v0.7.1 // indirect
-	github.com/tdewolff/parse/v2 v2.8.1 // indirect
+	github.com/tdewolff/parse/v2 v2.8.3 // indirect
 	github.com/tg123/go-htpasswd v1.2.4 // indirect
 	github.com/urfave/cli/v2 v2.27.7 // indirect
 	github.com/weppos/publicsuffix-go v0.30.2 // indirect
@@ -116,17 +116,17 @@ require (
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1 // indirect
 	go.etcd.io/bbolt v1.4.0 // indirect
-	golang.org/x/crypto v0.40.0 // indirect
-	golang.org/x/exp v0.0.0-20240416160154-fe59bbe5cc7f // indirect
-	golang.org/x/net v0.42.0 // indirect
-	golang.org/x/sys v0.34.0 // indirect
-	golang.org/x/term v0.33.0 // indirect
-	golang.org/x/text v0.27.0 // indirect
+	golang.org/x/crypto v0.42.0 // indirect
+	golang.org/x/exp v0.0.0-20250819193227-8b4c13bb791b // indirect
+	golang.org/x/net v0.44.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
+	golang.org/x/term v0.35.0 // indirect
+	golang.org/x/text v0.29.0 // indirect
 	google.golang.org/protobuf v1.35.1 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/datatypes v1.2.6 // indirect
 	gorm.io/driver/mysql v1.6.0 // indirect
-	gorm.io/gorm v1.30.1 // indirect
+	gorm.io/gorm v1.31.0 // indirect
 )
